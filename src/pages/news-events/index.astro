@@ -1,0 +1,209 @@
+---
+import Hero from "@/common/components/Hero.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import { ArrowRightIcon } from "@heroicons/react/24/outline"
+import { format, formatISO } from "date-fns"
+
+
+
+
+const events = [
+    {
+        date: new Date(),
+        title: "Algebra and Number Theory Seminar",
+        description: "Lorem ipsum dolor sit amet consectetur. Morbi habitasse aliquet in ac eu. Amet consequat porttitor elit viverra tempus diam facilisis aliquet duis.",
+    },
+    {
+        date: new Date(),
+        title: "Algebra and Number Theory Seminar",
+        description: "Lorem ipsum dolor sit amet consectetur. Morbi habitasse aliquet in ac eu. Amet consequat porttitor elit viverra tempus diam facilisis aliquet duis.",
+    },
+    {
+        date: new Date(),
+        title: "Algebra and Number Theory Seminar",
+        description: "Lorem ipsum dolor sit amet consectetur. Morbi habitasse aliquet in ac eu. Amet consequat porttitor elit viverra tempus diam facilisis aliquet duis.",
+    },
+]
+
+---
+
+<BaseLayout title="News & Events">
+    <Hero title="News & Events" subtitle="Stay up to date with the latest news and events from department." />
+    <main>
+        <section class="grid lg:grid-cols-2 max-w-screen-xl mx-auto px-5 my-10 gap-5">
+            <section>nn
+                <header>
+                    <h2 class="text-3xl font-semibold font-kanit">Recent Stories & News</h2>
+                    <a href="/news-events/stories-news" class="underline inline-flex items-center">All Stories & News <ArrowRightIcon className="w-4 ml-1" /></a>
+                </header>
+                <div class="grid gap-y-5 mt-5">
+                    {[...Array(3)].map(() => (
+                        <article class="grid grid-cols-3 border border-gray-200 shadow-md">
+                            <div class="col-span-1">
+                                <img src="https://placehold.co/384" alt="News" class=" w-96 h-auto aspect-square object-cover" />
+                            </div>
+                            <div class="col-span-2 p-5 flex flex-col h-full justify-between">
+                                <h3 class="text-xl font-kanit text-slate-800">ขอเเสดงความยินดีกับ ศ.กิตติคุณ ดร.พัฒนี อุดมกะวานิช</h3>
+                                <p class="mt-3 text-light text-slate-300">{format(new Date(), "MMM dd, yyyy")}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            <section>
+                <header>
+                    <h2 class="text-3xl font-semibold font-kanit">Award</h2>
+                    <a href="/news-events/award" class="underline inline-flex items-center">All Award <ArrowRightIcon className="w-4 ml-1" /></a>
+                </header>
+                <div class="grid gap-y-5 mt-5">
+                    {[...Array(3)].map(() => (
+                        <article class="grid grid-cols-3 border border-gray-200 shadow-md">
+                            <div class="col-span-1">
+                                <img src="https://placehold.co/384" alt="News" class=" w-96 h-auto aspect-square object-cover" />
+                            </div>
+                            <div class="col-span-2 p-5 flex flex-col h-full justify-between">
+                                <h3 class="text-xl font-kanit text-slate-800">ขอเเสดงความยินดีกับ ศ.กิตติคุณ ดร.พัฒนี อุดมกะวานิช</h3>
+                                <p class="mt-3 text-light text-slate-300">{format(new Date(), "MMM dd, yyyy")}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+        </section>
+        <section class="bg-gray-100 py-10 font-kanit">
+            <div class="max-w-screen-xl mx-auto px-5 pb-5">
+                <header class="flex justify-center items-center">
+                    <h2 class="uppercase text-3xl font-semibold font-kanit text-slate-800">Upcoming Event</h2>
+                </header>
+                <section class="grid lg:grid-cols-3 mt-5">
+                    {events.map(event => (
+                            <article class="grid justify-items-center p-5 hover:bg-gray-200">
+                                <header>
+                                    <time class="grid justify-items-center" datetime={formatISO(event.date)}>
+                                        <span class="text-yellow-500 text-3xl font-bold uppercase">{format(event.date, "MMM dd")}</span>
+                                        <span class="text-yellow-500">{format(event.date, "hh:mm aa")}</span>
+                                    </time>
+                                    <h3 class="text-xl text-slate-500 mt-2.5">{event.title}</h3>
+                                </header>
+                                <p class="mt-3 text-center text-light text-slate-400">{event.description}</p>
+                            </article>
+                    ))}
+                </section>
+            </div>
+        </section>
+        <section class="bg-gray-700 py-10 font-kanit">
+            <div class="max-w-screen-xl mx-auto px-5 pb-5">
+                <section class="grid lg:grid-cols-3 justify-items-center mt-5">
+                    <article class="border-r border-r-gray-900 w-full grid justify-items-center">
+                        <img src="/icon/news-event/award.png" class=" w-24 h-24" alt="Awards">
+                        <h2 class="text-white text-center text-2xl mt-5">All Awards</h2>
+                    </article>
+                    <article class="border-r border-r-gray-900 w-full grid justify-items-center">
+                        <img src="/icon/news-event/seminar.png" class=" w-24 h-24" alt="Seminar">
+                        <h2 class="text-white text-center text-2xl mt-5">All Seminar</h2>
+                    </article>
+                    <article class=" w-full grid justify-items-center">
+                        <img src="/icon/news-event/apam.png" class=" w-24 h-24" alt="APAM">
+                        <h2 class="text-white text-center text-2xl mt-5">APAM</h2>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<!-- <BaseLayout title="News & Events">
+    <Hero title="News & Events" subtitle="Stay up to date with the latest news and events from department." />
+    <main>
+        <section class="grid lg:grid-cols-4 max-w-screen-xl mx-auto px-5 my-10 gap-5">
+            <section class="bg-yellow-400 text-slate-800 h-fit p-5 font-kanit">
+                <ul class="text-xl space-y-2.5">
+                    <li>Stories & News</li>
+                    <li>Award</li>
+                    <li>Upcoming Event</li>
+                    <li>Seminar</li>
+                    <li>APAM</li>
+                </ul>
+            </section>
+            <section class="col-span-3 grid gap-y-5">
+            <section>
+                <header>
+                    <h2 class="text-3xl font-semibold font-kanit">Recent Stories & News</h2>
+                    <a href="/news-events/stories-news" class="underline inline-flex items-center">All Stories & News <ArrowRightIcon className="w-4 ml-1" /></a>
+                </header>
+                <div class="grid gap-y-5 mt-5">
+                    {[...Array(3)].map(() => (
+                        <article class="grid grid-cols-3 border border-gray-200 shadow-md">
+                            <div class="col-span-1">
+                                <img src="https://placehold.co/384" alt="News" class=" w-60 h-auto aspect-square object-cover" />
+                            </div>
+                            <div class="col-span-2 p-5 flex flex-col h-full justify-between">
+                                <h3 class="text-xl font-kanit text-slate-800">ขอเเสดงความยินดีกับ ศ.กิตติคุณ ดร.พัฒนี อุดมกะวานิช</h3>
+                                <p class="mt-3 text-light text-slate-300">{format(new Date(), "MMM dd, yyyy")}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            <section>
+                <header>
+                    <h2 class="text-3xl font-semibold font-kanit">Award</h2>
+                    <a href="/news-events/award" class="underline inline-flex items-center">All Award <ArrowRightIcon className="w-4 ml-1" /></a>
+                </header>
+                <div class="grid gap-y-5 mt-5">
+                    {[...Array(3)].map(() => (
+                        <article class="grid grid-cols-3 border border-gray-200 shadow-md">
+                            <div class="col-span-1">
+                                <img src="https://placehold.co/384" alt="News" class=" w-60 h-auto aspect-square object-cover" />
+                            </div>
+                            <div class="col-span-2 p-5 flex flex-col h-full justify-between">
+                                <h3 class="text-xl font-kanit text-slate-800">ขอเเสดงความยินดีกับ ศ.กิตติคุณ ดร.พัฒนี อุดมกะวานิช</h3>
+                                <p class="mt-3 text-light text-slate-300">{format(new Date(), "MMM dd, yyyy")}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            </section>
+        </section>
+        <section class="bg-gray-100 py-10 font-kanit">
+            <div class="max-w-screen-xl mx-auto px-5 pb-5">
+                <header class="flex justify-center items-center">
+                    <h2 class="uppercase text-3xl font-semibold font-kanit text-slate-800">Upcoming Event</h2>
+                </header>
+                <section class="grid lg:grid-cols-3 mt-5">
+                    {events.map(event => (
+                            <article class="grid justify-items-center p-5 hover:bg-gray-200">
+                                <header>
+                                    <time class="grid justify-items-center" datetime={formatISO(event.date)}>
+                                        <span class="text-yellow-500 text-3xl font-bold uppercase">{format(event.date, "MMM dd")}</span>
+                                        <span class="text-yellow-500">{format(event.date, "hh:mm aa")}</span>
+                                    </time>
+                                    <h3 class="text-xl text-slate-500 mt-2.5">{event.title}</h3>
+                                </header>
+                                <p class="mt-3 text-center text-light text-slate-400">{event.description}</p>
+                            </article>
+                    ))}
+                </section>
+            </div>
+        </section>
+        <section class="bg-gray-700 py-10 font-kanit">
+            <div class="max-w-screen-xl mx-auto px-5 pb-5">
+                <section class="grid lg:grid-cols-3 justify-items-center mt-5">
+                    <article class="border-r border-r-gray-900 w-full grid justify-items-center">
+                        <img src="/icon/news-event/award.png" class=" w-24 h-24" alt="Awards">
+                        <h2 class="text-white text-center text-2xl mt-5">All Awards</h2>
+                    </article>
+                    <article class="border-r border-r-gray-900 w-full grid justify-items-center">
+                        <img src="/icon/news-event/seminar.png" class=" w-24 h-24" alt="Seminar">
+                        <h2 class="text-white text-center text-2xl mt-5">All Seminar</h2>
+                    </article>
+                    <article class=" w-full grid justify-items-center">
+                        <img src="/icon/news-event/apam.png" class=" w-24 h-24" alt="APAM">
+                        <h2 class="text-white text-center text-2xl mt-5">APAM</h2>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </main>
+</BaseLayout> -->

@@ -1,0 +1,81 @@
+---
+import "@fontsource-variable/work-sans";
+import "@fontsource/kanit/100.css";
+import "@fontsource/kanit/200.css";
+import "@fontsource/kanit/300.css";
+import "@fontsource/kanit/400.css";
+import "@fontsource/kanit/500.css";
+import "@fontsource/kanit/600.css";
+import "@fontsource/kanit/700.css";
+import "@fontsource/kanit/800.css";
+import "@fontsource/kanit/900.css";
+
+
+import { ViewTransitions } from "astro:transitions";
+import "../styles/global.css";
+import Menu from "@/common/components/Menu";
+import Navbar from "@/common/components/Navbar";
+import Footer from "@/common/components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <title>{title}</title>
+        <ViewTransitions />
+    </head>
+    <body>
+        <Menu client:load />
+        <Navbar client:load />
+        <div id="content">
+            <div class="pt-[80px]">
+              <slot />
+            </div>
+            <Footer />
+        </div>
+        
+    </body>
+    <style is:global>
+      #content {
+        overflow-x: h;
+        transition-property: transform;
+        transition-duration: 500ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #content.menu-open {
+        transform: translateX(-350px);
+      }
+    </style>
+    <script>
+      import { isMenuOpen } from "@/store/menuStore";
+
+      const content = document.getElementById("content");
+      if (!content) throw new Error("Content not found");
+
+      isMenuOpen.subscribe((value) => {
+          if (value) {
+              content.classList.add("menu-open");
+          } else {
+              content.classList.remove("menu-open");
+          }
+      });
+    </script>
+</html>

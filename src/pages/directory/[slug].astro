@@ -1,0 +1,99 @@
+---
+import type { Faculty } from "@/interfaces/faculty.interface";
+import { faculties } from "@/mock/faculties";
+import { DocumentTextIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
+import Layout from "../../layouts/BaseLayout.astro";
+
+const { slug } = Astro.params;
+const faculty: Faculty = faculties.find((faculty) => faculty.id === slug) as Faculty;
+
+export async function getStaticPaths() {
+    return {
+        paths: faculties.map((faculty) => ({
+            params: {
+                slug: faculty.id,
+            },
+        })),
+        fallback: false,
+    };
+}
+---
+
+<Layout title={faculty?.nameEng}>
+    <main class="max-w-screen-xl mx-auto md:px-5">
+        <article class="md:grid md:grid-cols-[500px_1fr] md:py-10 md:gap-x-10">
+            <header class="bg-yellow-400 p-5">
+                <figure>
+                    <img src={faculty.imgURL} class="w-full h-auto object-cover object-center" alt="">
+                </figure>
+
+                <section class="mt-5 md:hidden">
+                    <h1 class="text-2xl font-kanit font-medium text-gray-900">{faculty.academicRank.thAbbr}{faculty.isPhD && "ดร."}{faculty.nameTH}</h1>
+                    <h2 class="font-kanit text-gray-500">{faculty.nameEng}{faculty.isPhD && " , Ph.D."}</h2>
+                    <h3 class="text-gray-900 font-kanit">{faculty.academicRank.eng}</h3>
+                </section>
+
+                <section class="mt-5 md:block">
+                    <h2 class="text-xl md:text-3xl font-medium text-gray-900">Contact</h2>
+                    <div class="grid gap-x-5 gap-y-1 grid-cols-[max-content_1fr] mt-2">
+                        <p class=" text-gray-900 md:text-xl font-kanit font-medium">Office:</p>
+                        <p class=" text-gray-900 md:text-xl font-kanit font-thin">{faculty.office}</p>
+                        <p class=" text-gray-900 md:text-xl font-kanit font-medium">Phone:</p>
+                        <p class=" text-gray-900 md:text-xl font-kanit font-thin">{faculty.phone}</p>
+
+                        <p class=" text-gray-900 md:text-xl font-kanit font-medium">Email:</p>
+                        <p class=" text-gray-900 md:text-xl font-kanit font-thin">{faculty.email}</p>
+                    </div>
+
+                </section>
+                <section class="grid gap-y-2.5 mt-5">
+                    <button class="inline-flex items-center bg-gray-900 text-white p-2.5">
+                        <GlobeAltIcon className="w-5 h-5 mr-2" />
+                        <p class="font-kanit font-light">Visit Personal's Website</p>
+                    </button>
+                    <button class="inline-flex items-center bg-gray-900 text-white p-2.5">
+                        <DocumentTextIcon className="w-5 h-5 mr-2" />
+                        <p class="font-kanit font-light">Curriculum Vitae</p>
+                    </button>
+                </section>
+            </header>
+
+            <main class="p-5 flex flex-col">
+                <section class="hidden md:block">
+                    <h1 class=" text-5xl font-kanit font-semibold text-gray-900">{faculty.academicRank.thAbbr}{faculty.isPhD && "ดร."}{faculty.nameTH}</h1>
+                    <h2 class="font-kanit text-gray-500 text-xl">{faculty.nameEng}{faculty.isPhD && " , Ph.D."}</h2>
+                    <h3 class="text-gray-900 font-kanit text-xl">{faculty.academicRank.eng}</h3>
+                </section>
+
+                <section class="md:mt-5">
+                    <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Biography</h2>
+                    <p class="font-kanit font-light">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nam, sint neque temporibus sed omnis? Dolore eius eveniet odit, labore accusamus qui nostrum nihil aut tempora vitae deserunt nam nisi eaque sunt animi iure! Quasi repellendus totam fugiat! Deserunt a modi aspernatur aut, quae iusto fugiat beatae exercitationem vel rerum, laboriosam animi. Eius aliquam modi numquam ipsum natus mollitia amet ipsam praesentium nisi dolores. Repellat, aperiam accusamus, dolore voluptate alias vitae esse rerum et rem mollitia aliquam minima natus, asperiores quia in. Aspernatur delectus asperiores molestias odit obcaecati voluptatem vitae earum. Et voluptates voluptatum voluptate maxime sint autem sit! Eaque?
+                    </p>
+                </section>
+
+                <section class="md:mt-5">
+                    <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Research Area</h2>
+                    <ul class=" list-disc list-inside marker:text-yellow-600 mt-2">
+                        {faculty.researchFields.map((field) => (
+                            <li class="text-gray-500 font-kanit">{field}</li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section class="mt-5">
+                    <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Education</h2>
+                    <ul class="font-kanit mt-2">
+                        {faculty.education.map((edu) => (
+                            <li class="text-gray-500 font-kanit">
+                                <span class="text-gray-900 font-bold">{edu.year}</span>  
+                                <span class="text-gray-500">{edu.degree}</span>
+                                <span class="text-gray-500">{edu.university}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </main>
+        </article>
+    </main>
+</Layout>

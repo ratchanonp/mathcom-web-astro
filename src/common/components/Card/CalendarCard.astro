@@ -1,0 +1,27 @@
+---
+import type { Event } from "@/interfaces/event.interface";
+import { format } from "date-fns";
+const event: Event = Astro.props.event;
+
+const { start, title } = event;
+---
+
+<article
+    class="hover:bg-gray-100 hover:border-b-yellow-500 min-h-[300px]"
+>
+    <h3 class="bg-yellow-400 flex flex-col px-5 py-2.5">
+        <span class="text-2xl font-medium text-gray-500 mr-2 items-center">
+            {format(start, "MMM do")}
+        </span>
+    </h3>
+    <div class="p-5">
+
+        <span class="text-sm font-medium font-kanit text-gray-700 flex">{format(start, "EEEE")}</span><br/>
+        <span class="text-sm font-medium font-kanit text-gray-700 mb-1 flex">{format(start, "hh:mm aa")}</span><br/>
+        <p
+            class="font-kanit font-light text-sm md:text-base text-gray-500"
+        >
+            {title}
+        </p>
+    </div>
+</article>

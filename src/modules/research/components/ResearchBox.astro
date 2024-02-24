@@ -1,0 +1,13 @@
+---
+import { processLink } from "../libs/utils";
+
+const {title, link, bg, button, img} = Astro.props;
+---
+
+<article class="flex  min-h-40 bg-gray-50 text-slate-800 p-5 border-2 border-slate-800 relative items-center space-x-5">
+    <div class="grid gap-y-2.5">
+        <h4 class="text-xl font-kanit font-medium first-letter:text-3xl first-letter:font-semibold">{title}</h4>
+        <a href={`research/${processLink(link)}`} class=" border-slate-800 bg-slate-800 hover:bg-slate-800 text-white border-2 w-fit px-2.5 py-1">Explore</a>
+    </div>
+    <img src={img} alt={title} class="w-auto h-20 aspect-square object-fit object-center" />
+</article>

@@ -1,0 +1,266 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import {
+  Table,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Us">
+  <Hero title="About Us" subtitle="Who are we?" />
+  <main class="font-kanit">
+    <section class="space-y-2.5 mt-5 max-w-screen-xl mx-auto px-5">
+      <h2 class="font-kanit text-4xl font-semibold text-slate-800">
+        Introduction
+      </h2>
+      <p
+        class="first-letter:text-4xl first-letter:text-primary first-letter:font-semibold font-light text-slate-700"
+      >
+        Department of Mathematics and Computer Science at Chulalongkorn
+        University was founded in the late 30’s as the first mathematics
+        department in the nation. Since then it has grown up and became the
+        academic foundation and root of several other mathematics departments in
+        Thailand.
+      </p>
+      <p class="font-light">
+        The department has gradually gained the academic recognition by the
+        domestic and international scholars, researchers, as well as students
+        based on its advancement and strength. During the past history of our
+        department, several academic cornerstones and archievements have been
+        recorded. Our depertment library has more than 10,000 books and more
+        than 10 different journals in Mathematics and Computer Science. The
+        department has wide varieties of computing facilities for supporting the
+        research and teaching.
+      </p>
+    </section>
+    <section class="space-y-5 mt-5 max-w-screen-xl mx-auto px-5">
+      <h2 class="font-kanit text-4xl font-semibold text-slate-800">
+        Department Head
+      </h2>
+      <div class="p-2.5 bg-primary text-slate-700 font-kanit">
+        <h3 class="text-sm text-slate-500">Current</h3>
+        <div class="grid">
+          <p class="text-lg font-semibold">
+            Assistant Professor Dr. Athipat Thamrongthanyalak
+          </p>
+          <p>2023 - Present</p>
+        </div>
+      </div>
+      <h3 class="font-kanit text-2xl font-semibold text-slate-800">
+        List of Past Department Head
+      </h3>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Name</TableHead>
+            <TableHead>Duty Periods</TableHead>
+          </TableRow>
+        </TableHeader>
+        <tbody>
+          <TableRow>
+            <TableCell>Professor Sanoh Tanboonyeun</TableCell>
+            <TableCell>1947-1965</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Prapan Watcharapai</TableCell>
+            <TableCell>
+              <div>1966-1971</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Khaisri Na Seenlawan</TableCell>
+            <TableCell>
+              <div>1972-1975</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Surawit Kongsasana</TableCell>
+            <TableCell>
+              <div>1976-1979</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor M.R. Pakpongsanit Sanitwong</TableCell>
+            <TableCell>
+              <div>1980-1983</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Associate Professor Dr. Wiroon Boonsombat</TableCell>
+            <TableCell>
+              <div>1984-1987</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Assistant Professor Rajit Watanasin</TableCell>
+            <TableCell>
+              <div>1988-1994</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Assistant Professor La-or Chonwiriya</TableCell>
+            <TableCell>
+              <div>1994-1996</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Assistant Professor Rajit Watanasin</TableCell>
+            <TableCell>
+              <div>1996-1999</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Assistant Professor&nbsp;Suwimon&nbsp;Hall</TableCell>
+            <TableCell>
+              <div>1999-2000</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Associate Professor Dr. Wanida Hemakul</TableCell>
+            <TableCell>
+              <div>2000-2004</div>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Dr. Chidchanok Lursinsap</TableCell>
+            <TableCell>2004-2006</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Dr. Kritsana Neammanee</TableCell>
+            <TableCell>2006-2014</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Dr. Chidchanok Lursinsap</TableCell>
+            <TableCell>2015-2017</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Professor Dr. Kritsana Neammanee</TableCell>
+            <TableCell>2017-2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Associate Professor Dr. Ratinan Boonklurb</TableCell>
+            <TableCell>2021-2023</TableCell>
+          </TableRow>
+        </tbody>
+      </Table>
+    </section>
+    <section class="mt-10">
+      <header class="max-w-screen-xl mx-auto p-5">
+        <p class="text-3xl text-center font-semibold">
+          Our department currently offers 8 programs of study:
+        </p>
+      </header>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="bg-yellow-500 lg:bg-yellow-500 py-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] lg:min-w-[640px] lg:ml-auto px-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >B.Sc. (Mathematics)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-400 lg:bg-yellow-400 py-5 lg:pl-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >B.Sc. (Computer Science)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-500 lg:bg-yellow-400 py-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] lg:min-w-[640px] lg:ml-auto px-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >M.Sc. (Mathematics)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-400 lg:bg-yellow-500 py-5 lg:pl-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >M.Sc. (Computer Science and Information Technology)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-500 lg:bg-yellow-500 py-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] lg:ml-auto px-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >M.Sc. (Applied Mathematics and Computational Science)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-400 lg:bg-yellow-400 py-5 lg:pl-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >Ph.D. (Mathematics)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-500 lg:bg-yellow-400 py-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] lg:ml-auto px-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >Ph.D. (Computer Science and Information Technology)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+        <div class="bg-yellow-400 lg:bg-yellow-500 py-5 lg:pl-5">
+          <div
+            class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between"
+          >
+            <a href="" class="underline text-2xl font-semibold"
+              >Ph.D. (Applied Mathematics and Computational Science)</a
+            >
+            <button
+              class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+              >Explore</button
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

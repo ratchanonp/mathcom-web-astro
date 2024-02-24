@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: mathcom-wordpress
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME}
+    volumes:
+      - wordpress_data:/var/www/html
+    depends_on:
+      - db
+    ports:
+      - 8080:80
+    networks:
+      - wordpress
+
+  db:
+    image: mariadb:latest
+    container_name: mathcom-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wordpress
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: mathcom-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      PMA_ABSOLUTE_URI: ${PMA_ABSOLUTE_URI}
+    ports:
+      - 8081:80
+    networks:
+      - wordpress
+    depends_on:
+      - db
+  
+  nginx:
+    container_name: mathcom-nginx
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 80:80
+    networks:
+      - wordpress
+    depends_on:
+      - wordpress
+      - phpmyadmin
+
+volumes:
+  wordpress_data:
+  db_data:
+
+networks:
+  wordpress:
+    driver: bridge

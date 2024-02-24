@@ -1,0 +1,150 @@
+---
+import Facebook from "@/Img/facebook.png";
+import Instagram from "@/Img/instagram.png";
+import Linkedin from "@/Img/linkedin.png";
+import X from "@/Img/twitter.png";
+import Youtube from "@/Img/youtube.png";
+import { Image } from "astro:assets";
+
+import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
+---
+
+<footer class="bg-gray-950 py-10 w-full">
+    <div class="max-w-7xl px-5 mx-auto space-y-10">
+        <div class="flex flex-col space-y-10 md:space-y-0 md:flex-row md:space-x-5">
+            <div class="space-y-5 w-full md:w-[60%]">
+                <div class="flex items-center">
+                    <img
+                        src="/MathCULogo.png"
+                        alt="CU Logo"
+                        class="aspect-auto h-[60px] md:h-[90px] w-auto mr-5"
+                    />
+                    <div class="flex flex-col h-fit justify-center space-y-1">
+                        <p class="font-semibold text-white md:text-xl">
+              DEPARTMENT OF MATHEMATICS <br /> AND COMPUTER SCIENCE
+                        </p>
+                        <p class="text-sm md:text-base font-medium text-gray-300">
+              FACULTY OF SCIENCE
+                        </p>
+                    </div>
+                </div>
+                <p
+                    class="font-kanit text-gray-300 text-sm md:text-base leading-7 text-center md:text-left"
+                >
+          Department of Mathematics and Computer Science, <br />
+           Faculty of Science Chulalongkorn University, <br />
+           Bangkok 10330 Thailand
+                </p>
+            </div>
+            <div
+                class="flex flex-col w-full text-center md:text-right text-white md:w-[20%]"
+            >
+                <h3
+                    class="uppercase text-xl font-semibold underline decoration-primary decoration-4"
+                >
+          Get in touch
+                </h3>
+                <ul class="mt-3 font-gray-700 space-y-3">
+                    <li class=""><a href="https://maps.app.goo.gl/Un4zZWC7xeFMYPQz7">FIND US</a></li>
+                    <li class=""><a href="/administration">CONTACT US</a></li>
+                    <li class=""><a href="mailto:qq.panmas@gmail.com">WEBMASTER</a></li>
+                </ul>
+            </div>
+            <div
+                class="flex flex-col w-full text-center md:text-right text-white md:w-[20%]"
+            >
+                <h3
+                    class="uppercase text-xl font-semibold underline decoration-primary decoration-4"
+                >
+          Quick Links
+                </h3>
+                <ul class="mt-3 font-gray-700 space-y-3">
+                    <li class=""><a href="">CAMPUS DIRECTORY</a></li>
+                    <li class=""><a href="https://www.chula.ac.th/contact/map-and-directions/">CAMPUS MAP</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:justify-between w-full"
+        >
+            <div class="space-y-2">
+                <div class="flex">
+                    <div
+                        class="bg-white w-6 h-6 flex items-center justify-center mr-2"
+                    >
+                        <PhoneIcon className="w-4 h-4" />
+                    </div>
+                    <a href="" class="font-kanit font-light text-white"
+                    >+66(0)2-218-5141-2</a
+                    >
+                </div>
+                <div class="flex">
+                    <div
+                        class="bg-white w-6 h-6 flex items-center justify-center mr-2"
+                    >
+                        <PrinterIcon className="w-4 h-4" />
+                    </div>
+                    <a href="" class="font-kanit font-light text-white">+66(0)2-255-2287</a
+                    >
+                </div>
+            </div>
+            <div class="flex space-x-5 justify-center">
+                <a href="https://twitter.com/ChulalongkornU">
+                    <Image
+                        format="avif"
+                        loading="lazy"
+                        decoding="async"
+                        class="h-7 aspect-square w-7 object-cover"
+                        src={X}
+                        alt="X"
+                    />
+                </a>
+                <a href="https://www.facebook.com/MathComSciCU">
+                    <Image
+                        format="avif"
+                        loading="lazy"
+                        decoding="async"
+                        class="h-7 aspect-square w-7 object-cover"
+                        src={Facebook}
+                        alt="Facebook"
+                    />
+                </a>
+                <a href="https://www.youtube.com/user/chulauniversity">
+                    <Image
+                        format="avif"
+                        loading="lazy"
+                        decoding="async"
+                        class="h-7 aspect-square w-7 object-cover"
+                        src={Youtube}
+                        alt="Youtube"
+                    />
+                </a>
+                <a href="https://www.instagram.com/mathcom_cu/">
+                    <Image
+                        format="avif"
+                        loading="lazy"
+                        decoding="async"
+                        class="h-7 aspect-square w-7 object-cover"
+                        src={Instagram}
+                        alt="Instagram"
+                    />
+                </a>
+                <a href="https://www.linkedin.com/school/chulalongkornuniversity/">
+                    <Image
+                        format="avif"
+                        loading="lazy"
+                        decoding="async"
+                        class="h-7 aspect-square w-7 object-cover"
+                        src={Linkedin}
+                        alt="Linkedin"
+                    />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer>
+    <p class="text-center text-sm text-gray-500 py-2.5 px-5">
+    © 2023 Department of Mathematics and Computer Science. All rights reserved
+    </p>
+</footer>

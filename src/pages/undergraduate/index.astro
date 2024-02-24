@@ -1,0 +1,39 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+---
+
+
+<BaseLayout title="Undergraduate">
+    <Hero title="Undergraduate" />
+
+    <main class="max-w-screen-xl mx-auto p-5 space-y-10">
+        <section class="space-y-5">
+            <h2 class="text-5xl font-semibold font-kanit">Overview</h2>
+            <p class="font-sarabun">Welcome, Computer Science undergraduates and prospective students!</p>
+            <p class="font-sarabun">The Computer Science Department has consistently maintained the reputation of being one of the top Computer Science programs in the world. Prospective CS students do not need any prior background to study this subject! Many students start taking the introductory courses (e.g CS106) with no prior experience coding. The Computer Science Department has a variety of opportunities for undergraduates to engage with CS; whether it be majoring, minoring, teaching, doing research, or exploring our rigorous courses.</p>
+        </section>
+        <section class="space-y-5">
+            <h2 class="text-5xl font-semibold font-kanit">Our Undergraduate Programs</h2>
+            <div class="grid grid-cols-3 gap-5">
+                <article class="shadow-lg">
+                    <img src="/placeholder.jpeg" alt="" class="filter brightness-75">
+                    <div class="p-5 space-y-2.5">
+                        <h3 class="text-3xl font-medium font-kanit">Mathematics</h3>
+                        <p class="font-sarabun">Explore the foundations of numbers, shapes, logic, and computation for analytical problem-solving.</p>
+                        <a href="undergraduate/mathematics" class="flex items-center text-yellow-500 font-kanit">Learn more <ChevronRightIcon className="h-4 w-4" /></a>
+                    </div>
+                </article>
+                <article class="shadow-lg">
+                    <img src="/placeholder.jpeg" alt="" class="filter brightness-75">
+                    <div class="p-5 space-y-2.5">
+                        <h3 class="text-3xl font-medium font-kanit">Computer Science</h3>
+                        <p class="font-sarabun">Master programming, algorithms, data structures, software design, and computational problem-solving.</p>
+                        <a href="undergraduate/computer-science" class="flex items-center text-yellow-500 font-kanit">Learn more <ChevronRightIcon className="h-4 w-4" /></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
