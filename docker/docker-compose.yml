@@ -10,6 +10,10 @@ services:
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME','${WP_HOME}');
+        define('WP_SITEURL','${WP_SITEURL}');
+        $$_SERVER['REQUEST_URI'] = str_replace("/wp-admin/", "/blog/wp-admin/",  $$_SERVER['REQUEST_URI']);      
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
