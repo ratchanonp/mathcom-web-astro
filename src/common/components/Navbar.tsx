@@ -1,3 +1,4 @@
+import MathComLogo from "@/assets/img/logo/MathComLogo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useStore } from "@nanostores/react";
 import { isMenuOpen } from "../../store/menuStore";
@@ -16,9 +17,9 @@ export default function Navbar() {
                 <div className="container mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5">
                     <a href="/" className="flex items-center">
                         <img
-                            src="/MathCULogo.png"
+                            src={MathComLogo.src}
                             alt="CU Logo"
-                            className="aspect-auto h-[60px] md:h-[80px] w-auto border-r-[1px] border-r-gray-500 pr-2.5"
+                            className="aspect-auto h-[60px] w-[53px] md:h-[80px] md:w-[67px] border-r-[1px] border-r-gray-500 pr-2.5"
                         />
                         <div className="flex h-full flex-col justify-center font-kanit pl-2.5">
                             <span className="text-xs md:text-xl font-light text-gray-500">DEPARTMENT OF </span>

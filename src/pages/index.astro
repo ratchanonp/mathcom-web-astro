@@ -4,55 +4,66 @@ import { getPosts } from "@/libs/api/post";
 
 const posts = await getPosts({ _embed: "", per_page: "3" });
 
-const MenuData: MenuCardProps[] = [
-    {
-        title: "Undergraduate Programs",
-        href: "/undergraduate",
-        imagePath: "/MenuCardIcon/Undergraduate.png",
-    },
-    {
-        title: "Graduate Programs",
-        href: "/graduate",
-        imagePath: "/MenuCardIcon/Graduate.png",
-    },
-    {
-        title: "Undergraduate Advising",
-        href: "/undergraduate/advising",
-        imagePath: "/MenuCardIcon/Advising.png",
-    },
-    {
-        title: "People",
-        href: "/directory",
-        imagePath: "/MenuCardIcon/People.png",
-    },
-    {
-        title: "Research",
-        href: "/research",
-        imagePath: "/MenuCardIcon/Research.png",
-    },
-    {
-        title: "Math Learning Center",
-        href: "/ta-help-desk",
-        imagePath: "/MenuCardIcon/Research.png",
-    },
-];
 
-import type { MenuCardProps } from "@/common/components/Card/MenuCard/MenuCard";
-import MenuCard from "@/common/components/Card/MenuCard/MenuCard";
+
+import MHVH from "@/assets/img/mhvh/MHVH-Portriat.jpg";
+import MenuCard from "@/common/components/Card/MenuCard/MenuCard.astro";
 import PostGrid from "@/common/components/Post/PostGrid";
 import type { Event } from "@/interfaces/event.interface";
 import { events } from "@/mock/events";
 import EventCardMock from "@/modules/event/components/EventCardMock";
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
+import { Image } from "astro:assets";
+
+import AdvisingIcon from "@/assets/img/icon/card/Advising.png";
+import GraduateIcon from "@/assets/img/icon/card/Graduate.png";
+import PeopleIcon from "@/assets/img/icon/card/People.png";
+import ResearchIcon from "@/assets/img/icon/card/Research.png";
+import UndergraduateIcon from "@/assets/img/icon/card/Undergraduate.png";
+
+const MenuData = [
+    {
+        title: "Undergraduate Programs",
+        href: "/undergraduate",
+        imgSrc: UndergraduateIcon,
+    },
+    {
+        title: "Graduate Programs",
+        href: "/graduate",
+        imgSrc: GraduateIcon,
+    },
+    {
+        title: "Undergraduate Advising",
+        href: "/undergraduate/advising",
+        imgSrc: AdvisingIcon,
+    },
+    {
+        title: "People",
+        href: "/directory",
+        imgSrc: PeopleIcon,
+    },
+    {
+        title: "Research",
+        href: "/research",
+        imgSrc: ResearchIcon,
+    },
+    {
+        title: "Math Learning Center",
+        href: "/ta-help-desk",
+        imgSrc: ResearchIcon,
+    },
+];
 ---
 
 <BaseLayout title="Home">
     <main>
         <section class="w-full max-h-[70vh] flex flex-col relative">
-            <img
-            src="/building.jpeg"
-            class="w-full overflow-hidden object-cover md:object-[center_80%] filter brightness-[0.65]"
+            <Image
+                format="webp"
+                src={MHVH}
+                alt="MHVH"
+                class="w-full overflow-hidden object-cover md:object-[center_80%] filter brightness-[0.65]"
             />
             <div class="w-screen flex absolute left-0 bottom-5 lg:bottom-20">
                 <div class="grid max-w-screen-xl w-full mx-auto px-5">
@@ -79,7 +90,7 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5"
                 >
-                    {MenuData.map((data) => <MenuCard {...data} />)}
+                    {MenuData.map(({title, href, imgSrc}) => <MenuCard title={title} href={href} imgSrc={imgSrc} />)}
                 </div>
             </div>
         </section>

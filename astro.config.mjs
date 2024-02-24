@@ -1,7 +1,7 @@
 import node from "@astrojs/node";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig, squooshImageService } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -19,6 +19,6 @@ export default defineConfig({
         mode: "standalone"
     }),
     image: {
-        service: passthroughImageService(),
+        service: squooshImageService(),
     },
 });

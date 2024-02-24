@@ -1,10 +1,11 @@
 ---
-import Facebook from "@/Img/facebook.png";
-import Instagram from "@/Img/instagram.png";
-import Linkedin from "@/Img/linkedin.png";
-import X from "@/Img/twitter.png";
-import Youtube from "@/Img/youtube.png";
-import { Image } from "astro:assets";
+import MathComLogo from "@/assets/img/logo/MathComLogo.png";
+import Facebook from "@/assets/img/socials/facebook.png";
+import Instagram from "@/assets/img/socials/instagram.png";
+import Linkedin from "@/assets/img/socials/linkedin.png";
+import X from "@/assets/img/socials/x.png";
+import Youtube from "@/assets/img/socials/youtube.png";
+import { Picture } from "astro:assets";
 
 import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
 ---
@@ -14,10 +15,14 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
         <div class="flex flex-col space-y-10 md:space-y-0 md:flex-row md:space-x-5">
             <div class="space-y-5 w-full md:w-[60%]">
                 <div class="flex items-center">
-                    <img
-                        src="/MathCULogo.png"
-                        alt="CU Logo"
+
+                    <Picture
+                        format="webp"
+                        loading="lazy"
+                        decoding="async"
                         class="aspect-auto h-[60px] md:h-[90px] w-auto mr-5"
+                        src={MathComLogo}
+                        alt="MathComLogo"
                     />
                     <div class="flex flex-col h-fit justify-center space-y-1">
                         <p class="font-semibold text-white md:text-xl">
@@ -90,8 +95,8 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
             </div>
             <div class="flex space-x-5 justify-center">
                 <a href="https://twitter.com/ChulalongkornU">
-                    <Image
-                        format="avif"
+                    <Picture
+                        format="webp"
                         loading="lazy"
                         decoding="async"
                         class="h-7 aspect-square w-7 object-cover"
@@ -100,8 +105,8 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
                     />
                 </a>
                 <a href="https://www.facebook.com/MathComSciCU">
-                    <Image
-                        format="avif"
+                    <Picture
+                        format="webp"
                         loading="lazy"
                         decoding="async"
                         class="h-7 aspect-square w-7 object-cover"
@@ -110,8 +115,8 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
                     />
                 </a>
                 <a href="https://www.youtube.com/user/chulauniversity">
-                    <Image
-                        format="avif"
+                    <Picture
+                        format="webp"
                         loading="lazy"
                         decoding="async"
                         class="h-7 aspect-square w-7 object-cover"
@@ -120,8 +125,8 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
                     />
                 </a>
                 <a href="https://www.instagram.com/mathcom_cu/">
-                    <Image
-                        format="avif"
+                    <Picture
+                        format="webp"
                         loading="lazy"
                         decoding="async"
                         class="h-7 aspect-square w-7 object-cover"
@@ -130,8 +135,8 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
                     />
                 </a>
                 <a href="https://www.linkedin.com/school/chulalongkornuniversity/">
-                    <Image
-                        format="avif"
+                    <Picture
+                        format="webp"
                         loading="lazy"
                         decoding="async"
                         class="h-7 aspect-square w-7 object-cover"

@@ -7,6 +7,7 @@ import {
 import { ChevronDown } from "lucide-react";
 import { isMenuOpen } from "../../store/menuStore";
 
+import MathComLogo from "@/assets/img/logo/MathComLogo.png";
 import {
     AcademicCapIcon,
     BuildingLibraryIcon,
@@ -57,7 +58,7 @@ const Menu = () => {
                 <div className="flex items-center justify-between py-5 pl-5">
                     <a href="/" className="flex items-center">
                         <img
-                            src="/MathCULogo.png"
+                            src={MathComLogo.src}
                             alt="CU Logo"
                             className="mr-5 aspect-auto h-[65px] w-auto"
                         />
