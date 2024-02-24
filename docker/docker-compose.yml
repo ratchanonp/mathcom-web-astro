@@ -36,7 +36,7 @@ services:
       - wordpress
   
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin:latest
     container_name: mathcom-phpmyadmin
     restart: always
     environment:
@@ -58,11 +58,11 @@ services:
       - wordpress
   
   nginx:
+    image: nginx:alpine-slim
     container_name: mathcom-nginx
-    build: 
-      context: ./nginx
-      dockerfile: Dockerfile
     restart: always
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 80:80
     networks:
