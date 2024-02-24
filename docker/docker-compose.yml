@@ -51,13 +51,24 @@ services:
       - wordpress
     depends_on:
       - db
+
+  astro:
+    container_name: mathcom-astro
+    build: 
+      context: ../
+      dockerfile: ./docker/astro/Dockerfile
+    restart: always
+    ports:
+      - 4321:4321
+    networks:
+      - wordpress
   
   nginx:
     container_name: mathcom-nginx
     build: 
       context: ./nginx
       dockerfile: Dockerfile
-    restart: unless-stopped
+    restart: always
     ports:
       - 80:80
     networks:
