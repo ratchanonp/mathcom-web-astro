@@ -13,7 +13,7 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME','${WP_HOME}');
         define('WP_SITEURL','${WP_SITEURL}');
-        $$_SERVER['REQUEST_URI'] = str_replace("/wp-admin/", "/wordpresss/wp-admin/",  $$_SERVER['REQUEST_URI']);      
+        $$_SERVER['REQUEST_URI'] = str_replace("/wp-admin/", "/wordpress/wp-admin/",  $$_SERVER['REQUEST_URI']);      
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
