@@ -1,4 +1,4 @@
-import type { Faculty } from "@/interfaces/faculty.interface";
+import type { Faculty } from "src/interfaces/faculty.interface";
 
 interface Props {
   faculty: Faculty;

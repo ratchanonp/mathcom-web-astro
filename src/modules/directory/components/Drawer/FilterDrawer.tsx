@@ -6,12 +6,12 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@/common/components/ui/drawer";
+} from "src/common/components/ui/drawer";
 
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 
-import { researchFieldSelected } from "@/modules/directory/stores/facultyStore";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { researchFieldSelected } from "src/modules/directory/stores/facultyStore";
 import Filter from "../Filter";
 
 export default function FilterDrawer() {

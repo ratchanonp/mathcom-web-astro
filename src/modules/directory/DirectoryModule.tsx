@@ -1,9 +1,9 @@
 
-import DirectoryDisplay from "@/modules/directory/components/DirectoryDisplay";
 import {
     MagnifyingGlassIcon
 } from "@heroicons/react/24/outline";
 import { useStore } from "@nanostores/react";
+import DirectoryDisplay from "src/modules/directory/components/DirectoryDisplay";
 import FilterDrawer from "./components/Drawer/FilterDrawer";
 import SortByDrawer from "./components/Drawer/SortByDrawer";
 import { searchKeyword } from "./stores/facultyStore";

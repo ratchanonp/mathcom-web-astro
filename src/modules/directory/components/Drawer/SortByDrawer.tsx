@@ -6,7 +6,7 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@/common/components/ui/drawer";
+} from "src/common/components/ui/drawer";
 
 import { BarsArrowDownIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/solid";

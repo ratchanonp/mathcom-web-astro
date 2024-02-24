@@ -1,4 +1,4 @@
-import type { Post } from "@/interfaces/reponse/post.interface";
+import type { Post } from "src/interfaces/reponse/post.interface";
 import { BASE_URL } from "./config";
 
 const postEndpoint = new URL("posts/", BASE_URL);

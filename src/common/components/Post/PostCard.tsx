@@ -1,5 +1,5 @@
-import type { Post } from "@/interfaces/reponse/post.interface";
 import { format } from "date-fns";
+import type { Post } from "src/interfaces/reponse/post.interface";
 
 interface PostCardProps {
     post: Post;

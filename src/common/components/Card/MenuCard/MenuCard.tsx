@@ -1,5 +1,5 @@
-import { cn } from "@/libs/utils";
 import { forwardRef } from "react";
+import { cn } from "src/libs/utils";
 
 export interface MenuCardProps {
   title: string;

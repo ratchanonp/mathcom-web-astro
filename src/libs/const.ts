@@ -1,5 +1,5 @@
-import { ResearchField } from "@/interfaces/faculty.interface";
-import { SortBy } from "@/interfaces/sortBy.interface";
+import { ResearchField } from "src/interfaces/faculty.interface";
+import { SortBy } from "src/interfaces/sortBy.interface";
 
 export interface IResearch<T> {
     name: string;

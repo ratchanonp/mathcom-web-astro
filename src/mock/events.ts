@@ -1,4 +1,4 @@
-import { EventCategory, type Event } from "@/interfaces/event.interface";
+import { EventCategory, type Event } from "src/interfaces/event.interface";
 
 export const events: Event[] = [
     {

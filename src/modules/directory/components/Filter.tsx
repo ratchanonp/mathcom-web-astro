@@ -1,9 +1,9 @@
-import { ResearchField } from "@/interfaces/faculty.interface";
-import { researchFields } from "@/libs/const";
-import { researchFieldSelected, researchFields as researchFieldsStore } from "@/modules/directory/stores/facultyStore";
 import { DocumentTextIcon } from "@heroicons/react/24/solid";
 import { useStore } from "@nanostores/react";
 import { useEffect } from "react";
+import { ResearchField } from "src/interfaces/faculty.interface";
+import { researchFields } from "src/libs/const";
+import { researchFieldSelected, researchFields as researchFieldsStore } from "src/modules/directory/stores/facultyStore";
 
 const Filter = () => {
     const $researchFields = useStore(researchFieldsStore);

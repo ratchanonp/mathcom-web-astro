@@ -12,12 +12,12 @@ import {
     startOfToday
 } from "date-fns";
 
-import { cn } from "@/libs/utils";
-import { events } from "@/mock/events";
-import { selectedDay } from "@/modules/event/stores/eventStore";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useStore } from "@nanostores/react";
 import { useState } from "react";
+import { cn } from "src/libs/utils";
+import { events } from "src/mock/events";
+import { selectedDay } from "src/modules/event/stores/eventStore";
 
 const Calendar = () => {
 

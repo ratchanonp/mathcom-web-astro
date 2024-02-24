@@ -1,5 +1,5 @@
-import type { Event } from "@/interfaces/event.interface";
 import { CalendarIcon, ClockIcon } from "@heroicons/react/24/solid";
+import type { Event } from "src/interfaces/event.interface";
 
 interface Props {
   event: Event;

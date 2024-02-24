@@ -1,7 +1,7 @@
 
-import { events } from "@/mock/events";
 import { useStore } from "@nanostores/react";
 import { format, isSameDay } from "date-fns";
+import { events } from "src/mock/events";
 import Calendar from "./components/Calendar";
 import EventCard from "./components/EventCard";
 import { selectedDay } from "./stores/eventStore";

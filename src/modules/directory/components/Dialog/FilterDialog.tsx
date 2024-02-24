@@ -5,12 +5,12 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/common/components/ui/dialog";
+} from "src/common/components/ui/dialog";
 
-import { researchFieldSelected } from "@/modules/directory/stores/facultyStore";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { DialogClose } from "@radix-ui/react-dialog";
+import { researchFieldSelected } from "src/modules/directory/stores/facultyStore";
 import Filter from "../Filter";
 
 export default function FilterDialog() {

@@ -1,4 +1,4 @@
-import { researchFields } from "@/libs/const";
+import { researchFields } from "src/libs/const";
 
 // Write a function remove & and extra space before and after & and replace space with -
 export const processLink = (link: string) => {

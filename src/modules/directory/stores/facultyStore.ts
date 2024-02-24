@@ -1,6 +1,6 @@
-import { ResearchField } from "@/interfaces/faculty.interface";
-import { SortBy } from "@/interfaces/sortBy.interface";
 import { atom } from "nanostores";
+import { ResearchField } from "src/interfaces/faculty.interface";
+import { SortBy } from "src/interfaces/sortBy.interface";
 
 export const searchKeyword = atom<string>("");
 export const researchFieldSelected = atom<string[]>([]);

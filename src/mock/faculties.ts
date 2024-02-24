@@ -3,7 +3,7 @@ import {
     ResearchField,
     StaffType,
     type Faculty,
-} from "@/interfaces/faculty.interface";
+} from "src/interfaces/faculty.interface";
 
 export const faculties: Faculty[] = [
     {

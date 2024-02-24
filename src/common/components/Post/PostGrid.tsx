@@ -1,9 +1,9 @@
-import { QueryProviderHoc } from "@/common/HOC/QueryProviderHoc";
-import PostCard from "@/common/components/Post/PostCard";
-import type { Post } from "@/interfaces/reponse/post.interface";
+import { QueryProviderHoc } from "src/common/HOC/QueryProviderHoc";
+import PostCard from "src/common/components/Post/PostCard";
+import type { Post } from "src/interfaces/reponse/post.interface";
 
-import { getPosts } from "@/libs/api/post";
 import { useQuery } from "@tanstack/react-query";
+import { getPosts } from "src/libs/api/post";
 import PostCardLoading from "./PostCard.loading";
 
 

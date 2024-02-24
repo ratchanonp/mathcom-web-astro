@@ -1,14 +1,14 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/common/components/ui/tabs";
-import { ResearchField, StaffType, type Faculty } from "@/interfaces/faculty.interface";
-import { faculties } from "@/mock/faculties";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/common/components/ui/tabs";
+import { ResearchField, StaffType, type Faculty } from "src/interfaces/faculty.interface";
+import { faculties } from "src/mock/faculties";
 import FilterDialog from "./Dialog/FilterDialog";
 import SortByDialog from "./Dialog/SortByDialog";
 
-import { researchFields, searchKeyword, sortBy } from "@/modules/directory/stores/facultyStore";
 import { useStore } from "@nanostores/react";
+import { researchFields, searchKeyword, sortBy } from "src/modules/directory/stores/facultyStore";
 import FacultyCard from "../../../common/components/Card/FacultyCard";
 
-import { SortBy } from "@/interfaces/sortBy.interface";
+import { SortBy } from "src/interfaces/sortBy.interface";
 
 export default function DirectoryDisplay() {
     const tabsList: string[] = (

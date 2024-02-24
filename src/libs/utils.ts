@@ -2,8 +2,8 @@ export const removeHost = (url: string) => {
     return url.replace(/https?:[^]+/, "");
 };
 
-import type { Event, EventGroup } from "@/interfaces/event.interface";
 import { clsx, type ClassValue } from "clsx";
+import type { Event, EventGroup } from "src/interfaces/event.interface";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {

@@ -1,7 +1,7 @@
 import node from "@astrojs/node";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -9,9 +9,16 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
     integrations: [tailwind(), react(), sitemap()],
     prefetch: true,
-    site: "https://math.sc.chula.ac.th",
+    site: "http://localhost",
     output: "server",
+    root: "./",
+    srcDir: "./src",
+    outDir: "./dist",
+    publicDir: "./public",
     adapter: node({
         mode: "standalone"
-    })
+    }),
+    image: {
+        service: passthroughImageService(),
+    },
 });

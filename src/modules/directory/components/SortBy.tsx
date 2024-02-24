@@ -1,9 +1,9 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import type { SortBy as SortByInterface } from "@/interfaces/sortBy.interface";
-import { sortBy } from "@/libs/const";
-import { sortBySelected, sortBy as sortByStore } from "@/modules/directory/stores/facultyStore";
 import { useStore } from "@nanostores/react";
 import { useEffect } from "react";
+import type { SortBy as SortByInterface } from "src/interfaces/sortBy.interface";
+import { sortBy } from "src/libs/const";
+import { sortBySelected, sortBy as sortByStore } from "src/modules/directory/stores/facultyStore";
 
 const SortBy = () => {
     const $sortBy = useStore(sortByStore);
