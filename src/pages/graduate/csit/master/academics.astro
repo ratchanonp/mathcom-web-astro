@@ -1,0 +1,30 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Applied Mathematics and Computational Science Program">
+    <Hero
+        title="Applied Mathematics and Computational Science Program" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside>
+            <nav class="p-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="./amcs">Overview</a>
+                    <a class="p-5" href="amcs/academics">Academics</a>
+                    <a class="p-5" href="amcs/qualification">Qualification</a>
+                    <a class="p-5" href="amcs/apply">Apply</a>
+                    <a class="p-5" href="amcs/opportunities">Opportunities</a>
+                    <a class="p-5" href="amcs/qualifying-exam">Extrance Examination</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 space-y-10">
+        </main>
+    </div>
+
+
+</BaseLayout>

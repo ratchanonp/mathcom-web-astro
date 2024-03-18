@@ -1,0 +1,40 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Applied Mathematics and Computational Science Program">
+    <Hero 
+        title="Applied Mathematics and Computational Science Program" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside class="col-span-1">
+            <nav class="m-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a class="p-5" href="../amcs">Overview</a>
+                    <a class="p-5" href="academics">Academics</a>
+                    <a class="p-5" href="qualification">Qualification</a>
+                    <a href="apply" class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white">Apply</a>
+                    <a class="p-5" href="opportunities">Opportunities</a>
+                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 grid space-y-5">
+            <h2 class="text-5xl font-kanit font-semibold">Apply</h2>
+            <h3 class="text-3xl font-kanit font-semibold">Admission</h3>
+            <p>First Semester: The master's and doctoral degree programs have two rounds</p>
+            <ul class="list-inside list-disc">
+                <li>Round 1: February to March</li>
+                <li>Round 2: April to May</li>
+            </ul>
+            <p>Second Semester: Having one round for the Doctoral Programs Only during June to September</p>
+            <p>Applicants can apply online at the Graduate School website:</p>
+            <a href="https://www.register.gradchula.com">https://www.register.gradchula.com/</a>
+        </main>
+    </div>
+
+
+</BaseLayout>

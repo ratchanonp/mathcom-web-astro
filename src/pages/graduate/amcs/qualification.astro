@@ -1,0 +1,99 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+
+---
+
+<BaseLayout title="Applied Mathematics and Computational Science Program">
+    <Hero 
+        title="Applied Mathematics and Computational Science Program" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside class="col-span-1">
+            <nav class="m-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a class="p-5" href="../amcs">Overview</a></li>
+                    <a class="p-5" href="academics">Academics</a></li>
+                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="qualification">Qualification</a></li>
+                    <a class="p-5" href="apply">Apply</a></li>
+                    <a class="p-5" href="opportunities">Opportunities</a></li>
+                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 space-y-10 font-sarabun">
+            <h2 class="text-5xl font-kanit font-semibold">Qualification</h2>
+            <section class="space-y-5">
+                <h3 class="text-3xl font-kanit font-semibold">Master Degress</h3>
+                <p>The master's degree in AMCS has two normal admission and one special admission.</p>
+                <section>
+                    <h4 class="font-kanit text-xl font-medium underline decoration-yellow-400 decoration-2">Normal admission in Study plan 1.</h4>
+                    <ul class=" list-disc list-inside">
+                        <li>Applicants must have a master's degree or equivalent.</li>
+                        <li>Applicants must have passed at least 11 credit hours of mathematics and/or computer science courses at the undergraduate level or equivalent.</li>
+                        <li>Applicants may be considered for admission by the program committee for that year on a case-by-case basis</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-kanit text-xl font-medium underline decoration-yellow-400 decoration-2">Normal admission in Study plan 2.</h4>
+                    <ul class=" list-disc list-inside">
+                        <li>Applicants must have a bachelor's degree or equivalent with a GPA of at least 3.00.</li>
+                        <li>Applicants must have passed at least 11 credit hours of mathematics and/or computer science courses at the undergraduate level or equivalent.</li>
+                        <li>Applicants may be considered for admission by the program committee for that year on a case-by-case basis.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-kanit text-xl font-medium underline decoration-yellow-400 decoration-2">Additional requirement</h4>
+                    <ul class="list-disc list-inside">
+                        <li>Applicants must have a CU-TEP score of at least 45, a TOEFL score of at least 450, or an IELTS score of at least 4.0.</li>
+                        <li>The English proficiency test must be taken within 2 years of the application date.</li>
+                        <li>Applicants who do not meet the English proficiency requirement must retake the test or take English courses as specified by the Graduate School.</li>
+                        <li>The Registrar's Office will not accept registration for first-time students who do not meet the English proficiency requirement.</li>
+                        <li>Applicants must meet other requirements as announced by the Graduate School on a yearly basis.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-kanit text-xl font-medium underline decoration-yellow-400 decoration-2">Special Admission</h4>
+                    <p>To be eligible for special admission, applicants must meet the following requirements:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Have a bachelor's or master's degree or equivalent from a university recognized by the Ministry of Higher Education, Science, Research, and Innovation (MHESI).</li>
+                        <li>Have a GPA of at least 3.25 for a bachelor's degree or 3.75 for a master's degree.</li>
+                        <li>Have published academic work from a thesis in an international academic journal indexed in ISI or SCOPUS (for master's degree applicants only).</li>
+                        <li>Have passed at least 11 credit hours of mathematics and/or computer science courses at the undergraduate level or equivalent.</li>
+                        <li>Have a CU-TEP score of at least 60, a TOEFL score of at least 500, or an IELTS score of at least 5.0. The test results must be within 2 years of the application date.</li>
+                        <li>Be exempted from the English language requirement by Chulalongkorn University.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class="space-y-5">
+                <h3 class="text-3xl font-kanit font-semibold">Ph.D. Degress</h3>
+                <section>
+                    <h4 class="font-kanit text-xl font-medium underline decoration-yellow-400 decoration-2">Program Types 1.1 and 2.1</h4>
+                    <p>Applicants must meet one of the following requirements:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Have a master's degree or equivalent.</li>
+                        <li>Have passed at least 11 credit hours of mathematics and/or computer science courses at the undergraduate level or equivalent.</li>
+                        <li>Be approved by the Program Committee.</li>
+                        <li>Meet the English language proficiency requirement set by the university.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-kanit text-xl font-medium underline decoration-yellow-400 decoration-2">Program Types 1.2 and 2.2</h4>
+                    <p>Applicants must meet one of the following requirements:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Have a bachelor's degree or equivalent with a GPA of at least 3.00.</li>
+                        <li>Have passed at least 11 credit hours of mathematics and/or computer science courses at the undergraduate level or equivalent.</li>
+                        <li>Be approved by the Program Committee.</li>
+                        <li>Meet the English language proficiency requirement set by the university.</li>
+                    </ul>
+                </section>
+            </section>
+        </main>
+    </div>
+
+
+</BaseLayout>

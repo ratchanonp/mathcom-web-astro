@@ -18,11 +18,6 @@ export const researchFields: IResearch<ResearchField>[] = [
             {name: "Statistics, Probability & Stochastic Process", value: ResearchField.Statistics_Probability_StochasticProcess, img: "/research/statistic.png"},
             {name: "Applied Mathematics & Mathematical Modelling", value: ResearchField.AppliedMathematics_MathematicalModelling, img: "/research/applied.png"},
             {name: "Optimization, Operations Research, & Graph and Network Analysis", value: ResearchField.Optimization_OperationsResearch_GraphAndNetworkAnalysis, img: "/research/graph.png"},
-        ],
-    },
-    {
-        name: "Computer Science",
-        subCategory: [
             {name: "Data Science & Machine Learning", value: ResearchField.DataScienceMachineLearning, img: "/research/machine-learning.png"},
             {name: "Image Processing & Computer Vision", value: ResearchField.ImageProcessing_ComputerVision, img: "/research/image-processing.png"},
             {name: "Bioinformatics & Computational Biology", value: ResearchField.Bioinformatics_ComputationalBiology, img: "/research/bioinformatics.png"},

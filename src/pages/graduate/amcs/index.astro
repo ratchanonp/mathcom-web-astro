@@ -1,0 +1,35 @@
+---
+import AMCSLogo from "@/assets/img/logo/graduate/amcs.png";
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="Applied Mathematics and Computational Science Program">
+    <Hero 
+        title="Applied Mathematics and Computational Science Program" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside class="">
+            <nav class="p-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="./amcs">Overview</a>
+                    <a class="p-5" href="amcs/academics">Academics</a>
+                    <a class="p-5" href="amcs/qualification">Qualification</a>
+                    <a class="p-5" href="amcs/apply">Apply</a>
+                    <a class="p-5" href="amcs/opportunities">Opportunities</a>
+                    <a class="p-5" href="amcs/qualifying-exam">Qualifying Exam</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 space-y-10">
+            <h2 class="text-5xl font-semibold font-kanit">Applied Mathematics and Computational Science Program</h2>
+            <Image src={AMCSLogo} alt="AMCS Logo" class="w-full h-56 object-contain object-bottom" />
+            <p class="font-sarabun">Applied Mathematics and Computational Science curriculum develops academic excellence in research that integrates mathematics, computer science, and other disciplines to create international academic advancement in applied mathematics and computational science. It offers a variety of research fields that provide students with the foundational knowledge they need to succeed in their future endeavors. Graduates can apply this knowledge to their future careers in academia, industry, business, and finance or in further studies at an advanced degree level.</p>
+        </main>
+    </div>
+
+
+</BaseLayout>
