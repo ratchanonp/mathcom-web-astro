@@ -1,0 +1,26 @@
+---
+const { name, position, office, phone, email} = Astro.props;
+---
+<div class="grid bg-yellow-400 p-5">
+    <header>
+        <h2 class="text-2xl lg:text-4xl font-semibold font-kanit text-slate-800 mb-1">{name}</h2>
+        <p class="bg-slate-800 px-2 w-fit font-medium font-kanit text-white">{position}</p>
+    </header>
+
+    <section class="grid gap-y-1 mt-2.5">
+        <div class="flex items-baseline">
+            <p class="text-slate-700 font-kanit text-sm w-12">Office</p>
+            <p class="text-slate-800 font-kanit">{office}</p>
+        </div>
+        <div class="flex items-baseline">
+            <p class="text-slate-700 font-kanit text-sm w-12">Phone</p>
+            <p class="text-slate-800 font-kanit">{phone}</p>
+        </div>
+
+        <div class="flex items-baseline">
+            <p class="text-slate-700 font-kanit text-sm w-12">Email</p>
+            <p class="text-slate-800 font-kanit">{email}</p>
+        </div>
+    </section>
+
+</div>
