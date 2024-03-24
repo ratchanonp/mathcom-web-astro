@@ -1,0 +1,29 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Computer Science">
+    <Hero 
+        title="Computer Science" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside class="col-span-1">
+            <nav class="m-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a href="academics" class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white">Academics</a>
+                    <a class="p-5" href="apply">Apply</a>
+                    <a class="p-5" href="opportunities">Opportunities</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 grid space-y-10">
+            <h2 class="font-kanit text-5xl font-semibold">Academics</h2>
+            <p class="font-sarabun">The Department of Mathematics has offered the Bachelor of Science program in Computer Science since 2535 BE, with a focus on theoretical knowledge and practical applications. Graduates gain a strong foundational understanding of computer science, enabling them to engage in research and problem-solving. The evolving landscape of science and technology requires graduates to connect knowledge across disciplines, develop computer technology, and adapt to its widespread use. This adaptability is crucial in the field, where constant technological advancements necessitate professionals who can comprehend, apply, and innovate. The program is structured to meet these demands, ensuring that graduates are well-prepared to navigate the complexities of the modern computing industry. The program emphasizes a well-rounded education, essential skills development, and collaboration with experienced instructors, creating a supportive community for intellectual growth. The program is designed not just to impart technical knowledge but also to nurture creativity, critical thinking, and effective communication skills. The program provides job readiness, research opportunities, and a global outlook, fostering a collaborative community of innovators and problem-solvers in the dynamic field of computer science. Throughout the four-year program, students are actively encouraged to engage in academic collaborations with international universities and pursue professional opportunities with diverse industries, both in Thailand and abroad. This approach aims to enrich their educational experience and broaden their practical knowledge. Ultimately, the program aims to equip graduates with a holistic understanding of computer science, preparing them to actively contribute to progress of the field and tackle the challenges of an increasingly interconnected and technology-driven world.</p>
+        </main>
+    </div>
+
+
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Computer Science and Information Technology (M.Sc.)">
+    <Hero
+        title="Computer Science and Information Technology (M.Sc.)" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside>
+            <nav class="p-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a 
+                        href="academics" 
+                        class="p-5"
+                    >
+                        Academics
+                    </a>
+                    <a 
+                        href="qualification" 
+                        class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white"
+                    >
+                        Qualification
+                    </a>
+                    <a 
+                        href="apply" 
+                        class="p-5"
+                    >
+                        Apply
+                    </a>
+                    <a 
+                        href="opportunities" 
+                        class="p-5"
+                    >
+                        Opportunities
+                    </a>
+                    <a 
+                        href="entrance-exam" 
+                        class="p-5"
+                    >
+                        Extrance Examination
+                    </a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 space-y-10 font-sarabun">
+            <h2 class="font-kanit font-semibold text-5xl">Qualification</h2>
+            <ol class="list-decimal list-inside">
+                <li>Holding a Bachelor’s degree with GPA of at least 2.5.</li>
+                <li>Having English proficiency test, except native speakers, of TOEFL, IELTS, CU-TEP, according to the criteria given by the Graduate school.</li>
+                <li>Having appropriate qualifications in accordance with the Graduate school stipulations imposed for a given academic year, or being admitted by the administration committee of the M.Sc. program in computer science and information technology.</li>
+            </ol>
+        </main>
+    </div>
+
+
+</BaseLayout>

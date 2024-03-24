@@ -1,0 +1,31 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Graduate Program in Mathematics">
+    <Hero 
+        title="Graduate Program in Mathematics" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside class="">
+            <nav class="p-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a class="p-5 " href="academics">Academics</a>
+                    <a class="p-5" href="qualification">Qualification</a>
+                    <a class="p-5" href="apply">Apply</a>
+                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="opportunities">Opportunities</a>
+                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 space-y-10 font-sarabun">
+            <h2 class="font-kanit font-semibold text-5xl">Opportunities</h2>
+            <p>Teachers, researchers, system analysts Careers related to finance and banking stock market Career about computer science Academics in organizations promoting mathematics education, businessmen</p>
+        </main>
+    </div>
+
+
+</BaseLayout>

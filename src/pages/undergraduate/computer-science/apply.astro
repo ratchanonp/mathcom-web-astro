@@ -1,0 +1,41 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="Computer Science">
+    <Hero 
+        title="Computer Science" 
+        subtitle="Department of Mathematics and Computer Science"
+    />
+
+    <div class="grid grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20">
+        <aside class="col-span-1">
+            <nav class="m-5">
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a href="academics" class="p-5 ">Academics</a>
+                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="apply">Apply</a>
+                    <a class="p-5" href="opportunities">Opportunities</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="col-span-3 my-5 grid space-y-5">
+            <h2 class="text-5xl font-kanit font-semibold">Apply</h2>
+            <h3 class="text-3xl font-kanit font-semibold">Admission</h3>
+            <p>There are three rounds of admission.</p>
+            <section class="space-y-2 5">
+                <h4 class="text-xl font-kanit font-semibold">Round 1 - Portfolio:</h4>
+                <p class="font-sarabun">Please visit <a class="text-yellow-400 underline" href="http://www.atc.chula.ac.th/TCAS/TCAS1.html" target="_blank">http://www.atc.chula.ac.th/TCAS/TCAS1.html</a> for more information</p>
+            </section>
+            <section class="space-y-2 5">
+                <h4 class="text-xl font-kanit font-semibold">Round 2 - Quota:</h4>
+                <p class="font-sarabun">Please visit <a class="text-yellow-400 underline" href="http://www.atc.chula.ac.th/TCAS/TCAS2.html" target="_blank">http://www.atc.chula.ac.th/TCAS/TCAS2.html</a> for more information</p>
+            </section>
+            <section class="space-y-2 5">
+                <h4 class="text-xl font-kanit font-semibold">Round 3 - Admission:</h4>
+                <p class="font-sarabun">Please visit <a class="text-yellow-400 underline" href="http://www.atc.chula.ac.th/TCAS/TCAS3.html" target="_blank">http://www.atc.chula.ac.th/TCAS/TCAS3.html</a> for more information</p>
+            </section>
+        </main>
+    </div>
+
+
+</BaseLayout>
