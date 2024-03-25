@@ -5,17 +5,14 @@ services:
     image: wordpress:latest
     container_name: mathcom-wordpress
     restart: always
+    working_dir: /var/www/html/wordpress
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DB_NAME: ${DB_NAME}
-      WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME','${WP_HOME}');
-        define('WP_SITEURL','${WP_SITEURL}');
-        $$_SERVER['REQUEST_URI'] = str_replace("/wp-admin/", "/wordpress/wp-admin/",  $$_SERVER['REQUEST_URI']);      
     volumes:
-      - wordpress_data:/var/www/html
+      - wordpress_data:/var/www/html/wordpress
     depends_on:
       - db
     networks:
