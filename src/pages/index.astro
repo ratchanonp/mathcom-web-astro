@@ -3,7 +3,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import MHVH from "@/assets/img/mhvh/MHVH-Portriat.jpg";
 import MenuCard from "@/common/components/Card/MenuCard/MenuCard.astro";
-import PostGrid from "@/common/components/Post/PostGrid";
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import { Image } from "astro:assets";
@@ -96,7 +95,8 @@ const MenuData = [
                     News
                 </h2>
             </header>
-            <PostGrid client:load/>
+            <!-- <PostGrid client:load/> -->
+            <p class="mt-10 text-center">News will appear here 😝</p>
             <a
                 href="/news-event"
                 class="flex mt-10 text-center text-gray-500 w-full justify-center underline"
@@ -117,7 +117,7 @@ const MenuData = [
             </header>
             <div 
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-10 gap-2.5">
-                <p>Event Appear Here</p>
+                <p class="col-span-2 md:col-span-3 lg:col-span-5 text-center mt-5">Events will appear here 😝</p>
             </div>
             <a
                 href="/events"
