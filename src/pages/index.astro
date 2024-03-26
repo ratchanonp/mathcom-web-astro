@@ -1,17 +1,9 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getPosts } from "@/libs/api/post";
-
-const posts = await getPosts({ _embed: "", per_page: "3" });
-
-
 
 import MHVH from "@/assets/img/mhvh/MHVH-Portriat.jpg";
 import MenuCard from "@/common/components/Card/MenuCard/MenuCard.astro";
 import PostGrid from "@/common/components/Post/PostGrid";
-import type { Event } from "@/interfaces/event.interface";
-import { events } from "@/mock/events";
-import EventCardMock from "@/modules/event/components/EventCardMock";
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import { Image } from "astro:assets";
@@ -125,9 +117,7 @@ const MenuData = [
             </header>
             <div 
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-10 gap-2.5">
-                {
-                    events.sort((a: Event, b: Event) => a.start.getTime() - b.start.getTime()).slice(0, 6).map((event: Event) => <EventCardMock event={event} />)
-                }
+                <p>Event Appear Here</p>
             </div>
             <a
                 href="/events"

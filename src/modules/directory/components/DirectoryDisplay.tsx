@@ -51,14 +51,12 @@ export default function DirectoryDisplay() {
     // };
 
     const [faculties, setFaculties] = useState<IFaculty[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchFaculties = async () => {
             const data = await facultyAPI.getFaculties();
             console.log(data);
             setFaculties(data);
-            setLoading(false);
         };
 
         fetchFaculties();

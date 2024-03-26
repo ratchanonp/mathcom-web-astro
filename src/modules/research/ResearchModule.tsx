@@ -3,9 +3,7 @@ import { ResearchAPI } from "@/libs/api/research";
 import { useEffect, useState } from "react";
 import ResearchBox from "./components/ResearchBox";
 
-type Props = {}
-
-const ResearchModule = (props: Props) => {
+const ResearchModule = () => {
     const [research, setResearch] = useState<IResearch[]>([]);
     
     useEffect(() => {
@@ -20,7 +18,7 @@ const ResearchModule = (props: Props) => {
     }, []);
 
     return (
-        <div class="flex flex-wrap justify-center gap-x-4 gap-y-14">
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-14">
             {research.map((item) => (
                 <ResearchBox key={item.id} title={item.name} img="/research/applied.png" />
             ))}

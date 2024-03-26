@@ -4,9 +4,9 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
-    "include": ["src/**/*"],
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "outDir": "dist",
   }
 }
