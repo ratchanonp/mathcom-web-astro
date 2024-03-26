@@ -118,20 +118,20 @@ const Menu = () => {
                     <Accordion
                         type="single"
                         collapsible
-                        className="border-b-[1px] border-white"
+                        className="border-b border-white"
                     >
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="group flex w-full items-center py-2 text-white [&[data-state=open]>svg.back-icon]:rotate-180 border-b border-white">
                                 <AcademicCapIcon className="mr-2 h-6 w-6 transition-transform  ease-in-out group-hover:translate-x-5" />
-                                <p className="transition-transform  ease-in-out group-hover:translate-x-5">
+                                <a href="/undergraduate" className="transition-transform  ease-in-out group-hover:translate-x-5">
                                     Undergraduate
-                                </p>
+                                </a>
                                 <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white  transition-transform duration-200" />
                             </AccordionTrigger>
                             <AccordionContent>
                                 <ul>
                                     <a
-                                        href="/mathematics"
+                                        href="/undergraduate/math/academics"
                                         className="group flex space-x-3 border-b-[1px] border-white py-2 ml-5 hover:bg-black"
                                     >
                                         <CalculatorIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
@@ -156,91 +156,62 @@ const Menu = () => {
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="group flex w-full items-center py-2 text-white [&[data-state=open]>svg.back-icon]:rotate-180 border-b border-white">
                                 <AcademicCapIcon className="mr-2 h-6 w-6 transition-transform  ease-in-out group-hover:translate-x-5" />
-                                <p className="transition-transform  ease-in-out group-hover:translate-x-5">
+                                <a href="/graduate" className="transition-transform  ease-in-out group-hover:translate-x-5">
                                     Graduate
-                                </p>
+                                </a>
                                 <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white  transition-transform duration-200" />
                             </AccordionTrigger>
                             <AccordionContent>
                                 <Accordion type="multiple" className="border-b border-white">
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger className="group flex w-full items-center  text-white [&[data-state=open]>div>svg.back-icon]:rotate-180 pl-5">
-                                            <div className="flex w-full items-center border-b py-2">
-                                                <AcademicCapIcon className="mr-2 h-6 w-6 transition-transform  ease-in-out group-hover:translate-x-5" />
-                                                <p className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                Master
-                                                </p>
-                                                <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white transition-transform duration-200" />
-                                            </div>
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <ul>
-                                                <a
-                                                    href="/mathematics"
-                                                    className="group flex space-x-3 border-b-[1px] border-white py-2 ml-10 hover:bg-black"
-                                                >
-                                                    <CalculatorIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
-                                                    <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        M.Sc. Mathematics
-                                                    </a>
+                                    <AccordionItem value="item-1 border-b">
+                                        <ul>
+                                            <a
+                                                href="/graduate/math/academics"
+                                                className="group flex space-x-3 border-b-[1px] border-white py-2 ml-5 hover:bg-black"
+                                            >
+                                                <CalculatorIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
+                                                <a className="transition-transform ease-in-out group-hover:translate-x-5">
+                                                        Mathematics
                                                 </a>
-                                                <a
-                                                    href="/computer-science"
-                                                    className="group flex space-x-3 py-2 ml-10 hover:bg-black"
-                                                >
-                                                    <CalculatorIcon className="h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
-                                                    <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        M.Sc. Applied Mathematics & Computational Science
-                                                    </a>
+                                            </a>
+                                            <a
+                                                href="/graduate/amcs/academics"
+                                                className="group flex space-x-3 py-2 ml-5 hover:bg-black border-b border-white"
+                                            >
+                                                <CalculatorIcon className="h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
+                                                <a className="transition-transform ease-in-out group-hover:translate-x-5">
+                                                        Applied Mathematics & Computational Science
                                                 </a>
-                                                <a
-                                                    href="/mathematics"
-                                                    className="group flex space-x-3 border-y-[1px] border-white py-2 ml-10 hover:bg-black"
-                                                >
-                                                    <ComputerDesktopIcon className="h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
-                                                    <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        M.Sc. Computer Science & Information Technology
-                                                    </a>
-                                                </a>
-                                            </ul>
-                                        </AccordionContent>
+                                            </a>
+                                        </ul>
                                     </AccordionItem>
                                     <AccordionItem value="item-2">
                                         <AccordionTrigger className="group flex w-full items-center py-2 text-white [&[data-state=open]>svg.back-icon]:rotate-180 pl-5">
 
-                                            <AcademicCapIcon className="mr-2 h-6 w-6 transition-transform  ease-in-out group-hover:translate-x-5" />
-                                            <p className="transition-transform  ease-in-out group-hover:translate-x-5">
-                                                    Ph.D
+                                            <ComputerDesktopIcon className="mr-2 h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
+                                            <p className="transition-transform  ease-in-out group-hover:translate-x-5 text-left">
+                                                Computer Science <br/>& Information Technology
                                             </p>
                                             <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white  transition-transform duration-200" />
                                         </AccordionTrigger>
                                         <AccordionContent>
                                             <ul>
                                                 <a
-                                                    href="/mathematics"
-                                                    className="group flex space-x-3 border-t-[1px] border-white py-2 ml-5 pl-5 hover:bg-black"
+                                                    href="/graduate/csit/master/academics"
+                                                    className="group flex space-x-3 border-t-[1px] border-white py-2 ml-5 pl-5 hover:bg-black border-b"
                                                 >
-                                                    <CalculatorIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
+                                                    <ComputerDesktopIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
                                                     <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        Ph.D Mathematics
+                                                        Master
                                                     </a>
                                                 </a>
                                                 <a
-                                                    href="/computer-science"
-                                                    className="group flex space-x-3 py-2 ml-10 hover:bg-black border-y-[1px] border-white"
+                                                    href="/graduate/csit/phd/academics"
+                                                    className="group flex space-x-3 py-2 ml-10 hover:bg-black"
                                                 >
-                                                    <CalculatorIcon className="h-6 w-6 transition-transform shrink-0 ease-in-out group-hover:translate-x-5" />
+                                                    <ComputerDesktopIcon className="h-6 w-6 transition-transform shrink-0 ease-in-out group-hover:translate-x-5" />
                                                     <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        Ph.D Applied Mathematics & Computational Science
-                                                    </a>
-                                                </a>
-                                                <a
-                                                    href="/mathematics"
-                                                    className="group flex space-x-3  py-2 ml-10 hover:bg-black"
-                                                >
-                                                    <ComputerDesktopIcon className="h-6 w6-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
-                                                    <a className="transition-transform ease-in-out group-hover:translate-x-5 break-word">
-                                                        Ph.D Computer Science & Information Technology
+                                                        Doctoral
                                                     </a>
                                                 </a>
                                             </ul>

@@ -1,20 +1,7 @@
 ---
 import Hero from "@/common/components/Hero.astro";
-import { researchFields } from "@/libs/const";
-import ResearchBox from "@/modules/research/components/ResearchBox.astro";
+import ResearchModule from "@/modules/research/ResearchModule";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
-const colorClassList = [
-  "bg-yellow-200 text-slate-800",
-  "bg-gray-800 text-white",
-  "bg-yellow-400 text-slate-800",
-]
-
-const buttonClassList = [
-  "border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white",
-  "border-white text-white hover:bg-white hover:text-slate-800",
-  "border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white",
-]
 ---
 
 <BaseLayout title="Research">
@@ -23,20 +10,7 @@ const buttonClassList = [
       <section>
         <h2 class="text-center font-kanit font-semibold uppercase underline decoration-4 decoration-primary text-4xl">Research Area</h2>
         <main class="grid gap-y-2.5 mt-20">
-          {researchFields.map((item, outerIdx) => (
-              <div class="flex flex-wrap justify-center gap-x-4 gap-y-14">
-                {item.subCategory && item.subCategory
-                  .sort((a, b) => a.name.localeCompare(b.name))
-                  .map((item, innerIdx) => (
-                  <ResearchBox
-                  className=""
-                  img={item.img}
-                  title={item.name}
-                  link={item.name}
-                  />
-                ))}
-              </div>
-          ))}
+            <ResearchModule client:load />
         </main>
       </section>
     </main>

@@ -1,1 +1,1 @@
-export const BASE_URL = new URL("/wp-json/wp/v2/", "http://localhost/wordpress").toString();
+export const BASE_URL = new URL("/wordpress/wp-json/wp/v2/", "http://localhost").toString();

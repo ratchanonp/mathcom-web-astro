@@ -1,61 +1,53 @@
 ---
 import Hero from "@/common/components/Hero.astro";
-import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
 ---
 
 <BaseLayout title="Graduate">
     <Hero title="Graduate" />
 
-    <main class="mt-10">
+    <main class="mt-10 space-y-10 mb-20">
         <section class="max-w-screen-xl mx-auto px-5">
             <p class="font-kanit font-light text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis laboriosam minus excepturi earum nobis non vel, ratione sapiente corrupti perspiciatis porro repudiandae voluptatibus animi soluta, quod commodi. Voluptas unde rem totam natus tempora? Natus quos necessitatibus exercitationem at amet mollitia perferendis, eligendi libero culpa quo minus nobis molestiae doloribus expedita voluptas, fugiat dolor perspiciatis possimus quasi aliquid iusto? Laboriosam maiores quo recusandae ad aliquam mollitia reiciendis libero, eaque cum vitae, itaque, rem quisquam dolore enim consequatur pariatur! Nulla facere dolores sed! Consequuntur, pariatur! Quae dolore similique rerum, repellendus explicabo quis nobis ab ad ipsum consectetur animi, tenetur ullam amet quo.</p>
         </section>
 
-        <section class="grid lg:grid-cols-2 mt-10">
-            <img class="h-full object-fit w-auto aspect-auto" src="/placeholder.jpeg" />
-            <div class="bg-yellow-400 p-20 space-y-5">
-                <h2 class="text-5xl font-bold">Academics</h2>
-                <p class="font-kanit font-light text-lg"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis laborum tempore in, mollitia beatae modi, esse praesentium eum tenetur unde nobis consectetur, consequatur sed? Totam sequi, minima fugiat ipsam excepturi a accusamus cumque odio obcaecati tenetur illo molestiae saepe aut eligendi quibusdam, qui exercitationem deserunt aspernatur ut neque commodi eos illum ab esse? Dolores voluptatum facilis sapiente maiores reprehenderit fugiat nemo voluptates ratione provident? Vitae sint cum dolore ad commodi labore facere? Natus quasi minus velit? Nostrum quo, explicabo minus alias ipsam placeat minima perferendis praesentium animi expedita quia enim rerum unde neque cupiditate. Officia, sunt! Veniam molestiae iure omnis.</p>
-                <a class="mt-5 text-slate-800 font-semibold underline font-kanit text-lg inline-flex items-center" href="">Academics <ChevronRightIcon className="w-5 h-5" /></a>
-              </div>
-        </section>
-        <section class="bg-gray-800 py-10 grid justify-items-center">
-          <h2 class="text-4xl font-bold text-white text-center">Graduate Program</h2>
-          <div class="grid gap-y-5 mt-5">
-            <a class="text-white border border-white px-32 text-center py-2.5 text-xl font-kanit hover:text-gray-800 hover:bg-white" href="">Master Program</a>
-            <a class="text-white border border-white px-32 text-center py-2.5 text-xl font-kanit hover:text-gray-800 hover:bg-white" href="">Ph.D Program</a>
+        <section class="max-w-screen-xl mx-auto space-y-5 px-5">
+          <h2 class="text-5xl font-semibold font-kanit">Our Graduate Programs</h2>
+          <div class="grid md:grid-cols-3 gap-5">
+              <article class="shadow-lg bg-slate-800 text-white">
+                  <img src="/placeholder.jpeg" alt="" class="filter brightness-75">
+                  <div class="p-5 space-y-2.5 flex flex-col justify-between h-full">
+                      <div>
+                        <h3 class="text-3xl font-medium font-kanit mb-2.5">Mathematics</h3>
+                        <p class="font-sarabun font-sm font-light"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus cupiditate quod distinctio ab necessitatibus dolorem tempore quibusdam natus illum? Dolor? </p>
+                      </div>
+                      <a href="/graduate/math/academics" class="flex items-center text-yellow-500 font-kanit">Learn more <ChevronRightIcon className="h-4 w-4" /></a>
+                  </div>
+              </article>
+              <article class="shadow-lg bg-slate-800 text-white ">
+                  <div class="p-5 space-y-2.5 flex flex-col justify-between h-full">
+                      <div>
+                        <h3 class="text-3xl font-medium font-kanit mb-2.5">Applied Mathematics & Computational Science</h3>
+                        <p class="font-sarabun font-sm font-light"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis soluta sed quod quis distinctio aliquid nostrum autem quaerat! Odio, possimus! </p>
+                      </div>
+                      <a href="/graduate/amcs/academics" class="flex items-center text-yellow-500 font-kanit">Learn more <ChevronRightIcon className="h-4 w-4" /></a>
+                  </div>
+              </article>
+              <article class="shadow-lg bg-slate-800 text-white ">
+                <div class="p-5 space-y-2.5 flex flex-col justify-between h-full">
+                    <div>
+                      <h3 class="text-3xl font-medium font-kanit mb-2.5">Computer Science and Information Technology (M.Sc.)</h3>
+                      <p class="font-sarabun font-sm font-light"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae doloribus dolorum ea laborum at sapiente itaque nisi. Deserunt, consectetur. </p>
+                    </div>
+                    <div class="flex space-x-10">
+                      <a href="/graduate/csit/master/academics" class="flex items-center text-yellow-500 font-kanit">Master<ChevronRightIcon className="h-4 w-4" /></a>
+                      <a href="/graduate/csit/phd/academics" class="flex items-center text-yellow-500 font-kanit">Doctoral<ChevronRightIcon className="h-4 w-4" /></a>
+                    </div>
+                </div>
+            </article>
           </div>
-        </section>
-        <section class="grid lg:grid-cols-2">
-          <div class="bg-yellow-200 p-20 space-y-5">
-            <h2 class="text-5xl font-bold">Qualification Examination</h2>
-            <p class="font-kanit font-light text-lg"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis laborum tempore in, mollitia beatae modi, esse praesentium eum tenetur unde nobis consectetur, consequatur sed? Totam sequi, minima fugiat ipsam excepturi a accusamus cumque odio obcaecati tenetur illo molestiae saepe aut eligendi quibusdam, qui exercitationem deserunt aspernatur ut neque commodi eos illum ab esse? Dolores voluptatum facilis sapiente maiores reprehenderit fugiat nemo voluptates ratione provident? Vitae sint cum dolore ad commodi labore facere? Natus quasi minus velit? Nostrum quo, explicabo minus alias ipsam placeat minima perferendis praesentium animi expedita quia enim rerum unde neque cupiditate. Officia, sunt! Veniam molestiae iure omnis.</p>
-            <a class="mt-5 text-slate-800 font-semibold underline font-kanit text-lg inline-flex items-center" href="">Qualification Examination <ChevronRightIcon className="w-5 h-5" /></a>
-          </div>
-          <img class="h-full object-fit w-auto aspect-auto" src="/placeholder.jpeg" />
       </section>
-        <section class="grid lg:grid-cols-2">
-          <img class="h-full object-fit w-auto aspect-auto" src="/placeholder.jpeg" />
-            <div class="bg-gray-800 p-20 space-y-5">
-                <h2 class="text-5xl font-bold text-white">Applying</h2>
-                <p class="font-kanit font-light text-lg text-white"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis laborum tempore in, mollitia beatae modi, esse praesentium eum tenetur unde nobis consectetur, consequatur sed? Totam sequi, minima fugiat ipsam excepturi a accusamus cumque odio obcaecati tenetur illo molestiae saepe aut eligendi quibusdam, qui exercitationem deserunt aspernatur ut neque commodi eos illum ab esse? Dolores voluptatum facilis sapiente maiores reprehenderit fugiat nemo voluptates ratione provident? Vitae sint cum dolore ad commodi labore facere? Natus quasi minus velit? Nostrum quo, explicabo minus alias ipsam placeat minima perferendis praesentium animi expedita quia enim rerum unde neque cupiditate. Officia, sunt! Veniam molestiae iure omnis.</p>
-                <a class="mt-5 text-white font-semibold underline font-kanit text-lg inline-flex items-center" href="">Applying <ChevronRightIcon className="w-5 h-5" /></a>
-            </div>
-        </section>
-        <section class="grid lg:grid-cols-2">
-          <div class="bg-yellow-400 p-20 space-y-5">
-            <h2 class="text-5xl font-bold">Funding Graduate School</h2>
-            <p class="font-kanit font-light text-lg"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis laborum tempore in, mollitia beatae modi, esse praesentium eum tenetur unde nobis consectetur, consequatur sed? Totam sequi, minima fugiat ipsam excepturi a accusamus cumque odio obcaecati tenetur illo molestiae saepe aut eligendi quibusdam, qui exercitationem deserunt aspernatur ut neque commodi eos illum ab esse? Dolores voluptatum facilis sapiente maiores reprehenderit fugiat nemo voluptates ratione provident? Vitae sint cum dolore ad commodi labore facere? Natus quasi minus velit? Nostrum quo, explicabo minus alias ipsam placeat minima perferendis praesentium animi expedita quia enim rerum unde neque cupiditate. Officia, sunt! Veniam molestiae iure omnis.</p>
-            <a class="mt-5 text-slate-800 font-semibold underline font-kanit text-lg inline-flex items-center" href="">Funding Graduate School <ChevronRightIcon className="w-5 h-5" /></a>
-            
-          </div>
-          <img class="h-full object-fit w-auto aspect-auto" src="/placeholder.jpeg" />
-        </section>
-        <section class="grid justify-items-center py-10 max-w-screen-xl mx-auto px-5">
-            <h2 class="text-5xl font-bold">Careers in Mathematics</h2>
-            <p class="font-kanit font-light text-lg mt-5"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis laborum tempore in, mollitia beatae modi, esse praesentium eum tenetur unde nobis consectetur, consequatur sed? Totam sequi, minima fugiat ipsam excepturi a accusamus cumque odio obcaecati tenetur illo molestiae saepe aut eligendi quibusdam, qui exercitationem deserunt aspernatur ut neque commodi eos illum ab esse? Dolores voluptatum facilis sapiente maiores reprehenderit fugiat nemo voluptates ratione provident? Vitae sint cum dolore ad commodi labore facere? Natus quasi minus velit? Nostrum quo, explicabo minus alias ipsam placeat minima perferendis praesentium animi expedita quia enim rerum unde neque cupiditate. Officia, sunt! Veniam molestiae iure omnis.</p>
-            <a class="mt-5 text-slate-800 font-semibold underline font-kanit text-lg inline-flex items-center text-center" href="">Careers in Mathematics<ChevronRightIcon className="w-5 h-5" /></a>
-        </section>
+
     </main>
 </BaseLayout>
