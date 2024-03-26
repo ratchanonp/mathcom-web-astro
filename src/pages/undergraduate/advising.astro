@@ -1,11 +1,63 @@
 ---
 import Hero from "@/common/components/Hero.astro";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CheckIcon } from "@heroicons/react/24/solid";
 ---
 
 <BaseLayout title="Undergraduate Advising">
     <Hero title="Undergraduate Advising" />
-    <p class="max-w-screen-xl mx-auto p-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni laboriosam explicabo dolorum fuga natus quo a aspernatur magnam eum corporis, quae voluptatum impedit repellat omnis consequatur aut molestiae dolorem. Officiis eaque animi ducimus ab ad ratione, architecto, molestiae nostrum at itaque nisi. Magnam atque ipsam modi ducimus exercitationem eius consequatur magni fugiat earum commodi, iure architecto id, cupiditate velit, adipisci enim ipsum. Doloremque debitis in dolorem fuga, hic blanditiis minus similique dicta eos sit assumenda obcaecati perspiciatis a quae molestiae ea adipisci omnis ducimus. Commodi, nobis qui, assumenda ipsa unde odio quaerat rem fugit velit dolorum aspernatur neque amet voluptatum ipsum alias laborum voluptas tempore ipsam, voluptatem nulla inventore? Laudantium voluptatum repellendus eum quam quis perferendis. Quo quas quibusdam neque dolores magni repellat nemo, reiciendis omnis eos numquam hic iure nesciunt corporis dolorum, molestiae nulla at saepe iusto cumque doloribus sequi ut quia fugit vel. Pariatur excepturi consequatur corrupti ratione amet aut, assumenda maxime modi hic suscipit perferendis illum, sit totam deserunt unde sed voluptatem nisi voluptas velit minus eius ipsam. Placeat quos nulla officia quae facilis inventore, error necessitatibus nihil vero. Dolorem numquam natus quam amet distinctio molestias quas ab. Dolorum porro asperiores reprehenderit voluptatibus, sit voluptate eius consectetur.
-    </p>
+    <main class="max-w-screen-xl mx-auto p-5 space-y-10 mb-20">
+        <section class="space-y-5">
+            <h2 class="font-kanit font-semibold text-3xl">Scholarships</h2>
+            <p>Chulalongkorn University has various scholarships to make education accessible and affordable for students. Our scholarships provide more opportunities for both undergraduate and graduate students.</p>
+        </section>
+        <section class="space-y-5">
+            <h2 class="font-kanit font-semibold text-3xl">Scholarships for Undergraduate Student</h2>
+            <p>Our department has many scholarships from Chulalongkorn University and external supports. We encourage students with great academic potential to pursue their study in mathematics and computer science.</p>
+        
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>Scholarships</TableHead>
+                        <TableHead>Tuition Fee</TableHead>
+                        <TableHead>Allowance</TableHead>
+                        <TableHead>Link</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow>
+                        <TableCell className="max-w-60">His Royal Highness Crown Prince Maha Vajiralongkorn Fund</TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell className="max-w-60" ><a class="hover:underline" href="https://www.acad.sc.chula.ac.th/scholarship-detail.php?id=71&type=6" target="_blank" rel="noopener noreferrer">https://www.acad.sc.chula.ac.th/scholarship-detail.php?id=71&type=6</a></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="max-w-60">Honor Programme Scholarship</TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell className="max-w-60"></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="max-w-60">Development and Promotion of Science and Technology Talents Project, Thai government scholarship</TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell className="max-w-60" ><a class="hover:underline" href="https://www.acad.sc.chula.ac.th/scholarship-detail.php?id=71&type=6" target="_blank" rel="noopener noreferrer">https://www.acad.sc.chula.ac.th/scholarship-detail.php?id=71&type=6</a></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="max-w-60">Promotion of Science and Mathematics Talented Teachers, Thai government scholarship</TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell className="max-w-60"></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="max-w-60">Science Achievement Scholarship of Thailand</TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell><CheckIcon className="w-5 h-5 text-green-500" /></TableCell>
+                        <TableCell className="max-w-60" ><a class="hover:underline" href="https://www.acad.sc.chula.ac.th/scholarship-detail.php?id=71&type=6" target="_blank" rel="noopener noreferrer">https://www.acad.sc.chula.ac.th/scholarship-detail.php?id=71&type=6</a></TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </section>
+    </main>
 </BaseLayout>
