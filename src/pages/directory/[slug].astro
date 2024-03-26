@@ -1,17 +1,24 @@
 ---
-import type { Faculty } from "@/interfaces/faculty.interface";
-import { faculties } from "@/mock/faculties";
+import { FacultyAPI } from "@/libs/api/faculty";
+import { MediaAPI } from "@/libs/api/media";
 import { DocumentTextIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import Layout from "../../layouts/BaseLayout.astro";
 
+const facultyAPI = new FacultyAPI();
+const mediaAPI = new MediaAPI();
 const { slug } = Astro.params;
-const faculty: Faculty = faculties.find((faculty) => faculty.id === slug) as Faculty;
+console.log(slug);
+const faculty = await facultyAPI.getFaculty(slug);
+const imgURL = await mediaAPI.getMediaURL(faculty.picture);
 
 export async function getStaticPaths() {
+
+    const slugs = await facultyAPI.getAllFacultySlugs();
+
     return {
-        paths: faculties.map((faculty) => ({
+        paths: slugs.map((slug) => ({
             params: {
-                slug: faculty.id,
+                slug,
             },
         })),
         fallback: false,
@@ -19,18 +26,18 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout title={faculty?.nameEng}>
+<Layout title={faculty.first_name_eng}>
     <main class="max-w-screen-xl mx-auto md:px-5">
         <article class="md:grid md:grid-cols-[500px_1fr] md:py-10 md:gap-x-10">
             <header class="bg-yellow-400 p-5">
                 <figure>
-                    <img src={faculty.imgURL} class="w-full h-auto object-cover object-center" alt="">
+                    <img src={imgURL ? imgURL : "https://via.placeholder.com/640x640.png?text=No+Image+Available"} class="w-full h-auto object-cover object-center" alt="">
                 </figure>
 
                 <section class="mt-5 md:hidden">
-                    <h1 class="text-2xl font-kanit font-medium text-gray-900">{faculty.academicRank.thAbbr}{faculty.isPhD && "ดร."}{faculty.nameTH}</h1>
-                    <h2 class="font-kanit text-gray-500">{faculty.nameEng}{faculty.isPhD && " , Ph.D."}</h2>
-                    <h3 class="text-gray-900 font-kanit">{faculty.academicRank.eng}</h3>
+                    <h1 class="text-2xl font-kanit font-medium text-gray-900">{faculty.title_rendered}</h1>
+                    <h2 class="font-kanit text-gray-500">{faculty.first_name_eng}  {faculty.last_name_eng}</h2>
+                    <!-- <h3 class="text-gray-900 font-kanit">{faculty.academicRank.eng}</h3> -->
                 </section>
 
                 <section class="mt-5 md:block">
@@ -60,9 +67,9 @@ export async function getStaticPaths() {
 
             <main class="p-5 flex flex-col">
                 <section class="hidden md:block">
-                    <h1 class=" text-5xl font-kanit font-semibold text-gray-900">{faculty.academicRank.thAbbr}{faculty.isPhD && "ดร."}{faculty.nameTH}</h1>
-                    <h2 class="font-kanit text-gray-500 text-xl">{faculty.nameEng}{faculty.isPhD && " , Ph.D."}</h2>
-                    <h3 class="text-gray-900 font-kanit text-xl">{faculty.academicRank.eng}</h3>
+                    <h1 class=" text-5xl font-kanit font-semibold text-gray-900" set:html={faculty.title_rendered} />
+                    <h2 class="font-kanit text-gray-500 text-xl">{faculty.first_name_eng}  {faculty.last_name_eng}</h2>
+                    <h3 class="text-gray-900 font-kanit text-xl"></h3>
                 </section>
 
                 <section class="md:mt-5">
@@ -75,22 +82,22 @@ export async function getStaticPaths() {
                 <section class="md:mt-5">
                     <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Research Area</h2>
                     <ul class=" list-disc list-inside marker:text-yellow-600 mt-2">
-                        {faculty.researchFields.map((field) => (
+                        <!-- {faculty.researchFields.map((field) => (
                             <li class="text-gray-500 font-kanit">{field}</li>
-                        ))}
+                        ))} -->
                     </ul>
                 </section>
 
                 <section class="mt-5">
                     <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Education</h2>
                     <ul class="font-kanit mt-2">
-                        {faculty.education.map((edu) => (
+                        <!-- {faculty.education.map((edu) => (
                             <li class="text-gray-500 font-kanit">
                                 <span class="text-gray-900 font-bold">{edu.year}</span>  
                                 <span class="text-gray-500">{edu.degree}</span>
                                 <span class="text-gray-500">{edu.university}</span>
                             </li>
-                        ))}
+                        ))} -->
                     </ul>
                 </section>
             </main>

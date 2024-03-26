@@ -1,6 +1,7 @@
-/* eslint-disable no-unused-vars */
-export enum SortBy {
-    A_Z = "Alphabetically A-Z",
-    Z_A = "Alphabetically Z-A",
-    AcademicRank = "Academic Ranking",
+export interface ISortBy {
+    title: string;
+    options: {
+        name: string;
+        value: string;
+    }[];
 }

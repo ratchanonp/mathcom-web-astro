@@ -1,77 +1,48 @@
-/* eslint-disable no-unused-vars */
-export class AcademicRank {
-    private constructor(
-    public readonly eng: string,
-    public readonly th: string,
-    public readonly thAbbr: string,
-    public readonly priority: number,
-    ) {}
-
-    public static AssistantProfessor = new AcademicRank(
-        "Assistant Professor",
-        "ผู้ช่วยศาสตราจารย์",
-        "ผศ.",
-        2
-    );
-    public static AssociateProfessor = new AcademicRank(
-        "Associate Professor",
-        "รองศาสตราจารย์",
-        "รศ.",
-        1
-    );
-    public static Professor = new AcademicRank("Professor", "ศาสตราจารย์", "ศ.",0);
-
-    public toString(): string {
-        return this.eng;
-    }
-}
-
-export enum StaffType {
-  Faculty = "Faculty",
-  EmeritusFaculty = "Emeritus Faculty",
-  GraduateStudent = "Graduate Students",
-  PostDocsResearcher = "Post-Docs & Researchers",
-  Staff = "Staff",
-}
-
-export interface Education {
-  year: number;
-  degree: string;
-  university: string;
-}
-
-export enum ResearchField {
-  Geometry_Topology = "Geometry & Topology",
-  Analysis_NumericalTheory_DifferentialEquations = "Analysis, Numerical Theory, & Differential Equations",
-  Algebra_DiscreteMathematics_MathematicalLogic = "Algebra, Discrete Mathematics, & Mathematical Logic",
-  Statistics_Probability_StochasticProcess = "Statistics, Probability & Stochastic Process",
-  AppliedMathematics_MathematicalModelling = "Applied Mathematics & Mathematical Modelling",
-  Optimization_OperationsResearch_GraphAndNetworkAnalysis = "Optimization, Operations Research, & Graph and Network Analysis",
-  FinancialMath_ActuarialScience = "Financial Math & Actuarial Science",
-  DataScienceMachineLearning = "Data Science & Machine Learning",
-  ImageProcessing_ComputerVision = "Image Processing & Computer Vision",
-  Bioinformatics_ComputationalBiology = "Bioinformatics & Computational Biology",
-  SoftwareEngineering_DatabaseSystems_ParallelComputing = "Software Engineering, Database Systems, & Parallel Computing",
-  NetworkSecurity_Cryptography = "Network Security & Cryptography",
-}
-
-export interface Faculty {
-  id: string;
-  imgURL: string;
-  nameEng: string;
-  nameTH: string;
-  isPhD: boolean;
-  academicRank: AcademicRank;
-  staffType: StaffType;
-
+export interface IFaculty {
+  id: number;
+  slug: string;
+  title_rendered: string;
+  first_name_eng: string;
+  last_name_eng: string;
+  first_name_thai: string;
+  last_name_thai: string;
+  title: string;
+  order: string;
+  staff_status: string;
+  position_other: string;
+  picture: number;
   office: string;
   phone: string;
   fax: string;
   email: string;
-
-  education: Education[];
-
-  researchFields: ResearchField[];
-
-  publications: string[];
+  email2: string;
+  website: string;
+  educational_bg: string;
+  year_bsdegree: string;
+  name_bsdegree: string;
+  major_bsdegree: string;
+  university_bsdegree: string;
+  year_msdegree: string;
+  name_msdegree: string;
+  major_msdegree: string;
+  university_msdegree: string;
+  year2_msdegree: string;
+  name2_msdegree: string;
+  major2_msdegree: string;
+  university2_msdegree: string;
+  year_phddegree: string;
+  name_phddegree: string;
+  major_phddegree: string;
+  university_phddegree: string;
+  faculty_research_relationship: number[] | null;
+  research_areas: string;
+  publications: string;
+  publication_external_link_name: string;
+  publication_external_link_url: string;
+  publication_external_link_name_2: string;
+  publication_external_link_url_2: string;
+  scopus_feed_script_url: string;
+  books: string;
+  misc: string;
+  last_updated: string;
 }
