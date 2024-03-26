@@ -1,7 +1,6 @@
 
 import { useStore } from "@nanostores/react";
 import { format, isSameDay } from "date-fns";
-import { events } from "src/mock/events";
 import Calendar from "./components/Calendar";
 import EventCard from "./components/EventCard";
 import { selectedDay } from "./stores/eventStore";
@@ -9,6 +8,8 @@ import { selectedDay } from "./stores/eventStore";
 const EventModule = () => {
 
     const $selectedDay = useStore(selectedDay);
+    // FIXME: Replace with actual events
+    const events: any[] = [];
 
     return (
         <>

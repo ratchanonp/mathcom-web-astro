@@ -6,17 +6,14 @@ import { useEffect, useState } from "react";
 const Filter = () => {
     
     const [research, setResearch] = useState<IResearch[]>([]);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchResearch = async () => {
             const researchAPI = new ResearchAPI();
             const res = await researchAPI.getResearch();
             setResearch(res);
-            setLoading(false);
         };
 
-        setLoading(true);
         fetchResearch();
     }, []);
 

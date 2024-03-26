@@ -16,7 +16,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useStore } from "@nanostores/react";
 import { useState } from "react";
 import { cn } from "src/libs/utils";
-import { events } from "src/mock/events";
 import { selectedDay } from "src/modules/event/stores/eventStore";
 
 const Calendar = () => {
@@ -25,6 +24,9 @@ const Calendar = () => {
     const $selectedDay = useStore(selectedDay);
     const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
     const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
+
+    //FIXME: Replace with actual events
+    const events: any[] = [];
 
     const days = eachDayOfInterval({
         start: firstDayCurrentMonth,
