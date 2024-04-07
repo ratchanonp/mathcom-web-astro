@@ -183,39 +183,16 @@ const Menu = () => {
                                                         Applied Mathematics & Computational Science
                                                 </a>
                                             </a>
-                                        </ul>
-                                    </AccordionItem>
-                                    <AccordionItem value="item-2">
-                                        <AccordionTrigger className="group flex w-full items-center py-2 text-white [&[data-state=open]>svg.back-icon]:rotate-180 pl-5">
-
-                                            <ComputerDesktopIcon className="mr-2 h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
-                                            <p className="transition-transform  ease-in-out group-hover:translate-x-5 text-left">
+                                            <a
+                                                href="/graduate/csit/academics"
+                                                className="group flex space-x-3 py-2 ml-5 hover:bg-black border-white"
+                                            >
+                                                <CalculatorIcon className="h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
+                                                <a className="transition-transform ease-in-out group-hover:translate-x-5">
                                                 Computer Science <br/>& Information Technology
-                                            </p>
-                                            <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white  transition-transform duration-200" />
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <ul>
-                                                <a
-                                                    href="/graduate/csit/master/academics"
-                                                    className="group flex space-x-3 border-t-[1px] border-white py-2 ml-5 pl-5 hover:bg-black border-b"
-                                                >
-                                                    <ComputerDesktopIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
-                                                    <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        Master
-                                                    </a>
                                                 </a>
-                                                <a
-                                                    href="/graduate/csit/phd/academics"
-                                                    className="group flex space-x-3 py-2 ml-10 hover:bg-black"
-                                                >
-                                                    <ComputerDesktopIcon className="h-6 w-6 transition-transform shrink-0 ease-in-out group-hover:translate-x-5" />
-                                                    <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        Doctoral
-                                                    </a>
-                                                </a>
-                                            </ul>
-                                        </AccordionContent>
+                                            </a>
+                                        </ul>
                                     </AccordionItem>
                                 </Accordion>
                             </AccordionContent>
