@@ -164,5 +164,3 @@ export class FacultyAPI {
     }
 
 }
-
-export const facultyAPI = new FacultyAPI();
