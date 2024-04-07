@@ -1,6 +1,6 @@
 import FacultyCard from "@/common/components/Card/FacultyCard";
 import type { IFaculty } from "@/interfaces/faculty.interface";
-import { facultyAPI } from "@/libs/api/faculty";
+import { FacultyAPI } from "@/libs/api/faculty";
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "src/common/components/ui/tabs";
 import FilterDialog from "./Dialog/FilterDialog";
@@ -11,52 +11,15 @@ import SortByDialog from "./Dialog/SortByDialog";
 export default function DirectoryDisplay() {
     const tabsList: string[] = ["All", "Faculty", "Emeritus", "Graduate Students", "Post-Docs & Researchers", "Staff"];
 
-    // tabsList.unshift("All");
-
-    // const $serchKeyword = useStore(searchKeyword);
-    // const $sortBy = useStore(sortBy);
-    // const $researchFields = useStore(researchFields);
-
-    // const filterFaculties = (   
-    //     tab: string, 
-    //     searchKeyword: string, 
-    //     researchFields: ResearchField[], 
-    //     sortBy: string,
-    // ) => {
-    //     return faculties
-    //         .filter((faculty) => {
-    //             if (tab === "All") return true;
-    //             return faculty.staffType === tab;
-    //         })
-    //         .filter((faculty) => {
-    //             if (searchKeyword === "") return true;
-    //             return faculty.nameEng.toLowerCase().includes(searchKeyword.toLocaleLowerCase());
-    //         })
-    //         .filter((faculty) => {
-    //             if (researchFields.length === 0) return true;
-    //             return researchFields.some((field) =>
-    //                 faculty.researchFields.includes(field),
-    //             );
-    //         })
-    //         .sort((a: Faculty, b: Faculty) => {
-    //             if (sortBy === "firstname-asc") {
-    //                 return a.nameEng.localeCompare(b.nameEng);
-    //             }
-    //             if (sortBy === "firstname-desc") {
-    //                 return b.nameEng.localeCompare(a.nameEng);
-    //             }
-
-    //             return 0;
-    //         });
-    // };
-
     const [faculties, setFaculties] = useState<IFaculty[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchFaculties = async () => {
+            const facultyAPI = new FacultyAPI();
             const data = await facultyAPI.getFaculties();
-            console.log(data);
             setFaculties(data);
+            setLoading(false);
         };
 
         fetchFaculties();
@@ -92,7 +55,8 @@ export default function DirectoryDisplay() {
                                     <FacultyCard key={faculty.id} faculty={faculty} />
                                 ))
                         } */}
-                        {faculties.map((faculty) => (
+                        {loading && <p>Loading...</p>}
+                        {!loading && faculties.map((faculty) => (
                             <FacultyCard key={faculty.id} faculty={faculty} />
                         ))}
                     </div>
