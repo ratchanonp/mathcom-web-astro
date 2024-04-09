@@ -1,28 +1,17 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { useStore } from "@nanostores/react";
-import { useEffect } from "react";
 import { sortBy } from "src/libs/const";
-import { sortBySelected, sortBy as sortByStore } from "src/modules/directory/stores/facultyStore";
+import { sortBySelected, sortBySelected as sortByStore } from "src/modules/directory/stores/facultyStore";
 
 const SortBy = () => {
     const $sortBy = useStore(sortByStore);
-    const $sortBySelected = useStore(sortBySelected);
-
-    useEffect(() => { sortBySelected.set($sortBy); }, [$sortBy]);
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        
-        sortByStore.set($sortBySelected);
-    };
 
     return (
         <div className="grid gap-5 p-5">
             {sortBy.map((item) => (
                 <div key={item.title}>
                     <h2 className="text-xl font-medium text-gray-800">{item.title}</h2>
-                    <form
-                        onSubmit={handleSubmit}
+                    <div
                         id="sortBy"
                         className="grid gap-2.5 mt-2.5"
                     >
@@ -40,14 +29,14 @@ const SortBy = () => {
                                     value={option.value}
                                     id={option.name}
                                     className="w-5 h-5 rounded-full border-[1px] border-gray-300 accent-gray-800"
-                                    checked={$sortBySelected == option.value}
+                                    checked={$sortBy == option.value}
                                     onChange={() => {
                                         sortBySelected.set(option.value);
                                     }}
                                 />
                             </fieldset>
                         ))}
-                    </form>
+                    </div>
                 </div>
             ))}
         </div>

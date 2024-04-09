@@ -13,14 +13,13 @@ import {
     BuildingLibraryIcon,
     CalculatorIcon,
     CalendarDaysIcon,
-    ChatBubbleBottomCenterIcon,
     ComputerDesktopIcon,
     HomeIcon,
     InformationCircleIcon,
     MagnifyingGlassIcon,
     NewspaperIcon,
     TrophyIcon,
-    UserGroupIcon,
+    UserGroupIcon
 } from "@heroicons/react/24/outline";
 import { useStore } from "@nanostores/react";
 
@@ -251,7 +250,7 @@ const Menu = () => {
                             <AccordionContent>
                                 <ul>
                                     <a
-                                        href="/administration"
+                                        href="/news-events/stories-news"
                                         className="group flex space-x-3 border-y-[1px] border-white py-2 pl-5 hover:bg-black"
                                     >
                                         <NewspaperIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
@@ -260,7 +259,7 @@ const Menu = () => {
                                         </a>
                                     </a>
                                     <a
-                                        href="/directory"
+                                        href="/news-events/award"
                                         className="group flex space-x-3 py-2 pl-5 hover:bg-black  border-b border-white"
                                     >
                                         <TrophyIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
@@ -269,7 +268,7 @@ const Menu = () => {
                                         </a>
                                     </a>
                                     <a
-                                        href="/directory"
+                                        href="/events"
                                         className="group flex space-x-3 py-2 pl-5 hover:bg-black border-b border-white"
                                     >
                                         <CalendarDaysIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
@@ -278,16 +277,7 @@ const Menu = () => {
                                         </a>
                                     </a>
                                     <a
-                                        href="/directory"
-                                        className="group flex space-x-3 py-2 pl-5 hover:bg-black border-b border-white"
-                                    >
-                                        <ChatBubbleBottomCenterIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
-                                        <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                            Seminars
-                                        </a>
-                                    </a>
-                                    <a
-                                        href="/directory"
+                                        href="/news-events/apam"
                                         className="group flex space-x-3 py-2 pl-5 hover:bg-black"
                                     >
                                         <CalculatorIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />

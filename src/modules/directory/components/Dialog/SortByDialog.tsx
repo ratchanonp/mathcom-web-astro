@@ -36,10 +36,8 @@ export default function SortByDiaload() {
                     <DialogClose asChild>
                         <button
                             className=" rounded-lg bg-gray-800 px-5 py-2.5 text-lg text-white"
-                            type="submit"
-                            form="sortBy"
                         >
-              Apply Sort
+                            Apply Sort
                         </button>
                     </DialogClose>
                 </DialogFooter>

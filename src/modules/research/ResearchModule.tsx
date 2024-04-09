@@ -1,15 +1,15 @@
-import type { IResearch } from "@/interfaces/research.interface";
-import { ResearchAPI } from "@/libs/api/research";
+import type { IResearchV2 } from "@/interfaces/research.interface";
+import { ResearchAPIV2 } from "@/libs/api/research";
 import { useEffect, useState } from "react";
 import ResearchBox from "./components/ResearchBox";
 
 const ResearchModule = () => {
-    const [research, setResearch] = useState<IResearch[]>([]);
+    const [research, setResearch] = useState<IResearchV2[]>([]);
     
     useEffect(() => {
         const fetchResearch = async () => {
-            const researchAPI = new ResearchAPI();
-            const researchData = await researchAPI.getResearch();
+            const researchAPI = new ResearchAPIV2();
+            const researchData = await researchAPI.getResearch() as IResearchV2[];
 
             setResearch(researchData);
         };
@@ -20,7 +20,7 @@ const ResearchModule = () => {
     return (
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-14">
             {research.map((item) => (
-                <ResearchBox key={item.id} title={item.name} img="/research/applied.png" />
+                <ResearchBox key={item.id} research={item} />
             ))}
         </div>
     );
