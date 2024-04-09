@@ -1,3 +1,5 @@
+import type { IResearchV2 } from "./research.interface";
+
 export interface IFaculty {
   id: number;
   slug: string;
@@ -45,4 +47,21 @@ export interface IFaculty {
   books: string;
   misc: string;
   last_updated: string;
+  biography: string;
+  academic_rank: string;
+  staff_type: string;
+  cv: string;
+  research: IResearchV2[];
+}
+
+export interface IFacultyV2 {
+  id: number;
+  slug: string;
+  title: string;
+  first_name: string;
+  last_name: string;
+  picture: string | null;
+  academic_rank: string | null;
+  staff_type: string | null;
+  research_areas: number[];
 }

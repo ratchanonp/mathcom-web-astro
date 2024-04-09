@@ -1,6 +1,9 @@
 
+import type { Event } from "@/interfaces/event.interface";
+import { EventAPI } from "@/libs/api/event";
 import { useStore } from "@nanostores/react";
-import { format, isSameDay } from "date-fns";
+import { format } from "date-fns";
+import { useEffect, useState } from "react";
 import Calendar from "./components/Calendar";
 import EventCard from "./components/EventCard";
 import { selectedDay } from "./stores/eventStore";
@@ -8,8 +11,16 @@ import { selectedDay } from "./stores/eventStore";
 const EventModule = () => {
 
     const $selectedDay = useStore(selectedDay);
-    // FIXME: Replace with actual events
-    const events: any[] = [];
+
+    const [events, setEvents] = useState<Event[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const eventAPI = new EventAPI();
+            const eventsRes = await eventAPI.getEvents($selectedDay);
+            setEvents(eventsRes);
+        })();
+    } , [$selectedDay]);
 
     return (
         <>
@@ -25,10 +36,8 @@ const EventModule = () => {
                     <h2 className=" text-xl md:text-2xl font-kanit text-gray-700 font-semibold mt-10 lg:mt-0">Event for <span className="text-yellow-500">{format($selectedDay, "MMMM dd, yyyy")}</span> </h2>
                     <div className="grid gap-5">
                         {
-                            events.some((event) => isSameDay(event.start, $selectedDay)) ? (
-                                events
-                                    .filter((event) => isSameDay(event.start, $selectedDay))
-                                    .map((event) => (
+                            events.length > 0 ? (
+                                   events.map((event) => (
                                         <EventCard key={event.id} event={event} />
                                     ))
                             ) : (

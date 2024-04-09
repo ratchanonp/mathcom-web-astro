@@ -1,27 +1,47 @@
 ---
+import FacultyCard from "@/common/components/Card/FacultyCard";
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ResearchAPI } from "@/libs/api/research";
+
+const researchAPI = new ResearchAPI();
+const { slug } = Astro.params;
+
+const research = await researchAPI.getResearchBySlug(slug);
+
+
+
 export async function getStaticPaths() {
+
+    const researchAPI = new ResearchAPI();
+    const researchList = await researchAPI.getResearch();
+
     return {
-        paths: [],
+        paths: researchList.map((research) => ({
+            params: {
+                slug: research.slug,
+            },
+        })),
         fallback: true,
     };
 };
 
-const { slug } = Astro.params;
+export const prerender = false
+
+
 ---
 
-<BaseLayout title={slug}>
-    <Hero title={slug} />
+<BaseLayout title={research.title}>
+    <Hero title={research.title} />
     <main class="my-10 space-y-10">
         <section class="max-w-screen-xl mx-auto px-5 space-y-5">
-            <p class="font-kanit font-light text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, eos dolorum minima ducimus tempore quisquam corrupti eveniet commodi vero nihil delectus magnam qui? Numquam delectus neque quia error odit, consequatur hic ipsam. Fuga vero magni quasi enim consectetur nobis doloremque reprehenderit ipsa error distinctio illo qui, soluta, id asperiores voluptatum. </p>
-            <p class="font-kanit font-light text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea molestias veniam repudiandae recusandae tenetur debitis fugit ullam dolorem tempora laborum laboriosam sequi quos in ratione incidunt aliquam dolor magni nam quis dolores assumenda deleniti, sint ducimus? Nisi dolorum voluptatibus enim esse officiis! Velit deleniti eveniet molestiae earum provident nostrum dolorem. </p>
         </section>
         <section class="max-w-screen-xl mx-auto px-5 space-y-5">
             <h2 class="text-3xl font-kanit font-semibold underline decoration-4 decoration-primary text-center my-10">Resarch Faculty</h2>
             <main class="grid lg:grid-cols-4 gap-5">
-
+                {research.faculty && research.faculty.map((faculty) => (
+                    <FacultyCard client:load faculty={faculty} />
+                ))}
             </main>
         </section>
     </main>

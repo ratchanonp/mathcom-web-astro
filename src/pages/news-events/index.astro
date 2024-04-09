@@ -2,7 +2,12 @@
 import Hero from "@/common/components/Hero.astro"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
+import { Image } from "astro:assets"
 import { format, formatISO } from "date-fns"
+
+import apamImage from "@/assets/img/icon/news-category/apam.png"
+import seminarImage from "@/assets/img/icon/news-category/seminar.png"
+import awardImage from "@/assets/img/icon/news-category/award.png"
 
 
 
@@ -31,7 +36,7 @@ const events = [
     <Hero title="News & Events" subtitle="Stay up to date with the latest news and events from department." />
     <main>
         <section class="grid lg:grid-cols-2 max-w-screen-xl mx-auto px-5 my-10 gap-5">
-            <section>nn
+            <section>
                 <header>
                     <h2 class="text-3xl font-semibold font-kanit">Recent Stories & News</h2>
                     <a href="/news-events/stories-news" class="underline inline-flex items-center">All Stories & News <ArrowRightIcon className="w-4 ml-1" /></a>
@@ -95,15 +100,15 @@ const events = [
             <div class="max-w-screen-xl mx-auto px-5 pb-5">
                 <section class="grid lg:grid-cols-3 justify-items-center mt-5">
                     <article class="border-r border-r-gray-900 w-full grid justify-items-center">
-                        <img src="/icon/news-event/award.png" class=" w-24 h-24" alt="Awards">
+                        <Image src={awardImage} alt="Award" class=" w-24 h-24" />
                         <h2 class="text-white text-center text-2xl mt-5">All Awards</h2>
                     </article>
                     <article class="border-r border-r-gray-900 w-full grid justify-items-center">
-                        <img src="/icon/news-event/seminar.png" class=" w-24 h-24" alt="Seminar">
+                        <Image src={seminarImage} alt="Seminar" class=" w-24 h-24" />
                         <h2 class="text-white text-center text-2xl mt-5">All Seminar</h2>
                     </article>
                     <article class=" w-full grid justify-items-center">
-                        <img src="/icon/news-event/apam.png" class=" w-24 h-24" alt="APAM">
+                        <Image src={apamImage} alt="APAM" class=" w-24 h-24" />
                         <h2 class="text-white text-center text-2xl mt-5">APAM</h2>
                     </article>
                 </section>

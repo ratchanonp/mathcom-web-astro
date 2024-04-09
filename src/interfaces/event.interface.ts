@@ -1,20 +1,12 @@
-/* eslint-disable no-unused-vars */
-export enum EventCategory {
-  Seminar = "Seminar",
-}
-
 export interface Event {
-  id: string;
-  title: string;
-  eventCategory: EventCategory;
-  speaker: string;
-  start: Date;
-  end: Date;
-  location: string;
-  contact: string;
-  moreInfo: string;
-}
-
-export interface EventGroup {
-  [key: string]: Event[];
+  id:               number;
+  title:            string;
+  thumbnail:        string;
+  speaker:          string;
+  location:         string;
+  register_link:    string;
+  more_information: string;
+  event_start:      string;
+  event_end:        string;
+  category:         string[];
 }

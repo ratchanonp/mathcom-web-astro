@@ -1,4 +1,5 @@
 import { CalendarIcon, ClockIcon } from "@heroicons/react/24/solid";
+import { format, isSameDay } from "date-fns";
 import type { Event } from "src/interfaces/event.interface";
 
 interface Props {
@@ -7,46 +8,20 @@ interface Props {
 
 const EventCard = (props: Props) => {
     const { event } = props;
-    const { start, end } = event;
+    const { event_start, event_end } = event;
+    
+    let formattedTimeStart = format(event_start, 'h:mm');
+    let formattedTimeEnd = format(event_end, 'h:mm');
 
-    const localeDateFormater = new Intl.DateTimeFormat("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-    });
+    const formattedDateStart = format(event_start, 'MMMM d, yyyy');
+    const formattedDateEnd = format(event_end, 'MMMM d, yyyy');
 
-    const timeFormater = new Intl.DateTimeFormat("en-US", {
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true,
-    });
+    const isEventSameDay = isSameDay(event_start, event_end);
 
-    const formatFull = new Intl.DateTimeFormat("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true,
-    });
-
-    let formattedTimeStart = timeFormater.format(start);
-    formattedTimeStart = formattedTimeStart.replace(/ AM| PM/, ""); // remove AM/PM from start time
-
-    const formattedTimeEnd = timeFormater.format(end);
-
-    const formattedDateStart = localeDateFormater.format(start);
-    const formattedDateEnd = localeDateFormater.format(end);
-
-    const formattedFullStart = formatFull.format(start);
-    const formattedFullEnd = formatFull.format(end);
-
-    const isSameDay = formattedDateStart === formattedDateEnd;
-
-    const formattedDate = isSameDay
+    const formattedDate = isEventSameDay
         ? formattedDateStart
         : `${formattedDateStart} - ${formattedDateEnd}`;
-    const formattedTime = isSameDay
+    const formattedTime = isEventSameDay
         ? `${formattedTimeStart} - ${formattedTimeEnd}`
         : `${formattedTimeStart} - ${formattedDateEnd}`;
 
@@ -78,7 +53,7 @@ const EventCard = (props: Props) => {
                     <div className="gap-x-5 gap-y-2.5 mt-2 grid">
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">Event Categories:</p>
-                            <p className="font-light">{event.eventCategory}</p>
+                            <p className="font-light">{event.category[0]}</p>
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">Speaker:</p>
@@ -86,11 +61,11 @@ const EventCard = (props: Props) => {
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">Start:</p>
-                            <p className="font-light">{formattedFullStart}</p>
+                            <p className="font-light">{formattedDateStart}</p>
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">End:</p>
-                            <p className="font-light">{formattedFullEnd}</p>
+                            <p className="font-light">{formattedDateEnd}</p>
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">Location:</p>
@@ -98,11 +73,11 @@ const EventCard = (props: Props) => {
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">Contact:</p>
-                            <a className="font-light text-yellow-600">{event.contact}</a>
+                            <a className="font-light text-yellow-600">{event.register_link}</a>
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">More Information:</p>
-                            <a className="font-light text-yellow-600">{event.moreInfo}</a>
+                            <p dangerouslySetInnerHTML={{ __html: event.more_information }} className="font-light"></p>
                         </div>
                     </div>
                 </div>

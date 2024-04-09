@@ -12,9 +12,10 @@ import {
     startOfToday
 } from "date-fns";
 
+import { EventAPI } from "@/libs/api/event";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useStore } from "@nanostores/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "src/libs/utils";
 import { selectedDay } from "src/modules/event/stores/eventStore";
 
@@ -25,8 +26,17 @@ const Calendar = () => {
     const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
     const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
 
-    //FIXME: Replace with actual events
-    const events: any[] = [];
+    const [eventDates, setEventDates] = useState<string[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const eventAPI = new EventAPI();
+            const eventDates = await eventAPI.getEventDate(firstDayCurrentMonth);
+            setEventDates(eventDates);
+        })();
+    } , [currentMonth]);
+
+
 
     const days = eachDayOfInterval({
         start: firstDayCurrentMonth,
@@ -116,8 +126,8 @@ const Calendar = () => {
                         </button>
 
                         <div className="w-1 h-1 mx-auto mt-1">
-                            {events.some((event) =>
-                                isSameDay(event.start, day)
+                            {eventDates.some((date) =>
+                                isSameDay(date, day)
                             ) && (
                                 <div className="w-1 h-1 rounded-full bg-primary"></div>
                             )}
