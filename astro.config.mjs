@@ -8,6 +8,9 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     integrations: [tailwind(), react(), sitemap()],
+    vite: {
+        envDir: "./docker/"
+    },
     prefetch: true,
     site: "http://localhost",
     output: "server",
