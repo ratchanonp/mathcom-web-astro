@@ -53,6 +53,8 @@ services:
     build: 
       context: ../
       dockerfile: ./docker/astro/Dockerfile
+      args:
+        - PUBLIC_API=$PUBLIC_API
     restart: always
     networks:
       - wordpress
