@@ -1,0 +1,65 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.CSIT, "qualification_thai")        
+---
+
+<BaseLayout title="Computer Science and Information Technology (M.Sc. & Ph.D.)">
+    <Hero
+        title="Computer Science and Information Technology (M.Sc. & Ph.D.)" 
+    />
+
+    <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20 p-5">
+        <aside>
+            <nav>
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a 
+                        href="academics" 
+                        class="p-5"
+                    >
+                        Academics
+                    </a>
+                    <a 
+                        href="qualification" 
+                        class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white"
+                    >
+                        Qualification
+                    </a>
+                    <a 
+                        href="apply" 
+                        class="p-5"
+                    >
+                        Apply
+                    </a>
+                    <a 
+                        href="opportunities" 
+                        class="p-5"
+                    >
+                        Opportunities
+                    </a>
+                    <a 
+                        href="entrance-exam" 
+                        class="p-5"
+                    >
+                        Extrance Examination
+                    </a>
+                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
+            <h2 class="font-kanit font-semibold text-5xl">Qualification</h2>
+            <p set:html={content}/>    
+            <!-- <ol class="list-decimal list-inside space-y-2.5">
+                <li>Holding a Bachelor’s degree in Science and Engineering with GPA of at least 3.25 or a Master’s degree in Science and Engineering with GPA of at least 3.25.</li>
+                <li>Having English proficiency test, except native speakers, of TOEFL, IELTS, CU-TEP, according to the criteria given by the Graduate school.</li>
+                <li>Having appropriate qualifications in accordance with the Graduate school stipulations imposed for a given academic year, or being admitted by the administration committee of the Ph.D. program in Computer Science and Information Technology.</li>
+            </ol> -->
+        </main>
+    </div>
+
+
+</BaseLayout>
