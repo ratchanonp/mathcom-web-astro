@@ -55,6 +55,7 @@ services:
       dockerfile: ./docker/astro/Dockerfile
       args:
         - PUBLIC_API=$PUBLIC_API
+        - PUBLIC_INTERNAL_API=$PUBLIC_INTERNAL_API
     restart: always
     networks:
       - wordpress
