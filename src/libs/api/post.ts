@@ -1,7 +1,7 @@
 import type { Post } from "src/interfaces/reponse/post.interface";
-import { BASE_URL } from "./config";
+import { BASE_INTERNAL_URL } from "./config";
 
-const postEndpoint = new URL("posts/", BASE_URL);
+const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
 
 
 type Params = { [key: string]: string };
@@ -36,8 +36,12 @@ export const getPost = async (slug: string) => {
         postEndpoint.searchParams.append(key, params[key])
     );
     
-    const res = await fetch(postEndpoint.toString());
-    const post = await res.json();
-    
-    return post[0];
+    try {
+        const res = await fetch(postEndpoint.toString());
+        const post = await res.json();
+        
+        return post[0];
+    } catch (error) {
+        console.error(error);      
+    }
 };
