@@ -24,7 +24,7 @@ const content = await courseAPI.getCourse(CourseName.GRADMATH, "qualification_en
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun overflow-x-auto">
             <h2 class="font-kanit font-semibold text-5xl">Qualification</h2>
             <div set:html={content}/>
             <!-- <section class="space-y-5">

@@ -24,10 +24,10 @@ const content = await courseAPI.getCourse(CourseName.AMCS, "academic_english")
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 grid space-y-5">
+        <main class="md:col-span-3 my-5 grid space-y-5 overflow-x-auto">
             <h2 class="font-kanit text-5xl font-semibold">Academics</h2>
 
-            <p set:html={content}/>
+            <div set:html={content}/>
 
             <!-- <p class="font-sarabun">Applied Mathematics and Computational Science curriculum develops academic excellence in research that integrates mathematics, computer science, and other disciplines to create international academic advancement in applied mathematics and computational science. It offers a variety of research fields that provide students with the foundational knowledge they need to succeed in their future endeavors. Graduates can apply this knowledge to their future careers in academia, industry, business, and finance or in further studies at an advanced degree level.</p>
             <p class="font-sarabun">The Master's degree in AMCS requires 42 credits over a period of 2 academic years. There are two study plans: the first plan, A1, consists solely of thesis credits totaling 42 credits. The second plan A2 is divided into mandatory courses worth 12 credits and selective courses worth 12 credits, with the remaining 18 credits allocated to thesis credits. See details from the department website.</p>

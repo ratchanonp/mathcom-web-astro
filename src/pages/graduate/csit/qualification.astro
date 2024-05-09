@@ -50,9 +50,9 @@ const content = await courseAPI.getCourse(CourseName.CSIT, "qualification_englis
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun overflow-x-auto">
             <h2 class="font-kanit font-semibold text-5xl">Qualification</h2>
-            <p set:html={content}/>    
+            <div set:html={content}/>    
             <!-- <ol class="list-decimal list-inside space-y-2.5">
                 <li>Holding a Bachelor’s degree in Science and Engineering with GPA of at least 3.25 or a Master’s degree in Science and Engineering with GPA of at least 3.25.</li>
                 <li>Having English proficiency test, except native speakers, of TOEFL, IELTS, CU-TEP, according to the criteria given by the Graduate school.</li>

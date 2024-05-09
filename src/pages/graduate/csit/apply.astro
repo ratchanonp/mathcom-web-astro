@@ -44,7 +44,7 @@ const content = await courseAPI.getCourse(CourseName.CSIT, "apply_english")
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun overflow-x-auto">
             <h2 class="font-kanit font-semibold text-5xl">Admission</h2>
             <div set:html={content}/>
             <!-- <p>The academic year is divided into two semesters, namely, Fall and Spring. Fall semester starts from August to early December, while Spring semester runs from January to early May. Students must register at least 9 credit hours but not to exceed 15 credit hours per semester. Application can be filed according to the following procedures.</p> -->
