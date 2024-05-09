@@ -1,13 +1,16 @@
 import type { IFaculty, IFacultyV2 } from "@/interfaces/faculty.interface";
 import type { IResearchMini, IResearchV2 } from "@/interfaces/research.interface";
-import { BASE_URL, BASE_URL_V2 } from "./config";
+import { BASE_INTERNAL_URL, BASE_URL, BASE_URL_V2 } from "./config";
 import { ResearchAPIV2 } from "./research";
 
 export class FacultyAPI {
     facultyEndpoint: URL;
+    facultyEndpointInternal: URL;
+
 
     constructor() {
         this.facultyEndpoint = new URL("faculty/", BASE_URL);
+        this.facultyEndpointInternal = new URL("faculty/", BASE_INTERNAL_URL);
     }
 
     async getFaculties(): Promise<IFaculty[] | undefined> {
@@ -89,7 +92,7 @@ export class FacultyAPI {
             _embed: "",
         };
 
-        const fetchURL = new URL(this.facultyEndpoint.toString());
+        const fetchURL = new URL(this.facultyEndpointInternal.toString());
         Object.keys(params).forEach((key) =>
             fetchURL.searchParams.append(key, params[key])
         );
