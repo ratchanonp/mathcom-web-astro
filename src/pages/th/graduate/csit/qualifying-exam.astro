@@ -1,0 +1,70 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.CSIT, "qualification_exam_thai")       
+---
+
+<BaseLayout title="Computer Science and Information Technology (M.Sc. & Ph.D.)">
+    <Hero
+        title="Computer Science and Information Technology (M.Sc. & Ph.D.)" 
+    />
+
+    <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20 p-5">
+        <aside>
+            <nav>
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a 
+                        href="academics" 
+                        class="p-5"
+                    >
+                        Academics
+                    </a>
+                    <a 
+                        href="qualification" 
+                        class="p-5"
+                    >
+                        Qualification
+                    </a>
+                    <a 
+                        href="apply" 
+                        class="p-5"
+                    >
+                        Apply
+                    </a>
+                    <a 
+                        href="opportunities" 
+                        class="p-5"
+                    >
+                        Opportunities
+                    </a>
+                   
+                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="qualifying-exam">Qualifying Exam</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun overflow-x-auto">verflow-x-auto">verflow-x-auto">verflow-x-auto">
+            <h2 class="font-kanit font-semibold text-5xl">Entrance Examination</h2>
+            <p set:html={content}/>  
+            <!-- <section class="space-y-5">
+                <p>Two examinations must be completed for all applicants.</p>
+                <ol class="list-decimal list-inside">
+                    <li>Preliminary written examination encompassing the following subjects
+                        <ol class="list-decimal list-inside pl-5">
+                            <li>Discrete mathematics</li>
+                            <li>Computer Systems Organization</li>
+                            <li>Design and Analysis of Algorithms</li>
+                            <li>Automata Theory</li>
+                        </ol>
+                    </li>
+                    <li>Oral examination</li>
+                </ol>
+            </section> -->
+            <p class="font-sarabun">Every applicant must go through an oral examination which will take place approximately one week after the applicant has passed the written examinations.  The examination will be sanctioned by the Program Committee in the form of an official interview.</p>
+        </main>
+    </div>
+
+
+</BaseLayout>

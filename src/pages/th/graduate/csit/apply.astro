@@ -1,0 +1,66 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.CSIT, "apply_thai")
+---
+
+<BaseLayout title="Computer Science and Information Technology (M.Sc. & Ph.D.)">
+    <Hero
+        title="Computer Science and Information Technology (M.Sc. & Ph.D.)" 
+    />
+
+    <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20 p-5">
+        <aside>
+            <nav>
+                <ul class="bg-gray-100 font-kanit text-xl grid">
+                    <a 
+                        href="academics" 
+                        class="p-5"
+                    >
+                        Academics
+                    </a>
+                    <a 
+                        href="qualification" 
+                        class="p-5"
+                    >
+                        Qualification
+                    </a>
+                    <a 
+                        href="apply" 
+                        class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white"
+                    >
+                        Apply
+                    </a>
+                    <a 
+                        href="opportunities" 
+                        class="p-5"
+                    >
+                        Opportunities
+                    </a>
+                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun overflow-x-auto">
+            <h2 class="font-kanit font-semibold text-5xl">Admission</h2>
+            <div set:html={content}/>
+            <!-- <p>The academic year is divided into two semesters, namely, Fall and Spring. Fall semester starts from August to early December, while Spring semester runs from January to early May. Students must register at least 9 credit hours but not to exceed 15 credit hours per semester. Application can be filed according to the following procedures.</p> -->
+        
+            <!-- <ol class="list-decimal list-inside space-y-2.5">
+                <li>Complete Section A of the Application Form for Graduate Admissions.</li>
+                <li>Have each recommender filled out Section B and mail it along with the application form. Your application will not be considered unless all three copies of recommendation are received by the Department Office.</li>
+                <li>Pay the 1,000 Baht application fee (see Fees and Other Charges Section)</li>
+                <li>Have your TOEFL/IELTS or Chulalongkorn University (CU) Language Institute (CU-TEP) test score sent directly to Graduate Studies in Computer Science and Information Technology, Department of Mathematics and Computer Science.  You may arrange to take the test through your local TOEFL/IELTS test centers or CU Language Institute, respectively.</li>
+                <li>Submit an official transcript from your school(s) to the Graduate Studies in Computer Science and Information Technology, Department of Mathematics and Computer Science.  </li>
+                <li>For further information pertaining to applicant’s qualifications, please contact Program Secretary during business office hours from 8:30 a.m. – 5:00 p.m., Department of Mathematics and Computer Science, Faculty of Science. Tel. (662) 218-7106   https://math.sc.chula.ac.th/csit/ and nonglak.i@chula.ac.th</li>
+            </ol>
+
+            <p>Note: International applicants who are to apply for any university scholarships need to apply into the program and pass the exam and the interview to be considered for the scholarship, and please read the condition of each scholarship carefully.</p> -->
+        </main>
+    </div>
+
+
+</BaseLayout>
