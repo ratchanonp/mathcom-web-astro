@@ -5,6 +5,11 @@ add_action( 'rest_api_init', function () {
         'methods' => 'GET',
         'callback' => 'get_directory_list',
     ));
+
+    register_rest_route( 'mathcom/v1', '/directories' , array(
+        'methods' => 'POST',
+        'callback' => 'create_staff',
+    ));
 });
 
 function directory_list_data($directory) {
@@ -58,3 +63,49 @@ function get_directory_list($request) {
     return array_map('directory_list_data', $directories);
 }
 
+function create_staff($request) {
+    /**
+     * Create a new staff member with the given data
+     * first_name_eng
+     * last_name_eng
+     * first_name_thai
+     * last_name_thai
+     * staff_type
+     */
+
+    $data = $request->get_json_params();
+
+    $first_name_eng = $data['first_name_eng'];
+    $last_name_eng = $data['last_name_eng'];
+    $first_name_thai = $data['first_name_thai'];
+    $last_name_thai = $data['last_name_thai'];
+    $staff_type = $data['staff_type'];
+
+    if (empty($first_name_eng) || empty($last_name_eng) || empty($first_name_thai) || empty($last_name_thai) || empty($staff_type)) { 
+        return array(
+            'message' => 'Please fill in all fields',
+        );
+    }
+
+
+    // Create a new post object
+    $post = array(
+        'post_type' => 'faculty',
+        'post_title' => $first_name_eng . ' ' . $last_name_eng,
+        'post_status' => 'publish',
+        'post_author' => 1,
+    );
+
+    // Set acf fields
+    $post_id = wp_insert_post($post);
+    
+    update_field('first_name_eng', $first_name_eng, $post_id);
+    update_field('last_name_eng', $last_name_eng, $post_id);
+    update_field('first_name_thai', $first_name_thai, $post_id);
+    update_field('last_name_thai', $last_name_thai, $post_id);
+    update_field('staff_type', $staff_type, $post_id);
+
+    return array(
+        'message' => 'Staff member created successfully',
+    );
+}
