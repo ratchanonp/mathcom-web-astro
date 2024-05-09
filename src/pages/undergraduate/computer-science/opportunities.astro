@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CourseAPI, CourseName } from "@/libs/api/course";
+
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.CSBSC, "opportunities_english")
 ---
 
 <BaseLayout title="Computer Science">
@@ -21,42 +25,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-5 font-sarabun">
             <h2 class="text-5xl font-kanit font-semibold">Opportunities</h2>
-            <p>A BSc in Computer Science opens up a wide array of opportunities across various sectors. Here are some potential career paths and opportunities after graduating</p>
-            <ol class="list-decimal list-inside space-y-2.5">
-                <li>Software Developer, Web Developer, and Mobile App Developer
-                    <p class="pl-5">Design, develop, and maintain software / web applications for different platforms and industries.</p>
-                </li>
-                <li>Database Administrator
-                    <p class="pl-5">Manage and organize databases, ensuring efficient data storage, retrieval, and security.</p>
-                </li>
-                <li>Network Engineer
-                    <p class="pl-5">Design, implement, and manage computer networks for organizations, ensuring connectivity and security.</p>
-                </li>
-                <li>Systems Analyst
-                    <p class="pl-5">Analyze and improve computer systems for businesses, optimizing processes and workflows.</p>
-                </li>
-                <li>Quality Assurance Engineer
-                    <p class="pl-5">Ensure the quality and reliability of software products through testing and debugging.</p>
-                </li>
-                <li>Cloud Solutions Architect
-                    <p class="pl-5">Design and implement cloud-based solutions for businesses.</p>
-                </li>
-                <li>IT Consultant
-                    <p class="pl-5">Offer expert advice to organizations on how to use technology to meet their business objectives and solve problems.</p>
-                </li>
-                <li>Data Scientist/Analyst
-                    <p class="pl-5">Analyze and interpret complex data sets, deriving insights and making data-driven decisions.</p>
-                </li>
-                <li>Artificial Intelligence/Machine Learning Engineer
-                    <p class="pl-5">Work on developing systems that can learn and make decisions, often in areas like natural language processing, computer vision, or predictive analytics.</p>
-                </li>
-                <li>	Researcher/Scientist
-                    <p class="pl-5">Contribute to cutting-edge research in computer science, either in academia or with research-oriented organizations.</p>
-                </li>
-            </ol>
-            <p class="font-sarabun">
-                These are just a few examples, and the field of computer science continually evolves, offering a dynamic range of opportunities for graduates. Depending on personal interests and specialization during the BSc program, graduates can explore various paths within the broader realm of computer science.
-            </p>
+            <p set:html={content}/>
         </main>
     </div>
 

@@ -1,6 +1,11 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.MathBSC, "opportunities_english")
 ---
 
 <BaseLayout title="Computer Science">
@@ -21,11 +26,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-5 font-sarabun">
             <h2 class="text-5xl font-kanit font-semibold">Opportunities</h2>
-            <p>There is a wide range of career opportunities available. For examples, researchers or academics; teachers
-                or professors in academic institutions; mathematicians; statisticians; insurance mathematicians; insurance 
-                mathematics personnels; financial analysts in securities firms and financial institutions; financial and banking 
-                personnels; data scientists or data analysts. Moreover, graduate studies in various areas are ones of the 
-                options.</p>
+            <p set:html={content}/>
         </main>
     </div>
 
