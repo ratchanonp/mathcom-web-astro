@@ -1,6 +1,11 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.MathBSC, "apply_english")
 ---
 <BaseLayout title="Computer Science">
     <Hero 
@@ -20,7 +25,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-5">
             <h2 class="text-5xl font-kanit font-semibold">Apply</h2>
-            <p>Please Visit: <a class="text-yellow-400 underline" href="http://www.admissions.chula.ac.th/" target="_blank" rel="noopener noreferrer">http://www.admissions.chula.ac.th/</a></p>
+            <p set:html={content} />
         </main>
     </div>
 

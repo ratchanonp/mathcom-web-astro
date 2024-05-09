@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.GRADMATH, "qualification_english")
 ---
 
 <BaseLayout title="Graduate Program in Mathematics">
@@ -22,7 +26,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
             <h2 class="font-kanit font-semibold text-5xl">Qualification</h2>
-            <section class="space-y-5">
+            <div set:html={content}/>
+            <!-- <section class="space-y-5">
                 <h3 class="font-kanit font-semibold text-3xl">Master's degree : Qualifications of applicants</h3>
                 <ol class="list-decimal list-inside space-y-1">
                     <li>Graduated with a degree in any field of study and have previously studied mathematics for not less than 12 credits, and </li>
@@ -48,7 +53,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
                         <li>Other qualifications are in accordance with the regulations announced by the Graduate School from year to year or by the program committee considered and deemed appropriate to have the right to apply for study.</li>
                     </ol>
                 </section>
-            </section>           
+            </section>            -->
         </main>
     </div>
 

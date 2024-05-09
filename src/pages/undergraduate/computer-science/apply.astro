@@ -1,6 +1,11 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.CSBSC, "apply_english")
 ---
 <BaseLayout title="Computer Science">
     <Hero 
@@ -20,20 +25,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-5">
             <h2 class="text-5xl font-kanit font-semibold">Apply</h2>
-            <h3 class="text-3xl font-kanit font-semibold">Admission</h3>
-            <p>There are three rounds of admission.</p>
-            <section class="space-y-2 5">
-                <h4 class="text-xl font-kanit font-semibold">Round 1 - Portfolio:</h4>
-                <p class="font-sarabun">Please visit <a class="text-yellow-400 underline" href="http://www.atc.chula.ac.th/TCAS/TCAS1.html" target="_blank">http://www.atc.chula.ac.th/TCAS/TCAS1.html</a> for more information</p>
-            </section>
-            <section class="space-y-2 5">
-                <h4 class="text-xl font-kanit font-semibold">Round 2 - Quota:</h4>
-                <p class="font-sarabun">Please visit <a class="text-yellow-400 underline" href="http://www.atc.chula.ac.th/TCAS/TCAS2.html" target="_blank">http://www.atc.chula.ac.th/TCAS/TCAS2.html</a> for more information</p>
-            </section>
-            <section class="space-y-2 5">
-                <h4 class="text-xl font-kanit font-semibold">Round 3 - Admission:</h4>
-                <p class="font-sarabun">Please visit <a class="text-yellow-400 underline" href="http://www.atc.chula.ac.th/TCAS/TCAS3.html" target="_blank">http://www.atc.chula.ac.th/TCAS/TCAS3.html</a> for more information</p>
-            </section>
+            <p set:html={content}/>
         </main>
     </div>
 

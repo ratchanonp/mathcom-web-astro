@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.AMCS, "apply_english")
 ---
 
 <BaseLayout title="Applied Mathematics and Computational Science Program">
@@ -22,15 +26,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-5">
             <h2 class="text-5xl font-kanit font-semibold">Apply</h2>
-            <h3 class="text-3xl font-kanit font-semibold">Admission</h3>
-            <p>First Semester: The master's and doctoral degree programs have two rounds</p>
-            <ul class="list-inside list-disc">
-                <li>Round 1: February to March</li>
-                <li>Round 2: April to May</li>
-            </ul>
-            <p>Second Semester: Having one round for the Doctoral Programs Only during June to September</p>
-            <p>Applicants can apply online at the Graduate School website:</p>
-            <a href="https://www.register.gradchula.com">https://www.register.gradchula.com/</a>
+            <p set:html={content}/>
         </main>
     </div>
 

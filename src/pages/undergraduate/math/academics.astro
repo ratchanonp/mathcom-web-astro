@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CourseAPI, CourseName } from "@/libs/api/course";
+
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.MathBSC, "academic_english")
 ---
 
 
@@ -22,128 +26,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-10">
             <h2 class="font-kanit text-5xl font-semibold">Academics</h2>
-            <p class="font-sarabun">
-                The program focuses on studying both Pure Mathematics and Applied Mathematics, emphasizing
-                theoretical aspects as well as their practical applications. There's a strong emphasis on education to
-                instill the value of mathematics in fostering logical thinking in both scientific and artistic contexts.
-            </p>
-
-            <section class="space-y-5">
-                <h3 class="font-kanit text-3xl font-semibold">Program Structure (Revised Curriculum 2023)</h3>
-                <section class="space-y-2.5">
-                    <p>There are five options:</p>
-                    <div class="w-[calc(100vw_-_2.5rem)] md:w-fit overflow-x-scroll">
-
-                    
-                    <table class="table-auto w-full border-collapse overflow-scroll">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="border border-slate-300 ">PLAN (4 Years)</th>
-                                <th class="border border-slate-300 ">Total Credit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border border-slate-300 pl-5">PLAN A-1: Regular</td>
-                                <td class="border border-slate-300 text-center">132</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 pl-5">PLAN A-2: Regular and Cooperative Education</td>
-                                <td class="border border-slate-300 text-center">137</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 pl-5">PLAN B-1: Major in Mathematics with minor in another program</td>
-                                <td class="border border-slate-300 text-center">132</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 pl-5">PLAN B-2: Major in Mathematics with minor in another program and Cooperative Education</td>
-                                <td class="border border-slate-300 text-center">137</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 pl-5">PLAN C: Honor Program</td>
-                                <td class="border border-slate-300 text-center">132</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </section>
-                
-                <section>
-                    <p>There are five options:</p>
-                    <div class="w-[calc(100vw_-_2.5rem)] md:w-fit overflow-scroll">
-                        <table class="table-auto border-collapse ">
-                            <thead>
-                                <tr class="bg-gray-100">
-                                    <th></th>
-                                    <th class="px-2.5 border border-slate-300">Plan A-1 <br/>(132 Credits)</th>
-                                    <th class="px-2.5 border border-slate-300">Plan A-2 <br/>(137 Credits)</th>
-                                    <th class="px-2.5 border border-slate-300">Plan B-1 <br/>(132 Credits)</th>
-                                    <th class="px-2.5 border border-slate-300">Plan B-2 <br/>(137 Credits)</th>
-                                    <th class="px-2.5 border border-slate-300">Plan C <br/>(132 Credits)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="pl-5 border border-slate-300 font-semibold">1. General Education</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5  pr-5 border border-slate-300 font-semibold">2. Specialization</td>
-                                    <td class="border border-slate-300 text-center">96</td>
-                                    <td class="border border-slate-300 text-center">101</td>
-                                    <td class="border border-slate-300 text-center">96</td>
-                                    <td class="border border-slate-300 text-center">101</td>
-                                    <td class="border border-slate-300 text-center">96</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 pr-5  border border-slate-300">2.1 Basic Sciences and Mathematics</td>
-                                    <td class="border border-slate-300 text-center">27</td>
-                                    <td class="border border-slate-300 text-center">32</td>
-                                    <td class="border border-slate-300 text-center">27</td>
-                                    <td class="border border-slate-300 text-center">32</td>
-                                    <td class="border border-slate-300 text-center">27</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 pr-5  border border-slate-300">2.2 Required Courses</td>
-                                    <td class="border border-slate-300 text-center">39</td>
-                                    <td class="border border-slate-300 text-center">39</td>
-                                    <td class="border border-slate-300 text-center">39 in Math Major</td>
-                                    <td class="border border-slate-300 text-center">39 in Math Major</td>
-                                    <td class="border border-slate-300 text-center">45</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 pr-5  border border-slate-300">2.3 Elective Courses</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                    <td class="border border-slate-300 text-center">30</td>
-                                    <td class="border border-slate-300 text-center">15 in Math Major</td>
-                                    <td class="border border-slate-300 text-center">15 in Math Major</td>
-                                    <td class="border border-slate-300 text-center">24</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 pr-5  border border-slate-300">2.4 For minor program only</td>
-                                    <td class="border border-slate-300 text-center"></td>
-                                    <td class="border border-slate-300 text-center"></td>
-                                    <td class="border border-slate-300 text-center">15</td>
-                                    <td class="border border-slate-300 text-center">15</td>
-                                    <td class="border border-slate-300 text-center"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-5  pr-5 border border-slate-300 font-semibold">3. Free Electives</td>
-                                    <td class="border border-slate-300 text-center">6</td>
-                                    <td class="border border-slate-300 text-center">6</td>
-                                    <td class="border border-slate-300 text-center">6</td>
-                                    <td class="border border-slate-300 text-center">6</td>
-                                    <td class="border border-slate-300 text-center">6</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </section>
+            <div
+                set:html={content}
+            />
         </main>
     </div>
 

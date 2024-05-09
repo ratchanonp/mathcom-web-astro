@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.AMCS, "qualification_exam_english")
 ---
 
 <BaseLayout title="Applied Mathematics and Computational Science Program">
@@ -22,11 +26,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </aside>
         <main class="md:col-span-3 space-y-10 my-5">
             <h2 class="text-5xl font-semibold font-kanit">Qualifying Exam</h2>
-            <section class="space-y-5">
+            <p set:html={content}/>
+            <!-- <section class="space-y-5">
                 <p>The qualified Ph. D. candidate must pass two core subjects and one elective subject.
                     The two core subjects are Applied Analysis and Applied Linear Algebra. The elective subject can be chosen from Applied Statistics, Numerical Analysis, Fundamental of Mathematical Programming, Mathematical modeling or approved subject from Program committees.</p>
                     <p>Each subject must achieve a minimum passing score of 50%, and the overall average score must exceed a threshold of 60%.</p>
-            </section>
+            </section> -->
         </main>
     </div>
 

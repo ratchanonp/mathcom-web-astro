@@ -3,33 +3,12 @@ import Hero from "@/common/components/Hero.astro"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import { Image } from "astro:assets"
-import { format, formatISO } from "date-fns"
+import { format } from "date-fns"
 
 import apamImage from "@/assets/img/icon/news-category/apam.png"
-import seminarImage from "@/assets/img/icon/news-category/seminar.png"
 import awardImage from "@/assets/img/icon/news-category/award.png"
-
-
-
-
-const events = [
-    {
-        date: new Date(),
-        title: "Algebra and Number Theory Seminar",
-        description: "Lorem ipsum dolor sit amet consectetur. Morbi habitasse aliquet in ac eu. Amet consequat porttitor elit viverra tempus diam facilisis aliquet duis.",
-    },
-    {
-        date: new Date(),
-        title: "Algebra and Number Theory Seminar",
-        description: "Lorem ipsum dolor sit amet consectetur. Morbi habitasse aliquet in ac eu. Amet consequat porttitor elit viverra tempus diam facilisis aliquet duis.",
-    },
-    {
-        date: new Date(),
-        title: "Algebra and Number Theory Seminar",
-        description: "Lorem ipsum dolor sit amet consectetur. Morbi habitasse aliquet in ac eu. Amet consequat porttitor elit viverra tempus diam facilisis aliquet duis.",
-    },
-]
-
+import seminarImage from "@/assets/img/icon/news-category/seminar.png"
+import EventGrid from "@/modules/news-events/components/event/EventGrid"
 ---
 
 <BaseLayout title="News & Events">
@@ -81,7 +60,7 @@ const events = [
                     <h2 class="uppercase text-3xl font-semibold font-kanit text-slate-800">Upcoming Event</h2>
                 </header>
                 <section class="grid lg:grid-cols-3 mt-5">
-                    {events.map(event => (
+                    <!-- {events.map(event => (
                             <article class="grid justify-items-center p-5 hover:bg-gray-200">
                                 <header>
                                     <time class="grid justify-items-center" datetime={formatISO(event.date)}>
@@ -92,7 +71,8 @@ const events = [
                                 </header>
                                 <p class="mt-3 text-center text-light text-slate-400">{event.description}</p>
                             </article>
-                    ))}
+                    ))} -->
+                    <EventGrid client:load />
                 </section>
             </div>
         </section>

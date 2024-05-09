@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { CourseAPI, CourseName } from "@/libs/api/course";
+const courseAPI = new CourseAPI();
+const content = await courseAPI.getCourse(CourseName.CSIT, "academic_english")
 ---
 
 <BaseLayout title="Computer Science and Information Technology (M.Sc. & Ph.D.)">
@@ -36,18 +40,14 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
                     >
                         Opportunities
                     </a>
-                    <a 
-                        href="entrance-exam" 
-                        class="p-5"
-                    >
-                        Extrance Examination
-                    </a>
+                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a>
                 </ul>
             </nav>
         </aside>
         <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
             <h2 class="font-kanit font-semibold text-5xl">Academics</h2>
-            <p>The Ph.D. program offers an excellent opportunity for students who wish to pursue advanced studies in Computer Science and Information Technology, which operates under the AVIC Center. The Center has conducted a wide range of research activities in close cooperation with local and international agencies. It is ideal for international students who are interested in oversea studies and cross cultural learning.</p>
+            <p set:html={content}/>
+            <!-- <p>The Ph.D. program offers an excellent opportunity for students who wish to pursue advanced studies in Computer Science and Information Technology, which operates under the AVIC Center. The Center has conducted a wide range of research activities in close cooperation with local and international agencies. It is ideal for international students who are interested in oversea studies and cross cultural learning.</p>
 
             <section class="space-y-2.5">
                 <h3 class="font-kanit font-semibold text-3xl">Degree Requirements</h3>
@@ -95,7 +95,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
                         <p>Graduation must be filed with the Office of Graduate Studies, Chulalongkorn University.  There is a 100 Baht/day late charge if application is not made within the deadline.</p>
                     </li>
                 </ol>
-            </section>
+            </section> -->
         </main>
     </div>
 
