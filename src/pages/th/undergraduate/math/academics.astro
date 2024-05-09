@@ -24,7 +24,7 @@ const content = await courseAPI.getCourse(CourseName.MathBSC, "academic_thai")
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 grid space-y-10">
+        <main class="md:col-span-3 my-5 grid space-y-5 overflow-x-auto">
             <h2 class="font-kanit text-5xl font-semibold">Academics</h2>
             <div
                 set:html={content}

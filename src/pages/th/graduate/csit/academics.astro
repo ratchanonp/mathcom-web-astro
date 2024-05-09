@@ -44,7 +44,7 @@ const content = await courseAPI.getCourse(CourseName.CSIT, "academic_thai")
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 space-y-10 font-sarabun">
+        <main class="md:col-span-3 my-5 space-y-10 font-sarabun overflow-x-auto">
             <h2 class="font-kanit font-semibold text-5xl">Academics</h2>
             <p set:html={content}/>
             <!-- <p>The Ph.D. program offers an excellent opportunity for students who wish to pursue advanced studies in Computer Science and Information Technology, which operates under the AVIC Center. The Center has conducted a wide range of research activities in close cooperation with local and international agencies. It is ideal for international students who are interested in oversea studies and cross cultural learning.</p>

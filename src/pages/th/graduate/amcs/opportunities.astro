@@ -24,7 +24,7 @@ const content = await courseAPI.getCourse(CourseName.AMCS, "opportunities_thai")
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 my-5 grid space-y-5 font-sarabun">
+        <main class="md:col-span-3 my-5 grid space-y-5 overflow-x-auto">
             <h2 class="text-5xl font-kanit font-semibold">Opportunities</h2>
             <p set:html={content}/>
             <!-- <p>The curriculum encourages students to participate in activities that promote the desired attributes of Chulalongkorn University graduates which include (1) critical thinking, (2) problem solving, (3) communication, (4) teamwork, (5) ethics and (6) social responsibility. It offers opportunities for internships with private organizations and research work with organizations that have signed memorandums of understanding (MOUs).</p>
