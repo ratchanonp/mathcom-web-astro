@@ -24,9 +24,9 @@ const content = await courseAPI.getCourse(CourseName.AMCS, "qualification_exam_e
                 </ul>
             </nav>
         </aside>
-        <main class="md:col-span-3 space-y-10 my-5">
+        <main class="md:col-span-3 space-y-10 my-5 overflow-x-auto">
             <h2 class="text-5xl font-semibold font-kanit">Qualifying Exam</h2>
-            <p set:html={content}/>
+            <div set:html={content}/>
             <!-- <section class="space-y-5">
                 <p>The qualified Ph. D. candidate must pass two core subjects and one elective subject.
                     The two core subjects are Applied Analysis and Applied Linear Algebra. The elective subject can be chosen from Applied Statistics, Numerical Analysis, Fundamental of Mathematical Programming, Mathematical modeling or approved subject from Program committees.</p>
