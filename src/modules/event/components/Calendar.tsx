@@ -9,7 +9,7 @@ import {
     isSameMonth,
     isToday,
     parse,
-    startOfToday
+    startOfToday,
 } from "date-fns";
 
 import { EventAPI } from "@/libs/api/event";
@@ -20,7 +20,6 @@ import { cn } from "src/libs/utils";
 import { selectedDay } from "src/modules/event/stores/eventStore";
 
 const Calendar = () => {
-
     const today = startOfToday();
     const $selectedDay = useStore(selectedDay);
     const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
@@ -31,12 +30,11 @@ const Calendar = () => {
     useEffect(() => {
         (async () => {
             const eventAPI = new EventAPI();
-            const eventDates = await eventAPI.getEventDate(firstDayCurrentMonth);
+            const eventDates =
+                await eventAPI.getEventDate(firstDayCurrentMonth);
             setEventDates(eventDates);
         })();
-    } , [currentMonth]);
-
-
+    }, [currentMonth]);
 
     const days = eachDayOfInterval({
         start: firstDayCurrentMonth,
@@ -91,7 +89,7 @@ const Calendar = () => {
                         key={day.toString()}
                         className={cn(
                             dayIdx === 0 && colStartClasses[getDay(day)],
-                            "py-1.5"
+                            "py-1.5",
                         )}
                     >
                         <button
@@ -100,24 +98,27 @@ const Calendar = () => {
                             className={cn(
                                 isEqual(day, $selectedDay) && "text-white",
                                 !isEqual(day, $selectedDay) &&
-                    isToday(day) &&
-                    "text-yellow-500",
+                                    isToday(day) &&
+                                    "text-yellow-500",
                                 !isEqual(day, $selectedDay) &&
-                    !isToday(day) &&
-                    isSameMonth(day, firstDayCurrentMonth) &&
-                    "text-gray-900",
+                                    !isToday(day) &&
+                                    isSameMonth(day, firstDayCurrentMonth) &&
+                                    "text-gray-900",
                                 !isEqual(day, $selectedDay) &&
-                    !isToday(day) &&
-                    !isSameMonth(day, firstDayCurrentMonth) &&
-                    "text-gray-400",
-                                isEqual(day, $selectedDay) && isToday(day) && "bg-yellow-500",
+                                    !isToday(day) &&
+                                    !isSameMonth(day, firstDayCurrentMonth) &&
+                                    "text-gray-400",
                                 isEqual(day, $selectedDay) &&
-                    !isToday(day) &&
-                    "bg-yellow-500",
-                                !isEqual(day, $selectedDay) && "hover:bg-yellow-200",
+                                    isToday(day) &&
+                                    "bg-yellow-500",
+                                isEqual(day, $selectedDay) &&
+                                    !isToday(day) &&
+                                    "bg-yellow-500",
+                                !isEqual(day, $selectedDay) &&
+                                    "hover:bg-yellow-200",
                                 (isEqual(day, $selectedDay) || isToday(day)) &&
-                    "font-semibold",
-                                "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                                    "font-semibold",
+                                "mx-auto flex h-8 w-8 items-center justify-center rounded-full",
                             )}
                         >
                             <time dateTime={format(day, "yyyy-MM-dd")}>
@@ -127,7 +128,7 @@ const Calendar = () => {
 
                         <div className="w-1 h-1 mx-auto mt-1">
                             {eventDates.some((date) =>
-                                isSameDay(date, day)
+                                isSameDay(date, day),
                             ) && (
                                 <div className="w-1 h-1 rounded-full bg-primary"></div>
                             )}

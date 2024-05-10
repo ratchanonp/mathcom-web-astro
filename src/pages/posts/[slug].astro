@@ -1,5 +1,5 @@
 ---
-export const prerender = false
+export const prerender = false;
 
 import { getPost, getPosts } from "@/libs/api/post";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -25,10 +25,8 @@ export async function getStaticPaths() {
         };
     });
 
-    return transformedPosts
+    return transformedPosts;
 }
-
-
 ---
 
 <BaseLayout title={title.rendered}>
@@ -47,8 +45,9 @@ export async function getStaticPaths() {
             >
                 {post.title.rendered}
             </h1>
-            <time class="text-gray-500 text-center font-kanit" datetime={date_gmt}
-            >{date}</time
+            <time
+                class="text-gray-500 text-center font-kanit"
+                datetime={date_gmt}>{date}</time
             >
         </header>
         <article class="max-w-7xl px-5 mx-auto pb-20 mt-5">

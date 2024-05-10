@@ -60,14 +60,29 @@ const MenuData = [
             />
             <div class="w-screen flex absolute left-0 bottom-5 lg:bottom-20">
                 <div class="grid max-w-screen-xl w-full mx-auto px-5">
-                    <h1 class="text-white text-2xl md:text-4xl lg:text-7xl font-semibold">Welcome to the Department of<br/> <span class="underline decoration-4 lg:decoration-8 decoration-primary">Mathematics</span> & <span class="underline decoration-4 lg:decoration-8 decoration-primary">Computer Science</span></h1>
-                    <a href="/about-us" class=" flex justify-start mt-5 lg:mt-10">
+                    <h1
+                        class="text-white text-2xl md:text-4xl lg:text-7xl font-semibold"
+                    >
+                        Welcome to the Department of<br />
+                        <span
+                            class="underline decoration-4 lg:decoration-8 decoration-primary"
+                            >Mathematics</span
+                        > & <span
+                            class="underline decoration-4 lg:decoration-8 decoration-primary"
+                            >Computer Science</span>
+                    </h1>
+                    <a
+                        href="/about-us"
+                        class="flex justify-start mt-5 lg:mt-10"
+                    >
                         <span
                             class="uppercase bg-primary p-1.5 md:p-2.5 text-sm md:text-xl w-fit font-kanit font-medium"
                         >
                             Explore our department
                         </span>
-                        <div class="bg-gray-700 flex justify-center items-center">
+                        <div
+                            class="bg-gray-700 flex justify-center items-center"
+                        >
                             <ArrowDownRightIcon
                                 client:load
                                 className="w-5 h-5 text-white mx-2 md:mx-4"
@@ -83,7 +98,15 @@ const MenuData = [
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5"
                 >
-                    {MenuData.map(({title, href, imgSrc}) => <MenuCard title={title} href={href} imgSrc={imgSrc} />)}
+                    {
+                        MenuData.map(({ title, href, imgSrc }) => (
+                            <MenuCard
+                                title={title}
+                                href={href}
+                                imgSrc={imgSrc}
+                            />
+                        ))
+                    }
                 </div>
             </div>
         </section>
@@ -93,11 +116,11 @@ const MenuData = [
             <header>
                 <h2
                     class="uppercase text-center text-2xl md:text-4xl font-semibold underline decoration-primary decoration-4"
-                    >
+                >
                     News
                 </h2>
             </header>
-            <PostGrid client:load/>
+            <PostGrid client:load />
             <!-- <p class="mt-10 text-center">News will appear here 😝</p> -->
             <a
                 href="/news-events"
@@ -109,7 +132,10 @@ const MenuData = [
         </section>
         <!-- End News -->
         <!-- Calendar -->
-        <section id="event" class="mx-auto max-w-screen-xl px-5 mt-10 lg:mt-20 mb-10">
+        <section
+            id="event"
+            class="mx-auto max-w-screen-xl px-5 mt-10 lg:mt-20 mb-10"
+        >
             <header>
                 <h2
                     class="uppercase text-center text-2xl md:text-4xl font-semibold underline decoration-primary decoration-4"
@@ -117,7 +143,7 @@ const MenuData = [
                     Calendar
                 </h2>
             </header>
-                <EventGrid client:load />
+            <EventGrid client:load />
             <a
                 href="/events"
                 class="flex mt-10 text-center text-gray-500 w-full justify-center underline"

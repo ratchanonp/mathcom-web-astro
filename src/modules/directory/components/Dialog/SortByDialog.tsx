@@ -24,7 +24,9 @@ export default function SortByDiaload() {
             <DialogContent className="max-w-screen-md ">
                 <DialogHeader className="flex  justify-between border-b-[1px] border-b-gray-200 p-5">
                     <div className="h-6 w-6" />
-                    <DialogTitle className="text-xl text-gray-800">Sort By</DialogTitle>
+                    <DialogTitle className="text-xl text-gray-800">
+                        Sort By
+                    </DialogTitle>
                     <DialogClose asChild>
                         <button>
                             <XMarkIcon className="h-6 w-6 text-gray-800" />
@@ -34,9 +36,7 @@ export default function SortByDiaload() {
                 <SortBy />
                 <DialogFooter className="flex justify-end border-t-[1px] border-t-gray-200 p-5">
                     <DialogClose asChild>
-                        <button
-                            className=" rounded-lg bg-gray-800 px-5 py-2.5 text-lg text-white"
-                        >
+                        <button className=" rounded-lg bg-gray-800 px-5 py-2.5 text-lg text-white">
                             Apply Sort
                         </button>
                     </DialogClose>

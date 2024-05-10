@@ -4,9 +4,7 @@ interface PostCardProps {
     post: Post;
 }
 
-
 function PostCard(props: PostCardProps) {
-
     const { post } = props;
     const { title, slug, _embedded } = post;
 
@@ -14,16 +12,15 @@ function PostCard(props: PostCardProps) {
         <article className="w-full space-y-3 shadow-lg overflow-hidden">
             <a href={`/posts/${slug}`}>
                 <figure className="relative -z-10">
-                    {_embedded["wp:featuredmedia"] && _embedded["wp:featuredmedia"][0] ? (
+                    {_embedded["wp:featuredmedia"] &&
+                    _embedded["wp:featuredmedia"][0] ? (
                         <img
                             className="object-center object-cover aspect-square w-full z-0"
                             src={_embedded["wp:featuredmedia"][0].source_url}
                             alt={_embedded["wp:featuredmedia"][0].alt_text}
                         />
                     ) : (
-                        <div
-                            className="object-center object-cover aspect-square w-full z-0 bg-gray-100"
-                        />
+                        <div className="object-center object-cover aspect-square w-full z-0 bg-gray-100" />
                     )}
                     {/* <time
                         className="absolute top-2 right-2 px-3 py-1.5 bg-yellow-300 flex flex-col justify-center items-center space-x-0 z-0"

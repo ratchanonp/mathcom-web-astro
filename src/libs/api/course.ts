@@ -2,7 +2,10 @@ import { BASE_INTERNAL_URL_V2 } from "./config";
 
 export class CourseAPI {
     constructor(
-        private readonly courseEndpoint: URL = new URL("course", BASE_INTERNAL_URL_V2),
+        private readonly courseEndpoint: URL = new URL(
+            "course",
+            BASE_INTERNAL_URL_V2,
+        ),
     ) {}
 
     async getCourse(slug: string, field: string): Promise<string> {

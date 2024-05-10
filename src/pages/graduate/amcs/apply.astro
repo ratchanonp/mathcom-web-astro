@@ -4,12 +4,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import { CourseAPI, CourseName } from "@/libs/api/course";
 const courseAPI = new CourseAPI();
-const content = await courseAPI.getCourse(CourseName.AMCS, "apply_english")
+const content = await courseAPI.getCourse(CourseName.AMCS, "apply_english");
 ---
 
 <BaseLayout title="Applied Mathematics and Computational Science Program">
-    <Hero 
-        title="Applied Mathematics and Computational Science (M.Sc & Ph.D.)" 
+    <Hero
+        title="Applied Mathematics and Computational Science (M.Sc & Ph.D.)"
     />
 
     <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20 p-5">
@@ -17,18 +17,20 @@ const content = await courseAPI.getCourse(CourseName.AMCS, "apply_english")
             <nav>
                 <ul class="bg-gray-100 font-kanit text-xl grid">
                     <a class="p-5" href="academics">Academics</a>
-                    <a class="p-5" href="qualification">Qualification</a>
-                    <a href="apply" class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white">Apply</a>
+                    <a
+                        href="apply"
+                        class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white"
+                        >Apply</a
+                    >
                     <a class="p-5" href="opportunities">Opportunities</a>
+                    <a class="p-5" href="qualification">Qualification</a>
                     <a class="p-5" href="qualifying-exam">Qualifying Exam</a>
                 </ul>
             </nav>
         </aside>
         <main class="md:col-span-3 my-5 grid space-y-5 overflow-x-auto">
             <h2 class="text-5xl font-kanit font-semibold">Apply</h2>
-            <div set:html={content}/>
+            <div set:html={content} />
         </main>
     </div>
-
-
 </BaseLayout>

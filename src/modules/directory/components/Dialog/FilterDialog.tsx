@@ -29,7 +29,9 @@ export default function FilterDialog() {
             <DialogContent className="max-w-screen-md">
                 <DialogHeader className="flex  justify-between border-b-[1px] border-b-gray-200 p-5">
                     <div className="h-6 w-6" />
-                    <DialogTitle className="text-xl text-gray-800">Filter</DialogTitle>
+                    <DialogTitle className="text-xl text-gray-800">
+                        Filter
+                    </DialogTitle>
                     <DialogClose asChild>
                         <button>
                             <XMarkIcon className="h-6 w-6 text-gray-800" />
@@ -39,7 +41,7 @@ export default function FilterDialog() {
                 <Filter />
                 <DialogFooter className="flex justify-between p-5 border-t-[1px] border-t-gray-200">
                     <button className=" py-2.5 text-lg" onClick={handleClear}>
-            Clear all
+                        Clear all
                     </button>
                     <DialogClose asChild>
                         <button
@@ -47,7 +49,7 @@ export default function FilterDialog() {
                             type="submit"
                             form="filter"
                         >
-              Apply Filters
+                            Apply Filters
                         </button>
                     </DialogClose>
                 </DialogFooter>

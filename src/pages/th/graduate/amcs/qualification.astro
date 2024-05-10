@@ -4,30 +4,38 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import { CourseAPI, CourseName } from "@/libs/api/course";
 const courseAPI = new CourseAPI();
-const content = await courseAPI.getCourse(CourseName.AMCS, "qualification_thai")
+const content = await courseAPI.getCourse(
+    CourseName.AMCS,
+    "qualification_thai",
+);
 ---
 
 <BaseLayout title="Applied Mathematics and Computational Science Program">
-    <Hero 
-        title="Applied Mathematics and Computational Science (M.Sc & Ph.D.)" 
+    <Hero
+        title="Applied Mathematics and Computational Science (M.Sc & Ph.D.)"
     />
 
     <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20 p-5">
         <aside class="col-span-1">
             <nav>
                 <ul class="bg-gray-100 font-kanit text-xl grid">
-                    <a class="p-5" href="academics">Academics</a></li>
-                    <a class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white" href="qualification">Qualification</a></li>
-                    <a class="p-5" href="apply">Apply</a></li>
-                    <a class="p-5" href="opportunities">Opportunities</a></li>
-                    <a class="p-5" href="qualifying-exam">Qualifying Exam</a></li>
+                    <a class="p-5" href="academics">Academics</a>
                 </ul>
+                <a
+                    class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white"
+                    href="qualification">Qualification</a>
             </nav>
+            <a class="p-5" href="apply">Apply</a>
         </aside>
-        <main class="md:col-span-3 my-5 space-y-5 font-sarabun">
-            <h2 class="text-5xl font-kanit font-semibold">Qualification</h2>
-            <p set:html={content}/>
-            <!-- <section class="space-y-5">
+        <a class="p-5" href="opportunities">Opportunities</a>
+    </div>
+    <a class="p-5" href="qualifying-exam">Qualifying Exam</a></BaseLayout
+>
+
+<main class="md:col-span-3 my-5 space-y-5 font-sarabun">
+    <h2 class="text-5xl font-kanit font-semibold">Qualification</h2>
+    <p set:html={content} />
+    <!-- <section class="space-y-5">
                 <h3 class="text-3xl font-kanit font-semibold">Master Degress</h3>
                 <p>The master's degree in AMCS has two normal admission and one special admission.</p>
                 <section>
@@ -93,8 +101,4 @@ const content = await courseAPI.getCourse(CourseName.AMCS, "qualification_thai")
                     </ul>
                 </section>
             </section> -->
-        </main>
-    </div>
-
-
-</BaseLayout>
+</main>
