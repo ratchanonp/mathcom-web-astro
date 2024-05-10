@@ -1,12 +1,14 @@
 import type { IFaculty, IFacultyV2 } from "@/interfaces/faculty.interface";
-import type { IResearchMini, IResearchV2 } from "@/interfaces/research.interface";
+import type {
+    IResearchMini,
+    IResearchV2,
+} from "@/interfaces/research.interface";
 import { BASE_INTERNAL_URL, BASE_URL, BASE_URL_V2 } from "./config";
 import { ResearchAPIV2 } from "./research";
 
 export class FacultyAPI {
     facultyEndpoint: URL;
     facultyEndpointInternal: URL;
-
 
     constructor() {
         this.facultyEndpoint = new URL("faculty/", BASE_URL);
@@ -94,22 +96,24 @@ export class FacultyAPI {
 
         const fetchURL = new URL(this.facultyEndpointInternal.toString());
         Object.keys(params).forEach((key) =>
-            fetchURL.searchParams.append(key, params[key])
+            fetchURL.searchParams.append(key, params[key]),
         );
 
         try {
             const res = await fetch(fetchURL.toString());
             const data = await res.json();
-    
+
             const first = data[0];
-    
+
             let research: IResearchV2[] = [];
             if (first.acf.faculty_research_relationship) {
                 const researchAPI = new ResearchAPIV2();
-                research = await researchAPI.getResearch(false, first.acf.faculty_research_relationship) as IResearchMini[];
+                research = (await researchAPI.getResearch(
+                    false,
+                    first.acf.faculty_research_relationship,
+                )) as IResearchMini[];
             }
-    
-    
+
             const faculty: IFaculty = {
                 id: first.id,
                 slug: first.slug,
