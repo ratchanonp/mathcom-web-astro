@@ -19,7 +19,7 @@ import {
     MagnifyingGlassIcon,
     NewspaperIcon,
     TrophyIcon,
-    UserGroupIcon
+    UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { useStore } from "@nanostores/react";
 
@@ -50,7 +50,8 @@ const Menu = () => {
 
     return (
         <div
-            className={`fixed h-screen w-screen md:w-[350px] bg-gray-900 font-kanit right-0 ${$isMenuOpen ? "translate-x-0" : "translate-x-full"
+            className={`fixed h-screen w-screen md:w-[350px] bg-gray-900 font-kanit right-0 ${
+                $isMenuOpen ? "translate-x-0" : "translate-x-full"
             } z-50 transition-transform duration-500 ease-in-out`}
         >
             <div className="mx-auto max-w-7xl h-full overflow-y-auto">
@@ -63,8 +64,11 @@ const Menu = () => {
                         />
                         <div className="flex w-full justify-center font-kanit font-medium text-white">
                             <span>
-                                <span className="font-light">DEPARTMENT OF</span> <br />{" "}
-                                MATHEMATICS AND <br className="hidden xs:block lg:hidden" />{" "}
+                                <span className="font-light">
+                                    DEPARTMENT OF
+                                </span>{" "}
+                                <br /> MATHEMATICS AND{" "}
+                                <br className="hidden xs:block lg:hidden" />{" "}
                                 COMPUTER SCIENCE
                             </span>
                         </div>
@@ -89,7 +93,9 @@ const Menu = () => {
                         </svg>
                     </button>
                 </div>
-                <div className={"mt-5 flex flex-col p-5 font-medium text-white"}>
+                <div
+                    className={"mt-5 flex flex-col p-5 font-medium text-white"}
+                >
                     <h2 className="mb-5 font-kanit text-lg font-semibold uppercase">
                         Main Menu
                     </h2>
@@ -122,7 +128,10 @@ const Menu = () => {
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="group flex w-full items-center py-2 text-white [&[data-state=open]>svg.back-icon]:rotate-180 border-b border-white">
                                 <AcademicCapIcon className="mr-2 h-6 w-6 transition-transform  ease-in-out group-hover:translate-x-5" />
-                                <a href="/undergraduate" className="transition-transform  ease-in-out group-hover:translate-x-5">
+                                <a
+                                    href="/undergraduate"
+                                    className="transition-transform  ease-in-out group-hover:translate-x-5"
+                                >
                                     Undergraduate
                                 </a>
                                 <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white  transition-transform duration-200" />
@@ -155,13 +164,19 @@ const Menu = () => {
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="group flex w-full items-center py-2 text-white [&[data-state=open]>svg.back-icon]:rotate-180 border-b border-white">
                                 <AcademicCapIcon className="mr-2 h-6 w-6 transition-transform  ease-in-out group-hover:translate-x-5" />
-                                <a href="/graduate" className="transition-transform  ease-in-out group-hover:translate-x-5">
+                                <a
+                                    href="/graduate"
+                                    className="transition-transform  ease-in-out group-hover:translate-x-5"
+                                >
                                     Graduate
                                 </a>
                                 <ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white  transition-transform duration-200" />
                             </AccordionTrigger>
                             <AccordionContent>
-                                <Accordion type="multiple" className="border-b border-white">
+                                <Accordion
+                                    type="multiple"
+                                    className="border-b border-white"
+                                >
                                     <AccordionItem value="item-1 border-b">
                                         <ul>
                                             <a
@@ -170,7 +185,7 @@ const Menu = () => {
                                             >
                                                 <CalculatorIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
                                                 <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        Mathematics
+                                                    Mathematics
                                                 </a>
                                             </a>
                                             <a
@@ -179,7 +194,8 @@ const Menu = () => {
                                             >
                                                 <CalculatorIcon className="h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
                                                 <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                        Applied Mathematics & Computational Science
+                                                    Applied Mathematics &
+                                                    Computational Science
                                                 </a>
                                             </a>
                                             <a
@@ -188,7 +204,8 @@ const Menu = () => {
                                             >
                                                 <CalculatorIcon className="h-6 w-6 shrink-0 transition-transform ease-in-out group-hover:translate-x-5" />
                                                 <a className="transition-transform ease-in-out group-hover:translate-x-5">
-                                                Computer Science <br/>& Information Technology
+                                                    Computer Science <br />&
+                                                    Information Technology
                                                 </a>
                                             </a>
                                         </ul>

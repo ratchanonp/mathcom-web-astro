@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { researchFieldSelected } from "../stores/facultyStore";
 
 const Filter = () => {
-    
     const [research, setResearch] = useState<IResearchMini[]>([]);
 
     const $filter = useStore(researchFieldSelected);
@@ -21,27 +20,31 @@ const Filter = () => {
         fetchResearch();
     }, []);
 
-    const encodeStr = new DOMParser()
+    const encodeStr = new DOMParser();
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.checked) {
             researchFieldSelected.set([...$filter, parseInt(e.target.value)]);
-        }
-        else {
-            researchFieldSelected.set($filter.filter((id) => id !== parseInt(e.target.value)));
+        } else {
+            researchFieldSelected.set(
+                $filter.filter((id) => id !== parseInt(e.target.value)),
+            );
         }
     };
-    
+
     return (
         <div className=" mx-auto mt-5 max-h-96 max-w-screen-xl overflow-auto px-5 pb-5 no-scrollbar">
             <h1 className="inline-flex font-kanit text-2xl font-semibold text-gray-800">
                 <DocumentTextIcon className="mr-2 h-6 w-6 " />
-        Research Field{" "}
+                Research Field{" "}
                 <span className="hidden md:block">/ Areas of Expertise</span>
             </h1>
-            <form id="filter"  className="mt-4 grid md:grid-cols-2 gap-5">
-                {research.map(({id, title}) => (
-                    <div key={id} className="flex flex-row-reverse md:flex-row items-center gap-2">
+            <form id="filter" className="mt-4 grid md:grid-cols-2 gap-5">
+                {research.map(({ id, title }) => (
+                    <div
+                        key={id}
+                        className="flex flex-row-reverse md:flex-row items-center gap-2"
+                    >
                         <input
                             type="checkbox"
                             id={id.toString()}
@@ -53,9 +56,11 @@ const Filter = () => {
                         <label
                             htmlFor={id.toString()}
                             className="flex-1 font-light text-gray-400"
-
                         >
-                            {encodeStr.parseFromString(title, "text/html").body.textContent}
+                            {
+                                encodeStr.parseFromString(title, "text/html")
+                                    .body.textContent
+                            }
                         </label>
                     </div>
                 ))}

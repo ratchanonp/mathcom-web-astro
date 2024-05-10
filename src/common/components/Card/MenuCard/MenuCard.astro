@@ -1,8 +1,9 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
-const {title, href, imgSrc} = Astro.props
+const { title, href, imgSrc } = Astro.props;
 ---
+
 <a
     href={href}
     class="bg-white p-5 flex justify-between items-center h-full shadow-lg border-2 border-gray space-x-5 hover:scale-105 transition-all"
@@ -15,8 +16,10 @@ const {title, href, imgSrc} = Astro.props
             alt={title}
         />
     </div>
-        
-    <h2 class="text-gray-700 uppercase font-kanit text-left font-semibold md:text-lg lg:text-xl leading-6 w-full">
+
+    <h2
+        class="text-gray-700 uppercase font-kanit text-left font-semibold md:text-lg lg:text-xl leading-6 w-full"
+    >
         {title}
     </h2>
 </a>

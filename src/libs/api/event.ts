@@ -10,7 +10,7 @@ export const getEvents = async () => {
     };
 
     Object.keys(params).forEach((key) =>
-        eventEndpoint.searchParams.append(key, params[key])
+        eventEndpoint.searchParams.append(key, params[key]),
     );
 
     const res = await fetch(eventEndpoint.toString());
@@ -29,8 +29,13 @@ export class EventAPI {
     }
 
     async getEvents(date?: Date, limit?: number): Promise<Event[]> {
-        if (date) this.eventEndpoint.searchParams.set("date", format(date, "yyyy-MM-dd"));
-        if (limit) this.eventEndpoint.searchParams.set("limit", limit.toString());
+        if (date)
+            this.eventEndpoint.searchParams.set(
+                "date",
+                format(date, "yyyy-MM-dd"),
+            );
+        if (limit)
+            this.eventEndpoint.searchParams.set("limit", limit.toString());
 
         const res = await fetch(this.eventEndpoint.toString());
 
@@ -44,6 +49,6 @@ export class EventAPI {
 
         const res = await fetch(this.eventDateEndpoint.toString());
         const eventDates = await res.json();
-        return eventDates
+        return eventDates;
     }
 }

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import EventComponent from "./Event";
 
 const EventGrid = () => {
-    
     const [events, setEvents] = useState<Event[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -16,11 +15,14 @@ const EventGrid = () => {
         })();
     }, []);
 
-    return <>
-        {events && events.map((event) => (
-            <EventComponent event={event} key={event.id} />
-        ))}
+    return (
+        <>
+            {events &&
+                events.map((event) => (
+                    <EventComponent event={event} key={event.id} />
+                ))}
         </>
+    );
 };
 
 export default EventGrid;

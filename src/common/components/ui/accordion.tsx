@@ -7,8 +7,8 @@ import { cn } from "src/libs/utils";
 const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+    React.ElementRef<typeof AccordionPrimitive.Item>,
+    React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
     <AccordionPrimitive.Item
         ref={ref}
@@ -19,8 +19,8 @@ const AccordionItem = React.forwardRef<
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+    React.ElementRef<typeof AccordionPrimitive.Trigger>,
+    React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
     <AccordionPrimitive.Header className="flex">
         <AccordionPrimitive.Trigger
@@ -32,7 +32,7 @@ const AccordionTrigger = React.forwardRef<
             {...props}
         >
             {children}
-      test
+            test
             <ChevronDown className="h-4 w-4 shrink-0 text-white transition-transform duration-200" />
         </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
@@ -40,8 +40,8 @@ const AccordionTrigger = React.forwardRef<
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+    React.ElementRef<typeof AccordionPrimitive.Content>,
+    React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
     <AccordionPrimitive.Content
         ref={ref}

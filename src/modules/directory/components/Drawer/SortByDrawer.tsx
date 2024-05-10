@@ -40,7 +40,7 @@ export default function FilterDrawer() {
                                 className=" rounded-lg bg-gray-800 px-5 py-2.5 text-lg text-white"
                                 type="submit"
                             >
-                Apply Sort
+                                Apply Sort
                             </button>
                         </DrawerClose>
                     </DrawerFooter>

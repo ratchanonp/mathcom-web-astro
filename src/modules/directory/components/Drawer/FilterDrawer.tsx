@@ -41,15 +41,18 @@ export default function FilterDrawer() {
                     </DrawerHeader>
                     <Filter />
                     <DrawerFooter className="border-t-[1px] border-t-gray-200">
-                        <button className=" py-2.5 text-lg" onClick={handleClear}>
-              Clear all
+                        <button
+                            className=" py-2.5 text-lg"
+                            onClick={handleClear}
+                        >
+                            Clear all
                         </button>
                         <DrawerClose asChild>
                             <button
                                 className=" rounded-lg bg-gray-800 px-5 py-2.5 text-lg text-white"
                                 type="submit"
                             >
-                Apply Filter
+                                Apply Filter
                             </button>
                         </DrawerClose>
                     </DrawerFooter>

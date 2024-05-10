@@ -2,9 +2,9 @@ export const languages = {
     en: "English",
     th: "ไทย",
 };
-  
+
 export const defaultLang = "th";
-  
+
 export const ui = {
     en: {
         "menu.home": "Home",

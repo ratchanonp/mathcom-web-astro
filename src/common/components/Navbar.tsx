@@ -22,9 +22,12 @@ export default function Navbar() {
                             className="aspect-auto h-[60px] w-[53px] md:h-[80px] md:w-[67px] border-r-[1px] border-r-gray-500 pr-2.5"
                         />
                         <div className="flex h-full flex-col justify-center font-kanit pl-2.5">
-                            <span className="text-xs md:text-xl font-light text-gray-500">DEPARTMENT OF </span>
+                            <span className="text-xs md:text-xl font-light text-gray-500">
+                                DEPARTMENT OF{" "}
+                            </span>
                             <span className="text-sm md:text-2xl font-semibold text-gray-700">
-                MATHEMATICS AND <br className="md:hidden" /> COMPUTER SCIENCE
+                                MATHEMATICS AND <br className="md:hidden" />{" "}
+                                COMPUTER SCIENCE
                             </span>
                         </div>
                     </a>

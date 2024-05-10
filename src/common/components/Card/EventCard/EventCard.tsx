@@ -3,18 +3,18 @@ import { format, isSameDay } from "date-fns";
 import type { Event } from "src/interfaces/event.interface";
 
 interface Props {
-  event: Event;
+    event: Event;
 }
 
 const EventCard = (props: Props) => {
     const { event } = props;
     const { event_start, event_end } = event;
-    
-    let formattedTimeStart = format(event_start, 'h:mm');
-    let formattedTimeEnd = format(event_end, 'h:mm');
 
-    const formattedDateStart = format(event_start, 'MMMM d, yyyy');
-    const formattedDateEnd = format(event_end, 'MMMM d, yyyy');
+    let formattedTimeStart = format(event_start, "h:mm");
+    let formattedTimeEnd = format(event_end, "h:mm");
+
+    const formattedDateStart = format(event_start, "MMMM d, yyyy");
+    const formattedDateEnd = format(event_end, "MMMM d, yyyy");
 
     const isEventSameDay = isSameDay(event_start, event_end);
 
@@ -73,11 +73,18 @@ const EventCard = (props: Props) => {
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">Contact:</p>
-                            <a className="font-light text-yellow-600">{event.register_link}</a>
+                            <a className="font-light text-yellow-600">
+                                {event.register_link}
+                            </a>
                         </div>
                         <div className="grid md:grid-cols-[150px_1fr]">
                             <p className="font-semibold">More Information:</p>
-                            <p dangerouslySetInnerHTML={{ __html: event.more_information }} className="font-light"></p>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: event.more_information,
+                                }}
+                                className="font-light"
+                            ></p>
                         </div>
                     </div>
                 </div>
