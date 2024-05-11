@@ -1,6 +1,8 @@
 ---
-const { posts } = Astro.props;
 import PostCard from "./PostCard.astro";
+
+import { getPosts } from "@/libs/api/post";
+const posts = await getPosts({ _embed: "", per_page: "6" });
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-4">
