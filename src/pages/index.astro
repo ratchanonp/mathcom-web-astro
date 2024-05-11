@@ -12,7 +12,7 @@ import GraduateIcon from "@/assets/img/icon/card/Graduate.png";
 import PeopleIcon from "@/assets/img/icon/card/People.png";
 import ResearchIcon from "@/assets/img/icon/card/Research.png";
 import UndergraduateIcon from "@/assets/img/icon/card/Undergraduate.png";
-import PostGrid from "@/common/components/Post/PostGrid";
+import PostGrid from "@/common/components/Post/PostGrid.astro";
 import EventGrid from "@/modules/event/components/EventGridMain.astro";
 
 const MenuData = [
@@ -120,7 +120,7 @@ const MenuData = [
                     News
                 </h2>
             </header>
-            <PostGrid client:load />
+            <PostGrid />
             <!-- <p class="mt-10 text-center">News will appear here 😝</p> -->
             <a
                 href="/news-events"
@@ -143,7 +143,7 @@ const MenuData = [
                     Calendar
                 </h2>
             </header>
-            <EventGrid client:load />
+            <EventGrid />
             <a
                 href="/events"
                 class="flex mt-10 text-center text-gray-500 w-full justify-center underline"
