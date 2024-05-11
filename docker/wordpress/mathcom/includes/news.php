@@ -17,6 +17,7 @@ function get_news_data($news) {
         'title' => $news->post_title,
         'thumbnail' => get_the_post_thumbnail_url($news->ID, 'medium'), // 'thumbnail', 'medium', 'large', 'full
         'date' => $date,
+        'slug' => $news->post_name,
     ];
 }
 
