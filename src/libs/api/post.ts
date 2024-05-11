@@ -1,5 +1,5 @@
 import type { Post } from "src/interfaces/reponse/post.interface";
-import { BASE_INTERNAL_URL, BASE_URL_V2 } from "./config";
+import { BASE_INTERNAL_URL, BASE_INTERNAL_URL_V2, BASE_URL_V2 } from "./config";
 
 const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
 
@@ -50,7 +50,7 @@ export const getNews = async (category: string) => {
         limit: "3",
     };
 
-    const newsEndpoint = new URL("news/", BASE_URL_V2);
+    const newsEndpoint = new URL("news/", BASE_INTERNAL_URL_V2);
 
     Object.keys(params).forEach((key) =>
         newsEndpoint.searchParams.append(key, params[key]),
