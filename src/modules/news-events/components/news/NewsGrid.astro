@@ -1,0 +1,13 @@
+---
+import { getNews } from "@/libs/api/post";
+import NewsCard from "./NewsCard.astro";
+const { category } = Astro.props;
+
+const news = await getNews(category);
+---
+<div class="grid grid-cols-1 gap-5 ">
+    {news.map((news: any) => (
+        <NewsCard key={news.id} news={news} />
+    ))}
+</div>
+    
