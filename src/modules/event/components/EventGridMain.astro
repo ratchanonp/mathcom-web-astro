@@ -1,0 +1,11 @@
+---
+import { EventAPI } from "@/libs/api/event";
+import EventCardMock from "./EventCardMock.astro";
+
+const eventAPI = new EventAPI();
+const data = await eventAPI.getEvents(undefined, 3);
+---
+
+<div class="flex justify-center mt-10 gap-2.5">
+    {data.map((event) => <EventCardMock key={event.id} event={event} />)}
+</div>
