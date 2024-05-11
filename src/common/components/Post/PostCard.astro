@@ -1,0 +1,28 @@
+---
+const { post } = Astro.props;
+const { title, slug, _embedded } = post;
+---
+
+<article class="w-full space-y-3 shadow-lg overflow-hidden">
+    <a href={`/posts/${slug}`}>
+        <figure class="relative -z-10">
+            {
+                _embedded["wp:featuredmedia"] &&
+                _embedded["wp:featuredmedia"][0] ? (
+                    <img
+                        class="object-center object-cover aspect-square w-full z-0"
+                        src={_embedded["wp:featuredmedia"][0].source_url}
+                        alt={_embedded["wp:featuredmedia"][0].alt_text}
+                    />
+                ) : (
+                    <div class="object-center object-cover aspect-square w-full z-0 bg-gray-100" />
+                )
+            }
+        </figure>
+    </a>
+    <div class="space-y-2 p-5">
+        <h3 class="text-xl font-prompt">
+            <a href={`/posts/${slug}`}>{title.rendered}</a>
+        </h3>
+    </div>
+</article>
