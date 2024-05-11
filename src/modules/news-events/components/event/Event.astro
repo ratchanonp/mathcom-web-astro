@@ -1,0 +1,22 @@
+---
+const { event } = Astro.props;
+const { event_start } = event;
+import { format, formatISO } from "date-fns";
+---
+
+<article class="grid justify-items-center p-5 hover:bg-gray-200">
+    <header>
+        <time
+            class="grid justify-items-center"
+            datetime={formatISO(event_start)}
+        >
+            <span class="text-yellow-500 text-3xl font-bold uppercase">
+                {format(event_start, "MMM dd")}
+            </span>
+            <span class="text-yellow-500">
+                {format(event_start, "hh:mm aa")}
+            </span>
+        </time>
+        <h3 class="text-xl text-slate-500 mt-2.5 text-center">{event.title}</h3>
+    </header>
+</article>
