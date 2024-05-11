@@ -33,39 +33,46 @@ export class EventAPI {
     }
 
     async getEvents(date?: Date, limit?: number): Promise<Event[]> {
+        const eventEndpoint = new URL(this.eventEndpoint.toString());
+
         if (date)
-            this.eventEndpoint.searchParams.set(
+            eventEndpoint.searchParams.set(
                 "date",
                 format(date, "yyyy-MM-dd"),
             );
         if (limit)
-            this.eventEndpoint.searchParams.set("limit", limit.toString());
+            eventEndpoint.searchParams.set("limit", limit.toString());
 
-        const res = await fetch(this.eventEndpoint.toString());
+        console.log("Fetching", eventEndpoint.toString());
+        const res = await fetch(eventEndpoint.toString());
 
         return res.json();
     }
 
     async getEventsServer(date?: Date, limit?: number): Promise<Event[]> {
+        const eventServerEndpoint = new URL(this.eventServerEndpoint.toString());
         if (date)
-            this.eventServerEndpoint.searchParams.set(
+            eventServerEndpoint.searchParams.set(
                 "date",
                 format(date, "yyyy-MM-dd"),
             );
         if (limit)
-            this.eventServerEndpoint.searchParams.set("limit", limit.toString());
+            eventServerEndpoint.searchParams.set("limit", limit.toString());
 
-        const res = await fetch(this.eventServerEndpoint.toString());
+        console.log("Fetching", eventServerEndpoint.toString());
+        const res = await fetch(eventServerEndpoint.toString());
 
         return res.json();
     }
 
     async getEventDate(month: Date): Promise<string[]> {
+        const eventDateEndpoint = new URL(this.eventDateEndpoint.toString());
         const monthString = format(month, "yyyy-MM");
 
-        this.eventDateEndpoint.searchParams.set("month", monthString);
+        eventDateEndpoint.searchParams.set("month", monthString);
 
-        const res = await fetch(this.eventDateEndpoint.toString());
+        console.log("Fetching", eventDateEndpoint.toString());
+        const res = await fetch(eventDateEndpoint.toString());
         const eventDates = await res.json();
         return eventDates;
     }

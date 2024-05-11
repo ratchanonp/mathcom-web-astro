@@ -13,6 +13,8 @@ import PeopleIcon from "@/assets/img/icon/card/People.png";
 import ResearchIcon from "@/assets/img/icon/card/Research.png";
 import UndergraduateIcon from "@/assets/img/icon/card/Undergraduate.png";
 import PostGrid from "@/common/components/Post/PostGrid.astro";
+import { EventAPI } from "@/libs/api/event";
+import { getPosts } from "@/libs/api/post";
 import EventGrid from "@/modules/event/components/EventGridMain.astro";
 
 const MenuData = [
@@ -47,6 +49,10 @@ const MenuData = [
         imgSrc: ResearchIcon,
     },
 ];
+const posts = await getPosts({ _embed: "", per_page: "6" });
+const eventAPI = new EventAPI();
+const events = await eventAPI.getEventsServer(undefined, 3);
+export const prerender = false;
 ---
 
 <BaseLayout title="Home">
@@ -69,7 +75,8 @@ const MenuData = [
                             >Mathematics</span
                         > & <span
                             class="underline decoration-4 lg:decoration-8 decoration-primary"
-                            >Computer Science</span>
+                            >Computer Science</span
+                        >
                     </h1>
                     <a
                         href="/about-us"
@@ -120,7 +127,7 @@ const MenuData = [
                     News
                 </h2>
             </header>
-            <PostGrid />
+            <PostGrid posts={posts} />
             <!-- <p class="mt-10 text-center">News will appear here 😝</p> -->
             <a
                 href="/news-events"
@@ -143,7 +150,7 @@ const MenuData = [
                     Calendar
                 </h2>
             </header>
-            <EventGrid />
+            <EventGrid events={events} />
             <a
                 href="/events"
                 class="flex mt-10 text-center text-gray-500 w-full justify-center underline"
