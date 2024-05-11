@@ -1,0 +1,14 @@
+---
+import { EventAPI } from "@/libs/api/event";
+import Event from "./Event.astro";
+
+const eventAPI = new EventAPI()
+const events = await eventAPI.getEvents();
+---
+
+
+            {events &&
+                events.map((event) => (
+                    <Event event={event} key={event.id} />
+                ))}
+   
