@@ -148,7 +148,7 @@ const Menu = () => {
                                         </a>
                                     </a>
                                     <a
-                                        href="/computer-science"
+                                        href="/undergraduate/computer-science/academics"
                                         className="group flex space-x-3 py-2 ml-5 hover:bg-black"
                                     >
                                         <ComputerDesktopIcon className="h-6 w-6 transition-transform ease-in-out group-hover:translate-x-5" />
