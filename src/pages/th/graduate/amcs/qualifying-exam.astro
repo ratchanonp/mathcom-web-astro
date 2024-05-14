@@ -1,5 +1,6 @@
 ---
 import Hero from "@/common/components/Hero.astro";
+import SideBarGrad from "@/common/components/SIdebar/SideBarGrad.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import { CourseAPI, CourseName } from "@/libs/api/course";
@@ -17,27 +18,12 @@ const content = await courseAPI.getCourse(
 
     <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-10 mb-20 p-5">
         <aside>
-            <nav>
-                <ul class="bg-gray-100 font-kanit text-xl grid">
-                    <a class="p-5" href="academics">Academics</a>
-                    <a class="p-5" href="qualification">Qualification</a>
-                    <a class="p-5" href="apply">Apply</a>
-                    <a class="p-5" href="opportunities">Opportunities</a>
-                    <a
-                        class="p-5 border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white"
-                        href="qualifying-exam">Qualifying Exam</a
-                    >
-                </ul>
-            </nav>
+            <SideBarGrad />
         </aside>
+        
         <main class="md:col-span-3 space-y-5 my-5">
             <h2 class="text-5xl font-semibold font-kanit">Qualifying Exam</h2>
-            <p set:html={content} />
-            <!-- <section class="space-y-5">
-                <p>The qualified Ph. D. candidate must pass two core subjects and one elective subject.
-                    The two core subjects are Applied Analysis and Applied Linear Algebra. The elective subject can be chosen from Applied Statistics, Numerical Analysis, Fundamental of Mathematical Programming, Mathematical modeling or approved subject from Program committees.</p>
-                    <p>Each subject must achieve a minimum passing score of 50%, and the overall average score must exceed a threshold of 60%.</p>
-            </section> -->
+            <div set:html={content} />
         </main>
     </div>
 </BaseLayout>
