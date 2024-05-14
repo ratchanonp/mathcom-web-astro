@@ -1,0 +1,23 @@
+---
+interface Props {
+    title: string;
+    href: string;
+}
+
+const { title, href} = Astro.props;
+const pathname = new URL(Astro.request.url).pathname
+const lastCurrentPath = pathname.split('/').pop()
+const isActive = lastCurrentPath === href.split('/').pop()
+---
+
+<a
+    class:list={
+        [{
+            "p-5 transition-all ease-in-out": true,
+            "border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white": isActive,
+            "hover:bg-slate-800 hover:text-white": !isActive
+        }]
+    }
+    href={href}>
+    {title}
+</a>
