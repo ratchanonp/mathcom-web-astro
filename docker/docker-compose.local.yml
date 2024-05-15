@@ -10,8 +10,8 @@ services:
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DB_NAME: ${DB_NAME}
       WORDPRESS_CONFIG_EXTRA: |
-        # Development environment
-        define( 'WP_ENVIRONMENT_TYPE', 'development' );
+        # Local environment
+        define( 'WP_ENVIRONMENT_TYPE', 'staging' );
     volumes:
       - wordpress_data:/var/www/html/wordpress
       # Custom theme
