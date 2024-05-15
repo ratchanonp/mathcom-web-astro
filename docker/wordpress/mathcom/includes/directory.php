@@ -80,6 +80,7 @@ function create_staff($request) {
     $first_name_thai = $data['first_name_thai'];
     $last_name_thai = $data['last_name_thai'];
     $staff_type = $data['staff_type'];
+    $picture = $data['picture'];
 
     if (empty($first_name_eng) || empty($last_name_eng) || empty($first_name_thai) || empty($last_name_thai) || empty($staff_type)) { 
         return array(
@@ -104,6 +105,7 @@ function create_staff($request) {
     update_field('first_name_thai', $first_name_thai, $post_id);
     update_field('last_name_thai', $last_name_thai, $post_id);
     update_field('staff_type', $staff_type, $post_id);
+    update_field('picture', $picture, $post_id);
 
     return array(
         'message' => 'Staff member created successfully',
