@@ -1,0 +1,22 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { getNews } from "@/libs/api/post";
+import NewsCard2 from "@/modules/news-events/components/news/NewsCard2.astro";
+const news = await getNews("award", -1);
+---
+
+<BaseLayout title="News & Events">
+    <Hero title="Awards" />
+
+    <main class="max-w-screen-xl mx-auto p-5">
+        <div class="grid grid-cols-3">
+            {
+                news.map((post: any) => {
+                    return <NewsCard2 news={post} />;
+                })
+            }
+        </div>
+    </main>
+</BaseLayout>
