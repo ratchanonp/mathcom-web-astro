@@ -51,11 +51,11 @@ export const getPost = async (slug: string) => {
     }
 };
 
-export const getNews = async (category: string) => {
+export const getNews = async (category: string, limit: number = 3) => {
     const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
     const params: { [key: string]: string } = {
         category: category,
-        limit: "3",
+        limit: limit.toString(),
     };
 
     const newsEndpoint = new URL("news/", BASE_INTERNAL_URL_V2);
