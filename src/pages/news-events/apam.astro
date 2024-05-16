@@ -1,6 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import NewsCard2 from "@/modules/news-events/components/news/NewsCard2.astro";
+
+import { getNews } from "@/libs/api/post";
+const apams = await getNews("apam", -1);
 ---
 
 <BaseLayout title="APAM">
@@ -8,63 +12,25 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         title="APAM"
         subtitle="Annual Pure and Applied Mathematics Conference"
     />
-    <main class="max-w-screen-xl mx-auto px-5 space-y-5 my-5">
+    <main class="max-w-screen-xl mx-auto px-5 space-y-5 my-5 mb-20">
         <section>
             <h2 class="text-2xl lg:text-3xl font-kanit font-bold">
                 What is APAM?
             </h2>
-            <p class="first-letter:text-5xl first-letter:font-bold">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Necessitatibus eius placeat odit sint deserunt dignissimos a
-                mollitia! Numquam rem labore doloribus facere, inventore aliquid
-                mollitia tenetur, officia optio, fuga deserunt! Nostrum officiis
-                nemo pariatur aut sint iure repudiandae placeat, totam voluptate
-                quidem iusto eius commodi accusamus tempora deleniti
-                voluptatibus dolorum labore cupiditate sunt, veniam nisi ipsam
-                quaerat soluta sit. Nobis! Error totam saepe quibusdam atque
-                architecto, facilis illo dolores magni repellendus cupiditate
-                fugiat. Qui ut, minus eos iure commodi obcaecati necessitatibus.
-                Vel asperiores, aliquam debitis esse magni minus dicta ea.
-            </p>
-        </section>
-        <section>
-            <h2 class="text-2xl lg:text-3xl font-kanit font-bold">
-                History of APAM
-            </h2>
-            <p class="">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Necessitatibus eius placeat odit sint deserunt dignissimos a
-                mollitia! Numquam rem labore doloribus facere, inventore aliquid
-                mollitia tenetur, officia optio, fuga deserunt! Nostrum officiis
-                nemo pariatur aut sint iure repudiandae placeat, totam voluptate
-                quidem iusto eius commodi accusamus tempora deleniti
-                voluptatibus dolorum labore cupiditate sunt, veniam nisi ipsam
-                quaerat soluta sit. Nobis! Error totam saepe quibusdam atque
-                architecto, facilis illo dolores magni repellendus cupiditate
-                fugiat. Qui ut, minus eos iure commodi obcaecati necessitatibus.
-                Vel asperiores, aliquam debitis esse magni minus dicta ea.
-            </p>
-        </section>
-        <section>
-            <h2 class="text-2xl lg:text-3xl font-kanit font-bold">Past APAM</h2>
-            <p class="">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Necessitatibus eius placeat odit sint deserunt dignissimos a
-                mollitia! Numquam rem labore doloribus facere, inventore aliquid
-                mollitia tenetur, officia optio, fuga deserunt! Nostrum officiis
-                nemo pariatur aut sint iure repudiandae placeat, totam voluptate
-                quidem iusto eius commodi accusamus tempora deleniti
-                voluptatibus dolorum labore cupiditate sunt, veniam nisi ipsam
-                quaerat soluta sit. Nobis! Error totam saepe quibusdam atque
-                architecto, facilis illo dolores magni repellendus cupiditate
-                fugiat. Qui ut, minus eos iure commodi obcaecati necessitatibus.
-                Vel asperiores, aliquam debitis esse magni minus dicta ea.
+            <p class="font-sarabun">
+                The Annual Applied and Pure Mathematics Conference (APAM) is a yearly event hosted by the Department of Mathematics and Computer Science at Chulalongkorn University. APAM provides a platform for researchers, students, and enthusiasts to engage with the latest advancements in both theoretical and practical mathematics.
             </p>
         </section>
         <section>
             <h2 class="text-2xl lg:text-3xl font-kanit font-bold">
                 APAM News & Update
             </h2>
+
+            <div class="grid grid-cols-4 gap-5 mt-5">
+                {apams.map((apam: any) => {
+                    return <NewsCard2 news={apam} />;
+                })}
+            </div>
         </section>
     </main>
 </BaseLayout>
