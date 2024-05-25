@@ -1,6 +1,4 @@
-type Props = {};
-
-const NewsCardLoading = (props: Props) => {
+const NewsCardLoading = () => {
     return (
         <article className="grid grid-cols-3 border border-gray-200 shadow-md animate-pulse">
             <div className="col-span-1">
