@@ -101,7 +101,7 @@ export default function DirectoryDisplay() {
     };
 
     return (
-        <Tabs defaultValue="All" className="md:mt-10">
+        <Tabs defaultValue="Faculty" className="md:mt-10">
             <div className="flex w-full items-center border-b-[1px] border-gray-200 md:justify-between md:pr-5">
                 <TabsList className="no-scrollbar w-fits overflow-x-scroll px-5 md:space-x-5">
                     {tabsList.map((tab) => (
