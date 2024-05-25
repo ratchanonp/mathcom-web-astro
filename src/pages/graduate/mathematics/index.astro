@@ -1,0 +1,21 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import SideBarUnGrad from "@/common/components/SIdebar/SideBar.astro";
+import Render from "@/common/page/render.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { createSidebarItemsGraduate, programPageID } from "@/libs/const";
+---
+
+<BaseLayout title="Mathematics | Overview">
+    <Hero title="Mathematics " subtitle="M.Sc & Ph.D." />
+
+    <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
+        <aside class="col-span-1">
+            <SideBarUnGrad navItems={createSidebarItemsGraduate("mathematics")} />
+        </aside>
+        <main class="md:col-span-3 grid overflow-x-auto">
+            <Render pageId={programPageID.graduate.mathematics.overview.en} />
+        </main>
+    </div>
+</BaseLayout>

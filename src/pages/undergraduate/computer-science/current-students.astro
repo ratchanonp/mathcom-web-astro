@@ -1,0 +1,23 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import SideBarUnGrad from "@/common/components/SIdebar/SideBar.astro";
+import Render from "@/common/page/render.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { createSidebarItemsUndergraduate, programPageID } from "@/libs/const";
+---
+
+<BaseLayout title="Computer Science | Current Students">
+    <Hero title="Computer Science" subtitle="Bachelor of Science" />
+
+    <div class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
+        <aside class="col-span-1">
+            <nav class="bg-gray-50 sticky top-32">
+                <SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science")} />
+            </nav>
+        </aside>
+        <main class="md:col-span-3 font-sarabun overflow-x-auto">
+            <Render pageId={programPageID.undergradudate.computer_science.current_students.en} />
+        </main>
+    </div>
+</BaseLayout>

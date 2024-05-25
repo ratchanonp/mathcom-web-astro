@@ -1,0 +1,22 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import SideBarUnGrad from "@/common/components/SIdebar/SideBar.astro";
+import Render from "@/common/page/render.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { createSidebarItemsGraduate, programPageID } from "@/libs/const";
+---
+
+<BaseLayout title="Applied Mathematics and Computational Science | Prospective Student">
+    <Hero title="Applied Mathematics and Computational Science " subtitle="M.Sc & Ph.D." />
+
+    <div class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
+        <aside class="col-span-1">
+            <nav class="bg-gray-50 sticky top-32">
+                <SideBarUnGrad navItems={createSidebarItemsGraduate("amcs")} />
+            </nav>
+        </aside>
+        <main class="md:col-span-3 grid font-sarabun overflow-x-auto">
+            <Render pageId={programPageID.graduate.amcs.prospective_students.en} />
+        </main>
+    </div>
+</BaseLayout>
