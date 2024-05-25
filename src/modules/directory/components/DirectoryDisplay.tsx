@@ -126,7 +126,7 @@ export default function DirectoryDisplay() {
                     {loading ? (
                         <div className="grid grid-cols-2 gap-5 p-5 md:grid-cols-3 lg:grid-cols-4">
                             {[...Array(8)].map((_, index) => (
-                                <FacultyCardLoading />)
+                                <FacultyCardLoading key={index} />)
                             )}
                         </div>
                     ) : (
