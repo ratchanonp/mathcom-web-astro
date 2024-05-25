@@ -3,10 +3,7 @@ import Render from "@/common/page/render.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { fetchWordPressPage } from "@/libs/api/page";
 
-import "@/styles/globalStylesheet.css";
-import "@wordpress/block-library/build-style/editor.css";
-import "@wordpress/block-library/build-style/style.css";
-import "@wordpress/block-library/build-style/theme.css";
+
 const content = await fetchWordPressPage(6063)
 ---
 
