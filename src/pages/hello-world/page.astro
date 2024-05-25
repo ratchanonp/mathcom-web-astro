@@ -1,0 +1,9 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { fetchWordPressPage } from "@/libs/api/page";
+
+const content = await fetchWordPressPage(2)
+---
+<BaseLayout title={content.title.rendered}>
+    <div set:html={content.content.rendered } class="mt-20 pb-20 max-w-screen-xl mx-auto" />
+</BaseLayout>
