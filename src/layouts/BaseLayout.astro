@@ -68,14 +68,17 @@ const { title } = Astro.props;
         <script>
             import { isMenuOpen } from "@/store/menuStore";
 
-            const content = document.getElementById("content");
-            if (!content) throw new Error("Content not found");
-
             isMenuOpen.subscribe((value) => {
                 if (value) {
-                    content.classList.add("menu-open");
+                    const contentElement = document.getElementById("content");
+                    if (contentElement !== null) {
+                        contentElement.classList.add("menu-open");
+                    }
                 } else {
-                    content.classList.remove("menu-open");
+                    const contentElement = document.getElementById("content");
+                    if (contentElement !== null) {
+                        contentElement.classList.remove("menu-open");
+                    }
                 }
             });
         </script>
