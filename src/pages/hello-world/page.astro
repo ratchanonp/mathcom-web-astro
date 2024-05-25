@@ -1,9 +1,17 @@
 ---
+import Render from "@/common/page/render.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { fetchWordPressPage } from "@/libs/api/page";
 
-const content = await fetchWordPressPage(2)
+import "@/styles/globalStylesheet.css";
+import "@wordpress/block-library/build-style/editor.css";
+import "@wordpress/block-library/build-style/style.css";
+import "@wordpress/block-library/build-style/theme.css";
+const content = await fetchWordPressPage(6063)
 ---
+
+
+<link rel="stylesheet" href="http://161.200.118.208/wordpress/wp-content/uploads/uag-plugin/assets/6000/uag-css-6063.css">
 <BaseLayout title={content.title.rendered}>
-    <div set:html={content.content.rendered } class="mt-20 pb-20 max-w-screen-xl mx-auto" />
+    <Render content={content.content.rendered} />    
 </BaseLayout>

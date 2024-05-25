@@ -1,0 +1,9 @@
+---
+import "@/styles/globalStylesheet.css";
+
+const { content } = Astro.props;
+---
+<main class="pt-20 mb-20">
+    <div class="is-layout-constrained" set:html={content}></div>
+</main>
+
