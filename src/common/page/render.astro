@@ -1,0 +1,20 @@
+---
+interface Props {
+    pageId: number;
+}
+
+import "@/styles/globalStylesheet.css";
+import "@wordpress/block-library/build-style/style.css";
+
+const { pageId } = Astro.props;
+
+import { fetchWordPressPage } from "@/libs/api/page";
+const content = await fetchWordPressPage(pageId);
+---
+
+<link
+    rel="stylesheet"
+    href={`http://161.200.118.208/wordpress/wp-content/uploads/uag-plugin/assets/6000/uag-css-${pageId}.css`}
+/>
+
+<div class="wordpress is-layout-constrained" set:html={content.content.rendered} />
