@@ -1,4 +1,5 @@
 import FacultyCard from "@/common/components/Card/FacultyCard";
+import FacultyCardLoading from "@/common/components/Card/FacultyCard.loading";
 import type { IFacultyV2 } from "@/interfaces/faculty.interface";
 import { FacultyAPIV2 } from "@/libs/api/faculty";
 import { useStore } from "@nanostores/react";
@@ -122,7 +123,15 @@ export default function DirectoryDisplay() {
 
             {tabsList.map((tab) => (
                 <TabsContent key={tab.key} value={tab.value}>
-                    <div className="grid grid-cols-2 gap-5 p-5 md:grid-cols-3 lg:grid-cols-4">
+                    {loading ? (
+                        <div className="grid grid-cols-2 gap-5 p-5 md:grid-cols-3 lg:grid-cols-4">
+                            {[...Array(8)].map((_, index) => (
+                                <FacultyCardLoading />)
+                            )}
+                        </div>
+                    ) : (
+
+                        <div className="grid grid-cols-2 gap-5 p-5 md:grid-cols-3 lg:grid-cols-4">
                         {filterFaculties(
                             tab.key,
                             $serchKeyword,
@@ -130,7 +139,7 @@ export default function DirectoryDisplay() {
                             $sortBy,
                         ).length === 0 ? (
                             <p className="text-center text-gray-500 col-span-full h-[400px]">
-                                No results found
+                            No results found
                             </p>
                         ) : (
                             filterFaculties(
@@ -140,13 +149,13 @@ export default function DirectoryDisplay() {
                                 $sortBy,
                             ).map((faculty) => (
                                 <FacultyCard
-                                    key={faculty.id}
-                                    faculty={faculty}
+                                key={faculty.id}
+                                faculty={faculty}
                                 />
                             ))
                         )}
-                        {loading && <p>Loading...</p>}
-                    </div>
+                        </div>
+                    )}
                 </TabsContent>
             ))}
         </Tabs>
