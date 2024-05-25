@@ -10,9 +10,9 @@ const DirectoryModule = () => {
 
     return (
         <>
-            <header className="max-w-screen-xl mx-auto px-5">
+            <header className="max-w-screen-xl mx-auto px-5 mt-10">
                 <h1 className="uppercase text-2xl lg:text-4xl underline decoration-primary decoration-4 text-center py-10 font-kanit font-semibold">
-                    Directory
+                    People
                 </h1>
                 <form className="flex space-x-1">
                     <label
