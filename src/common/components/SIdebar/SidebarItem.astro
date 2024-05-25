@@ -1,23 +1,38 @@
 ---
+import SideBar from "./SideBar.astro";
+
 interface Props {
-    title: string;
-    href: string;
+    item: NavItem;
+    isSubmenu?: boolean;
+    isLast?: boolean;
 }
 
-const { title, href} = Astro.props;
-const pathname = new URL(Astro.request.url).pathname
-const lastCurrentPath = pathname.split('/').pop()
-const isActive = lastCurrentPath === href.split('/').pop()
+const { item, isSubmenu, isLast } = Astro.props;
+const { title, href, subItems } = item;
+const pathname = new URL(Astro.request.url).pathname;
+const lastCurrentPath = pathname.split("/").pop();
+const isActive = lastCurrentPath === href.split("/").pop();
 ---
 
-<a
-    class:list={
-        [{
-            "p-5 transition-all ease-in-out": true,
-            "border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white": isActive,
-            "hover:bg-slate-800 hover:text-white": !isActive
-        }]
-    }
-    href={href}>
-    {title}
-</a>
+<li
+ class="w-full h-full flex flex-col"
+>
+    <a
+        class:list={[
+            {
+                "transition-all ease-in-out duration-500 ": true,
+                "p-4": !isSubmenu,
+                "p-2.5": isSubmenu,
+                "pb-4": isSubmenu && isLast,
+                "border-l-8 border-yellow-400 underline decoration-4 decoration-yellow-400 bg-slate-900 text-white":
+                    isActive,
+                "hover:bg-slate-800/75 hover:text-white border-transparent border-l-8 hover:border-yellow-400": !isActive && !isSubmenu,
+                "hover:text-yellow-500 border-l-8 border-transparent hover:underline hover:border-yellow-400": !isActive && isSubmenu,
+            },
+        ]}
+        href={href}
+    >
+        {title}
+    </a>
+    {subItems && isActive && <SideBar navItems={subItems} isSubmenu />}
+</li>
