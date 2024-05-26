@@ -21,6 +21,8 @@ function directory_list_data($directory) {
         'title' => get_field("first_name_eng", $directory->ID) . ' ' . get_field("last_name_eng", $directory->ID),
         'first_name' => $directory_meta['first_name_eng'][0],
         'last_name' => $directory_meta['last_name_eng'][0],
+        'first_name_thai' => $directory_meta['first_name_thai'][0],
+        'last_name_thai' => $directory_meta['last_name_thai'][0],
         'picture' => wp_get_attachment_url($directory_meta['picture'][0]),
         'academic_rank' => $directory_meta['academic_rank'][0],
         'staff_type' => $directory_meta['staff_type'][0],
