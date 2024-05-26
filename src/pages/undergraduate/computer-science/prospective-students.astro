@@ -6,20 +6,15 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { createSidebarItemsUndergraduate, programPageID } from "@/libs/const";
 ---
 
-<BaseLayout title="Computer Science | Prospective Students">
-    <Hero title="Computer Science" subtitle="Bachelor of Science" />
-
-    <div
-        class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5"
-    >
-    <aside class="col-span-1">
-        <nav class="bg-gray-50 sticky top-32">
-            <SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science")} />
-        </nav>
-    </aside>
-        <main
-            class="md:col-span-3 font-sarabun overflow-x-auto"
-        >
+<BaseLayout title="Prospective Students | Undergraduate | Computer Science">
+    <Hero title="Prospective Students" subtitle="Computer Science" />
+    <div class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
+        <aside class="col-span-1">
+            <nav class="bg-gray-50 sticky top-32">
+                <SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science")} />
+            </nav>
+        </aside>
+        <main class="md:col-span-3 font-sarabun overflow-x-auto">
             <Render pageId={programPageID.undergradudate.computer_science.prospective_students.en} />
         </main>
     </div>
