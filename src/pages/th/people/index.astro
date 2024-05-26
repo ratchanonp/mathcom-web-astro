@@ -1,0 +1,12 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import DirectoryModuleTH from "@/modules/directory/DirectoryModuleTH";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("people.title").toString()}>
+    <DirectoryModuleTH client:load />
+</BaseLayout>

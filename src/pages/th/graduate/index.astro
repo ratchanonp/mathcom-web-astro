@@ -1,0 +1,116 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
+---
+
+<BaseLayout title="Graduate">
+    <Hero title="Graduate" />
+
+    <main class="mt-10 space-y-10 mb-20">
+        <section class="max-w-screen-xl mx-auto px-5">
+            <p class="font-sarabun">
+                For those seeking to deepen their academic pursuits and
+                contribute to the advancement of knowledge in mathematics and
+                computer science, the Department of Mathematics and Computer
+                Science at Chulalongkorn University offers a range of rigorous
+                graduate programs. Our programs cater to individuals with a
+                strong foundation in mathematics or computer science, providing
+                opportunities to specialize in diverse areas of study. Whether
+                your passion lies in exploring theoretical mathematics, applying
+                mathematical principles to solve real-world problems, or delving
+                into the intricacies of computer science and information
+                technology, our graduate programs offer a stimulating academic
+                environment for intellectual growth and professional
+                development. Join our community of scholars and benefit from the
+                expertise of our renowned faculty as you embark on a journey of
+                research, innovation, and academic excellence.
+            </p>
+        </section>
+
+        <section class="max-w-screen-xl mx-auto space-y-5 px-5">
+            <h2 class="text-5xl font-semibold font-kanit">
+                Our Graduate Programs
+            </h2>
+            <div class="grid md:grid-cols-3 gap-5">
+                <article class="shadow-lg bg-slate-800 text-white">
+                    <img
+                        src="/placeholder.jpeg"
+                        alt=""
+                        class="filter brightness-75"
+                    />
+                    <div
+                        class="p-5 space-y-2.5 flex flex-col justify-between h-full"
+                    >
+                        <div>
+                            <h3 class="text-3xl font-medium font-kanit mb-2.5">
+                                Mathematics
+                            </h3>
+                            <p class="font-sarabun font-sm font-light">
+                                Advance your mathematical knowledge and research
+                                skills, exploring pure and applied mathematics
+                                for a career in academia or research.
+                            </p>
+                        </div>
+                        <a
+                            href="/graduate/mathematics"
+                            class="flex items-center text-yellow-500 font-kanit"
+                            >Learn more <ChevronRightIcon
+                                className="h-4 w-4"
+                            /></a
+                        >
+                    </div>
+                </article>
+                <article class="shadow-lg bg-slate-800 text-white">
+                    <div
+                        class="p-5 space-y-2.5 flex flex-col justify-between h-full"
+                    >
+                        <div>
+                            <h3 class="text-3xl font-medium font-kanit mb-2.5">
+                                Applied Mathematics & Computational Science
+                            </h3>
+                            <p class="font-sarabun font-sm font-light">
+                                Harness the power of mathematics and computing
+                                to solve real-world problems across science and
+                                engineering disciplines.
+                            </p>
+                        </div>
+                        <a
+                            href="/graduate/amcs"
+                            class="flex items-center text-yellow-500 font-kanit"
+                            >Learn more <ChevronRightIcon
+                                className="h-4 w-4"
+                            /></a
+                        >
+                    </div>
+                </article>
+                <article class="shadow-lg bg-slate-800 text-white">
+                    <div
+                        class="p-5 space-y-2.5 flex flex-col justify-between h-full"
+                    >
+                        <div>
+                            <h3 class="text-3xl font-medium font-kanit mb-2.5">
+                                Computer Science and Information Technology
+                            </h3>
+                            <p class="font-sarabun font-sm font-light">
+                                AI Explore cutting-edge topics in computer
+                                science and information technology, specializing
+                                in areas like AI, data science, and
+                                cybersecurity.
+                            </p>
+                        </div>
+                        <div class="flex space-x-10">
+                            <a
+                                href="/graduate/csit"
+                                class="flex items-center text-yellow-500 font-kanit"
+                                >Learn more <ChevronRightIcon
+                                    className="h-4 w-4"
+                                /></a
+                            >
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

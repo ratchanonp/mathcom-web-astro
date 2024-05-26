@@ -1,0 +1,217 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Layout from "@/layouts/BaseLayout.astro";
+import { FacultyAPI } from "@/libs/api/faculty";
+import { MediaAPI } from "@/libs/api/media";
+import { DocumentTextIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
+
+const facultyAPI = new FacultyAPI();
+const mediaAPI = new MediaAPI();
+const { slug } = Astro.params;
+const faculty = await facultyAPI.getFaculty(slug);
+
+if (!faculty) throw new Error("Fetching Error");
+
+const imgURL = await mediaAPI.getMediaURL(faculty.picture);
+
+export async function getStaticPaths() {
+    const facultyAPI = new FacultyAPI();
+    const slugs = await facultyAPI.getAllFacultySlugs();
+
+    return slugs.map((slug) => {
+        return {
+            params: { slug: slug },
+        };
+    });
+}
+
+const academicRender = () => {
+    switch (faculty.academic_rank) {
+        case "professor":
+            return "Professor";
+        case "associate":
+            return "Associate Professor";
+        case "assistant":
+            return "Assistant Professor";
+        default:
+            return "";
+    }
+};
+
+export const prerender = false;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={faculty.first_name_thai + " " + faculty.last_name_thai + " | " + t("department.name")}>
+    <main class="max-w-screen-xl mx-auto md:px-5">
+        <article class="md:grid md:grid-cols-[500px_1fr] md:py-10 md:gap-x-10">
+            <header class="bg-yellow-400 p-5 h-fit">
+                <figure>
+                    <img
+                        src={imgURL ? imgURL : "https://via.placeholder.com/640x640.png?text=No+Image+Available"}
+                        class="w-full h-auto object-cover object-center"
+                        alt=""
+                    />
+                </figure>
+
+                <section class="mt-5 md:hidden">
+                    <h1 class="text-2xl font-kanit font-medium text-gray-900">
+                        {faculty.first_name_thai}
+                        {faculty.last_name_thai}
+                    </h1>
+                    <h3 class="text-gray-900 font-kanit">{academicRender()}</h3>
+                </section>
+
+                <section class="mt-5 md:block">
+                    <h2 class="sr-only text-gray-900">{t("people.contact")}</h2>
+                    <div class="grid gap-x-5 gap-y-1 grid-cols-[max-content_1fr] mt-2">
+                        {
+                            faculty.office && (
+                                <>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">
+                                        {t("people.office")}:
+                                    </p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.office}</p>
+                                </>
+                            )
+                        }
+                        {
+                            faculty.phone && (
+                                <>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">{t("people.phone")}:</p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.phone}</p>
+                                </>
+                            )
+                        }
+                        {
+                            faculty.email && (
+                                <>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">{t("people.email")}:</p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.email}</p>
+                                </>
+                            )
+                        }
+                    </div>
+                </section>
+
+                {
+                    (faculty.website != "" || faculty.cv) && (
+                        <section class="grid gap-y-2.5 mt-5">
+                            {faculty.website != "" && (
+                                <a
+                                    class="inline-flex items-center bg-gray-900 text-white p-2.5"
+                                    href={faculty.website}
+                                    target="_blank"
+                                >
+                                    <GlobeAltIcon className="w-5 h-5 mr-2" />
+                                    <p class="font-kanit font-light">{t("people.website")}</p>
+                                </a>
+                            )}
+
+                            {faculty.cv && (
+                                <a
+                                    class="inline-flex items-center bg-gray-900 text-white p-2.5"
+                                    href={faculty.cv}
+                                    target="_blank"
+                                >
+                                    <DocumentTextIcon className="w-5 h-5 mr-2" />
+                                    <p class="font-kanit font-light">{t("people.cv")}</p>
+                                </a>
+                            )}
+                        </section>
+                    )
+                }
+            </header>
+
+            <main class="p-5 flex flex-col">
+                <section class="hidden md:block">
+                    <h1 class="text-5xl font-kanit font-semibold text-gray-900">
+                        {faculty.first_name_thai}
+                        {faculty.last_name_thai}
+                    </h1>
+                    <h3 class="text-gray-900 font-kanit text-xl">
+                        {academicRender()}
+                    </h3>
+                </section>
+
+                {
+                    faculty.biography && (
+                        <section class="md:mt-5">
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">{t("people.biography")}</h2>
+                            <p class="font-kanit font-light" set:html={faculty.biography} />
+                        </section>
+                    )
+                }
+
+                {
+                    faculty.research && (
+                        <section class="md:mt-5">
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">{t("people.research_area")}</h2>
+                            <ul class=" list-disc list-inside marker:text-yellow-600 mt-2">
+                                {faculty.research.map((area) => (
+                                    <li class="text-gray-500 font-kanit" set:html={area.title} />
+                                ))}
+                            </ul>
+                        </section>
+                    )
+                }
+
+                {
+                    (faculty.name_bsdegree || faculty.name_msdegree || faculty.name_phddegree) && (
+                        <section class="mt-5">
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">{t("people.education")}</h2>
+                            <ul class="font-kanit mt-2">
+                                <li class="text-gray-500 font-kanit">
+                                    <span class="text-gray-900 font-bold">{faculty.year_bsdegree}</span>
+                                    <span class="text-gray-500">{faculty.name_bsdegree}</span>
+                                    <span class="text-gray-500">{faculty.major_bsdegree}</span>
+                                    <span class="text-gray-500">{faculty.university_bsdegree}</span>
+                                </li>
+                                <li class="text-gray-500 font-kanit">
+                                    <span class="text-gray-900 font-bold">{faculty.year_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.name_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.university_msdegree}</span>
+                                </li>
+                                <li class="text-gray-500 font-kanit">
+                                    <span class="text-gray-900 font-bold">{faculty.year2_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.name2_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.university2_msdegree}</span>
+                                </li>
+                                <li class="text-gray-500 font-kanit">
+                                    <span class="text-gray-900 font-bold">{faculty.year_phddegree}</span>
+                                    <span class="text-gray-500">{faculty.name_phddegree}</span>
+                                    <span class="text-gray-500">{faculty.university_phddegree}</span>
+                                </li>
+                            </ul>
+                        </section>
+                    )
+                }
+                {
+                    faculty.publications && (
+                        <section class="md:mt-5">
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">{t("people.publications")}</h2>
+                            <p class="font-kanit font-light" set:html={faculty.publications} />
+                        </section>
+                    )
+                }
+                {
+                    faculty.scopus_feed_script_url && (
+                        <section class="mt-5">
+                            <div class="mt-2">
+                                <a
+                                    href={faculty.scopus_feed_script_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="bg-yellow-400 px-5 py-2.5"
+                                >
+                                    Scopus &reg;
+                                </a>
+                            </div>
+                        </section>
+                    )
+                }
+            </main>
+        </article>
+    </main>
+</Layout>

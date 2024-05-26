@@ -60,6 +60,8 @@ export interface IFacultyV2 {
     title: string;
     first_name: string;
     last_name: string;
+    first_name_thai: string;
+    last_name_thai: string;
     picture: string | null;
     academic_rank: string | null;
     staff_type: string | null;

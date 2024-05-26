@@ -2,18 +2,24 @@
 import Hero from "@/common/components/Hero.astro";
 import SideBarUnGrad from "@/common/components/SIdebar/SideBar.astro";
 import Render from "@/common/page/render.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import { createSidebarItemsUndergraduate, programPageID } from "@/libs/const";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<BaseLayout title="Current Students | Undergraduate | Computer Science">
-    <Hero title="Current Students" subtitle="Computer Science" />
+<BaseLayout title={t("program.undergraduate.computer_science.current_students.title")}>
+    <Hero
+        title={t("program.undergraduate.computer_science.current_students.hero.title")}
+        subtitle={t("program.undergraduate.computer_science.current_students.hero.subTitle")}
+    />
 
     <div class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
         <aside class="col-span-1">
             <nav class="bg-gray-50 sticky top-32">
-                <SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science")} />
+                <SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science", lang)} />
             </nav>
         </aside>
         <main class="md:col-span-3 font-sarabun overflow-x-auto">

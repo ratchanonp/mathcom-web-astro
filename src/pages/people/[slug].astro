@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { FacultyAPI } from "@/libs/api/faculty";
 import { MediaAPI } from "@/libs/api/media";
 import { DocumentTextIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
@@ -38,17 +39,18 @@ const academicRender = () => {
 };
 
 export const prerender = false;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title={faculty.first_name_eng + " " + faculty.last_name_eng}>
+<Layout title={faculty.first_name_eng + " " + faculty.last_name_eng + " | " + t("department.name")}>
     <main class="max-w-screen-xl mx-auto md:px-5">
         <article class="md:grid md:grid-cols-[500px_1fr] md:py-10 md:gap-x-10">
             <header class="bg-yellow-400 p-5 h-fit">
                 <figure>
                     <img
-                        src={imgURL
-                            ? imgURL
-                            : "https://via.placeholder.com/640x640.png?text=No+Image+Available"}
+                        src={imgURL ? imgURL : "https://via.placeholder.com/640x640.png?text=No+Image+Available"}
                         class="w-full h-auto object-cover object-center"
                         alt=""
                     />
@@ -64,42 +66,28 @@ export const prerender = false;
 
                 <section class="mt-5 md:block">
                     <h2 class="sr-only text-gray-900">Contact</h2>
-                    <div
-                        class="grid gap-x-5 gap-y-1 grid-cols-[max-content_1fr] mt-2"
-                    >
+                    <div class="grid gap-x-5 gap-y-1 grid-cols-[max-content_1fr] mt-2">
                         {
                             faculty.office && (
                                 <>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">
-                                        Office:
-                                    </p>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">
-                                        {faculty.office}
-                                    </p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">Office:</p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.office}</p>
                                 </>
                             )
                         }
                         {
                             faculty.phone && (
                                 <>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">
-                                        Phone:
-                                    </p>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">
-                                        {faculty.phone}
-                                    </p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">Phone:</p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.phone}</p>
                                 </>
                             )
                         }
                         {
                             faculty.email && (
                                 <>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">
-                                        Email:
-                                    </p>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">
-                                        {faculty.email}
-                                    </p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">Email:</p>
+                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.email}</p>
                                 </>
                             )
                         }
@@ -116,9 +104,7 @@ export const prerender = false;
                                     target="_blank"
                                 >
                                     <GlobeAltIcon className="w-5 h-5 mr-2" />
-                                    <p class="font-kanit font-light">
-                                        Visit Personal's Website
-                                    </p>
+                                    <p class="font-kanit font-light">Visit Personal's Website</p>
                                 </a>
                             )}
 
@@ -129,9 +115,7 @@ export const prerender = false;
                                     target="_blank"
                                 >
                                     <DocumentTextIcon className="w-5 h-5 mr-2" />
-                                    <p class="font-kanit font-light">
-                                        Curriculum Vitae
-                                    </p>
+                                    <p class="font-kanit font-light">Curriculum Vitae</p>
                                 </a>
                             )}
                         </section>
@@ -153,13 +137,8 @@ export const prerender = false;
                 {
                     faculty.biography && (
                         <section class="md:mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">
-                                Biography
-                            </h2>
-                            <p
-                                class="font-kanit font-light"
-                                set:html={faculty.biography}
-                            />
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Biography</h2>
+                            <p class="font-kanit font-light" set:html={faculty.biography} />
                         </section>
                     )
                 }
@@ -167,15 +146,10 @@ export const prerender = false;
                 {
                     faculty.research && (
                         <section class="md:mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">
-                                Research Area
-                            </h2>
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Research Area</h2>
                             <ul class=" list-disc list-inside marker:text-yellow-600 mt-2">
                                 {faculty.research.map((area) => (
-                                    <li
-                                        class="text-gray-500 font-kanit"
-                                        set:html={area.title}
-                                    />
+                                    <li class="text-gray-500 font-kanit" set:html={area.title} />
                                 ))}
                             </ul>
                         </section>
@@ -183,60 +157,30 @@ export const prerender = false;
                 }
 
                 {
-                    (faculty.name_bsdegree ||
-                        faculty.name_msdegree ||
-                        faculty.name_phddegree) && (
+                    (faculty.name_bsdegree || faculty.name_msdegree || faculty.name_phddegree) && (
                         <section class="mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">
-                                Education
-                            </h2>
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Education</h2>
                             <ul class="font-kanit mt-2">
                                 <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">
-                                        {faculty.year_bsdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.name_bsdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.major_bsdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.university_bsdegree}
-                                    </span>
+                                    <span class="text-gray-900 font-bold">{faculty.year_bsdegree}</span>
+                                    <span class="text-gray-500">{faculty.name_bsdegree}</span>
+                                    <span class="text-gray-500">{faculty.major_bsdegree}</span>
+                                    <span class="text-gray-500">{faculty.university_bsdegree}</span>
                                 </li>
                                 <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">
-                                        {faculty.year_msdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.name_msdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.university_msdegree}
-                                    </span>
+                                    <span class="text-gray-900 font-bold">{faculty.year_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.name_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.university_msdegree}</span>
                                 </li>
                                 <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">
-                                        {faculty.year2_msdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.name2_msdegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.university2_msdegree}
-                                    </span>
+                                    <span class="text-gray-900 font-bold">{faculty.year2_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.name2_msdegree}</span>
+                                    <span class="text-gray-500">{faculty.university2_msdegree}</span>
                                 </li>
                                 <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">
-                                        {faculty.year_phddegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.name_phddegree}
-                                    </span>
-                                    <span class="text-gray-500">
-                                        {faculty.university_phddegree}
-                                    </span>
+                                    <span class="text-gray-900 font-bold">{faculty.year_phddegree}</span>
+                                    <span class="text-gray-500">{faculty.name_phddegree}</span>
+                                    <span class="text-gray-500">{faculty.university_phddegree}</span>
                                 </li>
                             </ul>
                         </section>
@@ -245,13 +189,8 @@ export const prerender = false;
                 {
                     faculty.publications && (
                         <section class="md:mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">
-                                Publications
-                            </h2>
-                            <p
-                                class="font-kanit font-light"
-                                set:html={faculty.publications}
-                            />
+                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Publications</h2>
+                            <p class="font-kanit font-light" set:html={faculty.publications} />
                         </section>
                     )
                 }
