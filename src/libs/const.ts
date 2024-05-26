@@ -81,7 +81,7 @@ export const createSidebarItemsUndergraduate = (program: string, language?: stri
     },
     {
         title: "News",
-        href: language ? `${language}/undergraduate/computer-sciences/news` : `/undergraduate/computer-sciences/news`,
+        href: language ? `${language}/undergraduate/${program}/news` : `/undergraduate/${program}/news`,
     },
 ];
 
