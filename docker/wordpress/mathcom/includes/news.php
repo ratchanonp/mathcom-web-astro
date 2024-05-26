@@ -31,12 +31,14 @@ function get_news($request) {
     );
 
     $category = $request['category'];
+    $parent = $request['parent'];
     if (isset($category)) {
         $args['tax_query'] = array(
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
                 'terms' => $category,
+                'parent' => $parent,
             )
         );
     }
