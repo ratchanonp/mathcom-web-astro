@@ -86,12 +86,12 @@ const Menu = () => {
                                 <AccordionContent className="border-t border-white">
                                     <ul className="ml-5 divide-y">
                                         <MenuItem
-                                            title="B.Sc. Mathematics"
-                                            href="/undergraduate/math"
+                                            title="Mathematics"
+                                            href="/undergraduate/mathematics"
                                             Icon={CalculatorIcon}
                                         />
                                         <MenuItem
-                                            title="B.Sc. Computer Science"
+                                            title="Computer Science"
                                             href="/undergraduate/computer-science"
                                             Icon={ComputerDesktopIcon}
                                         />
@@ -110,17 +110,17 @@ const Menu = () => {
                                         <ul className="ml-5 divide-y">
                                             <MenuItem
                                                 title="Mathematics"
-                                                href="/graduate/math/academics"
+                                                href="/graduate/mathematics"
                                                 Icon={CalculatorIcon}
                                             />
                                             <MenuItem
                                                 title="Applied Mathematics & Computational Science"
-                                                href="/graduate/amcs/academics"
+                                                href="/graduate/amcs"
                                                 Icon={CalculatorIcon}
                                             />
                                             <MenuItem
                                                 title="Computer Science & Information Technology"
-                                                href="/graduate/csit/academics"
+                                                href="/graduate/csit"
                                                 Icon={ComputerDesktopIcon}
                                             />
                                         </ul>
