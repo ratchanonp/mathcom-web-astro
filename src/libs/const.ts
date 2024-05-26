@@ -1,3 +1,4 @@
+import { useTranslations } from "@/i18n/utils";
 import type { ISortBy } from "@/interfaces/sortBy.interface";
 
 export const sortBy: ISortBy[] = [
@@ -37,9 +38,9 @@ export const programPageID = {
             prospective_students: { en: 6067, th: 6140 },
         },
         amcs: {
-            overview: { en: 6063, th: 6174 },
+            overview: { en: 6063, th: 6147 },
             current_students: { en: 6074, th: 6148 },
-            prospective_students: { en: 6069, th: 6148 },
+            prospective_students: { en: 6069, th: 6149 },
         },
         csit: {
             overview: { en: 6057, th: 6153 },
@@ -49,89 +50,99 @@ export const programPageID = {
     },
 };
 
-export const createSidebarItemsUndergraduate = (program: string, language?: string) => [
-    {
-        title: "Overview",
-        href: language ? `${language}/undergraduate/${program}` : `/undergraduate/${program}`,
-        subItems: [
-            { title: "Overview", href: "#overview" },
-            { title: "Academics", href: "#academics" },
-            { title: "Oppotunities", href: "#opportunities" },
-        ],
-    },
-    {
-        title: "Current Students",
-        href: language
-            ? `${language}/undergraduate/${program}/current-students`
-            : `/undergraduate/${program}/current-students`,
-        subItems: [{ title: "Academics", href: "#academics" }],
-    },
-    {
-        title: "Prospective Students",
-        href: language
-            ? `${language}/undergraduate/${program}/prospective-students`
-            : `/undergraduate/${program}/prospective-students`,
-        subItems: [
-            { title: "Admission", href: "#admission" },
-            {
-                title: "Qualification",
-                href: "#qualification",
-            },
-        ],
-    },
-    {
-        title: "News",
-        href: language ? `${language}/undergraduate/${program}/news` : `/undergraduate/${program}/news`,
-    },
-];
+export const createSidebarItemsUndergraduate = (program: string, language: "en" | "th") => {
+    const t = useTranslations(language);
 
-export const createSidebarItemsGraduate = (program: string, language?: string) => {
     return [
         {
-            title: "Overview",
-            href: language ? `/${language}/graduate/${program}` : `/graduate/${program}`,
+            title: t("sidebar.overview"),
+            href: language !== "en" ? `/${language}/undergraduate/${program}` : `/undergraduate/${program}`,
             subItems: [
-                { title: "Overview", href: "#overview" },
-                { title: "Academics", href: "#academics" },
-                { title: "Oppotunities", href: "#opportunities" },
-                { title: "Rules and Regulations", href: "#rules-and-regulations" },
-                { title: "Course Descriptions", href: "#course-descriptions" },
+                { title: t("sidebar.overview"), href: "#overview" },
+                { title: t("sidebar.academics"), href: "#academics" },
+                { title: t("sidebar.opportunities"), href: "#opportunities" },
             ],
         },
         {
-            title: "Current Students",
-            href: language
-                ? `/${language}/graduate/${program}/current-students`
-                : `/graduate/${program}/current-students`,
-            subItems: [
-                { title: "Master Program", href: "#master-program" },
-                { title: "Doctoral Program", href: "#doctoral-program" },
-                { title: "Qualifying Exam", href: "#qualifying-exam" },
-                { title: "Proposal Examination", href: "#proposal-examination" },
-                { title: "Thesis/Dissertation Defense", href: "#thesis-dissertation-defense" },
-            ],
+            title: t("sidebar.current_students"),
+            href:
+                language !== "en"
+                    ? `/${language}/undergraduate/${program}/current-students`
+                    : `/undergraduate/${program}/current-students`,
+            subItems: [{ title: t("sidebar.academics"), href: "#academics" }],
         },
         {
-            title: "Prospective Students",
-            href: language
-                ? `${language}/graduate/${program}/prospective-students`
-                : `/graduate/${program}/prospective-students`,
+            title: t("sidebar.prospective_students"),
+            href:
+                language !== "en"
+                    ? `/${language}/undergraduate/${program}/prospective-students`
+                    : `/undergraduate/${program}/prospective-students`,
             subItems: [
-                { title: "Admission", href: "#admission" },
+                { title: t("sidebar.admission"), href: "#admission" },
                 {
-                    title: "Qualification",
+                    title: t("sidebar.qualification"),
+                    href: "#qualification",
+                },
+            ],
+        },
+        {
+            title: t("sidebar.news"),
+            href: language !== "en" ? `/${language}/undergraduate/${program}/news` : `/undergraduate/${program}/news`,
+        },
+    ];
+};
+
+export const createSidebarItemsGraduate = (program: string, language: "en" | "th") => {
+    const t = useTranslations(language);
+
+    return [
+        {
+            title: t("sidebar.overview"),
+            href: language !== "en" ? `/${language}/graduate/${program}` : `/graduate/${program}`,
+            subItems: [
+                { title: t("sidebar.overview"), href: "#overview" },
+                { title: t("sidebar.academics"), href: "#academics" },
+                { title: t("sidebar.opportunities"), href: "#opportunities" },
+                { title: t("sidebar.rules_and_regulations"), href: "#rules-and-regulations" },
+                { title: t("sidebar.course_descriptions"), href: "#course-descriptions" },
+            ],
+        },
+        {
+            title: t("sidebar.current_students"),
+            href:
+                language !== "en"
+                    ? `/${language}/graduate/${program}/current-students`
+                    : `/graduate/${program}/current-students`,
+            subItems: [
+                { title: t("sidebar.master_program"), href: "#master-program" },
+                { title: t("sidebar.doctoral_program"), href: "#doctoral-program" },
+                { title: t("sidebar.qualifying_exam"), href: "#qualifying-exam" },
+                { title: t("sidebar.proposal_examination"), href: "#proposal-examination" },
+                { title: t("sidebar.thesis-and-dissertation_defense"), href: "#thesis-dissertation-defense" },
+            ],
+        },
+        {
+            title: t("sidebar.prospective_students"),
+            href:
+                language !== "en"
+                    ? `/${language}/graduate/${program}/prospective-students`
+                    : `/graduate/${program}/prospective-students`,
+            subItems: [
+                { title: t("sidebar.admission"), href: "#admission" },
+                {
+                    title: t("sidebar.qualification"),
                     href: "#qualification",
                     subItems: [
-                        { title: "Master Program", href: "#master-program" },
-                        { title: "Doctoral Program", href: "#doctoral-program" },
+                        { title: t("sidebar.master_program"), href: "#master-program" },
+                        { title: t("sidebar.doctoral_program"), href: "#doctoral-program" },
                     ],
                 },
-                { title: "Scope and sample Exams", href: "#scope-and-sample-exams" },
+                { title: t("sidebar.scopes_and_sample_exams"), href: "#scope-and-sample-exams" },
             ],
         },
         {
-            title: "News",
-            href: language ? `${language}/graduate/${program}/news` : `/graduate/${program}/news`,
+            title: t("sidebar.news"),
+            href: language !== "en" ? `/${language}/graduate/${program}/news` : `/graduate/${program}/news`,
         },
     ];
 };

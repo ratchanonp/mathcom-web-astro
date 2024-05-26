@@ -1,5 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 const { name, position, office, phone, email } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="grid">
@@ -7,25 +12,23 @@ const { name, position, office, phone, email } = Astro.props;
         <h2 class="text-xl lg:text-2xl font-semibold font-kanit text-slate-800">
             {name}
         </h2>
-        <p
-            class="bg-primary px-2 font-kanit inline text-slate-800 text-sm md:text-base"
-        >
+        <p class="bg-primary px-2 font-kanit inline text-slate-800 text-sm md:text-base">
             {position}
         </p>
     </header>
 
     <section class="grid gap-y-1 mt-2.5">
         <div class="flex items-baseline">
-            <p class="text-gray-400 font-kanit text-sm w-12">Office</p>
+            <p class="text-slate-700 font-kanit text-sm w-16">{t("administration.office")}</p>
             <p class="text-slate-800 font-kanit">{office}</p>
         </div>
         <div class="flex items-baseline">
-            <p class="text-gray-400 font-kanit text-sm w-12">Phone</p>
+            <p class="text-slate-700 font-kanit text-sm w-16">{t("administration.phone")}</p>
             <p class="text-slate-800 font-kanit">{phone}</p>
         </div>
 
         <div class="flex items-baseline">
-            <p class="text-gray-400 font-kanit text-sm w-12">Email</p>
+            <p class="text-slate-700 font-kanit text-sm w-16">{t("administration.email")}</p>
             <p class="text-slate-800 font-kanit">{email}</p>
         </div>
     </section>

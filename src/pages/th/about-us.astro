@@ -1,0 +1,209 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import { Table, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Us">
+    <Hero title="About Us" subtitle="Who are we?" />
+    <main class="font-kanit">
+        <section class="space-y-2.5 mt-5 max-w-screen-xl mx-auto px-5">
+            <h2 class="font-kanit text-4xl font-semibold text-slate-800">Introduction</h2>
+            <p
+                class="first-letter:text-4xl first-letter:text-primary first-letter:font-semibold font-light text-slate-700"
+            >
+                ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย ก่อตั้งเมื่อวันที่ 29 มกราคม พ.ศ. 2476
+                โดยในตอนแรกเป็น แผนกคณิตศาสตร์ อยู่ในคณะอักษรศาสตร์และวิทยาศาสตร์ ต่อมาจึงค่อยเปลี่ยนเป็น
+                ภาควิชาคณิตศาสตร์ในภายหลัง ในตอนแรกที่เริ่มก่อตั้ง นิสิตที่เรียนคณิตศาสตร์ยังไม่มีห้องพักนิสิต
+                เหมือนนิสิตที่เรียนสาขาเคมี ชีววิทยา และฟิสิกส์ ได้มีการขอใช้ห้องชั้น 3 ของตึกฟิสิกส์
+                และห้องชั้นบนของเรือนไม้อยู่หลายปี จึงได้ของบประมาณมาสร้างตึกคณิตศาสตร์แทนเรือนไม้
+                แล้วต่อมาอีกหลายปีจึงได้มีโอกาสขยายออกทางด้านหลัง มีห้องสำหรับการเรียนการสอนของตนเอง
+                และมีการจัดห้องไว้สำหรับฉายภาพยนตร์ได้อีกด้วย ต่อมาในปี พ.ศ. 2506
+                แผนกวิชาคณิตศาสตร์ได้เปิดการสอนหลักสูตรปริญญาโท และ พ.ศ. 2523 ก็ได้เปิดสอนระดับปริญญาเอกเป็นครั้งแรก
+                โดยรับนิสิตเข้าศึกษา 2 คน (รศ.ดร. วิรุฬห์ บุญสมบัติ เป็นอาจารย์ท่านแรกที่ได้รับปริญญาเอก)
+            </p>
+            <p class="font-light">
+                ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ ยังคงความเป็น “แรก” ของประเทศไทย ในหลายๆด้าน กล่าวคือ
+                เป็นแห่งแรกที่ทำการเปิดสอนในระดับปริญญาตรี ปริญญาโท และ ปริญญาเอก เป็นแห่งแรกที่จัดสัมมนา และ
+                ประชุมทางวิชาการทั้งในระดับประเทศและระดับภาคพื้นเอเชียอาคเนย์
+                และเป็นแห่งแรกที่จัดตั้งสมาคมคณิตศาสตร์แห่งประเทศไทย ซึ่งต่อมาได้รับอยู่ในพระบรมราชูปถัมภ์
+            </p>
+        </section>
+        <section class="space-y-5 mt-5 max-w-screen-xl mx-auto px-5">
+            <h2 class="font-kanit text-4xl font-semibold text-slate-800">หัวหน้าภาควิชา</h2>
+            <div class="p-2.5 bg-primary text-slate-700 font-kanit">
+                <h3 class="text-sm text-slate-500">คนปัจจุบัน</h3>
+                <div class="grid">
+                    <p class="text-lg font-semibold">ผู้ช่วยศาสตราจารย์ ดร. อธิปัตย์ ธำรงธัญลักษณ์</p>
+                    <p>2566 - ปัจจุบัน</p>
+                </div>
+            </div>
+            <h3 class="font-kanit text-2xl font-semibold text-slate-800">รายนามอดีตหัวหน้าภาควิชา</h3>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>ชื่อหัวหน้าภาควิชา</TableHead>
+                        <TableHead>ช่วงเวลาที่เข้ารับตำแหน่ง</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <tbody>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ เสนาะ ตันบุญยืน</TableCell>
+                        <TableCell>2490-2508</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ ประพันธ์ วัชราภัย </TableCell>
+                        <TableCell>2509-2514</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ คุณหญิง ไขศรี ณ ศีลวันต์</TableCell>
+                        <TableCell>2515-2518</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ สุรวิทย์ กองสาสนะ</TableCell>
+                        <TableCell> 2519-2522 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ ม.ร.ว.พรรคพงศ์สนิท สนิทวงศ์</TableCell>
+                        <TableCell> 2523-2526 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>รองศาสตราจารย์ ดร.วิรุฬห์ บุญสมบัติ </TableCell>
+                        <TableCell> 2527-2530 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ผู้ช่วยศาสตราจารย์ รจิต วัฒนสินธุ์</TableCell>
+                        <TableCell> 2531-2537 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ผู้ช่วยศาสตราจารย์ ลออ ชนวิริยะ</TableCell>
+                        <TableCell> 2537-2539 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ผู้ช่วยศาสตราจารย์ รจิต วัฒนสินธุ์</TableCell>
+                        <TableCell> 2539-2542 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ผู้ช่วยศาสตราจารย์ สุวิมล ฮอลล์</TableCell>
+                        <TableCell> 2542-2543 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>รองศาสตราจารย์ ดร. วนิดา เหมาะกุล</TableCell>
+                        <TableCell> 2543-2547 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ ดร. ชิดชนก เหลือสินทรัพย์</TableCell>
+                        <TableCell> 2547-2549</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ ดร. กฤษณะ เนียมมณี</TableCell>
+                        <TableCell> 2549-2557</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ ดร. ชิดชนก เหลือสินทรัพย์ </TableCell>
+                        <TableCell>2558-2560 </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>ศาสตราจารย์ ดร. กฤษณะ เนียมมณี</TableCell>
+                        <TableCell> 2560-2564</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>รองศาสตราจารย์ ดร. รตินันท์ บุญเคลือบ</TableCell>
+                        <TableCell> 2564-2566</TableCell>
+                    </TableRow>
+                </tbody>
+            </Table>
+        </section>
+        <section class="mt-10">
+            <header class="max-w-screen-xl mx-auto p-5">
+                <p class="text-3xl text-center font-semibold">หลักสูตรที่เปิดสอน</p>
+                <p class="text-xl text-center">
+                    ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ เปิดสอนทั้งหมด 8 หลักสูตรดังต่อไปนี้
+                </p>
+            </header>
+
+            <div class="grid lg:grid-cols-2">
+                <div class="bg-yellow-500 lg:bg-yellow-500 py-5">
+                    <div class="h-32 flex flex-col max-w-[640px] lg:min-w-[640px] lg:ml-auto px-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.บ. (คณิตศาสตร์)</h3>
+                        <a
+                            href="/undergraduate/mathematics"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-400 lg:bg-yellow-400 py-5 lg:pl-5">
+                    <div class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.บ. (วิทยาการคอมพิวเตอร์)</h3>
+                        <a
+                            href="/undergraduate/computer-science"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-500 lg:bg-yellow-400 py-5">
+                    <div class="h-32 flex flex-col max-w-[640px] lg:min-w-[640px] lg:ml-auto px-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.ม. (คณิตศาสตร์)</h3>
+                        <a
+                            href="/graduate/mathematics"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-400 lg:bg-yellow-500 py-5 lg:pl-5">
+                    <div class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.ม. (วิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ)</h3>
+                        <a
+                            href="/graduate/csit"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-500 lg:bg-yellow-500 py-5">
+                    <div class="h-32 flex flex-col max-w-[640px] lg:ml-auto px-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.ม. (คณิตศาสตร์ประยุกต์และวิทยาการคณนา)</h3>
+                        <a
+                            href="/graduate/amcs"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-400 lg:bg-yellow-400 py-5 lg:pl-5">
+                    <div class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.ด. (คณิตศาสตร์)</h3>
+                        <a
+                            href="/graduate/mathematics"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-500 lg:bg-yellow-400 py-5">
+                    <div class="h-32 flex flex-col max-w-[640px] lg:ml-auto px-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.ด. (วิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ)</h3>
+                        <a
+                            href="/graduate/csit"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+                <div class="bg-yellow-400 lg:bg-yellow-500 py-5 lg:pl-5">
+                    <div class="h-32 flex flex-col max-w-[640px] px-5 lg:pr-5 justify-between">
+                        <h3 class="text-2xl font-semibold">วท.ด. (คณิตศาสตร์ประยุกต์และวิทยาการคณนา)</h3>
+                        <a
+                            href="/graduate/amcs"
+                            class="px-5 py-2.5 border-2 border-black w-fit hover:bg-black hover:text-white"
+                            >ดูรายละเอียด</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

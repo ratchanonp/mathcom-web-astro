@@ -1,8 +1,12 @@
 ---
 import Hero from "@/common/components/Hero.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import AdministratorCard from "./components/AdministratorCard.astro";
 import HeadCard from "./components/HeadCard.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout title="Administration">
@@ -11,30 +15,28 @@ import HeadCard from "./components/HeadCard.astro";
     <main class="max-w-screen-xl mx-auto px-5 mt-5 grid">
         <section class="border-b-2 py-5">
             <HeadCard
-                name="Athipat Thamrongthanyalak"
-                position="Department Head"
+                name={t("administration.position.department_head.name")}
+                position={t("administration.position.department_head")}
                 office="MATH 318, MATH 1309/10"
                 phone="02-218-5145, 02-218-5162"
                 email="athipat.th@chula.ac.th"
             />
         </section>
         <section class="border-b-2 py-5">
-            <h2
-                class="text-2xl lg:text-3xl font-bold border-l-4 border-l-primary pl-2"
-            >
-                Director of Undergraduate Program
+            <h2 class="text-2xl lg:text-3xl font-bold border-l-4 border-l-primary pl-2 font-kanit">
+                {t("administration.position.undergraduate.director")}
             </h2>
             <main class="grid md:grid-cols-2 mt-2.5 space-y-2.5">
                 <AdministratorCard
-                    name="Sajee Pianskool"
-                    position="Mathematics"
+                    name={t("administration.position.undergraduate.director.mathematics.name")}
+                    position={t("administration.program.undergraduate.mathematics")}
                     office="MATH 1208/7"
                     phone="02-218-7119"
                     email="Sajee.P@chula.ac.th"
                 />
                 <AdministratorCard
-                    name="Nagul Cooharojananone"
-                    position="Computer Science and Information Technology"
+                    name={t("administration.position.undergraduate.director.computer_science.name")}
+                    position={t("administration.program.undergraduate.computer_science")}
                     office="MATH 1008/13"
                     phone="02-218-5156"
                     email="Nagul.C@chula.ac.th"
@@ -42,36 +44,34 @@ import HeadCard from "./components/HeadCard.astro";
             </main>
         </section>
         <section class="border-b-2 py-5">
-            <h2
-                class="text-2xl lg:text-3xl font-bold border-l-4 border-l-primary pl-2"
-            >
-                Director of Graduate Program
+            <h2 class="text-2xl lg:text-3xl font-bold border-l-4 border-l-primary pl-2 font-kanit">
+                {t("administration.position.graduate.director")}
             </h2>
             <main class="grid md:grid-cols-2 mt-2.5 space-y-2.5">
                 <AdministratorCard
-                    name="Yotsanan Meemak"
-                    position="Mathematics"
+                    name={t("administration.position.graduate.director.mathematics.name")}
+                    position={t("administration.program.graduate.mathematics")}
                     office="MATH 1008/4"
                     phone="02-218-5155"
                     email="yotsanan.m@chula.ac.th"
                 />
                 <AdministratorCard
-                    name="Suphakant Phimoltares"
-                    position="Computer Science and Information Technology"
+                    name={t("administration.position.graduate.director.csit.name")}
+                    position={t("administration.program.graduate.csit")}
                     office="MATH 1108/11"
                     phone="02-218-5221"
                     email="suphakant.p@chula.ac.th"
                 />
                 <AdministratorCard
-                    name="Krung Sinapiromsaran"
-                    position="Applied Mathematics and Computational Science"
+                    name={t("administration.position.graduate.director.amcs.name")}
+                    position={t("administration.program.graduate.amcs")}
                     office="MATH 1208/16"
                     phone="02-218-7123"
                     email="Krung.s@chula.ac.th"
                 />
                 <AdministratorCard
-                    name="Jaruloj Chongstitvatana"
-                    position="Cooperative Advisor"
+                    name={t("administration.position.cooperative_advisor.name")}
+                    position={t("administration.position.cooperative_advisor")}
                     office="MATH 1208/11"
                     phone="02-218-5152"
                     email="jaruloj@gmail.com"
@@ -81,15 +81,15 @@ import HeadCard from "./components/HeadCard.astro";
         <section class="py-5">
             <main class="grid md:grid-cols-2 mt-2.5 space-y-2.5">
                 <AdministratorCard
-                    name="Arporntip Sombatboriboon"
-                    position="Office Manager"
+                    name={t("administration.position.office_manager.name")}
+                    position={t("administration.position.office_manager")}
                     office="MATH 322"
                     phone="02-218-5142"
                     email="Arpornthip.S@chula.ac.th"
                 />
                 <AdministratorCard
-                    name="Nanicha Tharavech"
-                    position="Graduate Coordinator"
+                    name={t("administration.position.graduate_coordinator.name")}
+                    position={t("administration.position.graduate_coordinator")}
                     office="MATH 323"
                     phone="02-218-5172"
                     email="tnanicha@hotmail.com"

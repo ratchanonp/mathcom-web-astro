@@ -1,0 +1,27 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import SideBarUnGrad from "@/common/components/SIdebar/SideBar.astro";
+import Render from "@/common/page/render.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { createSidebarItemsGraduate, programPageID } from "@/libs/const";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("program.graduate.mathematics.prospective_students.title")}>
+    <Hero
+        title={t("program.graduate.mathematics.prospective_students.hero.title")}
+        subtitle={t("program.graduate.mathematics.prospective_students.hero.subTitle")}
+    />
+    <div class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
+        <aside class="col-span-1">
+            <nav class="bg-gray-50 sticky top-32">
+                <SideBarUnGrad navItems={createSidebarItemsGraduate("mathematics", lang)} />
+            </nav>
+        </aside>
+        <main class="md:col-span-3 grid font-sarabun overflow-x-auto">
+            <Render pageId={programPageID.graduate.mathematics.prospective_students.th} />
+        </main>
+    </div>
+</BaseLayout>
