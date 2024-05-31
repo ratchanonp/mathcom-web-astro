@@ -4,6 +4,7 @@ export const languages = {
 };
 
 export const defaultLang = "en";
+export const showDefaultLang = false;
 
 export const ui = {
     en: {
@@ -13,6 +14,37 @@ export const ui = {
         "menu.home": "Home",
         "menu.about_us": "About Us",
         "menu.research": "Research",
+
+        "nav.department": "Department of",
+        "nav.mathematics": "Mathematics",
+        "nav.and": " and ",
+        "nav.&": " & ",
+        "nav.computer_science": "Computer Science",
+
+        "home.explore_our_department": "Explore our department",
+        "home.undergraduate_programs": "Undergraduate Programs",
+        "home.graduate_programs": "Graduate Programs",
+        "home.undergraduate.advising": "Undergraduate Advising",
+        "home.people": "People",
+        "home.research": "Research",
+        "home.math_learning_center": "Math Learning Center",
+        "home.news": "News",
+        "home.view_all_news": "View all news",
+        "home.calendar": "Calendar",
+        "home.view_all_events": "View all events",
+
+        "footbar.faculty_of_science": "Faculty of Science",
+        "footbar.chulalongkorn_university": "Chulalongkorn University",
+        "footbar.address": "Phayathai Rd., Pathumwan, Bangkok 10330 Thailand",
+
+        "footbar.get_in_touch": "Get in touch",
+        "footbar.find_us": "Find us",
+        "footbar.contact_us": "Contact us",
+        "footbar.webmaster": "Webmaster",
+
+        "footbar.quick_links": "Quick Links",
+        "footbar.campus_directory": "Campus Directory",
+        "footbar.campus_map": "Campus Map",
 
         "administration.office": "Office",
         "administration.phone": "Phone",
@@ -171,6 +203,38 @@ export const ui = {
         "menu.home": "หน้าหลัก",
         "menu.about_us": "เกี่ยวกับ",
         "menu.research": "งานวิจัย",
+
+        "nav.department": "ภาควิชา",
+        "nav.mathematics": "คณิตศาสตร์",
+        "nav.and": "และ",
+        "nav.&": " และ ",
+        "nav.computer_science": "วิทยาการคอมพิวเตอร์",
+
+        "home.explore_our_department": "สำรวจภาควิชาของเรา",
+        "home.undergraduate_programs": "หลักสูตรปริญญาตรี",
+        "home.graduate_programs": "หลักสูตรบัณฑิตศึกษา",
+        "home.undergraduate.advising": "กิจการนิสิต",
+        "home.people": "บุคลากร",
+        "home.research": "งานวิจัย",
+        "home.math_learning_center": "ศูนย์เรียนรู้คณิตศาสตร์",
+        "home.news": "ข่าวสาร",
+        "home.view_all_news": "ดูข่าวสารทั้งหมด",
+        "home.calendar": "ปฏิทิน",
+        "home.view_all_events": "ดูกิจกรรมทั้งหมด",
+
+        "footbar.faculty_of_science": "คณะวิทยาศาสตร์",
+        "footbar.chulalongkorn_university": "จุฬาลงกรณ์มหาวิทยาลัย",
+        "footbar.address": "ถนนพญาไท ปทุมวัน กรุงเทพฯ 10330",
+
+        "footbar.get_in_touch": "ติดต่อ",
+        "footbar.find_us": "ค้นหาเรา",
+        "footbar.contact_us": "ติดต่อเรา",
+        "footbar.webmaster": "ผู้ดูแลเว็บไซต์",
+
+        "footbar.quick_links": "ลิงค์ด่วน",
+        "footbar.campus_directory": "เกี่ยวกับเรา",
+        "footbar.campus_map": "แผนที่มหาวิทยาลัย",
+
         "administration.office": "ห้องพัก",
         "administration.phone": "โทรศัพท์",
         "administration.email": "อีเมล",

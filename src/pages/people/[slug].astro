@@ -47,7 +47,7 @@ const t = useTranslations(lang);
 <Layout title={faculty.first_name_eng + " " + faculty.last_name_eng + " | " + t("department.name")}>
     <main class="max-w-screen-xl mx-auto md:px-5">
         <article class="md:grid md:grid-cols-[500px_1fr] md:py-10 md:gap-x-10">
-            <header class="bg-yellow-400 p-5 h-fit">
+            <header class="bg-yellow-500 p-5 h-fit">
                 <figure>
                     <img
                         src={imgURL ? imgURL : "https://via.placeholder.com/640x640.png?text=No+Image+Available"}
@@ -202,7 +202,7 @@ const t = useTranslations(lang);
                                     href={faculty.scopus_feed_script_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="bg-yellow-400 px-5 py-2.5"
+                                    class="bg-yellow-500 px-5 py-2.5"
                                 >
                                     Scopus &reg;
                                 </a>
