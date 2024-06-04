@@ -8,29 +8,27 @@ const apams = await getNews("apam", -1);
 ---
 
 <BaseLayout title="APAM">
-    <Hero
-        title="APAM"
-        subtitle="Annual Pure and Applied Mathematics Conference"
-    />
-    <main class="max-w-screen-xl mx-auto px-5 space-y-5 my-5 mb-20">
-        <section>
-            <h2 class="text-2xl lg:text-3xl font-kanit font-bold">
-                What is APAM?
-            </h2>
-            <p class="font-sarabun">
-                The Annual Applied and Pure Mathematics Conference (APAM) is a yearly event hosted by the Department of Mathematics and Computer Science at Chulalongkorn University. APAM provides a platform for researchers, students, and enthusiasts to engage with the latest advancements in both theoretical and practical mathematics.
-            </p>
-        </section>
-        <section>
-            <h2 class="text-2xl lg:text-3xl font-kanit font-bold">
-                APAM News & Update
-            </h2>
+	<Hero title="APAM" subtitle="Annual Pure and Applied Mathematics Conference" />
+	<main class="mx-auto my-5 mb-20 max-w-screen-xl space-y-5 px-5">
+		<section>
+			<h2 class="font-kanit text-2xl font-bold lg:text-3xl">What is APAM?</h2>
+			<p class="font-sarabun">
+				The Annual Applied and Pure Mathematics Conference (APAM) is a yearly event hosted by the Department of
+				Mathematics and Computer Science at Chulalongkorn University. APAM provides a platform for researchers,
+				students, and enthusiasts to engage with the latest advancements in both theoretical and practical
+				mathematics.
+			</p>
+		</section>
+		<section>
+			<h2 class="font-kanit text-2xl font-bold lg:text-3xl">APAM News & Update</h2>
 
-            <div class="grid grid-cols-4 gap-5 mt-5">
-                {apams.map((apam: any) => {
-                    return <NewsCard2 news={apam} />;
-                })}
-            </div>
-        </section>
-    </main>
+			<div class="mt-5 grid grid-cols-4 gap-5">
+				{
+					apams.map((apam: any) => {
+						return <NewsCard2 news={apam} />;
+					})
+				}
+			</div>
+		</section>
+	</main>
 </BaseLayout>

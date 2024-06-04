@@ -5,17 +5,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Research">
-    <Hero title="Research" />
-    <main class="max-w-screen-xl mx-auto p-5">
-        <section>
-            <h2
-                class="text-center font-kanit font-semibold uppercase underline decoration-4 decoration-primary text-4xl"
-            >
-                Research Area
-            </h2>
-            <main class="grid gap-y-2.5 mt-20">
-                <ResearchModule client:load />
-            </main>
-        </section>
-    </main>
+	<Hero title="Research" />
+	<main class="mx-auto max-w-screen-xl p-5">
+		<section>
+			<h2
+				class="text-center font-kanit text-4xl font-semibold uppercase underline decoration-primary decoration-4"
+			>
+				Research Area
+			</h2>
+			<main class="mt-20 grid gap-y-2.5">
+				<ResearchModule client:load />
+			</main>
+		</section>
+	</main>
 </BaseLayout>

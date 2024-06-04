@@ -1,5 +1,5 @@
 interface NavItem {
-    title: string;
-    href: string;
-    subItems?: NavItem[];
+	title: string;
+	href: string;
+	subItems?: NavItem[];
 }

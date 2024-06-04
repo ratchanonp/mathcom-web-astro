@@ -5,6 +5,6 @@ import { getPosts } from "@/libs/api/post";
 const posts = await getPosts({ _embed: "", per_page: "6" });
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-4">
-    {posts.map((post: any, idx: any) => <PostCard key={idx} post={post} />)}
+<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+	{posts.map((post: any, idx: any) => <PostCard key={idx} post={post} />)}
 </div>

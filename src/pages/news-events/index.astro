@@ -12,97 +12,62 @@ import NewsGrid from "@/modules/news-events/components/news/NewsGrid.astro";
 
 const STORY_NEWS_CATEGORY = "story-news";
 const AWARD_CATEGORY = "award";
-
 ---
 
 <BaseLayout title="News & Events">
-    <Hero
-        title="News & Events"
-        subtitle="Stay up to date with the latest news and events from department."
-    />
-    <main>
-        <section
-            class="grid lg:grid-cols-2 max-w-screen-xl mx-auto px-5 my-10 gap-5"
-        >
-            <section>
-                <header>
-                    <h2 class="text-3xl font-semibold font-kanit">
-                        Recent Stories & News
-                    </h2>
-                    <a
-                        href="/news-events/stories-news"
-                        class="underline inline-flex items-center"
-                        >All Stories & News <ArrowRightIcon
-                            className="w-4 ml-1"
-                        /></a
-                    >
-                </header>
-                <div class="grid gap-y-5 mt-5">
-                    <NewsGrid category={STORY_NEWS_CATEGORY} />
-                </div>
-            </section>
-            <section>
-                <header>
-                    <h2 class="text-3xl font-semibold font-kanit">Award</h2>
-                    <a
-                        href="/news-events/award"
-                        class="underline inline-flex items-center"
-                        >All Award <ArrowRightIcon className="w-4 ml-1" /></a
-                    >
-                </header>
-                <div class="grid gap-y-5 mt-5">
-                    <NewsGrid category={AWARD_CATEGORY} />
-                </div>
-            </section>
-        </section>
-        <section class="bg-gray-100 py-10 font-kanit">
-            <div class="max-w-screen-xl mx-auto px-5 pb-5">
-                <header class="flex justify-center items-center">
-                    <h2
-                        class="uppercase text-3xl font-semibold font-kanit text-slate-800"
-                    >
-                        Upcoming Event
-                    </h2>
-                </header>
-                <section class="grid lg:grid-cols-3 mt-5">
-                    <EventGrid />
-                </section>
-            </div>
-        </section>
-        <section class="bg-gray-700 py-10 font-kanit">
-            <div class="max-w-screen-xl mx-auto px-5 pb-5">
-                <section class="grid lg:grid-cols-3 justify-items-center mt-5">
-                    <a 
-                        href="news-events/award"
-                        class="border-r border-r-gray-900 w-full grid justify-items-center"
-                    >
-                        <Image src={awardImage} alt="Award" class="w-24 h-24" />
-                        <h2  class="text-white text-center text-2xl mt-5">
-                            All Awards
-                        </h2>
-                    </a>
-                    <a
-                        href="events"
-                        class="border-r border-r-gray-900 w-full grid justify-items-center"
-                    >
-                        <Image
-                            src={seminarImage}
-                            alt="Seminar"
-                            class="w-24 h-24"
-                        />
-                        <h2 class="text-white text-center text-2xl mt-5">
-                            All Seminar
-                        </h2>
-                    </a>
-                    <a  href="news-events/apam"
-                        class="w-full grid justify-items-center">
-                        <Image src={apamImage} alt="APAM" class="w-24 h-24" />
-                        <h2 class="text-white text-center text-2xl mt-5">
-                            APAM
-                        </h2>
-                    </a>
-                </section>
-            </div>
-        </section>
-    </main>
+	<Hero title="News & Events" subtitle="Stay up to date with the latest news and events from department." />
+	<main>
+		<section class="mx-auto my-10 grid max-w-screen-xl gap-5 px-5 lg:grid-cols-2">
+			<section>
+				<header>
+					<h2 class="font-kanit text-3xl font-semibold">Recent Stories & News</h2>
+					<a href="/news-events/stories-news" class="inline-flex items-center underline"
+						>All Stories & News <ArrowRightIcon className="ml-1 w-4" /></a
+					>
+				</header>
+				<div class="mt-5 grid gap-y-5">
+					<NewsGrid category={STORY_NEWS_CATEGORY} />
+				</div>
+			</section>
+			<section>
+				<header>
+					<h2 class="font-kanit text-3xl font-semibold">Award</h2>
+					<a href="/news-events/award" class="inline-flex items-center underline"
+						>All Award <ArrowRightIcon className="ml-1 w-4" /></a
+					>
+				</header>
+				<div class="mt-5 grid gap-y-5">
+					<NewsGrid category={AWARD_CATEGORY} />
+				</div>
+			</section>
+		</section>
+		<section class="bg-gray-100 py-10 font-kanit">
+			<div class="mx-auto max-w-screen-xl px-5 pb-5">
+				<header class="flex items-center justify-center">
+					<h2 class="font-kanit text-3xl font-semibold uppercase text-slate-800">Upcoming Event</h2>
+				</header>
+				<section class="mt-5 grid lg:grid-cols-3">
+					<EventGrid />
+				</section>
+			</div>
+		</section>
+		<section class="bg-gray-700 py-10 font-kanit">
+			<div class="mx-auto max-w-screen-xl px-5 pb-5">
+				<section class="mt-5 grid justify-items-center lg:grid-cols-3">
+					<a href="news-events/award" class="grid w-full justify-items-center border-r border-r-gray-900">
+						<Image src={awardImage} alt="Award" class="h-24 w-24" />
+						<h2 class="mt-5 text-center text-2xl text-white">All Awards</h2>
+					</a>
+					<a href="events" class="grid w-full justify-items-center border-r border-r-gray-900">
+						<Image src={seminarImage} alt="Seminar" class="h-24 w-24" />
+						<h2 class="mt-5 text-center text-2xl text-white">All Seminar</h2>
+					</a>
+					<a href="news-events/apam" class="grid w-full justify-items-center">
+						<Image src={apamImage} alt="APAM" class="h-24 w-24" />
+						<h2 class="mt-5 text-center text-2xl text-white">APAM</h2>
+					</a>
+				</section>
+			</div>
+		</section>
+	</main>
 </BaseLayout>

@@ -10,40 +10,33 @@ const { slug } = Astro.params;
 const research = await researchAPI.getResearchBySlug(slug);
 
 export async function getStaticPaths() {
-    const researchAPI = new ResearchAPI();
-    const researchList = await researchAPI.getResearch();
+	const researchAPI = new ResearchAPI();
+	const researchList = await researchAPI.getResearch();
 
-    return {
-        paths: researchList.map((research) => ({
-            params: {
-                slug: research.slug,
-            },
-        })),
-        fallback: true,
-    };
+	return {
+		paths: researchList.map((research) => ({
+			params: {
+				slug: research.slug,
+			},
+		})),
+		fallback: true,
+	};
 }
 
 export const prerender = false;
 ---
 
 <BaseLayout title={research.title}>
-    <Hero title={research.title} />
-    <main class="my-10 space-y-10">
-        <section class="max-w-screen-xl mx-auto px-5 space-y-5"></section>
-        <section class="max-w-screen-xl mx-auto px-5 space-y-5">
-            <h2
-                class="text-3xl font-kanit font-semibold underline decoration-4 decoration-primary text-center my-10"
-            >
-                Resarch Faculty
-            </h2>
-            <main class="grid lg:grid-cols-4 gap-5">
-                {
-                    research.faculty &&
-                        research.faculty.map((faculty) => (
-                            <FacultyCard client:load faculty={faculty} />
-                        ))
-                }
-            </main>
-        </section>
-    </main>
+	<Hero title={research.title} />
+	<main class="my-10 space-y-10">
+		<section class="mx-auto max-w-screen-xl space-y-5 px-5"></section>
+		<section class="mx-auto max-w-screen-xl space-y-5 px-5">
+			<h2 class="my-10 text-center font-kanit text-3xl font-semibold underline decoration-primary decoration-4">
+				Resarch Faculty
+			</h2>
+			<main class="grid gap-5 lg:grid-cols-4">
+				{research.faculty && research.faculty.map((faculty) => <FacultyCard client:load faculty={faculty} />)}
+			</main>
+		</section>
+	</main>
 </BaseLayout>

@@ -15,27 +15,27 @@ if (!faculty) throw new Error("Fetching Error");
 const imgURL = await mediaAPI.getMediaURL(faculty.picture);
 
 export async function getStaticPaths() {
-    const facultyAPI = new FacultyAPI();
-    const slugs = await facultyAPI.getAllFacultySlugs();
+	const facultyAPI = new FacultyAPI();
+	const slugs = await facultyAPI.getAllFacultySlugs();
 
-    return slugs.map((slug) => {
-        return {
-            params: { slug: slug },
-        };
-    });
+	return slugs.map((slug) => {
+		return {
+			params: { slug: slug },
+		};
+	});
 }
 
 const academicRender = () => {
-    switch (faculty.academic_rank) {
-        case "professor":
-            return "Professor";
-        case "associate":
-            return "Associate Professor";
-        case "assistant":
-            return "Assistant Professor";
-        default:
-            return "";
-    }
+	switch (faculty.academic_rank) {
+		case "professor":
+			return "Professor";
+		case "associate":
+			return "Associate Professor";
+		case "assistant":
+			return "Assistant Professor";
+		default:
+			return "";
+	}
 };
 
 export const prerender = false;
@@ -45,172 +45,172 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={faculty.first_name_eng + " " + faculty.last_name_eng + " | " + t("department.name")}>
-    <main class="max-w-screen-xl mx-auto md:px-5">
-        <article class="md:grid md:grid-cols-[500px_1fr] md:py-10 md:gap-x-10">
-            <header class="bg-yellow-500 p-5 h-fit">
-                <figure>
-                    <img
-                        src={imgURL ? imgURL : "https://via.placeholder.com/640x640.png?text=No+Image+Available"}
-                        class="w-full h-auto object-cover object-center"
-                        alt=""
-                    />
-                </figure>
+	<main class="mx-auto max-w-screen-xl md:px-5">
+		<article class="md:grid md:grid-cols-[500px_1fr] md:gap-x-10 md:py-10">
+			<header class="h-fit bg-yellow-500 p-5">
+				<figure>
+					<img
+						src={imgURL ? imgURL : "https://via.placeholder.com/640x640.png?text=No+Image+Available"}
+						class="h-auto w-full object-cover object-center"
+						alt=""
+					/>
+				</figure>
 
-                <section class="mt-5 md:hidden">
-                    <h1 class="text-2xl font-kanit font-medium text-gray-900">
-                        {faculty.first_name_eng}
-                        {faculty.last_name_eng}
-                    </h1>
-                    <h3 class="text-gray-900 font-kanit">{academicRender()}</h3>
-                </section>
+				<section class="mt-5 md:hidden">
+					<h1 class="font-kanit text-2xl font-medium text-gray-900">
+						{faculty.first_name_eng}
+						{faculty.last_name_eng}
+					</h1>
+					<h3 class="font-kanit text-gray-900">{academicRender()}</h3>
+				</section>
 
-                <section class="mt-5 md:block">
-                    <h2 class="sr-only text-gray-900">Contact</h2>
-                    <div class="grid gap-x-5 gap-y-1 grid-cols-[max-content_1fr] mt-2">
-                        {
-                            faculty.office && (
-                                <>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">Office:</p>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.office}</p>
-                                </>
-                            )
-                        }
-                        {
-                            faculty.phone && (
-                                <>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">Phone:</p>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.phone}</p>
-                                </>
-                            )
-                        }
-                        {
-                            faculty.email && (
-                                <>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-medium">Email:</p>
-                                    <p class=" text-gray-900 md:text-xl font-kanit font-light">{faculty.email}</p>
-                                </>
-                            )
-                        }
-                    </div>
-                </section>
+				<section class="mt-5 md:block">
+					<h2 class="sr-only text-gray-900">Contact</h2>
+					<div class="mt-2 grid grid-cols-[max-content_1fr] gap-x-5 gap-y-1">
+						{
+							faculty.office && (
+								<>
+									<p class="font-kanit font-medium text-gray-900 md:text-xl">Office:</p>
+									<p class="font-kanit font-light text-gray-900 md:text-xl">{faculty.office}</p>
+								</>
+							)
+						}
+						{
+							faculty.phone && (
+								<>
+									<p class="font-kanit font-medium text-gray-900 md:text-xl">Phone:</p>
+									<p class="font-kanit font-light text-gray-900 md:text-xl">{faculty.phone}</p>
+								</>
+							)
+						}
+						{
+							faculty.email && (
+								<>
+									<p class="font-kanit font-medium text-gray-900 md:text-xl">Email:</p>
+									<p class="font-kanit font-light text-gray-900 md:text-xl">{faculty.email}</p>
+								</>
+							)
+						}
+					</div>
+				</section>
 
-                {
-                    (faculty.website != "" || faculty.cv) && (
-                        <section class="grid gap-y-2.5 mt-5">
-                            {faculty.website != "" && (
-                                <a
-                                    class="inline-flex items-center bg-gray-900 text-white p-2.5"
-                                    href={faculty.website}
-                                    target="_blank"
-                                >
-                                    <GlobeAltIcon className="w-5 h-5 mr-2" />
-                                    <p class="font-kanit font-light">Visit Personal's Website</p>
-                                </a>
-                            )}
+				{
+					(faculty.website != "" || faculty.cv) && (
+						<section class="mt-5 grid gap-y-2.5">
+							{faculty.website != "" && (
+								<a
+									class="inline-flex items-center bg-gray-900 p-2.5 text-white"
+									href={faculty.website}
+									target="_blank"
+								>
+									<GlobeAltIcon className="w-5 h-5 mr-2" />
+									<p class="font-kanit font-light">Visit Personal's Website</p>
+								</a>
+							)}
 
-                            {faculty.cv && (
-                                <a
-                                    class="inline-flex items-center bg-gray-900 text-white p-2.5"
-                                    href={faculty.cv}
-                                    target="_blank"
-                                >
-                                    <DocumentTextIcon className="w-5 h-5 mr-2" />
-                                    <p class="font-kanit font-light">Curriculum Vitae</p>
-                                </a>
-                            )}
-                        </section>
-                    )
-                }
-            </header>
+							{faculty.cv && (
+								<a
+									class="inline-flex items-center bg-gray-900 p-2.5 text-white"
+									href={faculty.cv}
+									target="_blank"
+								>
+									<DocumentTextIcon className="w-5 h-5 mr-2" />
+									<p class="font-kanit font-light">Curriculum Vitae</p>
+								</a>
+							)}
+						</section>
+					)
+				}
+			</header>
 
-            <main class="p-5 flex flex-col">
-                <section class="hidden md:block">
-                    <h1 class="text-5xl font-kanit font-semibold text-gray-900">
-                        {faculty.first_name_eng}
-                        {faculty.last_name_eng}
-                    </h1>
-                    <h3 class="text-gray-900 font-kanit text-xl">
-                        {academicRender()}
-                    </h3>
-                </section>
+			<main class="flex flex-col p-5">
+				<section class="hidden md:block">
+					<h1 class="font-kanit text-5xl font-semibold text-gray-900">
+						{faculty.first_name_eng}
+						{faculty.last_name_eng}
+					</h1>
+					<h3 class="font-kanit text-xl text-gray-900">
+						{academicRender()}
+					</h3>
+				</section>
 
-                {
-                    faculty.biography && (
-                        <section class="md:mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Biography</h2>
-                            <p class="font-kanit font-light" set:html={faculty.biography} />
-                        </section>
-                    )
-                }
+				{
+					faculty.biography && (
+						<section class="md:mt-5">
+							<h2 class="font-kanit text-2xl font-medium text-yellow-600">Biography</h2>
+							<p class="font-kanit font-light" set:html={faculty.biography} />
+						</section>
+					)
+				}
 
-                {
-                    faculty.research && (
-                        <section class="md:mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Research Area</h2>
-                            <ul class=" list-disc list-inside marker:text-yellow-600 mt-2">
-                                {faculty.research.map((area) => (
-                                    <li class="text-gray-500 font-kanit" set:html={area.title} />
-                                ))}
-                            </ul>
-                        </section>
-                    )
-                }
+				{
+					faculty.research && (
+						<section class="md:mt-5">
+							<h2 class="font-kanit text-2xl font-medium text-yellow-600">Research Area</h2>
+							<ul class="mt-2 list-inside list-disc marker:text-yellow-600">
+								{faculty.research.map((area) => (
+									<li class="font-kanit text-gray-500" set:html={area.title} />
+								))}
+							</ul>
+						</section>
+					)
+				}
 
-                {
-                    (faculty.name_bsdegree || faculty.name_msdegree || faculty.name_phddegree) && (
-                        <section class="mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Education</h2>
-                            <ul class="font-kanit mt-2">
-                                <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">{faculty.year_bsdegree}</span>
-                                    <span class="text-gray-500">{faculty.name_bsdegree}</span>
-                                    <span class="text-gray-500">{faculty.major_bsdegree}</span>
-                                    <span class="text-gray-500">{faculty.university_bsdegree}</span>
-                                </li>
-                                <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">{faculty.year_msdegree}</span>
-                                    <span class="text-gray-500">{faculty.name_msdegree}</span>
-                                    <span class="text-gray-500">{faculty.university_msdegree}</span>
-                                </li>
-                                <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">{faculty.year2_msdegree}</span>
-                                    <span class="text-gray-500">{faculty.name2_msdegree}</span>
-                                    <span class="text-gray-500">{faculty.university2_msdegree}</span>
-                                </li>
-                                <li class="text-gray-500 font-kanit">
-                                    <span class="text-gray-900 font-bold">{faculty.year_phddegree}</span>
-                                    <span class="text-gray-500">{faculty.name_phddegree}</span>
-                                    <span class="text-gray-500">{faculty.university_phddegree}</span>
-                                </li>
-                            </ul>
-                        </section>
-                    )
-                }
-                {
-                    faculty.publications && (
-                        <section class="md:mt-5">
-                            <h2 class="text-2xl text-yellow-600 font-medium font-kanit">Publications</h2>
-                            <p class="font-kanit font-light" set:html={faculty.publications} />
-                        </section>
-                    )
-                }
-                {
-                    faculty.scopus_feed_script_url && (
-                        <section class="mt-5">
-                            <div class="mt-2">
-                                <a
-                                    href={faculty.scopus_feed_script_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="bg-yellow-500 px-5 py-2.5"
-                                >
-                                    Scopus &reg;
-                                </a>
-                            </div>
-                        </section>
-                    )
-                }
-            </main>
-        </article>
-    </main>
+				{
+					(faculty.name_bsdegree || faculty.name_msdegree || faculty.name_phddegree) && (
+						<section class="mt-5">
+							<h2 class="font-kanit text-2xl font-medium text-yellow-600">Education</h2>
+							<ul class="mt-2 font-kanit">
+								<li class="font-kanit text-gray-500">
+									<span class="font-bold text-gray-900">{faculty.year_bsdegree}</span>
+									<span class="text-gray-500">{faculty.name_bsdegree}</span>
+									<span class="text-gray-500">{faculty.major_bsdegree}</span>
+									<span class="text-gray-500">{faculty.university_bsdegree}</span>
+								</li>
+								<li class="font-kanit text-gray-500">
+									<span class="font-bold text-gray-900">{faculty.year_msdegree}</span>
+									<span class="text-gray-500">{faculty.name_msdegree}</span>
+									<span class="text-gray-500">{faculty.university_msdegree}</span>
+								</li>
+								<li class="font-kanit text-gray-500">
+									<span class="font-bold text-gray-900">{faculty.year2_msdegree}</span>
+									<span class="text-gray-500">{faculty.name2_msdegree}</span>
+									<span class="text-gray-500">{faculty.university2_msdegree}</span>
+								</li>
+								<li class="font-kanit text-gray-500">
+									<span class="font-bold text-gray-900">{faculty.year_phddegree}</span>
+									<span class="text-gray-500">{faculty.name_phddegree}</span>
+									<span class="text-gray-500">{faculty.university_phddegree}</span>
+								</li>
+							</ul>
+						</section>
+					)
+				}
+				{
+					faculty.publications && (
+						<section class="md:mt-5">
+							<h2 class="font-kanit text-2xl font-medium text-yellow-600">Publications</h2>
+							<p class="font-kanit font-light" set:html={faculty.publications} />
+						</section>
+					)
+				}
+				{
+					faculty.scopus_feed_script_url && (
+						<section class="mt-5">
+							<div class="mt-2">
+								<a
+									href={faculty.scopus_feed_script_url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="bg-yellow-500 px-5 py-2.5"
+								>
+									Scopus &reg;
+								</a>
+							</div>
+						</section>
+					)
+				}
+			</main>
+		</article>
+	</main>
 </Layout>

@@ -15,38 +15,38 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t("program.graduate.amcs.news.title")}>
-    <Hero title={t("program.graduate.amcs.news.hero.title")} subtitle={t("program.graduate.amcs.news.hero.subTitle")} />
-    <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
-        <aside class="col-span-1">
-            <nav class="bg-gray-50 sticky top-32">
-                <SideBarUnGrad navItems={createSidebarItemsGraduate("amcs", lang)} />
-            </nav>
-        </aside>
-        <main class="md:col-span-3 grid overflow-x-auto scroll-smooth">
-            {
-                news.length === 0 && (
-                    <div class="flex flex-col h-full justify-center items-center bg-gray-50 rounded-xl py-10">
-                        <NewspaperIcon className="h-10 w-10 text-slate-800 mx-auto" />
-                        <p class="text-slate-800 text-xl font-kanit text-center">{t("program.news.no_news")}</p>
-                        <a
-                            href="/news-events"
-                            class="text-slate-500 items-center hover:border-b hover:border-b-slate-800 inline-flex"
-                        >
-                            {t("program.news.explore_more")}
-                            <ArrowRightIcon className="h-4 w-4 text-slate-800 inline-block ml-2" />
-                        </a>
-                    </div>
-                )
-            }
-            {
-                news.length > 0 && (
-                    <div class="grid grid-cols-3 gap-5">
-                        {news.map((post: any) => {
-                            return <NewsCard2 news={post} />;
-                        })}
-                    </div>
-                )
-            }
-        </main>
-    </div>
+	<Hero title={t("program.graduate.amcs.news.hero.title")} subtitle={t("program.graduate.amcs.news.hero.subTitle")} />
+	<div class="mx-auto mb-20 grid max-w-screen-xl gap-5 p-5 md:grid-cols-4 md:gap-10">
+		<aside class="col-span-1">
+			<nav class="sticky top-32 bg-gray-50">
+				<SideBarUnGrad navItems={createSidebarItemsGraduate("amcs", lang)} />
+			</nav>
+		</aside>
+		<main class="grid overflow-x-auto scroll-smooth md:col-span-3">
+			{
+				news.length === 0 && (
+					<div class="flex h-full flex-col items-center justify-center rounded-xl bg-gray-50 py-10">
+						<NewspaperIcon className="h-10 w-10 text-slate-800 mx-auto" />
+						<p class="text-center font-kanit text-xl text-slate-800">{t("program.news.no_news")}</p>
+						<a
+							href="/news-events"
+							class="inline-flex items-center text-slate-500 hover:border-b hover:border-b-slate-800"
+						>
+							{t("program.news.explore_more")}
+							<ArrowRightIcon className="h-4 w-4 text-slate-800 inline-block ml-2" />
+						</a>
+					</div>
+				)
+			}
+			{
+				news.length > 0 && (
+					<div class="grid grid-cols-3 gap-5">
+						{news.map((post: any) => {
+							return <NewsCard2 news={post} />;
+						})}
+					</div>
+				)
+			}
+		</main>
+	</div>
 </BaseLayout>
