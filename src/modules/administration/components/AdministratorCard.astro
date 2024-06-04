@@ -8,28 +8,28 @@ const t = useTranslations(lang);
 ---
 
 <div class="grid">
-    <header>
-        <h2 class="text-xl lg:text-2xl font-semibold font-kanit text-slate-800">
-            {name}
-        </h2>
-        <p class="bg-primary px-2 font-kanit inline text-slate-800 text-sm md:text-base">
-            {position}
-        </p>
-    </header>
+	<header>
+		<h2 class="font-kanit text-xl font-semibold text-slate-800 lg:text-2xl">
+			{name}
+		</h2>
+		<p class="inline bg-primary px-2 font-kanit text-sm text-slate-800 md:text-base">
+			{position}
+		</p>
+	</header>
 
-    <section class="grid gap-y-1 mt-2.5">
-        <div class="flex items-baseline">
-            <p class="text-slate-700 font-kanit text-sm w-16">{t("administration.office")}</p>
-            <p class="text-slate-800 font-kanit">{office}</p>
-        </div>
-        <div class="flex items-baseline">
-            <p class="text-slate-700 font-kanit text-sm w-16">{t("administration.phone")}</p>
-            <p class="text-slate-800 font-kanit">{phone}</p>
-        </div>
+	<section class="mt-2.5 grid gap-y-1">
+		<div class="flex items-baseline">
+			<p class="w-16 font-kanit text-sm text-slate-700">{t("administration.office")}</p>
+			<p class="font-kanit text-slate-800">{office}</p>
+		</div>
+		<div class="flex items-baseline">
+			<p class="w-16 font-kanit text-sm text-slate-700">{t("administration.phone")}</p>
+			<p class="font-kanit text-slate-800">{phone}</p>
+		</div>
 
-        <div class="flex items-baseline">
-            <p class="text-slate-700 font-kanit text-sm w-16">{t("administration.email")}</p>
-            <p class="text-slate-800 font-kanit">{email}</p>
-        </div>
-    </section>
+		<div class="flex items-baseline">
+			<p class="w-16 font-kanit text-sm text-slate-700">{t("administration.email")}</p>
+			<p class="font-kanit text-slate-800">{email}</p>
+		</div>
+	</section>
 </div>

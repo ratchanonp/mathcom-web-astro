@@ -22,118 +22,118 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const MenuData = [
-    {
-        title: t("home.undergraduate_programs"),
-        href: translatePath("/undergraduate"),
-        imgSrc: UndergraduateIcon,
-    },
-    {
-        title: t("home.graduate_programs"),
-        href: translatePath("/graduate"),
-        imgSrc: GraduateIcon,
-    },
-    {
-        title: t("home.undergraduate.advising"),
-        href: translatePath("/undergraduate/advising"),
-        imgSrc: AdvisingIcon,
-    },
-    {
-        title: t("home.people"),
-        href: translatePath("/people"),
-        imgSrc: PeopleIcon,
-    },
-    {
-        title: t("home.research"),
-        href: translatePath("/research"),
-        imgSrc: ResearchIcon,
-    },
-    {
-        title: t("home.math_learning_center"),
-        href: translatePath("/ta-help-desk"),
-        imgSrc: ResearchIcon,
-    },
+	{
+		title: t("home.undergraduate_programs"),
+		href: translatePath("/undergraduate"),
+		imgSrc: UndergraduateIcon,
+	},
+	{
+		title: t("home.graduate_programs"),
+		href: translatePath("/graduate"),
+		imgSrc: GraduateIcon,
+	},
+	{
+		title: t("home.undergraduate.advising"),
+		href: translatePath("/undergraduate/advising"),
+		imgSrc: AdvisingIcon,
+	},
+	{
+		title: t("home.people"),
+		href: translatePath("/people"),
+		imgSrc: PeopleIcon,
+	},
+	{
+		title: t("home.research"),
+		href: translatePath("/research"),
+		imgSrc: ResearchIcon,
+	},
+	{
+		title: t("home.math_learning_center"),
+		href: translatePath("/ta-help-desk"),
+		imgSrc: ResearchIcon,
+	},
 ];
 
 export const prerender = false;
 ---
 
 <BaseLayout title="Home">
-    <main>
-        <section class="w-full max-h-[70vh] flex flex-col relative">
-            <Image
-                format="webp"
-                src={MHVH}
-                alt="MHVH"
-                class="w-full overflow-hidden object-cover md:object-[center_80%] filter brightness-[0.65]"
-            />
-            <div class="w-screen flex absolute left-0 bottom-5 lg:bottom-20">
-                <div class="grid max-w-screen-xl w-full mx-auto px-5">
-                    <h1 class="text-white text-2xl md:text-4xl lg:text-7xl font-medium font-kanit">
-                        ยินดีต้อนรับสู่ {t("nav.department")}<br />
-                        <span class="underline decoration-4 lg:decoration-8 decoration-primary"
-                            >{t("nav.mathematics")}</span
-                        >
-                        {t("nav.&")}
-                        <span class="underline decoration-4 lg:decoration-8 decoration-primary"
-                            >{t("nav.computer_science")}</span
-                        >
-                    </h1>
-                    <a href="/th/about-us" class="flex justify-start mt-5 lg:mt-10">
-                        <span
-                            class="uppercase bg-primary p-1.5 md:p-2.5 text-sm md:text-xl w-fit font-kanit font-medium"
-                        >
-                            {t("home.explore_our_department")}
-                        </span>
-                        <div class="bg-gray-700 flex justify-center items-center">
-                            <ArrowDownRightIcon client:load className="w-5 h-5 text-white mx-2 md:mx-4" />
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+	<main>
+		<section class="relative flex max-h-[70vh] w-full flex-col">
+			<Image
+				format="webp"
+				src={MHVH}
+				alt="MHVH"
+				class="w-full overflow-hidden object-cover brightness-[0.65] filter md:object-[center_80%]"
+			/>
+			<div class="absolute bottom-5 left-0 flex w-screen lg:bottom-20">
+				<div class="mx-auto grid w-full max-w-screen-xl px-5">
+					<h1 class="font-kanit text-2xl font-medium text-white md:text-4xl lg:text-7xl">
+						ยินดีต้อนรับสู่ {t("nav.department")}<br />
+						<span class="underline decoration-primary decoration-4 lg:decoration-8"
+							>{t("nav.mathematics")}</span
+						>
+						{t("nav.&")}
+						<span class="underline decoration-primary decoration-4 lg:decoration-8"
+							>{t("nav.computer_science")}</span
+						>
+					</h1>
+					<a href="/th/about-us" class="mt-5 flex justify-start lg:mt-10">
+						<span
+							class="w-fit bg-primary p-1.5 font-kanit text-sm font-medium uppercase md:p-2.5 md:text-xl"
+						>
+							{t("home.explore_our_department")}
+						</span>
+						<div class="flex items-center justify-center bg-gray-700">
+							<ArrowDownRightIcon client:load className="mx-2 h-5 w-5 text-white md:mx-4" />
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
 
-        <section class="mt-5">
-            <div class="max-w-screen-xl w-full mx-auto px-5">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5">
-                    {MenuData.map(({ title, href, imgSrc }) => <MenuCard title={title} href={href} imgSrc={imgSrc} />)}
-                </div>
-            </div>
-        </section>
+		<section class="mt-5">
+			<div class="mx-auto w-full max-w-screen-xl px-5">
+				<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+					{MenuData.map(({ title, href, imgSrc }) => <MenuCard title={title} href={href} imgSrc={imgSrc} />)}
+				</div>
+			</div>
+		</section>
 
-        <!-- Start News -->
-        <section id="news" class="mx-auto max-w-screen-xl px-5 mt-10 lg:mt-20">
-            <header>
-                <h2
-                    class="uppercase text-center text-2xl md:text-4xl font-semibold underline decoration-primary decoration-4 font-kanit"
-                >
-                    {t("home.news")}
-                </h2>
-            </header>
-            <PostGrid />
-            <a
-                href="/news-events"
-                class="flex mt-10 text-center text-gray-500 w-full justify-center underline font-sarabun"
-            >
-                {t("home.view_all_news")}
-                <ArrowLongRightIcon className="w-5 h-5 ml-2" />
-            </a>
-        </section>
-        <!-- End News -->
-        <!-- Calendar -->
-        <section id="event" class="mx-auto max-w-screen-xl px-5 mt-10 lg:mt-20 mb-10">
-            <header>
-                <h2
-                    class="uppercase text-center text-2xl md:text-4xl font-semibold underline decoration-primary decoration-4 font-kanit"
-                >
-                    {t("home.calendar")}
-                </h2>
-            </header>
-            <EventGrid />
-            <a href="/events" class="flex mt-10 text-center text-gray-500 w-full justify-center underline font-sarabun">
-                {t("home.view_all_events")}
-                <ArrowLongRightIcon className="w-5 h-5 ml-2" />
-            </a>
-        </section>
-        <!-- End Calendar -->
-    </main>
+		<!-- Start News -->
+		<section id="news" class="mx-auto mt-10 max-w-screen-xl px-5 lg:mt-20">
+			<header>
+				<h2
+					class="text-center font-kanit text-2xl font-semibold uppercase underline decoration-primary decoration-4 md:text-4xl"
+				>
+					{t("home.news")}
+				</h2>
+			</header>
+			<PostGrid />
+			<a
+				href="/news-events"
+				class="mt-10 flex w-full justify-center text-center font-sarabun text-gray-500 underline"
+			>
+				{t("home.view_all_news")}
+				<ArrowLongRightIcon className="ml-2 h-5 w-5" />
+			</a>
+		</section>
+		<!-- End News -->
+		<!-- Calendar -->
+		<section id="event" class="mx-auto mb-10 mt-10 max-w-screen-xl px-5 lg:mt-20">
+			<header>
+				<h2
+					class="text-center font-kanit text-2xl font-semibold uppercase underline decoration-primary decoration-4 md:text-4xl"
+				>
+					{t("home.calendar")}
+				</h2>
+			</header>
+			<EventGrid />
+			<a href="/events" class="mt-10 flex w-full justify-center text-center font-sarabun text-gray-500 underline">
+				{t("home.view_all_events")}
+				<ArrowLongRightIcon className="ml-2 h-5 w-5" />
+			</a>
+		</section>
+		<!-- End Calendar -->
+	</main>
 </BaseLayout>

@@ -6,14 +6,14 @@ const posts = await getPosts();
 ---
 
 <BaseLayout title="Posts">
-    <header class="pt-[80px]">
-        <h1
-            class="text-5xl font-semibold font-kanit text-center py-10 text-gray-900 underline decoration-4 decoration-primary"
-        >
-            Posts Archive
-        </h1>
-    </header>
-    <main class="grid grid-cols-3 max-w-7xl px-5 mx-auto gap-5 pb-20">
-        {posts.map((post) => <PostCard post={post} />)}
-    </main>
+	<header class="pt-[80px]">
+		<h1
+			class="py-10 text-center font-kanit text-5xl font-semibold text-gray-900 underline decoration-primary decoration-4"
+		>
+			Posts Archive
+		</h1>
+	</header>
+	<main class="mx-auto grid max-w-7xl grid-cols-3 gap-5 px-5 pb-20">
+		{posts.map((post) => <PostCard post={post} />)}
+	</main>
 </BaseLayout>

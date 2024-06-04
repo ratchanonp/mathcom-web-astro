@@ -5,44 +5,35 @@ const { post } = Astro.props;
 const { title, excerpt, date_gmt, _embedded, slug } = post;
 
 // Remove html tags and special characters from excerpt
-const excerptText = excerpt.rendered
-    .replace(/(<([^>]+)>)/gi, "")
-    .replace(/&nbsp;/g, " ");
+const excerptText = excerpt.rendered.replace(/(<([^>]+)>)/gi, "").replace(/&nbsp;/g, " ");
 
 const date = new Date(date_gmt);
 ---
 
-<article class="w-full space-y-3 shadow-lg overflow-hidden">
-    <a href=`/posts/${slug}`>
-        <figure class="relative -z-10">
-            <img
-                class="object-center object-cover aspect-[4/3] w-full z-0"
-                src={_embedded["wp:featuredmedia"][0].source_url}
-                alt={_embedded["wp:featuredmedia"][0].alt_text}
-            />
-            <time
-                class="absolute top-2 right-2 px-3 py-1.5 bg-yellow-300 flex flex-col justify-center items-center space-x-0 z-0"
-                datetime={date_gmt}
-            >
-                <span class="font-kanit font-medium text-gray-700 text-xl"
-                    >{format(date, "dd")}</span
-                >
-                <span
-                    class="font-kanit font-medium text-gray-500 text-sm leading-4"
-                    >{format(date, "MMM")}</span
-                >
-            </time>
-        </figure>
-    </a>
-    <div class="space-y-2 p-5">
-        <div
-            class="text-sm text-yellow-500 border-[1px] border-yellow-500 px-2 py-0.5 w-fit"
-        >
-            {_embedded["wp:term"][0][0].name}
-        </div>
-        <h3 transition:name={slug} class="text-xl font-prompt">
-            <a href=`/posts/${slug}`>{title.rendered}</a>
-        </h3>
-        <p class="text-gray-500 font-light" set:html={excerptText} />
-    </div>
+<article class="w-full space-y-3 overflow-hidden shadow-lg">
+	<a href=`/posts/${slug}`>
+		<figure class="relative -z-10">
+			<img
+				class="z-0 aspect-[4/3] w-full object-cover object-center"
+				src={_embedded["wp:featuredmedia"][0].source_url}
+				alt={_embedded["wp:featuredmedia"][0].alt_text}
+			/>
+			<time
+				class="absolute right-2 top-2 z-0 flex flex-col items-center justify-center space-x-0 bg-yellow-300 px-3 py-1.5"
+				datetime={date_gmt}
+			>
+				<span class="font-kanit text-xl font-medium text-gray-700">{format(date, "dd")}</span>
+				<span class="font-kanit text-sm font-medium leading-4 text-gray-500">{format(date, "MMM")}</span>
+			</time>
+		</figure>
+	</a>
+	<div class="space-y-2 p-5">
+		<div class="w-fit border-[1px] border-yellow-500 px-2 py-0.5 text-sm text-yellow-500">
+			{_embedded["wp:term"][0][0].name}
+		</div>
+		<h3 transition:name={slug} class="font-prompt text-xl">
+			<a href=`/posts/${slug}`>{title.rendered}</a>
+		</h3>
+		<p class="font-light text-gray-500" set:html={excerptText} />
+	</div>
 </article>

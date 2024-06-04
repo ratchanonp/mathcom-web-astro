@@ -14,136 +14,136 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-gray-950 py-10 w-full">
-    <div class="max-w-7xl px-5 mx-auto space-y-10">
-        <div class="flex flex-col space-y-10 md:space-y-0 md:flex-row md:space-x-5">
-            <div class="space-y-5 w-full md:w-[60%]">
-                <div class="flex items-center">
-                    <Picture
-                        format="webp"
-                        loading="lazy"
-                        decoding="async"
-                        class="aspect-auto h-[60px] md:h-[90px] w-auto mr-5"
-                        src={MathComLogo}
-                        alt="MathComLogo"
-                    />
-                    <div class="flex flex-col h-fit justify-center space-y-1 font-kanit">
-                        <p class="font-semibold text-white md:text-xl">
-                            {t("nav.department")}{t("nav.mathematics")}
-                            {t("nav.and")}
-                            <br />
-                            {t("nav.computer_science")}
-                        </p>
-                        <p class="text-sm md:text-base font-medium text-gray-300">{t("footbar.faculty_of_science")}</p>
-                    </div>
-                </div>
-                <p class="font-sarabun text-gray-300 text-sm md:text-base leading-7 text-center md:text-left">
-                    {t("nav.department")}{t("nav.mathematics")}{t("nav.and")}{t("nav.computer_science")}<br />
-                    {t("footbar.faculty_of_science")}
-                    {t("footbar.chulalongkorn_university")}<br />
-                    {t("footbar.address")}<br />
-                </p>
-            </div>
-            <div class="flex flex-col w-full text-center md:text-right text-white md:w-[20%] font-kanit">
-                <h3 class="uppercase text-xl font-semibold underline decoration-primary decoration-4">
-                    {t("footbar.get_in_touch")}
-                </h3>
-                <ul class="mt-3 font-gray-700 space-y-3">
-                    <li class="">
-                        <a href="https://maps.app.goo.gl/Un4zZWC7xeFMYPQz7">{t("footbar.find_us")}</a>
-                    </li>
-                    <li class=""><a href="/administration">{t("footbar.contact_us")}</a></li>
-                    <li class="">
-                        <a href="mailto:qq.panmas@gmail.com">{t("footbar.webmaster")}</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex flex-col w-full text-center md:text-right text-white md:w-[20%]">
-                <h3 class="uppercase text-xl font-semibold underline decoration-primary decoration-4">
-                    {t("footbar.quick_links")}
-                </h3>
-                <ul class="mt-3 font-gray-700 space-y-3">
-                    <li class="">
-                        <a href="https://www.chula.ac.th/en/">{t("footbar.chulalongkorn_university")}</a>
-                    </li>
-                    <li class="">
-                        <a href="https://www.chula.ac.th/contact/map-and-directions/">{t("footbar.campus_map")}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:justify-between w-full">
-            <div class="space-y-2">
-                <div class="flex">
-                    <div class="bg-white w-6 h-6 flex items-center justify-center mr-2">
-                        <PhoneIcon className="w-4 h-4" />
-                    </div>
-                    <a href="" class="font-kanit font-light text-white">+66(0)2-218-5141-2</a>
-                </div>
-                <div class="flex">
-                    <div class="bg-white w-6 h-6 flex items-center justify-center mr-2">
-                        <PrinterIcon className="w-4 h-4" />
-                    </div>
-                    <a href="" class="font-kanit font-light text-white">+66(0)2-255-2287</a>
-                </div>
-            </div>
-            <div class="flex space-x-5 justify-center">
-                <a href="https://twitter.com/ChulalongkornU">
-                    <Picture
-                        format="webp"
-                        loading="lazy"
-                        decoding="async"
-                        class="h-7 aspect-square w-7 object-cover"
-                        src={X}
-                        alt="X"
-                    />
-                </a>
-                <a href="https://www.facebook.com/MathComSciCU">
-                    <Picture
-                        format="webp"
-                        loading="lazy"
-                        decoding="async"
-                        class="h-7 aspect-square w-7 object-cover"
-                        src={Facebook}
-                        alt="Facebook"
-                    />
-                </a>
-                <a href="https://www.youtube.com/user/chulauniversity">
-                    <Picture
-                        format="webp"
-                        loading="lazy"
-                        decoding="async"
-                        class="h-7 aspect-square w-7 object-cover"
-                        src={Youtube}
-                        alt="Youtube"
-                    />
-                </a>
-                <a href="https://www.instagram.com/mathcom_cu/">
-                    <Picture
-                        format="webp"
-                        loading="lazy"
-                        decoding="async"
-                        class="h-7 aspect-square w-7 object-cover"
-                        src={Instagram}
-                        alt="Instagram"
-                    />
-                </a>
-                <a href="https://www.linkedin.com/school/chulalongkornuniversity/">
-                    <Picture
-                        format="webp"
-                        loading="lazy"
-                        decoding="async"
-                        class="h-7 aspect-square w-7 object-cover"
-                        src={Linkedin}
-                        alt="Linkedin"
-                    />
-                </a>
-            </div>
-        </div>
-    </div>
+<footer class="w-full bg-gray-950 py-10">
+	<div class="mx-auto max-w-7xl space-y-10 px-5">
+		<div class="flex flex-col space-y-10 md:flex-row md:space-x-5 md:space-y-0">
+			<div class="w-full space-y-5 md:w-[60%]">
+				<div class="flex items-center">
+					<Picture
+						format="webp"
+						loading="lazy"
+						decoding="async"
+						class="mr-5 aspect-auto h-[60px] w-auto md:h-[90px]"
+						src={MathComLogo}
+						alt="MathComLogo"
+					/>
+					<div class="flex h-fit flex-col justify-center space-y-1 font-kanit">
+						<p class="font-semibold text-white md:text-xl">
+							{t("nav.department")}{t("nav.mathematics")}
+							{t("nav.and")}
+							<br />
+							{t("nav.computer_science")}
+						</p>
+						<p class="text-sm font-medium text-gray-300 md:text-base">{t("footbar.faculty_of_science")}</p>
+					</div>
+				</div>
+				<p class="text-center font-sarabun text-sm leading-7 text-gray-300 md:text-left md:text-base">
+					{t("nav.department")}{t("nav.mathematics")}{t("nav.and")}{t("nav.computer_science")}<br />
+					{t("footbar.faculty_of_science")}
+					{t("footbar.chulalongkorn_university")}<br />
+					{t("footbar.address")}<br />
+				</p>
+			</div>
+			<div class="flex w-full flex-col text-center font-kanit text-white md:w-[20%] md:text-right">
+				<h3 class="text-xl font-semibold uppercase underline decoration-primary decoration-4">
+					{t("footbar.get_in_touch")}
+				</h3>
+				<ul class="font-gray-700 mt-3 space-y-3">
+					<li class="">
+						<a href="https://maps.app.goo.gl/Un4zZWC7xeFMYPQz7">{t("footbar.find_us")}</a>
+					</li>
+					<li class=""><a href="/administration">{t("footbar.contact_us")}</a></li>
+					<li class="">
+						<a href="mailto:qq.panmas@gmail.com">{t("footbar.webmaster")}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="flex w-full flex-col text-center text-white md:w-[20%] md:text-right">
+				<h3 class="text-xl font-semibold uppercase underline decoration-primary decoration-4">
+					{t("footbar.quick_links")}
+				</h3>
+				<ul class="font-gray-700 mt-3 space-y-3">
+					<li class="">
+						<a href="https://www.chula.ac.th/en/">{t("footbar.chulalongkorn_university")}</a>
+					</li>
+					<li class="">
+						<a href="https://www.chula.ac.th/contact/map-and-directions/">{t("footbar.campus_map")}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="flex w-full flex-col items-center space-y-10 md:flex-row md:justify-between md:space-y-0">
+			<div class="space-y-2">
+				<div class="flex">
+					<div class="mr-2 flex h-6 w-6 items-center justify-center bg-white">
+						<PhoneIcon className="h-4 w-4" />
+					</div>
+					<a href="" class="font-kanit font-light text-white">+66(0)2-218-5141-2</a>
+				</div>
+				<div class="flex">
+					<div class="mr-2 flex h-6 w-6 items-center justify-center bg-white">
+						<PrinterIcon className="h-4 w-4" />
+					</div>
+					<a href="" class="font-kanit font-light text-white">+66(0)2-255-2287</a>
+				</div>
+			</div>
+			<div class="flex justify-center space-x-5">
+				<a href="https://twitter.com/ChulalongkornU">
+					<Picture
+						format="webp"
+						loading="lazy"
+						decoding="async"
+						class="aspect-square h-7 w-7 object-cover"
+						src={X}
+						alt="X"
+					/>
+				</a>
+				<a href="https://www.facebook.com/MathComSciCU">
+					<Picture
+						format="webp"
+						loading="lazy"
+						decoding="async"
+						class="aspect-square h-7 w-7 object-cover"
+						src={Facebook}
+						alt="Facebook"
+					/>
+				</a>
+				<a href="https://www.youtube.com/user/chulauniversity">
+					<Picture
+						format="webp"
+						loading="lazy"
+						decoding="async"
+						class="aspect-square h-7 w-7 object-cover"
+						src={Youtube}
+						alt="Youtube"
+					/>
+				</a>
+				<a href="https://www.instagram.com/mathcom_cu/">
+					<Picture
+						format="webp"
+						loading="lazy"
+						decoding="async"
+						class="aspect-square h-7 w-7 object-cover"
+						src={Instagram}
+						alt="Instagram"
+					/>
+				</a>
+				<a href="https://www.linkedin.com/school/chulalongkornuniversity/">
+					<Picture
+						format="webp"
+						loading="lazy"
+						decoding="async"
+						class="aspect-square h-7 w-7 object-cover"
+						src={Linkedin}
+						alt="Linkedin"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
 </footer>
 <footer>
-    <p class="text-center text-sm text-gray-500 py-2.5 px-5">
-        © 2023 Department of Mathematics and Computer Science. All rights reserved
-    </p>
+	<p class="px-5 py-2.5 text-center text-sm text-gray-500">
+		© 2023 Department of Mathematics and Computer Science. All rights reserved
+	</p>
 </footer>

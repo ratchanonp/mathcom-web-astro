@@ -4,69 +4,69 @@ import { BASE_INTERNAL_URL, BASE_INTERNAL_URL_V2 } from "./config";
 type Params = { [key: string]: string };
 
 export const getPosts = async (params?: Params): Promise<Post[]> => {
-    const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
+	const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
 
-    if (params) {
-        Object.keys(params).forEach((key) => postEndpoint.searchParams.set(key, params[key]));
-    }
+	if (params) {
+		Object.keys(params).forEach((key) => postEndpoint.searchParams.set(key, params[key]));
+	}
 
-    try {
-        console.log("Fetching", postEndpoint.toString());
-        const res = await fetch(postEndpoint.toString());
-        const posts = (await res.json()) as Post[];
+	try {
+		console.log("Fetching", postEndpoint.toString());
+		const res = await fetch(postEndpoint.toString());
+		const posts = (await res.json()) as Post[];
 
-        return posts;
-    } catch (error) {
-        console.error(error);
-    }
+		return posts;
+	} catch (error) {
+		console.error(error);
+	}
 
-    return [];
+	return [];
 };
 
 export const getPost = async (slug: string) => {
-    const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
-    const params: { [key: string]: string } = {
-        slug,
-        _embed: "",
-    };
+	const postEndpoint = new URL("posts/", BASE_INTERNAL_URL);
+	const params: { [key: string]: string } = {
+		slug,
+		_embed: "",
+	};
 
-    Object.keys(params).forEach((key) => postEndpoint.searchParams.set(key, params[key]));
+	Object.keys(params).forEach((key) => postEndpoint.searchParams.set(key, params[key]));
 
-    try {
-        console.log("Fetching", postEndpoint.toString());
-        const res = await fetch(postEndpoint.toString());
-        const post = await res.json();
+	try {
+		console.log("Fetching", postEndpoint.toString());
+		const res = await fetch(postEndpoint.toString());
+		const post = await res.json();
 
-        return post[0];
-    } catch (error) {
-        console.error(error);
-    }
+		return post[0];
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 export const getNews = async (category: string, limit: number = 3) => {
-    let parent, child;
+	let parent, child;
 
-    const spilted = category.split("_");
-    parent = spilted[0];
-    child = spilted[1];
+	const spilted = category.split("_");
+	parent = spilted[0];
+	child = spilted[1];
 
-    const params: { [key: string]: string } = {
-        category: child ? child : parent,
-        parent: child ? parent : "",
-        limit: limit.toString(),
-    };
+	const params: { [key: string]: string } = {
+		category: child ? child : parent,
+		parent: child ? parent : "",
+		limit: limit.toString(),
+	};
 
-    const newsEndpoint = new URL("news/", BASE_INTERNAL_URL_V2);
+	const newsEndpoint = new URL("news/", BASE_INTERNAL_URL_V2);
 
-    Object.keys(params).forEach((key) => newsEndpoint.searchParams.set(key, params[key]));
+	Object.keys(params).forEach((key) => newsEndpoint.searchParams.set(key, params[key]));
 
-    try {
-        console.log("Fetching", newsEndpoint.toString());
-        const res = await fetch(newsEndpoint.toString());
-        const news = await res.json();
+	try {
+		console.log("Fetching", newsEndpoint.toString());
+		const res = await fetch(newsEndpoint.toString());
+		const news = await res.json();
 
-        return news;
-    } catch (error) {
-        console.error(error);
-    }
+		return news;
+	} catch (error) {
+		console.error(error);
+	}
 };

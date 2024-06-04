@@ -11,18 +11,18 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t("program.undergraduate.computer_science.overview.title")}>
-    <Hero
-        title={t("program.undergraduate.computer_science.overview.hero.title")}
-        subtitle={t("program.undergraduate.computer_science.overview.hero.subTitle")}
-    />
-    <div class="grid grid-cols-1 md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
-        <aside class="col-span-1">
-            <nav class="bg-gray-50 sticky top-32">
-                <SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science", lang)} />
-            </nav>
-        </aside>
-        <main class="md:col-span-3 overflow-x-auto">
-            <Render pageId={programPageID.undergradudate.computer_science.overview.en} />
-        </main>
-    </div>
+	<Hero
+		title={t("program.undergraduate.computer_science.overview.hero.title")}
+		subtitle={t("program.undergraduate.computer_science.overview.hero.subTitle")}
+	/>
+	<div class="mx-auto mb-20 grid max-w-screen-xl grid-cols-1 gap-5 p-5 md:grid-cols-4 md:gap-10">
+		<aside class="col-span-1">
+			<nav class="sticky top-32 bg-gray-50">
+				<SideBarUnGrad navItems={createSidebarItemsUndergraduate("computer-science", lang)} />
+			</nav>
+		</aside>
+		<main class="overflow-x-auto md:col-span-3">
+			<Render pageId={programPageID.undergradudate.computer_science.overview.en} />
+		</main>
+	</div>
 </BaseLayout>

@@ -7,46 +7,46 @@ import SortByDrawer from "./components/Drawer/SortByDrawerTH";
 import { searchKeyword } from "./stores/facultyStore";
 
 const DirectoryModule = () => {
-    const $searchKeyword = useStore(searchKeyword);
+	const $searchKeyword = useStore(searchKeyword);
 
-    const t = useTranslations("th");
+	const t = useTranslations("th");
 
-    return (
-        <>
-            <header className="max-w-screen-xl mx-auto px-5 mt-10">
-                <h1 className="uppercase text-2xl lg:text-4xl underline decoration-primary decoration-4 text-center py-10 font-kanit font-semibold">
-                    {t("people.hero.title")}
-                </h1>
-                <form className="flex space-x-1">
-                    <label
-                        htmlFor="search"
-                        className="relative flex-1 border-gray-300 border-[1px] rounded overflow-clip shadow-lg mr-1 md:max-w-xl md:mx-auto"
-                    >
-                        <MagnifyingGlassIcon className="w-6 h-6 absolute -translate-y-1/2 top-1/2 left-2.5 text-gray-900" />
-                        <input
-                            type="search"
-                            id="search"
-                            name="search"
-                            placeholder={t("people.search_by_name")}
-                            className="pl-10 pr-2.5 py-2.5 w-full outline-none ring-0 font-sarabun"
-                            value={$searchKeyword}
-                            onChange={(e) => {
-                                searchKeyword.set(e.target.value);
-                            }}
-                        />
-                    </label>
-                    <input type="submit" className="sr-only" />
-                    <div className="md:hidden">
-                        <SortByDrawer />
-                        <FilterDrawer />
-                    </div>
-                </form>
-            </header>
-            <main className="pb-10 max-w-screen-xl mx-auto mt-2 font-kanit">
-                <DirectoryDisplay />
-            </main>
-        </>
-    );
+	return (
+		<>
+			<header className="mx-auto mt-10 max-w-screen-xl px-5">
+				<h1 className="py-10 text-center font-kanit text-2xl font-semibold uppercase underline decoration-primary decoration-4 lg:text-4xl">
+					{t("people.hero.title")}
+				</h1>
+				<form className="flex space-x-1">
+					<label
+						htmlFor="search"
+						className="relative mr-1 flex-1 overflow-clip rounded border-[1px] border-gray-300 shadow-lg md:mx-auto md:max-w-xl"
+					>
+						<MagnifyingGlassIcon className="absolute left-2.5 top-1/2 h-6 w-6 -translate-y-1/2 text-gray-900" />
+						<input
+							type="search"
+							id="search"
+							name="search"
+							placeholder={t("people.search_by_name")}
+							className="w-full py-2.5 pl-10 pr-2.5 font-sarabun outline-none ring-0"
+							value={$searchKeyword}
+							onChange={(e) => {
+								searchKeyword.set(e.target.value);
+							}}
+						/>
+					</label>
+					<input type="submit" className="sr-only" />
+					<div className="md:hidden">
+						<SortByDrawer />
+						<FilterDrawer />
+					</div>
+				</form>
+			</header>
+			<main className="mx-auto mt-2 max-w-screen-xl pb-10 font-kanit">
+				<DirectoryDisplay />
+			</main>
+		</>
+	);
 };
 
 export default DirectoryModule;

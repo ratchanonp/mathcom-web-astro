@@ -2,25 +2,25 @@
 import SidebarItem from "./SidebarItem.astro";
 
 interface Props {
-    navItems: NavItem[];
-    isSubmenu?: boolean;
+	navItems: NavItem[];
+	isSubmenu?: boolean;
 }
 
 const { navItems, isSubmenu } = Astro.props;
 ---
 
 <ul
-    class:list={[
-        {
-            "pl-8 text-lg font-light": isSubmenu,
-            "text-xl divide-y divide-slate-800": !isSubmenu,
-            "font-kanit": true
-        },
-    ]}
+	class:list={[
+		{
+			"pl-8 text-lg font-light": isSubmenu,
+			"divide-y divide-slate-800 text-xl": !isSubmenu,
+			"font-kanit": true,
+		},
+	]}
 >
-    {
-        navItems.map((item, idx) => (
-            <SidebarItem item={item} isSubmenu={isSubmenu} isLast={idx === navItems.length - 1} />
-        ))
-    }
+	{
+		navItems.map((item, idx) => (
+			<SidebarItem item={item} isSubmenu={isSubmenu} isLast={idx === navItems.length - 1} />
+		))
+	}
 </ul>

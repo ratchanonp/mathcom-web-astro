@@ -1,6 +1,6 @@
 ---
 interface Props {
-    pageId: number;
+	pageId: number;
 }
 
 import "@/styles/globalStylesheet.css";
@@ -13,8 +13,8 @@ const content = await fetchWordPressPage(pageId);
 ---
 
 <link
-    rel="stylesheet"
-    href={`http://161.200.118.208/wordpress/wp-content/uploads/uag-plugin/assets/6000/uag-css-${pageId}.css`}
+	rel="stylesheet"
+	href={`http://161.200.118.208/wordpress/wp-content/uploads/uag-plugin/assets/6000/uag-css-${pageId}.css`}
 />
 
 <div class="wordpress is-layout-constrained" set:html={content.content.rendered} />

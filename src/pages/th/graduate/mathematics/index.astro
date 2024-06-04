@@ -11,19 +11,19 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t("program.graduate.mathematics.overview.title")}>
-    <Hero
-        title={t("program.graduate.mathematics.overview.hero.title")}
-        subtitle={t("program.graduate.mathematics.overview.hero.subTitle")}
-    />
+	<Hero
+		title={t("program.graduate.mathematics.overview.hero.title")}
+		subtitle={t("program.graduate.mathematics.overview.hero.subTitle")}
+	/>
 
-    <div class="grid md:grid-cols-4 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-5">
-        <aside class="col-span-1">
-            <nav class="bg-gray-50 sticky top-32">
-                <SideBarUnGrad navItems={createSidebarItemsGraduate("mathematics", lang)} />
-            </nav>
-        </aside>
-        <main class="md:col-span-3 grid overflow-x-auto">
-            <Render pageId={programPageID.graduate.mathematics.overview.th} />
-        </main>
-    </div>
+	<div class="mx-auto mb-20 grid max-w-screen-xl gap-5 p-5 md:grid-cols-4 md:gap-10">
+		<aside class="col-span-1">
+			<nav class="sticky top-32 bg-gray-50">
+				<SideBarUnGrad navItems={createSidebarItemsGraduate("mathematics", lang)} />
+			</nav>
+		</aside>
+		<main class="grid overflow-x-auto md:col-span-3">
+			<Render pageId={programPageID.graduate.mathematics.overview.th} />
+		</main>
+	</div>
 </BaseLayout>

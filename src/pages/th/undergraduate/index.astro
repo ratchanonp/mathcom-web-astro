@@ -5,84 +5,57 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 ---
 
 <BaseLayout title="Undergraduate">
-    <Hero title="Undergraduate" />
+	<Hero title="Undergraduate" />
 
-    <main class="max-w-screen-xl mx-auto p-5 space-y-10">
-        <section class="space-y-5">
-            <h2 class="text-5xl font-semibold font-kanit">Overview</h2>
-            <p class="font-sarabun">
-                Welcome to the Department of Mathematics and Computer Science at
-                Chulalongkorn University's Faculty of Science! We offer two
-                rigorous undergraduate programs designed to equip you with the
-                essential knowledge and skills for a successful career in the
-                ever-evolving world of mathematics and computer science. Whether
-                you're passionate about the theoretical foundations of
-                mathematics or the practical applications of computer science,
-                our programs provide a solid foundation and diverse learning
-                opportunities. Our dedicated faculty, comprised of leading
-                experts in their fields, are committed to fostering your
-                intellectual curiosity and guiding you towards achieving your
-                academic and professional goals.
-            </p>
-        </section>
-        <section class="space-y-5">
-            <h2 class="text-5xl font-semibold font-kanit">
-                Our Undergraduate Programs
-            </h2>
-            <div class="grid md:grid-cols-3 gap-5">
-                <article class="shadow-lg bg-slate-800 text-white">
-                    <img
-                        src="/placeholder.jpeg"
-                        alt=""
-                        class="filter brightness-75"
-                    />
-                    <div class="p-5 flex flex-col h-full justify-between">
-                        <div>
-                            <h3 class="text-3xl font-medium font-kanit mb-5">
-                                Mathematics
-                            </h3>
-                            <p class="font-sarabun">
-                                Explore the foundations of numbers, shapes,
-                                logic, and computation for analytical
-                                problem-solving.
-                            </p>
-                        </div>
-                        <a
-                            href="undergraduate/mathematics"
-                            class="flex items-center text-yellow-500 font-kanit mt-5"
-                            >Learn more <ChevronRightIcon
-                                className="h-4 w-4"
-                            /></a
-                        >
-                    </div>
-                </article>
-                <article class="shadow-lg bg-slate-800 text-white">
-                    <img
-                        src="/placeholder.jpeg"
-                        alt=""
-                        class="filter brightness-75"
-                    />
-                    <div class="p-5 flex flex-col h-full justify-between">
-                        <div>
-                            <h3 class="text-3xl font-medium font-kanit mb-5">
-                                Computer Science
-                            </h3>
-                            <p class="font-sarabun">
-                                Master programming, algorithms, data structures,
-                                software design, and computational
-                                problem-solving.
-                            </p>
-                        </div>
-                        <a
-                            href="undergraduate/computer-science"
-                            class="flex items-center text-yellow-500 font-kanit mt-5"
-                            >Learn more <ChevronRightIcon
-                                className="h-4 w-4"
-                            /></a
-                        >
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
+	<main class="mx-auto max-w-screen-xl space-y-10 p-5">
+		<section class="space-y-5">
+			<h2 class="font-kanit text-5xl font-semibold">Overview</h2>
+			<p class="font-sarabun">
+				Welcome to the Department of Mathematics and Computer Science at Chulalongkorn University's Faculty of
+				Science! We offer two rigorous undergraduate programs designed to equip you with the essential knowledge
+				and skills for a successful career in the ever-evolving world of mathematics and computer science.
+				Whether you're passionate about the theoretical foundations of mathematics or the practical applications
+				of computer science, our programs provide a solid foundation and diverse learning opportunities. Our
+				dedicated faculty, comprised of leading experts in their fields, are committed to fostering your
+				intellectual curiosity and guiding you towards achieving your academic and professional goals.
+			</p>
+		</section>
+		<section class="space-y-5">
+			<h2 class="font-kanit text-5xl font-semibold">Our Undergraduate Programs</h2>
+			<div class="grid gap-5 md:grid-cols-3">
+				<article class="bg-slate-800 text-white shadow-lg">
+					<img src="/placeholder.jpeg" alt="" class="brightness-75 filter" />
+					<div class="flex h-full flex-col justify-between p-5">
+						<div>
+							<h3 class="mb-5 font-kanit text-3xl font-medium">Mathematics</h3>
+							<p class="font-sarabun">
+								Explore the foundations of numbers, shapes, logic, and computation for analytical
+								problem-solving.
+							</p>
+						</div>
+						<a href="undergraduate/mathematics" class="mt-5 flex items-center font-kanit text-yellow-500"
+							>Learn more <ChevronRightIcon className="h-4 w-4" /></a
+						>
+					</div>
+				</article>
+				<article class="bg-slate-800 text-white shadow-lg">
+					<img src="/placeholder.jpeg" alt="" class="brightness-75 filter" />
+					<div class="flex h-full flex-col justify-between p-5">
+						<div>
+							<h3 class="mb-5 font-kanit text-3xl font-medium">Computer Science</h3>
+							<p class="font-sarabun">
+								Master programming, algorithms, data structures, software design, and computational
+								problem-solving.
+							</p>
+						</div>
+						<a
+							href="undergraduate/computer-science"
+							class="mt-5 flex items-center font-kanit text-yellow-500"
+							>Learn more <ChevronRightIcon className="h-4 w-4" /></a
+						>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
 </BaseLayout>

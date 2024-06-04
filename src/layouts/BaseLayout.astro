@@ -17,7 +17,7 @@ import Footer from "@/common/components/Footer.astro";
 import Menu from "@/common/components/Menu/Menu";
 
 interface Props {
-    title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
@@ -27,62 +27,62 @@ const currentURL = Astro.url;
 
 <!doctype html>
 <html lang="th">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-        />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
 
-        <title>{title}</title>
-        <ViewTransitions />
-    </head>
-    <body>
-        <Menu client:load />
-        <Navbar currentURL={currentURL} client:load />
-        <div id="content">
-            <div class="pt-[80px]">
-                <slot />
-            </div>
-            <Footer />
-        </div>
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<Menu client:load />
+		<Navbar currentURL={currentURL} client:load />
+		<div id="content">
+			<div class="pt-[80px]">
+				<slot />
+			</div>
+			<Footer />
+		</div>
 
-        <style is:global>
-            #content {
-                overflow-x: h;
-                transition-property: transform;
-                transition-duration: 500ms;
-                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            }
+		<style is:global>
+			#content {
+				overflow-x: h;
+				transition-property: transform;
+				transition-duration: 500ms;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			}
 
-            #content.menu-open {
-                transform: translateX(-350px);
-            }
-        </style>
-        <script>
-            import { isMenuOpen } from "@/store/menuStore";
+			#content.menu-open {
+				transform: translateX(-350px);
+			}
+		</style>
+		<script>
+			import { isMenuOpen } from "@/store/menuStore";
 
-            isMenuOpen.subscribe((value) => {
-                if (value) {
-                    const contentElement = document.getElementById("content");
-                    if (contentElement !== null) {
-                        contentElement.classList.add("menu-open");
-                    }
-                } else {
-                    const contentElement = document.getElementById("content");
-                    if (contentElement !== null) {
-                        contentElement.classList.remove("menu-open");
-                    }
-                }
-            });
-        </script>
-    </body>
+			isMenuOpen.subscribe((value) => {
+				if (value) {
+					const contentElement = document.getElementById("content");
+					if (contentElement !== null) {
+						contentElement.classList.add("menu-open");
+					}
+				} else {
+					const contentElement = document.getElementById("content");
+					if (contentElement !== null) {
+						contentElement.classList.remove("menu-open");
+					}
+				}
+			});
+		</script>
+	</body>
 </html>
