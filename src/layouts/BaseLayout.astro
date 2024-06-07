@@ -46,7 +46,7 @@ const currentURL = Astro.url;
 		<ViewTransitions />
 	</head>
 	<body>
-		<Menu client:load />
+		<Menu currentURL={currentURL} client:load />
 		<Navbar currentURL={currentURL} client:load />
 		<div id="content">
 			<div class="pt-[80px]">
