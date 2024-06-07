@@ -1,0 +1,66 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="TA Help Desk">
+	<Hero title="TA Help Desk" subtitle="Get help from a TA" />
+	<main class="mx-auto my-10 max-w-screen-xl space-y-5 px-5">
+		<section>
+			<p class="font-kanit text-lg font-light">
+				สำหรับนิสิตที่ต้องการความช่วยเหลือในรายวิชาพื้นฐานของสาขาวิชาคณิตศาสตร์
+				ไม่ว่าจะเป็นเพราะไม่เข้าใจเนื้อหา ทำโจทย์ไม่ได้ ฯลฯ
+				ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์มีบริการให้คำปรึกษาแก่นิสิตในรายวิชาพื้นฐานของสาขาวิชาคณิตศาสตร์
+				(Help Desk) โดยนิสิตรุ่นพี่ระดับบัณฑิตศึกษาผู้มีความสามารถ ตั้งแต่วันที่ 15 มกราคม 2567 เป็นต้นไป
+			</p>
+		</section>
+		<section>
+			<h2 class="font-kanit text-2xl font-semibold">Schedule</h2>
+			<table class="w-full table-auto font-kanit text-lg">
+				<thead class="text-gray-500">
+					<tr class="border-b text-left">
+						<th class="pl-20 font-normal">Day</th>
+						<th class="font-normal">Time</th>
+					</tr>
+				</thead>
+				<tbody class="text-slate-800">
+					<tr class="border-b">
+						<td class="pl-20">Monday</td>
+						<td>12:30PM - 5:00PM</td>
+					</tr>
+					<tr class="border-b">
+						<td class="pl-20">Tuesday</td>
+						<td>12:30PM - 5:00PM</td>
+					</tr>
+					<tr class="border-b">
+						<td class="pl-20">Wednesday</td>
+						<td>12:30PM - 5:00PM</td>
+					</tr>
+					<tr class="border-b">
+						<td class="pl-20">Thursday</td>
+						<td>12:30PM - 4:30PM</td>
+					</tr>
+					<tr class="border-b">
+						<td class="pl-20">Friday</td>
+						<td>12:30PM - 4:30PM</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h2 class="font-kanit text-2xl font-semibold">Location</h2>
+			<p>Room 608/4 floor 6 Mahavajirunahis Building</p>
+		</section>
+		<section>
+			<h2 class="font-kanit text-2xl font-semibold">Schedule</h2>
+			<ul class="font-lg list-inside list-disc marker:text-yellow-500">
+				<li>Calculus I</li>
+				<li>Calculus II</li>
+				<li>Linear Algebra I</li>
+				<li>Mathematical Models and Reasoning</li>
+				<li>Principle of Mathematics I</li>
+				<li>Principle of Mathematics II</li>
+			</ul>
+		</section>
+	</main>
+</BaseLayout>

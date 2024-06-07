@@ -2,39 +2,39 @@
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+
+
 ---
 
-<BaseLayout title="Undergraduate">
-	<Hero title="Undergraduate" />
+<BaseLayout title="หลักสูตรปริญญาตรี | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์">
+	<Hero title="หลักสูตรปริญญาตรี" />
 
 	<main class="mx-auto max-w-screen-xl space-y-10 p-5">
 		<section class="space-y-5">
-			<h2 class="font-kanit text-5xl font-semibold">Overview</h2>
+			<h2 class="font-kanit text-5xl font-semibold">ภาพรวม</h2>
 			<p class="font-sarabun">
-				Welcome to the Department of Mathematics and Computer Science at Chulalongkorn University's Faculty of
-				Science! We offer two rigorous undergraduate programs designed to equip you with the essential knowledge
-				and skills for a successful career in the ever-evolving world of mathematics and computer science.
-				Whether you're passionate about the theoretical foundations of mathematics or the practical applications
-				of computer science, our programs provide a solid foundation and diverse learning opportunities. Our
-				dedicated faculty, comprised of leading experts in their fields, are committed to fostering your
-				intellectual curiosity and guiding you towards achieving your academic and professional goals.
+				นดีต้อนรับสู่ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย!
+				เราเปิดสอนหลักสูตรปริญญาตรีสองหลักสูตรที่เข้มข้น
+				ซึ่งออกแบบมาเพื่อให้คุณมีองค์ความรู้และทักษะที่จำเป็นสำหรับอาชีพที่ประสบความสำเร็จในโลกของคณิตศาสตร์และวิทยาการคอมพิวเตอร์ที่พัฒนาอย่างต่อเนื่อง
+				ไม่ว่าคุณจะหลงใหลในรากฐานทางทฤษฎีของคณิตศาสตร์หรือการประยุกต์ใช้จริงของวิทยาการคอมพิวเตอร์
+				หลักสูตรของเรามอบพื้นฐานที่แข็งแกร่งและโอกาสในการเรียนรู้ที่หลากหลาย
+				คณาจารย์ของเรามีความมุ่งมั่นในการส่งเสริมความอยากรู้อยากเห็นทางปัญญาของคุณและนำคุณไปสู่การบรรลุเป้าหมายทางวิชาการและอาชีพของคุณ
 			</p>
 		</section>
 		<section class="space-y-5">
-			<h2 class="font-kanit text-5xl font-semibold">Our Undergraduate Programs</h2>
+			<h2 class="font-kanit text-5xl font-semibold">หลักสูตรปริญญาตรีของเรา</h2>
 			<div class="grid gap-5 md:grid-cols-3">
 				<article class="bg-slate-800 text-white shadow-lg">
 					<img src="/placeholder.jpeg" alt="" class="brightness-75 filter" />
 					<div class="flex h-full flex-col justify-between p-5">
 						<div>
-							<h3 class="mb-5 font-kanit text-3xl font-medium">Mathematics</h3>
+							<h3 class="mb-5 font-kanit text-3xl font-medium">คณิตศาสตร์</h3>
 							<p class="font-sarabun">
-								Explore the foundations of numbers, shapes, logic, and computation for analytical
-								problem-solving.
+								สำรวจรากฐานของตัวเลข รูปทรง ตรรกะ และการคำนวณเพื่อการแก้ปัญหาเชิงวิเคราะห์
 							</p>
 						</div>
 						<a href="undergraduate/mathematics" class="mt-5 flex items-center font-kanit text-yellow-500"
-							>Learn more <ChevronRightIcon className="h-4 w-4" /></a
+							>สำรวจ <ChevronRightIcon className="h-4 w-4" /></a
 						>
 					</div>
 				</article>
@@ -42,16 +42,16 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 					<img src="/placeholder.jpeg" alt="" class="brightness-75 filter" />
 					<div class="flex h-full flex-col justify-between p-5">
 						<div>
-							<h3 class="mb-5 font-kanit text-3xl font-medium">Computer Science</h3>
+							<h3 class="mb-5 font-kanit text-3xl font-medium">วิทยาการคอมพิวเตอร์</h3>
 							<p class="font-sarabun">
-								Master programming, algorithms, data structures, software design, and computational
-								problem-solving.
+								เรียนรู้และฝึกฝนการเขียนโปรแกรม ขั้นตอนวิธี โครงสร้างข้อมูล การออกแบบซอฟต์แวร์
+								และการแก้ปัญหาเชิงคำนวณ
 							</p>
 						</div>
 						<a
 							href="undergraduate/computer-science"
 							class="mt-5 flex items-center font-kanit text-yellow-500"
-							>Learn more <ChevronRightIcon className="h-4 w-4" /></a
+							>สำรวจ <ChevronRightIcon className="h-4 w-4" /></a
 						>
 					</div>
 				</article>

@@ -1,42 +1,65 @@
 ---
 import Hero from "@/common/components/Hero.astro";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<BaseLayout title="Graduate">
-	<Hero title="Graduate" />
+<BaseLayout title="หลักสูตรบัณฑิตศึกษา | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์">
+	<Hero title="หลักสูตรบัณฑิตศึกษา" />
 
 	<main class="mb-20 mt-10 space-y-10">
-		<section class="mx-auto max-w-screen-xl px-5">
+		<section class="mx-auto max-w-screen-xl space-y-5 px-5">
+			<h2 class="font-kanit text-5xl font-semibold">ภาพรวม</h2>
 			<p class="font-sarabun">
-				For those seeking to deepen their academic pursuits and contribute to the advancement of knowledge in
-				mathematics and computer science, the Department of Mathematics and Computer Science at Chulalongkorn
-				University offers a range of rigorous graduate programs. Our programs cater to individuals with a strong
-				foundation in mathematics or computer science, providing opportunities to specialize in diverse areas of
-				study. Whether your passion lies in exploring theoretical mathematics, applying mathematical principles
-				to solve real-world problems, or delving into the intricacies of computer science and information
-				technology, our graduate programs offer a stimulating academic environment for intellectual growth and
-				professional development. Join our community of scholars and benefit from the expertise of our renowned
-				faculty as you embark on a journey of research, innovation, and academic excellence.
+				สำหรับผู้ที่ต้องการเสริมสร้างความรู้ทางวิชาการและมีส่วนร่วมในการพัฒนาความรู้ในสาขาคณิตศาสตร์และวิทยาการคอมพิวเตอร์
+				ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย
+				เปิดสอนหลักสูตรบัณฑิตศึกษาที่เข้มข้นหลากหลาย
+				หลักสูตรของเราเหมาะสำหรับบุคคลที่มีพื้นฐานที่แข็งแกร่งในสาขาคณิตศาสตร์หรือวิทยาการคอมพิวเตอร์
+				และเปิดโอกาสให้ผู้เรียนเชี่ยวชาญในสาขาการศึกษาที่หลากหลาย ไม่ว่าคุณจะหลงใหลในทฤษฎีคณิตศาสตร์
+				การประยุกต์ใช้หลักการทางคณิตศาสตร์เพื่อแก้ปัญหาในโลกความเป็นจริง
+				หรือการเจาะลึกความซับซ้อนของวิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ
+				หลักสูตรบัณฑิตศึกษาของเรามอบสภาพแวดล้อมทางวิชาการที่กระตุ้นให้เกิดการเติบโตทางปัญญาและการพัฒนาอาชีพ
+				เข้าร่วมชุมชนนักวิชาการของเราและรับประโยชน์จากความเชี่ยวชาญของคณาจารย์ชื่อดังของเราขณะที่คุณเริ่มต้นการเดินทางแห่งการวิจัย
+				นวัตกรรม และความเป็นเลิศทางวิชาการ
 			</p>
 		</section>
 
 		<section class="mx-auto max-w-screen-xl space-y-5 px-5">
-			<h2 class="font-kanit text-5xl font-semibold">Our Graduate Programs</h2>
+			<h2 class="font-kanit text-5xl font-semibold">หลักสูตรบัณฑิตศึกษาของเรา</h2>
 			<div class="grid gap-5 md:grid-cols-3">
 				<article class="bg-slate-800 text-white shadow-lg">
 					<img src="/placeholder.jpeg" alt="" class="brightness-75 filter" />
 					<div class="flex h-full flex-col justify-between space-y-2.5 p-5">
 						<div>
-							<h3 class="mb-2.5 font-kanit text-3xl font-medium">Mathematics</h3>
+							<h3 class="mb-2.5 font-kanit text-3xl font-medium">คณิตศาสตร์</h3>
 							<p class="font-sm font-sarabun font-light">
-								Advance your mathematical knowledge and research skills, exploring pure and applied
-								mathematics for a career in academia or research.
+								ยกระดับความรู้ทางคณิตศาสตร์และทักษะการวิจัยของคุณ
+								สำรวจคณิตศาสตร์บริสุทธิ์และประยุกต์เพื่อก้าวสู่เส้นทางอาชีพในวงการวิชาการหรือการวิจัย
 							</p>
 						</div>
-						<a href="/graduate/mathematics" class="flex items-center font-kanit text-yellow-500"
-							>Learn more <ChevronRightIcon className="h-4 w-4" /></a
+						<a
+							href={translatePath("/graduate/mathematics")}
+							class="flex items-center font-kanit text-yellow-500"
+							>สำรวจ <ChevronRightIcon className="h-4 w-4" /></a
+						>
+					</div>
+				</article>
+				<article class="bg-slate-800 text-white shadow-lg">
+					<div class="flex h-full flex-col justify-between space-y-2.5 p-5">
+						<div>
+							<h3 class="mb-2.5 font-kanit text-3xl font-medium">คณิตศาสตร์ประยุกต์และทฤษฎีการคณณา</h3>
+							<p class="font-sm font-sarabun font-light">
+								ประยุกต์ใช้พลังของคณิตศาสตร์และการคำนวณเพื่อแก้ปัญหาในชีวิตจริง
+								ครอบคลุมศาสตร์ทางวิทยาศาสตร์และวิศวกรรมศาสตร์
+							</p>
+						</div>
+						<a href={translatePath("/graduate/amcs")} class="flex items-center font-kanit text-yellow-500"
+							>สำรวจ <ChevronRightIcon className="h-4 w-4" /></a
 						>
 					</div>
 				</article>
@@ -44,32 +67,18 @@ import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
 					<div class="flex h-full flex-col justify-between space-y-2.5 p-5">
 						<div>
 							<h3 class="mb-2.5 font-kanit text-3xl font-medium">
-								Applied Mathematics & Computational Science
+								วิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ
 							</h3>
 							<p class="font-sm font-sarabun font-light">
-								Harness the power of mathematics and computing to solve real-world problems across
-								science and engineering disciplines.
-							</p>
-						</div>
-						<a href="/graduate/amcs" class="flex items-center font-kanit text-yellow-500"
-							>Learn more <ChevronRightIcon className="h-4 w-4" /></a
-						>
-					</div>
-				</article>
-				<article class="bg-slate-800 text-white shadow-lg">
-					<div class="flex h-full flex-col justify-between space-y-2.5 p-5">
-						<div>
-							<h3 class="mb-2.5 font-kanit text-3xl font-medium">
-								Computer Science and Information Technology
-							</h3>
-							<p class="font-sm font-sarabun font-light">
-								AI Explore cutting-edge topics in computer science and information technology,
-								specializing in areas like AI, data science, and cybersecurity.
+								เจาะลึกหัวข้อที่ล้ำสมัยในวิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ เชี่ยวชาญในสาขาอย่าง
+								AI, วิทยาศาสตร์ข้อมูล และความปลอดภัยทางไซเบอร์
 							</p>
 						</div>
 						<div class="flex space-x-10">
-							<a href="/graduate/csit" class="flex items-center font-kanit text-yellow-500"
-								>Learn more <ChevronRightIcon className="h-4 w-4" /></a
+							<a
+								href={translatePath("/graduate/csit")}
+								class="flex items-center font-kanit text-yellow-500"
+								>สำรวจ <ChevronRightIcon className="h-4 w-4" /></a
 							>
 						</div>
 					</div>
