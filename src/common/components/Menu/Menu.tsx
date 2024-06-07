@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { isMenuOpen } from "../../../store/menuStore";
 
 import MathComLogo from "@/assets/img/logo/MathComLogo.png";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import {
 	AcademicCapIcon,
 	BuildingLibraryIcon,
@@ -20,7 +21,15 @@ import {
 import { useStore } from "@nanostores/react";
 import MenuItem from "./MenuItem";
 
-const Menu = () => {
+interface MenuProps {
+	currentURL: URL;
+}
+
+const Menu = (props: MenuProps) => {
+	const { currentURL } = props;
+	const lang = getLangFromUrl(currentURL);
+	const t = useTranslations(lang);
+	const translatePath = useTranslatedPath(lang);
 	const $isMenuOpen = useStore(isMenuOpen);
 
 	return (
@@ -31,12 +40,12 @@ const Menu = () => {
 		>
 			<div className="mx-auto h-full max-w-7xl overflow-y-auto">
 				<div className="flex items-center justify-between py-5 pl-5">
-					<a href="/" className="flex items-center">
+					<a href={translatePath("/")} className="flex items-center">
 						<img src={MathComLogo.src} alt="CU Logo" className="mr-5 aspect-auto h-[65px] w-auto" />
 						<div className="flex w-full justify-center font-kanit font-medium text-white">
-							<span>
-								<span className="font-light">DEPARTMENT OF</span> <br /> MATHEMATICS AND{" "}
-								<br className="xs:block hidden lg:hidden" /> COMPUTER SCIENCE
+							<span className="uppercase">
+								<span className="font-light">{t("nav.department")}</span> <br /> {t("nav.mathematics")} {t("nav.and")}
+								<br className="xs:block hidden lg:hidden" /> {t("nav.computer_science")}
 							</span>
 						</div>
 					</a>
@@ -54,36 +63,48 @@ const Menu = () => {
 					</button>
 				</div>
 				<div className="mt-5 flex flex-col p-5 font-medium text-white">
-					<h2 className="mb-5 font-kanit text-lg font-semibold uppercase">Main Menu</h2>
+					<h2 className="mb-5 font-kanit text-lg font-semibold uppercase">{t("menu.main_menu")}</h2>
 					<ul className="divide-y">
-						<MenuItem title="Home" href="/" Icon={HomeIcon} />
+						<MenuItem title={t("menu.home")} href={translatePath("")} Icon={HomeIcon} />
 						<Accordion type="single" collapsible>
 							<AccordionItem value="item-1">
 								<AccordionTrigger className="group flex w-full items-center text-white hover:bg-white/10 [&[data-state=open]>svg.back-icon]:rotate-180">
-									<MenuItem title="About Us" href="/about-us" Icon={InformationCircleIcon} />
+									<MenuItem title={t("menu.about_us")} href={translatePath("/about-us")} Icon={InformationCircleIcon} />
 									<ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white transition-transform duration-200" />
 								</AccordionTrigger>
 								<AccordionContent className="border-t border-white">
 									<ul className="ml-5 divide-y">
-										<MenuItem title="Administration" href="/administration" Icon={BuildingLibraryIcon} />
+										<MenuItem
+											title={t("menu.administration")}
+											href={translatePath("/administration")}
+											Icon={BuildingLibraryIcon}
+										/>
 									</ul>
 								</AccordionContent>
 							</AccordionItem>
 						</Accordion>
-						<MenuItem title="People" href="/people" Icon={UserGroupIcon} />
+						<MenuItem title={t("menu.people")} href={translatePath("/people")} Icon={UserGroupIcon} />
 
 						<Accordion type="single" collapsible>
 							<AccordionItem value="item-1">
 								<AccordionTrigger className="group flex w-full items-center text-white hover:bg-white/10 [&[data-state=open]>svg.back-icon]:rotate-180">
-									<MenuItem title="Undergraduate" href="/undergraduate" Icon={AcademicCapIcon} />
+									<MenuItem
+										title={t("menu.undergraduate")}
+										href={translatePath("/undergraduate")}
+										Icon={AcademicCapIcon}
+									/>
 									<ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white transition-transform duration-200" />
 								</AccordionTrigger>
 								<AccordionContent className="border-t border-white">
 									<ul className="ml-5 divide-y">
-										<MenuItem title="Mathematics" href="/undergraduate/mathematics" Icon={CalculatorIcon} />
 										<MenuItem
-											title="Computer Science"
-											href="/undergraduate/computer-science"
+											title={t("menu.undergraduate.mathematics")}
+											href={translatePath("/undergraduate/mathematics")}
+											Icon={CalculatorIcon}
+										/>
+										<MenuItem
+											title={t("menu.undergraduate.computer_science")}
+											href={translatePath("/undergraduate/computer-science")}
 											Icon={ComputerDesktopIcon}
 										/>
 									</ul>
@@ -93,21 +114,25 @@ const Menu = () => {
 						<Accordion type="single" collapsible>
 							<AccordionItem value="item-1">
 								<AccordionTrigger className="group flex w-full items-center text-white hover:bg-white/10 [&[data-state=open]>svg.back-icon]:rotate-180">
-									<MenuItem title="Graduate" href="/graduate" Icon={AcademicCapIcon} />
+									<MenuItem title={t("menu.graduate")} href={translatePath("/graduate")} Icon={AcademicCapIcon} />
 									<ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white transition-transform duration-200" />
 								</AccordionTrigger>
 								<AccordionContent className="border-t border-white">
 									<AccordionItem value="item-1">
 										<ul className="ml-5 divide-y">
-											<MenuItem title="Mathematics" href="/graduate/mathematics" Icon={CalculatorIcon} />
 											<MenuItem
-												title="Applied Mathematics & Computational Science"
-												href="/graduate/amcs"
+												title={t("menu.graduate.mathematics")}
+												href={translatePath("/graduate/mathematics")}
 												Icon={CalculatorIcon}
 											/>
 											<MenuItem
-												title="Computer Science & Information Technology"
-												href="/graduate/csit"
+												title={t("menu.graduate.amcs")}
+												href={translatePath("/graduate/amcs")}
+												Icon={CalculatorIcon}
+											/>
+											<MenuItem
+												title={t("menu.graduate.csit")}
+												href={translatePath("/graduate/csit")}
 												Icon={ComputerDesktopIcon}
 											/>
 										</ul>
@@ -118,21 +143,37 @@ const Menu = () => {
 						<Accordion type="single" collapsible>
 							<AccordionItem value="item-1">
 								<AccordionTrigger className="group flex w-full items-center text-white hover:bg-white/10 [&[data-state=open]>svg.back-icon]:rotate-180">
-									<MenuItem title="News & Events" href="/news-events" Icon={NewspaperIcon} />
+									<MenuItem title={t("menu.news_events")} href={translatePath("/news-events")} Icon={NewspaperIcon} />
 									<ChevronDown className="back-icon ml-auto h-4 w-4 shrink-0 text-white transition-transform duration-200" />
 								</AccordionTrigger>
 								<AccordionContent className="border-t border-white">
 									<ul className="ml-5 divide-y">
-										<MenuItem title="Stories & News" href="/news-events/stories-news" Icon={NewspaperIcon} />
-										<MenuItem title="Awards" href="/news-events/award" Icon={TrophyIcon} />
-										<MenuItem title="Events" href="/events" Icon={CalendarDaysIcon} />
-										<MenuItem title="APAM" href="/news-events/apam" Icon={CalculatorIcon} />
+										<MenuItem
+											title={t("menu.news_events.stories_news")}
+											href={translatePath("/news-events/stories-news")}
+											Icon={NewspaperIcon}
+										/>
+										<MenuItem
+											title={t("menu.news_events.awards")}
+											href={translatePath("/news-events/award")}
+											Icon={TrophyIcon}
+										/>
+										<MenuItem
+											title={t("menu.news_events.events")}
+											href={translatePath("/events")}
+											Icon={CalendarDaysIcon}
+										/>
+										<MenuItem
+											title={t("menu.news_events.apam")}
+											href={translatePath("/news-events/apam")}
+											Icon={CalculatorIcon}
+										/>
 									</ul>
 								</AccordionContent>
 							</AccordionItem>
 						</Accordion>
-						<MenuItem title="Research" href="/research" Icon={DocumentTextIcon} />
-						<MenuItem title="Support Us" href="/support-us" Icon={HeartIcon} />
+						<MenuItem title={t("menu.research")} href={translatePath("/research")} Icon={DocumentTextIcon} />
+						<MenuItem title={t("menu.support_us")} href={translatePath("/support-us")} Icon={HeartIcon} />
 					</ul>
 				</div>
 			</div>

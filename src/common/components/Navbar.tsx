@@ -1,6 +1,6 @@
 import MathComLogo from "@/assets/img/logo/MathComLogo.png";
 import { languages } from "@/i18n/ui";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useStore } from "@nanostores/react";
 import { isMenuOpen } from "../../store/menuStore";
@@ -13,6 +13,8 @@ export default function Navbar(props: NavbarProps) {
 	const { currentURL } = props;
 	const lang = getLangFromUrl(currentURL);
 	const t = useTranslations(lang);
+	const translatePath = useTranslatedPath(lang);
+
 	const $isMenuOpen = useStore(isMenuOpen);
 
 	return (
@@ -21,7 +23,7 @@ export default function Navbar(props: NavbarProps) {
 				className={`fixed z-40 w-full overflow-hidden bg-white shadow transition-all duration-500 ${$isMenuOpen && "-translate-x-full md:-translate-x-[350px]"} `}
 			>
 				<div className="container mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5">
-					<a href="/" className="flex items-center">
+					<a href={translatePath("")} className="flex items-center">
 						<img
 							src={MathComLogo.src}
 							alt="CU Logo"
