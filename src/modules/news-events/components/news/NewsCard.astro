@@ -2,7 +2,10 @@
 const { news } = Astro.props;
 const { title, thumbnail, date, slug } = news;
 
+import { getLangFromUrl, useDateFnsLocale } from "@/i18n/utils";
 import { format } from "date-fns";
+const lang = getLangFromUrl(Astro.url);
+const dt = useDateFnsLocale(lang);
 ---
 
 <a href={`/posts/${slug}`} class="grid grid-cols-3 border border-gray-200 shadow-md">
@@ -14,7 +17,7 @@ import { format } from "date-fns";
 			{title}
 		</h3>
 		<p class="text-light mt-3 text-slate-300">
-			{format(date, "MMM dd, yyyy")}
+			{format(date, "MMMM dd, yyyy", { locale: dt })}
 		</p>
 	</div>
 </a>

@@ -3,7 +3,13 @@ import { ResearchAPIV2 } from "@/libs/api/research";
 import { useEffect, useState } from "react";
 import ResearchBox from "./components/ResearchBox";
 
-const ResearchModule = () => {
+interface Props {
+	url: URL;
+}
+
+const ResearchModule = (props: Props) => {
+	const { url } = props;
+
 	const [research, setResearch] = useState<IResearchV2[]>([]);
 
 	useEffect(() => {
@@ -18,9 +24,9 @@ const ResearchModule = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-wrap justify-center gap-x-4 gap-y-14">
+		<div className="mb-20 flex flex-wrap justify-center gap-x-4 gap-y-14">
 			{research.map((item) => (
-				<ResearchBox key={item.id} research={item} />
+				<ResearchBox url={url} key={item.id} research={item} />
 			))}
 		</div>
 	);

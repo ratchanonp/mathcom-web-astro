@@ -212,12 +212,52 @@ export const ui = {
 
 		"program.news.no_news": "No news available",
 		"program.news.explore_more": "Explore more",
+
+		"research.title": "Research | Department of Mathematics and Computer Science",
+		"research.hero.title": "Research",
+		"research.hero.subTitle": "Explore our research areas",
+		"research.research_areas": "Research Areas",
+		"research.explore": "Explore",
+		"research.research_faculty": "Research Faculty",
+
+		"news.title": "News & Events | Department of Mathematics and Computer Science",
+		"news.hero.title": "News & Events",
+		"news.hero.subTitle": "Stay up-to-date with our latest news and events",
+		"news.stories-news.recents": "Recent Stories & News",
+		"news.stories-news.all": "All Stories & News",
+		"news.awards": "Awards",
+		"news.awards.all": "All Awards",
+		"news.upcoming_events": "Upcoming Events",
+		"news.seminars.all": "All Seminars",
+		"news.apam": "APAM",
+
+		"news.apam.title": "APAM | Department of Mathematics and Computer Science",
+		"news.apam.hero.title": "APAM",
+		"news.apam.hero.subTitle": "Annual Applied and Pure Mathematics Conference",
+		"news.apam.what_is_apam": "What is APAM?",
+		"news.apam.description":
+			"The Annual Applied and Pure Mathematics Conference (APAM) is a yearly event hosted by the Department of Mathematics and Computer Science at Chulalongkorn University. APAM provides a platform for researchers, students, and enthusiasts to engage with the latest advancements in both theoretical and practical mathematics.",
+		"news.apam.news-updates": "APAM News & Update",
+
+		"news.events.title": "Events | Department of Mathematics and Computer Science",
+		"news.events.hero.title": "Events",
+		"news.events.hero.subTitle": "Stay up-to-date with our latest events",
+
+		"news.awards.title": "Awards | Department of Mathematics and Computer Science",
+		"news.awards.hero.title": "Awards",
+		"news.awards.hero.subTitle": "Explore our achievements and awards",
+		"news.awards.recents": "Recent Awards",
+
+		"news.stories-news.title": "Stories & News | Department of Mathematics and Computer Science",
+		"news.stories-news.hero.title": "Stories & News",
+		"news.stories-news.hero.subTitle": "Explore our latest stories and news",
 	},
 	th: {
 		department: "ภาควิชา",
 		"department.name": "ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
 		"department.short_name": "คณิตศาสตร์และวิทยาการคอมพิวเตอร์",
 
+		"menu.main_menu": "เมนูหลัก",
 		"menu.home": "หน้าหลัก",
 		"menu.about_us": "เกี่ยวกับ",
 		"menu.administration": "ฝ่ายบริหาร",
@@ -416,5 +456,44 @@ export const ui = {
 
 		"program.news.no_news": "ไม่มีข่าวสาร",
 		"program.news.explore_more": "ดูข่าวสารอื่น ๆ เพิ่มเติม",
+
+		"research.title": "งานวิจัย | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"research.hero.title": "งานวิจัย",
+		"research.hero.subTitle": "สำรวจสาขางานวิจัยของเรา",
+		"research.research_areas": "สาขางานวิจัย",
+		"research.explore": "สำรวจ",
+		"research.research_faculty": "อาจารย์ที่เกี่ยวข้อง",
+
+		"news.title": "ข่าวสารและกิจกรรม | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"news.hero.title": "ข่าวสารและกิจกรรม",
+		"news.hero.subTitle": "ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"news.stories-news.recents": "เรื่องราวและข่าวสารล่าสุด",
+		"news.stories-news.all": "เรื่องราวและข่าวสารทั้งหมด",
+		"news.awards": "รางวัล",
+		"news.awards.all": "รางวัลทั้งหมด",
+		"news.upcoming_events": "กิจกรรมที่จะมาถึง",
+		"news.seminars.all": "สัมมนาทั้งหมด",
+		"news.apam": "APAM",
+
+		"news.apam.title": "APAM | Department of Mathematics and Computer Science",
+		"news.apam.hero.title": "APAM",
+		"news.apam.hero.subTitle": "Annual Applied and Pure Mathematics Conference",
+		"news.apam.what_is_apam": "APAM คืออะไร?",
+		"news.apam.description":
+			"การประชุมวิชาการประยุกต์และคณิตศาสตร์บริสุทธิ์ประจำปี (APAM) เป็นงานประจำปีที่จัดโดยภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ มหาวิทยาลัยจุฬาลงกรณ์ APAM เป็นเวทีสำหรับนักวิจัย นักเรียน และผู้ที่ชื่นชอบในการติดตามความก้าวหน้าล่าสุดทั้งในด้านคณิตศาสตร์เชิงทฤษฎีและประยุกต์",
+		"news.apam.news-updates": "APAM ข่าวสารและอัพเดท",
+
+		"news.awards.title": "รางวัล | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"news.awards.hero.title": "รางวัล",
+		"news.awards.hero.subTitle": "ความสำเร็จของนิสิตและบุคลากร",
+		"news.awards.recents": "รางวัลล่าสุด",
+
+		"news.stories-news.title": "เรื่องราวและข่าวสาร | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"news.stories-news.hero.title": "เรื่องราวและข่าวสาร",
+		"news.stories-news.hero.subTitle": "สำรวจเรื่องราวและข่าวสารล่าสุดของเรา",
+
+		"news.events.title": "กิจกรรม | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"news.events.hero.title": "กิจกรรม",
+		"news.events.hero.subTitle": "อัพเดทกิจกรรมล่าสุดของเรา",
 	},
 } as const;

@@ -1,11 +1,18 @@
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import type { IResearchV2 } from "@/interfaces/research.interface";
 
 interface Props {
 	research: IResearchV2;
+	url: URL;
 }
 
 const ResearchBox = (props: Props) => {
-	const { research } = props;
+	const { research, url } = props;
+
+	const lang = getLangFromUrl(url);
+	const t = useTranslations(lang);
+	const translatePath = useTranslatedPath(lang);
+
 	const { title, thumbnail, slug } = research;
 
 	const parser = new DOMParser();
@@ -17,8 +24,11 @@ const ResearchBox = (props: Props) => {
 				<img src={thumbnail} alt="" className="h-10 w-10" />
 			</div>
 			<h2 className="mt-10 pb-2.5 text-center font-kanit text-xl font-medium">{titleRender}</h2>
-			<a href={`/research/${slug}`} className="rounded bg-yellow-400 px-5 py-2.5 text-center font-kanit text-slate-800">
-				Explore
+			<a
+				href={translatePath(`/research/${slug}`)}
+				className="rounded border-2 border-white bg-yellow-400 px-5 py-2.5 text-center font-kanit text-slate-800 transition-transform hover:-translate-y-1"
+			>
+				{t("research.explore")}
 			</a>
 		</article>
 	);
