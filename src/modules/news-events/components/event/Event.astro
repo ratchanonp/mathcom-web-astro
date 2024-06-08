@@ -1,17 +1,21 @@
 ---
 const { event } = Astro.props;
 const { event_start } = event;
+import { getLangFromUrl, useDateFnsLocale } from "@/i18n/utils";
 import { format, formatISO } from "date-fns";
+
+const lang = getLangFromUrl(Astro.url);
+const dt = useDateFnsLocale(lang);
 ---
 
 <article class="grid justify-items-center p-5 hover:bg-gray-200">
 	<header>
 		<time class="grid justify-items-center" datetime={formatISO(event_start)}>
 			<span class="text-3xl font-bold uppercase text-yellow-500">
-				{format(event_start, "MMM dd")}
+				{format(event_start, "MMM dd", { locale: dt })}
 			</span>
 			<span class="text-yellow-500">
-				{format(event_start, "hh:mm aa")}
+				{format(event_start, "hh:mm aa", { locale: dt })}
 			</span>
 		</time>
 		<h3 class="mt-2.5 text-center text-xl text-slate-500">{event.title}</h3>
