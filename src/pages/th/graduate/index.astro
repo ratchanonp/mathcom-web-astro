@@ -1,11 +1,10 @@
 ---
 import Hero from "@/common/components/Hero.astro";
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ChevronRightIcon from "@heroicons/react/24/solid/ChevronRightIcon";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
