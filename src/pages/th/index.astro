@@ -78,7 +78,7 @@ export const prerender = false;
 							>{t("nav.computer_science")}</span
 						>
 					</h1>
-					<a href="/th/about-us" class="mt-5 flex justify-start lg:mt-10">
+					<a href={translatePath("about-us")} class="mt-5 flex justify-start lg:mt-10">
 						<span
 							class="w-fit bg-primary p-1.5 font-kanit text-sm font-medium uppercase md:p-2.5 md:text-xl"
 						>
@@ -111,7 +111,7 @@ export const prerender = false;
 			</header>
 			<PostGrid />
 			<a
-				href="/news-events"
+				href={translatePath("/news-events")}
 				class="mt-10 flex w-full justify-center text-center font-sarabun text-gray-500 underline"
 			>
 				{t("home.view_all_news")}
@@ -129,7 +129,10 @@ export const prerender = false;
 				</h2>
 			</header>
 			<EventGrid />
-			<a href="/events" class="mt-10 flex w-full justify-center text-center font-sarabun text-gray-500 underline">
+			<a
+				href={translatePath("/events")}
+				class="mt-10 flex w-full justify-center text-center font-sarabun text-gray-500 underline"
+			>
 				{t("home.view_all_events")}
 				<ArrowLongRightIcon className="ml-2 h-5 w-5" />
 			</a>

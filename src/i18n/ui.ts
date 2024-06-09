@@ -251,6 +251,13 @@ export const ui = {
 		"news.stories-news.title": "Stories & News | Department of Mathematics and Computer Science",
 		"news.stories-news.hero.title": "Stories & News",
 		"news.stories-news.hero.subTitle": "Explore our latest stories and news",
+
+		"events.title": "Events | Department of Mathematics and Computer Science",
+		"events.hero.title": "Events",
+		"events.hero.subTitle": "Stay up-to-date with our latest events",
+		"events.event-calendar": "Event Calendar",
+		"events.event-for": "Events for",
+		"events.no-events-today": "No events this today",
 	},
 	th: {
 		department: "ภาควิชา",
@@ -495,5 +502,12 @@ export const ui = {
 		"news.events.title": "กิจกรรม | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
 		"news.events.hero.title": "กิจกรรม",
 		"news.events.hero.subTitle": "อัพเดทกิจกรรมล่าสุดของเรา",
+
+		"events.title": "กิจกรรม | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"events.hero.title": "กิจกรรม",
+		"events.hero.subTitle": "อัพเดทกิจกรรมล่าสุดของเรา",
+		"events.event-calendar": "ปฏิทินกิจกรรม",
+		"events.event-for": "กิจกรรมสำหรับ",
+		"events.no-events-today": "ไม่มีกิจกรรมในวันนี้",
 	},
 } as const;
