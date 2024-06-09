@@ -18,6 +18,23 @@ export const sortBy: ISortBy[] = [
 	},
 ];
 
+export const sortByTH: ISortBy[] = [
+	{
+		title: "ชื่อ",
+		options: [
+			{ name: "ชื่อ ก-ฮ", value: "firstname-asc" },
+			{ name: "ชื่อ ฮ-ก", value: "firstname-desc" },
+		],
+	},
+	{
+		title: "นามสกุล",
+		options: [
+			{ name: "นามสกุล ก-ฮ", value: "lastname-asc" },
+			{ name: "นามสกุล ฮ-ก", value: "lastname-desc" },
+		],
+	},
+];
+
 export const programPageID = {
 	undergradudate: {
 		mathematics: {

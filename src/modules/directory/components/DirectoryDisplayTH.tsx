@@ -37,11 +37,17 @@ export default function DirectoryDisplay() {
 	const $serchKeyword = useStore(searchKeyword);
 	const $researchFields = useStore(researchFieldSelected);
 
+	console.log(faculties);
+
 	const filterFaculties = (tab: string, searchKeyword: string, researchFields: number[], sortBy: string) => {
 		return faculties
 			.filter((faculty) => {
 				if (tab === "all" || tab.toLocaleLowerCase() === faculty.staff_type) {
-					if (searchKeyword !== "" && !faculty.title.toLowerCase().includes(searchKeyword.toLowerCase())) {
+					if (
+						searchKeyword !== "" &&
+						!faculty.first_name_thai.toLowerCase().includes(searchKeyword.toLowerCase()) &&
+						!faculty.last_name_thai.toLowerCase().includes(searchKeyword.toLowerCase())
+					) {
 						return false;
 					}
 
@@ -50,7 +56,11 @@ export default function DirectoryDisplay() {
 						return true;
 					}
 
-					if (researchFields.length > 0 && !researchFields.some((id) => faculty.research_areas.includes(id))) {
+					if (
+						researchFields.length > 0 &&
+						faculty.research_areas != null &&
+						!researchFields.some((id) => faculty.research_areas.includes(id))
+					) {
 						return false;
 					}
 
@@ -61,15 +71,15 @@ export default function DirectoryDisplay() {
 			.sort((a, b) => {
 				switch (sortBy) {
 					case "firstname-asc":
-						return a.first_name.localeCompare(b.first_name);
+						return a.first_name_thai.localeCompare(b.first_name_thai);
 					case "firstname-desc":
-						return b.first_name.localeCompare(a.first_name);
+						return b.first_name_thai.localeCompare(a.first_name_thai);
 					case "lastname-asc":
-						return a.last_name.localeCompare(b.last_name);
+						return a.last_name_thai.localeCompare(b.last_name_thai);
 					case "lastname-desc":
-						return b.last_name.localeCompare(a.last_name);
+						return b.last_name_thai.localeCompare(a.last_name_thai);
 					default:
-						return a.first_name.localeCompare(b.first_name);
+						return a.first_name_thai.localeCompare(b.first_name_thai);
 				}
 			});
 	};

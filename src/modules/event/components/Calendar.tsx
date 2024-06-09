@@ -12,6 +12,7 @@ import {
 	startOfToday,
 } from "date-fns";
 
+import { useDateFnsLocale } from "@/i18n/utils";
 import { EventAPI } from "@/libs/api/event";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useStore } from "@nanostores/react";
@@ -19,7 +20,14 @@ import { useEffect, useState } from "react";
 import { cn } from "src/libs/utils";
 import { selectedDay } from "src/modules/event/stores/eventStore";
 
-const Calendar = () => {
+interface Props {
+	lang: "en" | "th";
+}
+
+const Calendar = (props: Props) => {
+	const { lang } = props;
+	const dt = useDateFnsLocale(lang);
+
 	const today = startOfToday();
 	const $selectedDay = useStore(selectedDay);
 	const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
@@ -54,7 +62,7 @@ const Calendar = () => {
 		<div className="border-2 border-gray-200 p-5 shadow-lg">
 			<div className="flex items-center">
 				<h2 className="flex-auto font-kanit text-xl font-semibold text-yellow-500">
-					{format(firstDayCurrentMonth, "MMMM yyyy")}
+					{format(firstDayCurrentMonth, "MMMM yyyy", { locale: dt })}
 				</h2>
 				<button
 					type="button"
