@@ -29,6 +29,7 @@ export const ui = {
 		"menu.news_events.awards": "Awards",
 		"menu.news_events.events": "Events",
 		"menu.news_events.apam": "APAM",
+		"menu.news_events.seminar": "Seminar",
 		"menu.research": "Research",
 		"menu.support_us": "Support Us",
 
@@ -258,6 +259,13 @@ export const ui = {
 		"events.event-calendar": "Event Calendar",
 		"events.event-for": "Events for",
 		"events.no-events-today": "No events this today",
+		"seminars.title": "Seminars | Department of Mathematics and Computer Science",
+		"seminars.hero.title": "Seminars",
+		"seminars.hero.subTitle": "Stay up-to-date with our latest seminars",
+		"seminars.upcoming": "Upcoming Seminars",
+		"seminars.facebook_page": "Facebook Page",
+		"seminars.no-seminars": "No seminars available",
+		"seminars.explore_more": "Explore more",
 	},
 	th: {
 		department: "ภาควิชา",
@@ -281,6 +289,7 @@ export const ui = {
 		"menu.news_events.awards": "รางวัล",
 		"menu.news_events.events": "กิจกรรม",
 		"menu.news_events.apam": "APAM",
+		"menu.news_events.seminar": "สัมมนา",
 		"menu.research": "งานวิจัย",
 		"menu.support_us": "สนับสนุนเรา",
 
@@ -509,5 +518,13 @@ export const ui = {
 		"events.event-calendar": "ปฏิทินกิจกรรม",
 		"events.event-for": "กิจกรรมสำหรับ",
 		"events.no-events-today": "ไม่มีกิจกรรมในวันนี้",
+
+		"seminars.title": "สัมมนา | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
+		"seminars.hero.title": "สัมมนา",
+		"seminars.hero.subTitle": "อัพเดทสัมมนาล่าสุดของเรา",
+		"seminars.upcoming": "สัมมนาที่จะมาถึง",
+		"seminars.facebook_page": "เพจ Facebook Math CU Seminars",
+		"seminars.no-seminars": "ไม่มีสัมมนา",
+		"seminars.explore_more": "สำรวจเพิ่มเติม",
 	},
 } as const;
