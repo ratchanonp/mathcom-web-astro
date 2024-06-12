@@ -168,6 +168,11 @@ const Menu = (props: MenuProps) => {
 											href={translatePath("/news-events/apam")}
 											Icon={CalculatorIcon}
 										/>
+										<MenuItem
+											title={t("menu.news_events.seminar")}
+											href={translatePath("/news-events/seminar")}
+											Icon={CalculatorIcon}
+										/>
 									</ul>
 								</AccordionContent>
 							</AccordionItem>
