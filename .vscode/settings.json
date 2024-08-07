@@ -1,18 +1,22 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.organizeImports": "explicit"
-    },
-    "eslint.validate": [
-        "javascript"
-    ],
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "prettier.documentSelectors": ["**/*.astro"],
-    "[astro]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.formatOnSave": true,
-    "editor.insertSpaces": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	"eslint.validate": [
+		"javascript"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"prettier.documentSelectors": [
+		"**/*.astro"
+	],
+	"[astro]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
 	"editor.detectIndentation": false,
+	"editor.fontFamily": "'Monaspace Neon', monospace",
+	"editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
 }
