@@ -11,7 +11,7 @@ services:
       WORDPRESS_DB_NAME: ${DB_NAME}
       WORDPRESS_CONFIG_EXTRA: |
         # Development environment
-        define( 'WP_ENVIRONMENT_TYPE', 'development' );
+        define( 'WP_ENVIRONMENT_TYPE', 'local' );
     volumes:
       - wordpress_data:/var/www/html/wordpress
       # Custom theme
