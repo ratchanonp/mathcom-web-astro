@@ -15,7 +15,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html/wordpress
       # Custom theme
-      - ./wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
+      - ./wordpress/mathcom-func:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     depends_on:
       - db
@@ -35,7 +35,7 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - wordpress
-  
+
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: mathcom-phpmyadmin
@@ -51,7 +51,7 @@ services:
 
   astro:
     container_name: mathcom-astro
-    build: 
+    build:
       context: ../
       dockerfile: ./docker/astro/Dockerfile
       args:
@@ -60,7 +60,7 @@ services:
     restart: always
     networks:
       - wordpress
-  
+
   nginx:
     image: nginx:alpine-slim
     container_name: mathcom-nginx
@@ -78,6 +78,7 @@ services:
 volumes:
   wordpress_data:
   db_data:
+
 
 networks:
   wordpress:
