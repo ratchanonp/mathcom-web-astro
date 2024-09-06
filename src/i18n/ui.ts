@@ -456,7 +456,7 @@ export const ui = {
 		"sidebar.rules_and_regulations": "กฎระเบียบ",
 		"sidebar.course_descriptions": "รายละเอียดรายวิชา",
 
-		"sidebar.current_students": "นิสิตปัจจุบัน",
+		"sidebar.current_students": "นิสิตในหลักสูตร",
 		"sidebar.master_program": "หลักสูตรปริญญาโท",
 		"sidebar.doctoral_program": "หลักสูตรปริญญาเอก",
 		"sidebar.qualifying_exam": "สอบวัดคุณสมบัติ",
