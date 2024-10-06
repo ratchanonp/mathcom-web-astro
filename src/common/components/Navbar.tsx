@@ -43,6 +43,7 @@ export default function Navbar(props: NavbarProps) {
 						<div className="rounded-full bg-gray-100 p-1 font-kanit font-medium">
 							{Object.entries(languages).map(([language, _]) => (
 								<a
+									key={language}
 									href={`/${language}/`}
 									className={`rounded-full px-3 py-0.5 uppercase text-slate-800 hover:text-yellow-500 ${
 										lang === language && "bg-white text-yellow-500"
