@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const dt = useDateFnsLocale(lang);
 ---
 
-<a href={`/posts/${slug}`} class="grid grid-cols-3 border border-gray-200 shadow-md">
+<a href={slug} class="grid grid-cols-3 border border-gray-200 shadow-md">
 	<div class="col-span-1">
 		<img src={thumbnail} alt={thumbnail} class="aspect-square h-auto w-96 object-cover" />
 	</div>
