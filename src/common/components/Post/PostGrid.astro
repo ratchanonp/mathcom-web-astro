@@ -2,7 +2,9 @@
 import PostCard from "./PostCard.astro";
 
 import { getPosts } from "@/libs/api/post";
-const posts = await getPosts({ _embed: "", per_page: "6" });
+
+const STORY_NEW_CATEGORY_ID = "6";
+const posts = await getPosts({ _embed: "", per_page: "6", categories: STORY_NEW_CATEGORY_ID });
 ---
 
 <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
