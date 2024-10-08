@@ -8,7 +8,9 @@ const dt = useDateFnsLocale(lang);
 import { format } from "date-fns";
 ---
 
-<article class="border-gray w-full overflow-hidden border-2 shadow-lg transition-all ease-in-out hover:scale-105">
+<article
+	class="border-gray flex w-full flex-col overflow-hidden border-2 shadow-lg transition-all ease-in-out hover:scale-105"
+>
 	<a href={link}>
 		<figure class="relative -z-10">
 			{
@@ -24,12 +26,12 @@ import { format } from "date-fns";
 			}
 		</figure>
 	</a>
-	<div class="flex flex-col space-y-2 p-4">
+	<div class="flex h-full flex-col justify-between space-y-2 p-4">
+		<h3 class="font-prompt text-lg">
+			<a class="line-clamp-2 font-kanit font-medium" href={link}>{title.rendered}...</a>
+		</h3>
 		<date class="font-prompt self-start text-xs text-gray-400">
 			{format(new Date(post.date), "dd MMMM yyyy", { locale: dt })}
 		</date>
-		<h3 class="font-prompt text-lg font-medium">
-			<a class="line-clamp-2 font-kanit font-normal" href={link}>{title.rendered}...</a>
-		</h3>
 	</div>
 </article>
