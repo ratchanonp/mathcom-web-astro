@@ -1,11 +1,12 @@
 ---
 import { EventAPI } from "@/libs/api/event";
+import { undefined } from "astro:schema";
 import EventCardMock from "./EventCardMock.astro";
 
 const eventAPI = new EventAPI();
-const events = await eventAPI.getEventsServer(undefined, 3);
+const events = await eventAPI.getEventsServer(new Date(), undefined, 4);
 ---
 
-<div class="mt-10 flex flex-wrap-reverse justify-center gap-2.5 flex-row-reverse">
+<div class="mt-10 flex flex-row-reverse flex-wrap-reverse justify-center gap-2.5">
 	{events.map((event: any) => <EventCardMock key={event.id} event={event} />)}
 </div>
