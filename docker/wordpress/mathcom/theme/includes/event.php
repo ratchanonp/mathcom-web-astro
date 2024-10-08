@@ -28,7 +28,7 @@ function get_event_data($event) {
     return [
         'id' => $event->ID,
         'title' => $event->post_title,
-        'thumbnail' => get_the_post_thumbnail_url($event->ID, 'medium'), // 'thumbnail', 'medium', 'large', 'full
+        'thumbnail' => get_the_post_thumbnail_url($event->ID, 'fulll'), // 'thumbnail', 'medium', 'large', 'full
         'speaker' => $event_meta['speaker'][0],
         'location' => $event_meta['location'][0],
         'register_link' => $event_meta['register_link'][0],
