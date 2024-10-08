@@ -33,7 +33,7 @@ export const ui = {
 		"menu.research": "Research",
 		"menu.support_us": "Support Us",
 
-		"nav.department": "Department of",
+		"nav.department": "Department of ",
 		"nav.mathematics": "Mathematics",
 		"nav.and": " and ",
 		"nav.&": " & ",

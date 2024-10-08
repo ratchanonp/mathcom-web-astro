@@ -45,7 +45,7 @@ const EventModule = (props: Props) => {
 				<section className="flex-1 space-y-5">
 					<h2 className="mt-10 font-kanit text-xl font-semibold text-gray-700 md:text-2xl lg:mt-0">
 						{t("events.event-for")}{" "}
-						<span className="text-yellow-500">{format($selectedDay, "MMMM dd, yyyy", { locale: dt })}</span>{" "}
+						<span className="text-yellow-500">{format($selectedDay, "dd MMMM yyyy", { locale: dt })}</span>{" "}
 					</h2>
 					<div className="grid gap-5">
 						{events.length > 0 ? (

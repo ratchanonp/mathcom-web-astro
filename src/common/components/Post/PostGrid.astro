@@ -1,12 +1,18 @@
 ---
+import { getCategory } from "@/libs/api/category";
 import PostCard from "./PostCard.astro";
 
 import { getPosts } from "@/libs/api/post";
 
-const STORY_NEW_CATEGORY_ID = "6";
-const posts = await getPosts({ _embed: "", per_page: "6", categories: STORY_NEW_CATEGORY_ID });
+const categorySlug = "story-news";
+const queryCatIDFromSlug = await getCategory({ slug: "story-news" });
+if (queryCatIDFromSlug.length === 0) {
+	throw new Error("Category not found");
+}
+const catID = queryCatIDFromSlug[0].id;
+const posts = await getPosts({ _embed: "", per_page: "8", categories: catID });
 ---
 
-<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+<div class="mt-10 grid grid-cols-2 gap-2.5  md:grid-cols-3 lg:grid-cols-4 ">
 	{posts.map((post: any, idx: any) => <PostCard key={idx} post={post} />)}
 </div>
