@@ -201,3 +201,13 @@ include_once get_stylesheet_directory() . '/includes/directory.php';
 include_once get_stylesheet_directory() . '/includes/research.php';
 include_once get_stylesheet_directory() . '/includes/course.php';
 include_once get_stylesheet_directory() . '/includes/news.php';
+
+/**
+ * Disable Elementor AI
+ */
+add_action('elementor/editor/before_enqueue_scripts', function () {
+    echo "<style>";
+    echo ".e-ai-button {display: none;}";
+    echo "</style>";
+  
+});
