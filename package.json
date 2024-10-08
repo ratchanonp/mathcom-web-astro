@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "upgrade": "pnpm dlx @astrojs/upgrade",
-    "docker:compose:build": "docker compose -f ./docker/docker-compose.yml up -d --build",
+    "docker:compose:up": "docker compose -f ./docker/docker-compose.yml up -d --build",
+    "docker:compose:build": "docker compose -f ./docker/docker-compose.yml up -d",
     "docker:compose:down": "docker compose down -f ./docker/docker-compose.yml"
   },
   "dependencies": {
