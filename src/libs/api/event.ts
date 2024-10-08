@@ -38,9 +38,15 @@ export class EventAPI {
 		if (limit) eventEndpoint.searchParams.set("limit", limit.toString());
 
 		console.log("Fetching", eventEndpoint.toString());
-		const res = await fetch(eventEndpoint.toString());
+		
+		try {
+			const res = await fetch(eventEndpoint.toString());
+			return res.json();
+		} catch (error) {
+			console.error(error);
+		}
 
-		return res.json();
+		return [];
 	}
 
 	async getEventsServer(start?: Date, end?: Date, limit?: number, category?: string): Promise<Event[]> {
@@ -52,9 +58,16 @@ export class EventAPI {
 		if (category) eventServerEndpoint.searchParams.set("category", category);
 
 		console.log("Fetching", eventServerEndpoint.toString());
-		const res = await fetch(eventServerEndpoint.toString());
 
-		return res.json();
+		try {
+			const res = await fetch(eventServerEndpoint.toString());
+			return res.json();
+		} catch (error) {
+			console.error(error);
+		} 
+
+		return [];
+
 	}
 
 	async getEventDate(month: Date): Promise<string[]> {
