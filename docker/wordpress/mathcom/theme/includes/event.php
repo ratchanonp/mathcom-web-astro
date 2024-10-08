@@ -57,20 +57,51 @@ function get_event($request) {
     $args['order'] = 'ASC';
 
 
-    $event_start_date = $request['date'] ? $request['date'] : time();
-    $event_start_date_midnight = date('Y-m-d 00:00:00', strtotime($event_start_date));
-    $event_start_date_23_59 = date('Y-m-d 23:59:59', strtotime($event_start_date));
+    $event_start = $request['start'] ? $request['start'] : time();
+    $event_start = date('Y-m-d 00:00:00', strtotime($event_start));
 
-    if (isset($request['date'])) {
+	$event_end = $request['end'] ? $request['end'] : $request['start'];
+	$event_end = date('Y-m-d 23:59:59', strtotime($event_end));
+
+	$category = $request['category'];
+	if ($category) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'event-category',
+				'field' => 'slug',
+				'terms' => $category,
+			)
+		);
+	}
+
+    if (isset($request['start']) && isset($request['end'])) {
         $args['meta_query'] = array(
             array(
                 'key' => 'event_start',
-                'value' => array($event_start_date_midnight, $event_start_date_23_59),
+                'value' => array($event_start, $event_end),
                 'compare' => 'BETWEEN',
                 'type' => 'DATETIME',
             )
         );
-    }
+    } elseif (isset($request['start'])) {
+		$args['meta_query'] = array(
+			array(
+				'key' => 'event_start',
+				'value' => $event_start,
+				'compare' => '>=',
+				'type' => 'DATETIME',
+			)
+		);
+	} elseif (isset($request['end'])) {
+		$args['meta_query'] = array(
+			array(
+				'key' => 'event_start',
+				'value' => $event_end,
+				'compare' => '<=',
+				'type' => 'DATETIME',
+			)
+		);
+	}
 
     $query = new WP_Query($args);
     $events = $query->posts;

@@ -25,7 +25,11 @@ const EventModule = (props: Props) => {
 	useEffect(() => {
 		(async () => {
 			const eventAPI = new EventAPI();
-			const eventsRes = await eventAPI.getEvents($selectedDay);
+			const eventStart = new Date($selectedDay);
+			eventStart.setHours(0, 0, 0, 0);
+			const eventEnd = new Date($selectedDay);
+			eventEnd.setHours(23, 59, 59, 999);
+			const eventsRes = await eventAPI.getEvents(eventStart, eventEnd);
 			setEvents(eventsRes);
 		})();
 	}, [$selectedDay]);

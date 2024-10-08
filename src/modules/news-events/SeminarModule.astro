@@ -1,0 +1,78 @@
+---
+import Hero from "@/common/components/Hero.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { EventAPI } from "@/libs/api/event";
+import ArrowRightIcon from "@heroicons/react/24/outline/ArrowRightIcon";
+import NewspaperIcon from "@heroicons/react/24/outline/NewspaperIcon";
+import EventCardMock from "../event/components/EventCardMock.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const start = new Date();
+start.setHours(0, 0, 0, 0);
+// End = start + 1 year
+const end = new Date(start);
+end.setFullYear(end.getFullYear() + 1);
+
+const eventAPI = new EventAPI();
+const events = await eventAPI.getEventsServer(start, end, -1, "seminar");
+---
+
+<div id="fb-root"></div>
+<script
+	async
+	defer
+	crossorigin="anonymous"
+	src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"
+	nonce="1laLyPnQ"></script>
+
+<BaseLayout title={t("seminars.title")}>
+	<Hero title={t("seminars.hero.title")} subtitle={t("seminars.hero.subTitle")} />
+	<main class="mx-auto my-5 mb-20 grid max-w-screen-xl gap-5 px-5 md:grid-cols-2">
+		<section class="space-y-5">
+			<h2 class="font-kanit text-2xl font-semibold lg:text-3xl">{t("seminars.facebook_page")}</h2>
+
+			<div
+				class="fb-page w-full"
+				data-href="https://www.facebook.com/math.cu.seminar/"
+				data-tabs="timeline"
+				data-width=""
+				data-height=""
+				data-small-header="false"
+				data-adapt-container-width="true"
+				data-hide-cover="false"
+				data-show-facepile="true"
+			>
+				<blockquote cite="https://www.facebook.com/math.cu.seminar/" class="fb-xfbml-parse-ignore">
+					<a href="https://www.facebook.com/math.cu.seminar/">Math CU Seminar</a>
+				</blockquote>
+			</div>
+		</section>
+		<section class="space-y-5">
+			<h2 class="font-kanit text-2xl font-semibold lg:text-3xl">{t("seminars.upcoming")}</h2>
+			{
+				events.length > 0 ? (
+					<div class="grid grid-cols-2 flex-wrap gap-2.5 lg:grid-cols-3">
+						{events.map((event: any) => (
+							<EventCardMock key={event.id} event={event} />
+						))}
+					</div>
+				) : (
+					<div class="flex h-full flex-col items-center justify-center rounded-xl bg-gray-50 py-10">
+						<NewspaperIcon className="mx-auto h-10 w-10 text-slate-800" />
+						<p class="text-center font-kanit text-xl text-slate-800">{t("seminars.no-seminars")}</p>
+						<a
+							href="/news-events/event"
+							class="inline-flex items-center text-slate-500 hover:border-b hover:border-b-slate-800"
+						>
+							{t("seminars.explore_more")}
+							<ArrowRightIcon className="ml-2 inline-block h-4 w-4 text-slate-800" />
+						</a>
+					</div>
+				)
+			}
+		</section>
+	</main>
+</BaseLayout>
