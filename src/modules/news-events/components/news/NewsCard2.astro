@@ -14,7 +14,7 @@ const { title, thumbnail, date, slug } = news;
 import { format } from "date-fns";
 ---
 
-<a href={`/posts/${slug}`} class="group peer">
+<a href={slug} class="group peer">
 	<div class="grid">
 		<img
 			src={thumbnail}
