@@ -85,6 +85,80 @@ services:
       - ./certbot/conf/:/etc/letsencrypt/:rw
       - ./certbot/logs/:/var/log/letsencrypt/:rw
 
+  main_archive:
+    image: wordpress:latest
+    container_name: main_archive-wordpress
+    restart: always
+    working_dir: /var/www/html/wordpress
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME_ARCHIVE_MAIN}
+    volumes:
+      - ./wordpress/archive/main:/var/www/html/wordpress
+      - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - db
+    networks:
+      - wordpress
+
+  gradmath_archive:
+    image: wordpress:latest
+    container_name: gradmath_archive-wordpress
+    restart: always
+    working_dir: /var/www/html/wordpress
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME_ARCHIVE_GRADMATH}
+    volumes:
+      - ./wordpress/archive/gradmath:/var/www/html/wordpress
+      - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - db
+    networks:
+      - wordpress
+
+  amcs_archive:
+    image: wordpress:latest
+    container_name: amcs_archive-wordpress
+    restart: always
+    working_dir: /var/www/html/wordpress
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME_ARCHIVE_AMCS}
+    volumes:
+      - ./wordpress/archive/amcs:/var/www/html/wordpress
+      - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - db
+    networks:
+      - wordpress
+
+  csit_archive:
+    image: wordpress:latest
+    container_name: csit_archive-wordpress
+    restart: always
+    working_dir: /var/www/html/wordpress
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME_ARCHIVE_CSIT}
+    volumes:
+      - ./wordpress/archive/csit:/var/www/html/wordpress
+      - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - db
+    networks:
+      - wordpress
+
+
+
 volumes:
   wordpress_data:
   db_data:
