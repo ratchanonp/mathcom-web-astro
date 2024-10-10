@@ -16,7 +16,7 @@
     <div class="mx-auto h-full max-w-7xl overflow-y-auto">
         <div class="flex items-center justify-between py-5 pl-5">
             <a href="/" class="flex items-center">
-                <img src="http://161.200.118.208/wordpress/wp-content/uploads/2024/09/MathComLogo.png" alt="CU Logo"
+                <img src="https://math.sc.chula.ac.th/wordpress/wp-content/uploads/2024/09/MathComLogo.png" alt="CU Logo"
                     class="mr-5 aspect-auto h-[65px] w-auto">
                 <div class="flex w-full justify-center font-kanit font-medium text-white">
                     <span class="uppercase">
@@ -258,7 +258,7 @@
 <header id="head" class="shadow fixed w-screen bg-white z-40 top-0">
     <div class="max-w-screen-xl mx-auto items-center justify-between px-5 py-2.5 flex">
         <div class="flex items-center">
-            <img src="http://161.200.118.208/wordpress/wp-content/uploads/2024/08/MathComLogo.png" alt="MathCom Logo"
+            <img src="https://math.sc.chula.ac.th/wordpress/wp-content/uploads/2024/08/MathComLogo.png" alt="MathCom Logo"
                 class="aspect-auto h-[60px] w-[53px] border-r-[1px] border-r-gray-500 pr-2.5 md:h-[80px] md:w-[67px]">
 
             <div class="flex h-full flex-col justify-center pl-2.5 font-kanit">
