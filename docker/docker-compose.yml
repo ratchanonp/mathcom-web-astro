@@ -12,6 +12,7 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         # Development environment
         define( 'WP_ENVIRONMENT_TYPE', 'local' );
+        $_SERVER['HTTPS'] = 'on';
     volumes:
       - wordpress_data:/var/www/html/wordpress
       # Custom theme
