@@ -69,8 +69,8 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.astro.rule=Host(`math.sc.chula.ac.th`) 
-      - traefik.http.routers.whoami.tls=true
-      - traefik.http.routers.whoami.tls.certresolver=le
+      - traefik.http.routers.astro.tls=true
+      - traefik.http.routers.astro.tls.certresolver=le
   
   # Astro 
   astro:
