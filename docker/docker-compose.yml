@@ -13,7 +13,7 @@ services:
         # Development environment
         define( 'WP_ENVIRONMENT_TYPE', 'local' );
     volumes:
-      - wordpress_data:/var/www/html/wordpress
+      - ./wordpress/data:/var/www/html/wordpress
       # Custom theme
       - ./wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
