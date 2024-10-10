@@ -15,7 +15,7 @@
         <div class="flex flex-col space-y-10 md:flex-row md:space-x-5 md:space-y-0">
             <div class="w-full space-y-5 md:w-[60%]">
                 <div class="flex items-center">
-                    <img src="http://161.200.118.208/wordpress/wp-content/uploads/2024/08/MathComLogo.png" alt="" class="mr-5 aspect-auto h-[60px] w-auto md:h-[90px]">
+                    <img src="https://math.sc.chula.ac.th/wordpress/wp-content/uploads/2024/08/MathComLogo.png" alt="" class="mr-5 aspect-auto h-[60px] w-auto md:h-[90px]">
                     <div class="flex h-fit flex-col justify-center space-y-1 font-kanit">
                         <p class="font-semibold text-white md:text-xl"> Department ofMathematics and <br> Computer Science </p>
                         <p class="text-sm font-medium text-gray-300 md:text-base">Faculty of Science</p>
