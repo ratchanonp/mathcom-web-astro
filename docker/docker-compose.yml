@@ -67,6 +67,7 @@ services:
     restart: always
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/www:/var/www/certbot/:ro
     ports:
       - 80:80
     networks:
@@ -74,6 +75,12 @@ services:
     depends_on:
       - wordpress
       - phpmyadmin
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
 
 volumes:
   wordpress_data:
