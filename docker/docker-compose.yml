@@ -23,6 +23,9 @@ services:
       - --certificatesresolvers.le.acme.email=${LE_EMAIL:-email@example.com}
       - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
       - --certificatesresolvers.le.acme.tlschallenge=true
+      # Tracing
+      - --tracing=true
+      - --tracing.addinternals
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - le_data:/letsencrypt
