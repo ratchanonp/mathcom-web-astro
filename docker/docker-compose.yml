@@ -71,13 +71,13 @@ services:
       - traefik
       - main-wordpress
     expose:
-      - 3000
+      - 4321
     labels:
       - traefik.enable=true
       - traefik.http.routers.astro.rule=Host(`${ASTRO_HOST:-wordpress.local}`)
       - traefik.http.routers.astro.tls=true
       - traefik.http.routers.astro.tls.certresolver=le
-      - traefik.http.services.astro.loadbalancer.server.port=3000
+      - traefik.http.services.astro.loadbalancer.server.port=4321
 
 volumes:
   db_data:
