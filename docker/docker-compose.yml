@@ -57,6 +57,20 @@ services:
     networks:
       - traefik
   
+  # Nginx for Astro
+  nginx:
+    container_name: mathcom-nginx
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./config/nginx/conf.d/astro.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.astro.rule=Host(`localhost`) 
+      - traefik.http.routers.astro.entrypoints=web
+  
   # Astro 
   astro:
     container_name: mathcom-astro
@@ -69,16 +83,8 @@ services:
     restart: always
     networks:
       - traefik
-      - main-wordpress
     ports:
       - 4321:4321
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.astro.rule=Host(`${ASTRO_HOST:-math.sc.chula.ac.th}`) && PathPrefix(`/astro`)
-      - traefik.http.routers.astro.tls=true
-      - traefik.http.routers.astro.tls.certresolver=le
-      - traefik.http.services.astro.loadbalancer.server.port=4321
-      - "com.centurylinklabs.watchtower.enable=false"
 
 volumes:
   db_data:
