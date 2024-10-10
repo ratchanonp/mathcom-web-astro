@@ -146,8 +146,7 @@ networks:
     external: true
   wordpress:
     driver: bridge
-    name: main-wordpress
-    external: true
+    name: ${COMPOSE_PROJECT_NAME:-wordpress}
     ipam:
       driver: default
       config:
