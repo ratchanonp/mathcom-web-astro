@@ -11,7 +11,7 @@ services:
     environment:
       - NGINX_HOST=${NGINX_HOST:-math.sc.chula.ac.th}
     volumes:
-      - wp_data:/var/www/html
+      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html
       - ./conf/nginx/conf.d:/etc/nginx/conf.d
     expose:
       - 80
