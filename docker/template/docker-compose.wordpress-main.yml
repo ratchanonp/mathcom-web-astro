@@ -12,7 +12,7 @@ services:
       - NGINX_HOST=${NGINX_HOST:-math.sc.chula.ac.th}
     volumes:
       - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html
-      - ./conf/nginx/conf.d:/etc/nginx/conf.d
+      - ./.docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     expose:
       - 80
     labels:
@@ -20,6 +20,7 @@ services:
       - traefik.http.routers.${COMPOSE_PROJECT_NAME}-wordpress.rule=Host(`${NGINX_HOST:-math.sc.chula.ac.th}`) && PathPrefix(`${NGINX_PATHPREFIX:-/}`)
       - traefik.http.routers.${COMPOSE_PROJECT_NAME}-wordpress.tls=true
       - traefik.http.routers.${COMPOSE_PROJECT_NAME}-wordpress.tls.certresolver=le
+      - traefik.docker.network=traefik
     networks:
       traefik:
       wordpress:
