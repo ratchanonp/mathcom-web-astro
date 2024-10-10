@@ -47,7 +47,7 @@ services:
         /* Nginx Cache */
         define( 'RT_WP_NGINX_HELPER_CACHE_PATH', '/var/run/nginx-cache' );
     volumes:
-      - wp_data:/var/www/html
+      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html
       - ./.docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     extra_hosts:
@@ -77,7 +77,7 @@ services:
         /* Nginx Cache */
         define( 'RT_WP_NGINX_HELPER_CACHE_PATH', '/var/run/nginx-cache' );
     volumes:
-      - wp_data:/var/www/html
+      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html
       - ./wordpress/plugins:/var/www/html/wp-content/plugins
       - ./wordpress/themes:/var/www/html/wp-content/themes
     networks:
@@ -128,8 +128,6 @@ services:
     command: --interval 30
 
 volumes:
-  wp_data:
-    driver: local
   db_data:
     driver: local
   db_socket:
