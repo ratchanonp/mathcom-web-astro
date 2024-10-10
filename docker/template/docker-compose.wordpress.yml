@@ -12,7 +12,7 @@ services:
       - NGINX_HOST=${NGINX_HOST:-math.sc.chula.ac.th}
     volumes:
       - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html
-      - ./.docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./.docker/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     expose:
       - 80
     labels:
