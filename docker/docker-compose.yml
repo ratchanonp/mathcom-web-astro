@@ -102,4 +102,5 @@ networks:
     name: traefik
     external: true
   main-wordpress:
+    driver: bridge
     external: true
