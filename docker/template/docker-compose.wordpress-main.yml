@@ -11,7 +11,7 @@ services:
     environment:
       - NGINX_HOST=${NGINX_HOST:-math.sc.chula.ac.th}
     volumes:
-      - wp_data:/var/www/html${NGINX_PATHPREFIX:-/}/:rw
+      - wp_data:/var/www/html${NGINX_PATHPREFIX:-/}
     #   - ../wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./.docker/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     expose:
@@ -52,7 +52,7 @@ services:
         /* Direct Filesystem Access */
         define( 'FS_METHOD', 'direct' );
     volumes:
-      - wp_data:/var/www/html${NGINX_PATHPREFIX:-/}/:rw
+      - wp_data:/var/www/html${NGINX_PATHPREFIX:-/}
     #   - ../wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./.docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
@@ -134,9 +134,9 @@ services:
     command: --interval 30
 
 volumes:
-  db_data:
-    driver: local
   wp_data:
+    driver: local
+  db_data:
     driver: local
   db_socket:
     driver: local
