@@ -30,6 +30,7 @@ services:
   # This is the WordPress service with php-fpm. It could be replaced with the
   # Apache WordPress image but Nginx typically offers better static file performance.
   wordpress:
+    working_dir: /var/www/html${NGINX_PATHPREFIX:-/}
     depends_on:
       db:
         condition: service_healthy
