@@ -12,7 +12,7 @@ services:
       - NGINX_HOST=${NGINX_HOST:-math.sc.chula.ac.th}
     volumes:
       - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}
-      - ../wordpress/mathcom/theme:/var/www/html${NGINX_PATHPREFIX:-/}/wp-content/themes/mathcom
+      - ../wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./.docker/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     expose:
       - 80
@@ -51,7 +51,7 @@ services:
         define( 'WP_ENVIRONMENT_TYPE', 'local' );
     volumes:
       - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}
-      - ../wordpress/mathcom/theme:/var/www/html${NGINX_PATHPREFIX:-/}/wp-content/themes/mathcom
+      - ../wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./.docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     extra_hosts:
