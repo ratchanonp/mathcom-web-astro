@@ -196,11 +196,11 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
-include_once get_stylesheet_directory() . '/includes/event.php';
-include_once get_stylesheet_directory() . '/includes/directory.php';
-include_once get_stylesheet_directory() . '/includes/research.php';
-include_once get_stylesheet_directory() . '/includes/course.php';
-include_once get_stylesheet_directory() . '/includes/news.php';
+include_once get_template_directory() . '/includes/event.php';
+include_once get_template_directory() . '/includes/directory.php';
+include_once get_template_directory() . '/includes/research.php';
+include_once get_template_directory() . '/includes/course.php';
+include_once get_template_directory() . '/includes/news.php';
 
 /**
  * Disable Elementor AI
