@@ -48,6 +48,7 @@ services:
         define( 'WP_REDIS_PORT', 6379 );
         /* Nginx Cache */
         define( 'RT_WP_NGINX_HELPER_CACHE_PATH', '/var/run/nginx-cache' );
+        define( 'WP_ENVIRONMENT_TYPE', 'local' );
     volumes:
       - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}
       - ../wordpress/mathcom:/var/www/html${NGINX_PATHPREFIX:-/}/wp-content/themes/mathcom
