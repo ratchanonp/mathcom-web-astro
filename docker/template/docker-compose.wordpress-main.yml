@@ -11,7 +11,7 @@ services:
     environment:
       - NGINX_HOST=${NGINX_HOST:-math.sc.chula.ac.th}
     volumes:
-      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}
+      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}/:rw
       # - ../wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./.docker/conf.d/default.conf:/etc/nginx/conf.d/default.conf
     expose:
@@ -52,7 +52,7 @@ services:
         /* Direct Filesystem Access */
         define( 'FS_METHOD', 'direct' );
     volumes:
-      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}
+      - ../data/${COMPOSE_PROJECT_NAME}:/var/www/html${NGINX_PATHPREFIX:-/}/:rw
       # - ../wordpress/mathcom:/var/www/html/wordpress/wp-content/themes/mathcom
       - ./.docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
