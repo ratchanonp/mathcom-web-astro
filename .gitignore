@@ -14,12 +14,9 @@ yarn-error.log*
 pnpm-debug.log*
 
 # environment variables
-.env
 .env.production
 
 # macOS-specific files
 .DS_Store
 
-docker/certbot/*
-docker/wordpress/data/*
-docker/wordpress/archive/*
+*.zip
