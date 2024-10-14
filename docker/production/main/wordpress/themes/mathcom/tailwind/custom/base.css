@@ -1,0 +1,98 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+/**
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the block
+ * editor.
+*/
+body {
+	@apply bg-background text-foreground font-sans;
+}
+
+summary {
+	position: relative;
+}
+
+summary::marker {
+	content: none;
+}
+
+summary::after {
+	content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>');
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: calc(50% - 0.5rem);
+	right: 0rem;
+	transition: all 200ms ease-in-out;
+}
+
+[open] summary::after {
+	transition: all 200ms ease-in-out;
+	transform: rotate(180deg);
+  }
+
+
+ul.navbar > li:hover:not(:has(details)) {
+	@apply bg-white/25
+}
+
+ul.navbar > li:hover:not(:has(details)) {
+	@apply bg-white/25
+}
+
+ul.navbar > li:hover summary:hover {
+	@apply bg-white/25
+}
+
+ul.navbar > li:hover details li:hover {
+	@apply bg-white/25
+}
+
+#sidebar { 
+	@apply fixed right-0 top-0 h-screen w-screen bg-gray-900 font-kanit md:w-[350px] z-50 transition-transform duration-500 ease-in-out
+}
+
+#sidebar[data-open="true"] {
+	@apply translate-x-0
+}
+
+#sidebar[data-open="false"] {
+	@apply translate-x-full
+}
+
+#sidebar[data-open="true"] ~ #content {
+	@apply translate-x-[-350px] transition-transform duration-500 ease-in-out
+}
+
+#sidebar[data-open="false"] ~ #content {
+	@apply transition-transform duration-500 ease-in-out
+}
+
+
+#sidebar[data-open="true"] ~ #head {
+	@apply translate-x-[-350px] transition-transform duration-500 ease-in-out
+}
+
+#head {
+	@apply transition-transform duration-500 ease-in-out
+}
+
+.program_menu {
+	@apply sticky top-32 !important
+}
+
+#content {
+	scroll-margin-top: 80px;
+}
+
+.elementor-widget-heading { 
+	scroll-margin-top: 80px;
+}
