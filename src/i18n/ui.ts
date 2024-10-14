@@ -51,7 +51,7 @@ export const ui = {
 		"home.calendar": "Calendar",
 		"home.view_all_events": "View all events",
 
-		"footbar.faculty_of_science": "Faculty of Science",
+		"footbar.faculty_of_science": "Faculty of Science, ",
 		"footbar.chulalongkorn_university": "Chulalongkorn University",
 		"footbar.address": "Phayathai Rd., Pathumwan, Bangkok 10330 Thailand",
 
