@@ -72,7 +72,7 @@ services:
     volumes:
       - wp_data:/var/www/html
       - ./themes/mathcom:/var/www/html/wp-content/themes/mathcom:ro
-      - ../shared/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ../../shared/mysql/my.cnf:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     extra_hosts:
       - ${NGINX_HOST:-math.sc.chula.ac.th}:10.5.0.100

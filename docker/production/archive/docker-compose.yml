@@ -20,7 +20,7 @@ services:
         define( 'RT_WP_NGINX_HELPER_CACHE_PATH', '/var/run/nginx-cache' );
     volumes:
       - wp_data:/var/www/html
-      - ../shared/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ../../shared/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     expose:
       - 80
