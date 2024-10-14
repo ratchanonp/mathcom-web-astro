@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
     integrations: [tailwind(), react(), sitemap()],
     vite: {
-        envDir: "./docker/"
+        envDir: "./"
     },
     prefetch: true,
     site: "http://localhost",
