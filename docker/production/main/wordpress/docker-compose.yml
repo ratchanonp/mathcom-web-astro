@@ -79,6 +79,7 @@ services:
       - ${NGINX_HOST:-math.sc.chula.ac.th}:10.5.0.100
     networks:
       - wordpress
+    user: "www-data"
 
   wpcli:
     depends_on:
