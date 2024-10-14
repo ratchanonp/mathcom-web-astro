@@ -93,6 +93,7 @@ export class FacultyAPI {
 		Object.keys(params).forEach((key) => fetchURL.searchParams.append(key, params[key]));
 
 		try {
+			console.log(`Fetching ${fetchURL.toString()}`);
 			const res = await fetch(fetchURL.toString());
 			const data = await res.json();
 

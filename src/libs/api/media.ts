@@ -11,6 +11,7 @@ export class MediaAPI {
 		const fetchURL = new URL(`${id}`, this.mediaEndpoint);
 
 		try {
+			console.log(fetchURL.toString());
 			const res = await fetch(fetchURL.toString());
 			const data = await res.json();
 
