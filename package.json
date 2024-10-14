@@ -12,7 +12,7 @@
     "docker:compose:up": "docker compose -f ./docker/docker-compose.yml up -d --build",
     "docker:compose:build": "docker compose -f ./docker/docker-compose.yml up -d",
     "docker:compose:down": "docker compose down -f ./docker/docker-compose.yml",
-	"docker:compose:proxy:up": "docker compose -f ./docker/production/main/proxy/docker-compose.yml --env-file ./docker/production/main/proxy/.env.local up -d"
+    "docker:compose:proxy:up": "docker compose -f ./docker/production/main/proxy/docker-compose.yml --env-file ./docker/production/main/proxy/.env.local up -d"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -33,7 +33,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@tanstack/react-query": "^5.37.1",
     "@wordpress/block-library": "^8.35.0",
-    "astro": "^4.16.0",
+    "astro": "^4.16.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
