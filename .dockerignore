@@ -19,3 +19,6 @@
 
 # macOS-specific files
 **/.DS_Store
+
+*.zip
+**/docker
