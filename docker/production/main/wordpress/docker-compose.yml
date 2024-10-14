@@ -49,6 +49,7 @@ services:
         ipv4_address: ${NGINX_IP:-10.5.0.100} # static ip for loopback on reverse proxy
 
   wordpress:
+    working_dir: /var/www/html${NGINX_PATHPREFIX:-/}
     depends_on:
       db:
         condition: service_healthy
@@ -71,7 +72,7 @@ services:
         define( 'FS_METHOD', 'direct' );
     volumes:
       - wp_data:/var/www/html
-      - ./themes/mathcom/theme:/var/www/html/wp-content/themes/mathcom:ro
+      - ./themes/mathcom:/var/www/html${NGINX_PATHPREFIX:-/}/wp-content/themes/mathcom:ro
       - ../../../shared/mysql/my.cnf:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     extra_hosts:
