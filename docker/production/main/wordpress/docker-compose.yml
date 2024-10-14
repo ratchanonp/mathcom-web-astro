@@ -71,7 +71,7 @@ services:
         define( 'FS_METHOD', 'direct' );
     volumes:
       - wp_data:/var/www/html
-      - ./themes/mathcom:/var/www/html/wp-content/themes/mathcom:ro
+      - ./themes/mathcom/theme:/var/www/html/wp-content/themes/mathcom:ro
       - ../../../shared/mysql/my.cnf:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     extra_hosts:
