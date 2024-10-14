@@ -72,7 +72,7 @@ services:
         define( 'FS_METHOD', 'direct' );
     volumes:
       - wp_data:/var/www/html
-      - ./themes/mathcom:/var/www/html${NGINX_PATHPREFIX:-/}/wp-content/themes/mathcom:rw
+      # - ./themes/mathcom:/var/www/html${NGINX_PATHPREFIX:-/}/wp-content/themes/mathcom:rw # don't use this, it will break the theme
       - ../../../shared/mysql/my.cnf:/usr/local/etc/php/conf.d/custom.ini
       - ~/.ssh/id_rsa/:/root/.ssh/id_rsa
     extra_hosts:
