@@ -7,11 +7,12 @@ import X from "@/assets/img/socials/x.png";
 import Youtube from "@/assets/img/socials/youtube.png";
 import { Picture } from "astro:assets";
 
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <footer class="w-full bg-gray-950 py-10">
@@ -53,7 +54,7 @@ const t = useTranslations(lang);
 					<li class="">
 						<a href="https://maps.app.goo.gl/Un4zZWC7xeFMYPQz7">{t("footbar.find_us")}</a>
 					</li>
-					<li class=""><a href="/administration">{t("footbar.contact_us")}</a></li>
+					<li class=""><a href={translatePath("/administration")}>{t("footbar.contact_us")}</a></li>
 					<li class="">
 						<a href="mailto:qq.panmas@gmail.com">{t("footbar.webmaster")}</a>
 					</li>
