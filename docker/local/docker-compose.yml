@@ -1,0 +1,70 @@
+services:
+
+  # Traefik Reverse Proxy and SSL Management
+  # Traefik will reverse proxy requests to different applications in the stack.
+  # This application is composed of one single frontend application, WordPress. If
+  # you wanted to expose more applications, for example, phpmyadmin, portainer, etc,
+  # you could add the appropriate traefik labels to those services, and traefik will
+  # automatically add ssl through ssl (unless you manually supply ssl certs) and
+  # exposeing them to the frontend.
+  traefik:
+    image: traefik:${TRAEFIK_VERSION:-v2.7}
+    restart: always
+    command:
+      - --accesslog
+      - --api.insecure=true
+      - --providers.docker
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+      - 8080:8080
+    networks:
+      - traefik
+
+  nginx:
+    container_name: mathcom-nginx
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./config/nginx/conf.d/astro.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.astro.rule=Host(`localhost`) 
+      - traefik.http.routers.astro.entrypoints=web
+  
+  # Astro 
+  astro:
+    container_name: mathcom-astro
+    build: 
+      context: ../
+      dockerfile: ./docker/astro/Dockerfile
+      args:
+        - PUBLIC_API=$PUBLIC_API
+        - PUBLIC_INTERNAL_API=$PUBLIC_INTERNAL_API
+    restart: always
+    networks:
+      - traefik
+    ports:
+      - 4321:4321
+
+volumes:
+  db_data:
+    driver: local
+  db_socket:
+    driver: local
+  redis_data:
+    driver: local
+  le_data:
+    driver: local
+networks:
+  traefik:
+    driver: bridge
+    name: traefik
+    external: true
+  main-wordpress:
+    external: true
