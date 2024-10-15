@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="py-10 flex flex-col space-y-5 border-b-2 border-b-yellow-500">
+	<header class="py-2 md:py-4 flex flex-col space-y-5 border-b-2 border-b-yellow-500">
 
 		<!-- Category -->
 		<div class="text-center">
@@ -23,7 +23,7 @@
 			}
 			?>
 		</div>
-		<?php the_title('<h1 class="text-5xl font-kanit text-center">', '</h1>'); ?>
+		<?php the_title('<h1 class="text-xl md:text-3xl font-kanit text-center">', '</h1>'); ?>
 		<div class="text-center text-gray-500 text-sm">
 			<?php mathcom_posted_on(); ?>
 		</div>
