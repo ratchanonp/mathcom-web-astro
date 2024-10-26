@@ -24,11 +24,6 @@ services:
       - 8080:8080
     networks:
       - traefik
-    labels:
-      # Redirect www to non-www
-      - traefik.http.middlewares.non_www.redirectregex.regex=^(http|https)?://(?:www\.)?(.+)
-      - traefik.http.middlewares.non_www.redirectregex.replacement=https://$${2} 
-      - traefik.http.middlewares.non_www.redirectregex.permanent=true
 
   whoami:
     image: traefik/whoami
