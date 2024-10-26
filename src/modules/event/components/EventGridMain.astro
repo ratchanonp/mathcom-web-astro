@@ -1,11 +1,31 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { EventAPI } from "@/libs/api/event";
+import { CalendarIcon } from "@heroicons/react/24/outline";
 import EventCardMock from "./EventCardMock.astro";
 
 const eventAPI = new EventAPI();
 const events = await eventAPI.getEventsServer(new Date(), undefined, 4);
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<div class="mt-10 flex flex-row-reverse flex-wrap-reverse justify-center gap-2.5">
-	{events.map((event: any) => <EventCardMock key={event.id} event={event} />)}
-</div>
+{
+	events.length > 0 && (
+		<div class="mt-10 flex flex-row-reverse flex-wrap-reverse justify-center gap-2.5">
+			{events.map((event: any) => (
+				<EventCardMock key={event.id} event={event} />
+			))}
+		</div>
+	)
+}
+
+{
+	events.length === 0 && (
+		<div class="mt-10 flex flex-col items-center justify-center justify-items-center space-y-2.5">
+			<CalendarIcon className="w-10 h-10 text-gray-400" />
+			<p class="text-gray-400">{t("events.no-upcoming-events")}</p>
+		</div>
+	)
+}
