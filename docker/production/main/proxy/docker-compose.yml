@@ -24,6 +24,16 @@ services:
       - 8080:8080
     networks:
       - traefik
+    labels:
+      # Redirect from www.math.sc.chula.ac.th to math.sc.chula.ac.th
+      - traefik.http.routers.www.rule=Host(`www.math.sc.chula.ac.th`)
+      - traefik.http.routers.www.entrypoints=web
+      - traefik.http.routers.www.middlewares=redirect-to-non-www
+      - traefik.http.middlewares.redirect-to-non-www.redirectregex.regex=^https?://www\.(.+)
+      - traefik.http.middlewares.redirect-to-non-www.redirectregex.replacement=https://$${1}
+      - traefik.http.middlewares.redirect-to-non-www.redirectregex.permanent=true
+      - traefik.http.routers.www.tls=true
+      - traefik.http.routers.www.tls.certresolver=le
 
   whoami:
     image: traefik/whoami
