@@ -10,13 +10,13 @@ services:
       - astro
     labels:
       - traefik.enable=true
-      - traefik.http.routers.astro.rule=Host(`${HOSTNAME:-localhost}`) || Host(`www.${HOSTNAME:-localhost}`)
+      - traefik.http.routers.astro.rule=Host(`${HOSTNAME:-localhost}`) || Host(`www.${HOSTNAME:-localhost}`) && PathPrefix(`/`)
       - traefik.http.routers.astro.tls=true
       - traefik.http.routers.astro.tls.certresolver=le
       - traefik.http.routers.astro.middlewares=non_www
       - traefik.docker.network=traefik
 
-      # Redirect www to non-www
+      # Redirect www to non-www except for the {/archive} path 
       - traefik.http.middlewares.non_www.redirectregex.regex=^https?://www\.(.+)
       - traefik.http.middlewares.non_www.redirectregex.replacement=https://$${1}
       - traefik.http.middlewares.non_www.redirectregex.permanent=true
