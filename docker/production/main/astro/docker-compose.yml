@@ -13,8 +13,8 @@ services:
       - traefik.http.routers.astro.rule=Host(`${HOSTNAME:-localhost}`) || Host(`www.${HOSTNAME:-localhost}`)
       - traefik.http.routers.astro.tls=true
       - traefik.http.routers.astro.tls.certresolver=le
+      - traefik.http.routers.astro.middlewares=non_www@docker
       - traefik.docker.network=traefik
-      - traefik.http.routers.astro.middlewares=redirect-to-non-www
 
   astro:
     container_name: mathcom-astro

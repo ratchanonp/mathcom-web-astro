@@ -26,12 +26,9 @@ services:
       - traefik
     labels:
       # Redirect www to non-www
-      - traefik.http.routers.www-redirect.rule=Host(`www.${HOSTNAME:-localhost}`)
-      - traefik.http.routers.www-redirect.entrypoints=web
-      - traefik.http.routers.www-redirect.middlewares=redirect-to-non-www
-      - traefik.http.middlewares.redirect-to-non-www.redirectregex.regex=^https?://www\.(.+)
-      - traefik.http.middlewares.redirect-to-non-www.redirectregex.replacement=https://$${1}
-      - traefik.http.middlewares.redirect-to-non-www.redirectregex.permanent=true
+      - traefik.http.middlewares.non_www.redirectregex.regex=^(http|https)?://(?:www\.)?(.+)
+      - traefik.http.middlewares.non_www.redirectregex.replacement=https://$${2} 
+      - traefik.http.middlewares.non_www.redirectregex.permanent=true
 
   whoami:
     image: traefik/whoami
