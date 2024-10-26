@@ -10,7 +10,7 @@ services:
       - astro
     labels:
       - traefik.enable=true
-      - traefik.http.routers.astro.rule=Host(`${HOSTNAME:-localhost}`) && PathPrefix(`/`) || Host(`www.${HOSTNAME:-localhost}`) && PathPrefix(`/`)
+      - traefik.http.routers.astro.rule=Host(`${HOSTNAME:-localhost}`)
       - traefik.http.routers.astro.tls=true
       - traefik.http.routers.astro.tls.certresolver=le
       - traefik.docker.network=traefik
