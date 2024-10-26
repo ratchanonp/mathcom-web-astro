@@ -259,6 +259,7 @@ export const ui = {
 		"events.event-calendar": "Event Calendar",
 		"events.event-for": "Events for",
 		"events.no-events-today": "No events this today",
+		"events.no-upcoming-events": "No upcoming events",
 		"seminars.title": "Seminars | Department of Mathematics and Computer Science",
 		"seminars.hero.title": "Seminars",
 		"seminars.hero.subTitle": "Stay up-to-date with our latest seminars",
@@ -518,6 +519,7 @@ export const ui = {
 		"events.event-calendar": "ปฏิทินกิจกรรม",
 		"events.event-for": "กิจกรรมสำหรับ",
 		"events.no-events-today": "ไม่มีกิจกรรมในวันนี้",
+		"events.no-upcoming-events": "ไม่มีกิจกรรมที่จะมาถึง",
 
 		"seminars.title": "สัมมนา | ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์",
 		"seminars.hero.title": "สัมมนา",
