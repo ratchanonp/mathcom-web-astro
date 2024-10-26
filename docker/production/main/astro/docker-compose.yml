@@ -14,6 +14,7 @@ services:
       - traefik.http.routers.astro.tls=true
       - traefik.http.routers.astro.tls.certresolver=le
       - traefik.docker.network=traefik
+      - traefik.http.routers.astro.middlewares=redirect-to-non-www
 
   astro:
     container_name: mathcom-astro
