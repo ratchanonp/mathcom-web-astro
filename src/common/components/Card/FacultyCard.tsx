@@ -38,10 +38,10 @@ const FacultyCard = (props: Props) => {
 				</div>
 			)}
 			<div className="p-2.5 font-kanit md:p-5">
-				<h2 className="text-base font-medium md:text-2xl">{title}</h2>
-				<p className="text-xs capitalize text-gray-400 md:mt-2 md:text-base">
-					{academic_rank ? academicName[academic_rank as keyof typeof academicName] : staff_type}
+				<p className="text-xs capitalize text-gray-400 md:text-base">
+					{academic_rank && academic_rank != "none" ? academicName[academic_rank as keyof typeof academicName] : staff_type}
 				</p>
+				<h2 className="text-base font-medium md:text-2xl h-full">{title}</h2>
 			</div>
 		</a>
 	);
