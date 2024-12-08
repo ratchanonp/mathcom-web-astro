@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 const { title, href, imgSrc } = Astro.props;
 ---
 
@@ -9,7 +7,7 @@ const { title, href, imgSrc } = Astro.props;
 	class="border-gray flex h-full items-center justify-between space-x-5 border-2 bg-white p-5 shadow-lg transition-all hover:scale-105"
 >
 	<div class="w-14">
-		<Image class="object-fit aspect-square" format="webp" src={imgSrc} alt={title} />
+		<img class="object-fit aspect-square" src={imgSrc} alt={title} />
 	</div>
 
 	<h2 class="w-full text-left font-kanit font-semibold uppercase leading-6 text-gray-700 md:text-lg lg:text-xl">
