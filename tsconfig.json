@@ -9,5 +9,6 @@
     },
     "outDir": "dist",
   },
-  "exclude": ["dist", "node_modules", "public", "docker"]
+  "exclude": ["dist", "node_modules", "public", "docker"],
+  "include": ["src"]
 }
