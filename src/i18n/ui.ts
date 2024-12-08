@@ -228,7 +228,8 @@ export const ui = {
 		"news.stories-news.all": "All Stories & News",
 		"news.awards": "Awards",
 		"news.awards.all": "All Awards",
-		"news.upcoming_events": "Upcoming Events",
+		"news.events": "Events",
+		"news.events.all": "All Events",
 		"news.seminars.all": "All Seminars",
 		"news.apam": "APAM",
 
@@ -488,7 +489,8 @@ export const ui = {
 		"news.stories-news.all": "เรื่องราวและข่าวสารทั้งหมด",
 		"news.awards": "รางวัล",
 		"news.awards.all": "รางวัลทั้งหมด",
-		"news.upcoming_events": "กิจกรรมที่จะมาถึง",
+		"news.events": "กิจกรรม",
+		"news.events.all": "กิจกรรมทั้งหมด",
 		"news.seminars.all": "สัมมนาทั้งหมด",
 		"news.apam": "APAM",
 
