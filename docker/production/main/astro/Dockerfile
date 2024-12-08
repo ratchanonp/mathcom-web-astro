@@ -12,6 +12,7 @@ COPY ["./package.json", "./pnpm-lock.yaml", "./"]
 
 FROM base AS dependencies
 RUN pnpm install --frozen-lockfile
+RUN pnpm add sharp
 
 FROM dependencies AS build
 COPY ["./", "./"]
