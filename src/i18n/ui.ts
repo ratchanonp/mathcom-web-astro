@@ -228,7 +228,7 @@ export const ui = {
 		"news.stories-news.all": "All Stories & News",
 		"news.awards": "Awards",
 		"news.awards.all": "All Awards",
-		"news.events": "Events",
+		"news.events": "Past Events",
 		"news.events.all": "All Events",
 		"news.seminars.all": "All Seminars",
 		"news.apam": "APAM",
