@@ -2,7 +2,6 @@
 import Hero from "@/common/components/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { Image } from "astro:assets";
 
 import apamImage from "@/assets/img/icon/news-category/apam.png";
 import awardImage from "@/assets/img/icon/news-category/award.png";
@@ -75,18 +74,18 @@ const translatePath = useTranslatedPath(lang);
 						href={translatePath("/news-events/award")}
 						class="grid w-full justify-items-center border-r border-r-gray-900"
 					>
-						<Image src={awardImage} alt="Award" class="h-24 w-24" />
+						<img src={awardImage.src} alt="Award" class="h-24 w-24" />
 						<h2 class="mt-5 text-center text-2xl text-white">{t("news.awards.all")}</h2>
 					</a>
 					<a
 						href={translatePath("/events")}
 						class="grid w-full justify-items-center border-r border-r-gray-900"
 					>
-						<Image src={seminarImage} alt="Seminar" class="h-24 w-24" />
+						<img src={seminarImage.src} alt="Seminar" class="h-24 w-24" />
 						<h2 class="mt-5 text-center text-2xl text-white">{t("news.seminars.all")}</h2>
 					</a>
 					<a href={translatePath("/news-events/apam")} class="grid w-full justify-items-center">
-						<Image src={apamImage} alt="APAM" class="h-24 w-24" />
+						<img src={apamImage.src} alt="APAM" class="h-24 w-24" />
 						<h2 class="mt-5 text-center text-2xl text-white">{t("news.apam")}</h2>
 					</a>
 				</section>
