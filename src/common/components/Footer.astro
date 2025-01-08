@@ -5,7 +5,6 @@ import Instagram from "@/assets/img/socials/instagram.png";
 import Linkedin from "@/assets/img/socials/linkedin.png";
 import X from "@/assets/img/socials/x.png";
 import Youtube from "@/assets/img/socials/youtube.png";
-import { Image } from "astro:assets";
 
 import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
@@ -13,6 +12,8 @@ import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+
+export const prerender = false;
 ---
 
 <footer class="w-full bg-gray-950 py-10">
@@ -20,12 +21,11 @@ const translatePath = useTranslatedPath(lang);
 		<div class="flex flex-col space-y-10 md:flex-row md:space-x-5 md:space-y-0">
 			<div class="w-full space-y-5 md:w-[60%]">
 				<div class="flex items-center">
-					<Image
-						format="webp"
+					<img
 						loading="lazy"
 						decoding="async"
 						class="mr-5 aspect-auto h-[60px] w-auto md:h-[90px]"
-						src={MathComLogo}
+						src={MathComLogo.src}
 						alt="MathComLogo"
 					/>
 					<div class="flex h-fit flex-col justify-center space-y-1 font-kanit">
@@ -91,52 +91,47 @@ const translatePath = useTranslatedPath(lang);
 			</div>
 			<div class="flex justify-center space-x-5">
 				<a href="https://twitter.com/ChulalongkornU">
-					<Image
-						format="webp"
+					<img
 						loading="lazy"
 						decoding="async"
 						class="aspect-square h-7 w-7 object-cover"
-						src={X}
+						src={X.src}
 						alt="X"
 					/>
 				</a>
 				<a href="https://www.facebook.com/MathComSciCU">
-					<Image
-						format="webp"
+					<img
 						loading="lazy"
 						decoding="async"
 						class="aspect-square h-7 w-7 object-cover"
-						src={Facebook}
+						src={Facebook.src}
 						alt="Facebook"
 					/>
 				</a>
 				<a href="https://www.youtube.com/user/chulauniversity">
-					<Image
-						format="webp"
+					<img
 						loading="lazy"
 						decoding="async"
 						class="aspect-square h-7 w-7 object-cover"
-						src={Youtube}
+						src={Youtube.src}
 						alt="Youtube"
 					/>
 				</a>
 				<a href="https://www.instagram.com/mathcom_cu/">
-					<Image
-						format="webp"
+					<img
 						loading="lazy"
 						decoding="async"
 						class="aspect-square h-7 w-7 object-cover"
-						src={Instagram}
+						src={Instagram.src}
 						alt="Instagram"
 					/>
 				</a>
 				<a href="https://www.linkedin.com/school/chulalongkornuniversity/">
-					<Image
-						format="webp"
+					<img
 						loading="lazy"
 						decoding="async"
 						class="aspect-square h-7 w-7 object-cover"
-						src={Linkedin}
+						src={Linkedin.src}
 						alt="Linkedin"
 					/>
 				</a>
