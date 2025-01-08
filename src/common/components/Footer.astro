@@ -5,7 +5,7 @@ import Instagram from "@/assets/img/socials/instagram.png";
 import Linkedin from "@/assets/img/socials/linkedin.png";
 import X from "@/assets/img/socials/x.png";
 import Youtube from "@/assets/img/socials/youtube.png";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 
 import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 import { PhoneIcon, PrinterIcon } from "@heroicons/react/24/solid";
@@ -20,7 +20,7 @@ const translatePath = useTranslatedPath(lang);
 		<div class="flex flex-col space-y-10 md:flex-row md:space-x-5 md:space-y-0">
 			<div class="w-full space-y-5 md:w-[60%]">
 				<div class="flex items-center">
-					<Picture
+					<Image
 						format="webp"
 						loading="lazy"
 						decoding="async"
@@ -91,7 +91,7 @@ const translatePath = useTranslatedPath(lang);
 			</div>
 			<div class="flex justify-center space-x-5">
 				<a href="https://twitter.com/ChulalongkornU">
-					<Picture
+					<Image
 						format="webp"
 						loading="lazy"
 						decoding="async"
@@ -101,7 +101,7 @@ const translatePath = useTranslatedPath(lang);
 					/>
 				</a>
 				<a href="https://www.facebook.com/MathComSciCU">
-					<Picture
+					<Image
 						format="webp"
 						loading="lazy"
 						decoding="async"
@@ -111,7 +111,7 @@ const translatePath = useTranslatedPath(lang);
 					/>
 				</a>
 				<a href="https://www.youtube.com/user/chulauniversity">
-					<Picture
+					<Image
 						format="webp"
 						loading="lazy"
 						decoding="async"
@@ -121,7 +121,7 @@ const translatePath = useTranslatedPath(lang);
 					/>
 				</a>
 				<a href="https://www.instagram.com/mathcom_cu/">
-					<Picture
+					<Image
 						format="webp"
 						loading="lazy"
 						decoding="async"
@@ -131,7 +131,7 @@ const translatePath = useTranslatedPath(lang);
 					/>
 				</a>
 				<a href="https://www.linkedin.com/school/chulalongkornuniversity/">
-					<Picture
+					<Image
 						format="webp"
 						loading="lazy"
 						decoding="async"
