@@ -5,7 +5,6 @@ import MHVH from "@/assets/img/mhvh/MHVH-Portriat.jpg";
 import MenuCard from "@/common/components/Card/MenuCard/MenuCard.astro";
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
-import { Image } from "astro:assets";
 
 import AdvisingIcon from "@/assets/img/icon/card/Advising.png";
 import GraduateIcon from "@/assets/img/icon/card/Graduate.png";
@@ -63,9 +62,8 @@ export const prerender = false;
 >
 	<main>
 		<section class="relative flex max-h-[70vh] w-full flex-col">
-			<Image
-				format="webp"
-				src={MHVH}
+			<img
+				src={MHVH.src}
 				alt="MHVH"
 				class="w-full overflow-hidden object-cover brightness-[0.65] filter md:object-[center_80%]"
 			/>
