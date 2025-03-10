@@ -161,27 +161,46 @@ const t = useTranslations(lang);
 						<section class="mt-5">
 							<h2 class="font-kanit text-2xl font-medium text-yellow-600">Education</h2>
 							<ul class="mt-2 font-kanit">
-								<li class="font-kanit text-gray-500">
-									<span class="font-bold text-gray-900">{faculty.year_bsdegree}</span>
-									<span class="text-gray-500">{faculty.name_bsdegree}</span>
-									<span class="text-gray-500">{faculty.major_bsdegree}</span>
-									<span class="text-gray-500">{faculty.university_bsdegree}</span>
-								</li>
-								<li class="font-kanit text-gray-500">
-									<span class="font-bold text-gray-900">{faculty.year_msdegree}</span>
-									<span class="text-gray-500">{faculty.name_msdegree}</span>
-									<span class="text-gray-500">{faculty.university_msdegree}</span>
-								</li>
-								<li class="font-kanit text-gray-500">
-									<span class="font-bold text-gray-900">{faculty.year2_msdegree}</span>
-									<span class="text-gray-500">{faculty.name2_msdegree}</span>
-									<span class="text-gray-500">{faculty.university2_msdegree}</span>
-								</li>
-								<li class="font-kanit text-gray-500">
-									<span class="font-bold text-gray-900">{faculty.year_phddegree}</span>
-									<span class="text-gray-500">{faculty.name_phddegree}</span>
-									<span class="text-gray-500">{faculty.university_phddegree}</span>
-								</li>
+								{
+									faculty.year_bsdegree && (
+										<li class="font-kanit text-gray-500">
+											<span class="font-bold text-gray-900">{faculty.year_bsdegree}</span>
+											<span class="text-gray-500">{faculty.name_bsdegree}</span>
+											<span class="text-gray-500">({faculty.major_bsdegree})</span>
+											<span class="text-gray-500">{faculty.university_bsdegree}</span>
+										</li>
+									)
+								}
+								{
+									faculty.year_msdegree && (
+										<li class="font-kanit text-gray-500">
+											<span class="font-bold text-gray-900">{faculty.year_msdegree}</span>
+											<span class="text-gray-500">{faculty.name_msdegree}</span>
+											<span class="text-gray-500">({faculty.major_msdegree})</span>
+											<span class="text-gray-500">{faculty.university_msdegree}</span>
+										</li>
+									)
+								}
+								{
+									faculty.year2_msdegree && (
+										<li class="font-kanit text-gray-500">
+											<span class="font-bold text-gray-900">{faculty.year2_msdegree}</span>
+											<span class="text-gray-500">{faculty.name2_msdegree}</span>
+											<span class="text-gray-500">({faculty.major2_msdegree})</span>
+											<span class="text-gray-500">{faculty.university2_msdegree}</span>
+										</li>
+									)
+								}
+								{
+									faculty.year_phddegree && (
+										<li class="font-kanit text-gray-500">
+											<span class="font-bold text-gray-900">{faculty.year_phddegree}</span>
+											<span class="text-gray-500">{faculty.name_phddegree}</span>
+											<span class="text-gray-500">({faculty.major_phddegree})</span>
+											<span class="text-gray-500">{faculty.university_phddegree}</span>
+										</li>
+									)
+								}
 							</ul>
 						</section>
 					)
