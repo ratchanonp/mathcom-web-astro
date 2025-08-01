@@ -1,6 +1,6 @@
 ---
 const { post } = Astro.props;
-const { title, slug, _embedded, link } = post;
+const { title, _embedded, link } = post;
 import { getLangFromUrl, useDateFnsLocale } from "@/i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const dt = useDateFnsLocale(lang);
