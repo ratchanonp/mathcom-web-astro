@@ -140,7 +140,6 @@ Additional documentation can be found in the `docs/` directory:
 - Docker Disk Space Management
 - Docker Service Restart Guide
 
-
 ## 🆘 Support
 
 For support and questions, please contact the development team or create an issue in the repository.
