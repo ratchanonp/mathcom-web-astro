@@ -14,7 +14,7 @@ const t = useTranslations(lang);
 <BaseLayout title={t("news.awards.title")}>
 	<Hero title={t("news.awards.hero.title")} subtitle={t("news.awards.hero.subTitle")} />
 
-	<main class="mx-auto max-w-screen-xl p-5">
+	<main class="mx-auto max-w-(--breakpoint-xl) p-5">
 		<div class="grid grid-cols-3 gap-10">
 			{
 				news.map((post: any) => {

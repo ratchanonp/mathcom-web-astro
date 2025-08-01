@@ -16,13 +16,13 @@ export default function SortByDiaload() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<button className="inline-flex items-center rounded border-[1px] border-gray-300 px-5 py-2.5 text-xl">
+				<button className="inline-flex items-center rounded border border-gray-300 px-5 py-2.5 text-xl">
 					<BarsArrowDownIcon className="h-6 w-6 text-gray-900 lg:mr-2" />
 					<span className="hidden lg:block">Sort by</span>
 				</button>
 			</DialogTrigger>
-			<DialogContent className="max-w-screen-md">
-				<DialogHeader className="flex justify-between border-b-[1px] border-b-gray-200 p-5">
+			<DialogContent className="max-w-(--breakpoint-md)">
+				<DialogHeader className="flex justify-between border-b border-b-gray-200 p-5">
 					<div className="h-6 w-6" />
 					<DialogTitle className="text-xl text-gray-800">Sort By</DialogTitle>
 					<DialogClose asChild>
@@ -32,7 +32,7 @@ export default function SortByDiaload() {
 					</DialogClose>
 				</DialogHeader>
 				<SortBy />
-				<DialogFooter className="flex justify-end border-t-[1px] border-t-gray-200 p-5">
+				<DialogFooter className="flex justify-end border-t border-t-gray-200 p-5">
 					<DialogClose asChild>
 						<button className="rounded-lg bg-gray-800 px-5 py-2.5 text-lg text-white">Apply Sort</button>
 					</DialogClose>

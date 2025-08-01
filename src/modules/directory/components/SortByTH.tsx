@@ -22,7 +22,7 @@ const SortBy = () => {
 									name="sortBy"
 									value={option.value}
 									id={option.name}
-									className="h-5 w-5 rounded-full border-[1px] border-gray-300 accent-gray-800"
+									className="h-5 w-5 rounded-full border border-gray-300 accent-gray-800"
 									checked={$sortBy == option.value}
 									onChange={() => {
 										sortBySelected.set(option.value);

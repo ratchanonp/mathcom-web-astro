@@ -19,7 +19,7 @@ const ResearchBox = (props: Props) => {
 	const titleRender = parser.parseFromString(title, "text/html").body.textContent;
 
 	return (
-		<article className="relative flex min-h-60 w-full flex-col justify-between border-2 border-slate-800 bg-slate-900 p-5 text-white sm:w-[calc(50%_-_16px)] md:w-[calc(33.33%_-_32px)] lg:w-[calc(25%_-_48px)]">
+		<article className="relative flex min-h-60 w-full flex-col justify-between border-2 border-slate-800 bg-slate-900 p-5 text-white sm:w-[calc(50%-16px)] md:w-[calc(33.33%-32px)] lg:w-[calc(25%-48px)]">
 			<div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-slate-800 bg-white p-5">
 				<img src={thumbnail} alt="" className="h-10 w-10" />
 			</div>

@@ -30,7 +30,7 @@ const events = await eventAPI.getEventsServer(start, end, -1, "seminar");
 
 <BaseLayout title={t("seminars.title")}>
 	<Hero title={t("seminars.hero.title")} subtitle={t("seminars.hero.subTitle")} />
-	<main class="mx-auto my-5 mb-20 grid max-w-screen-xl gap-5 px-5 md:grid-cols-2">
+	<main class="mx-auto my-5 mb-20 grid max-w-(--breakpoint-xl) gap-5 px-5 md:grid-cols-2">
 		<section class="space-y-5">
 			<h2 class="font-kanit text-2xl font-semibold lg:text-3xl">{t("seminars.facebook_page")}</h2>
 

@@ -42,7 +42,7 @@ const EventModule = (props: Props) => {
 				</h1>
 			</header>
 
-			<main className="mx-auto grid max-w-screen-xl justify-items-center px-5 pb-20 lg:flex lg:grid-cols-2 lg:space-x-10">
+			<main className="mx-auto grid max-w-(--breakpoint-xl) justify-items-center px-5 pb-20 lg:flex lg:grid-cols-2 lg:space-x-10">
 				<aside className="w-full max-w-96">
 					<Calendar lang={lang} />
 				</aside>

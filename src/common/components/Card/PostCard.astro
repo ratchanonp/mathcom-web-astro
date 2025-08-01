@@ -14,7 +14,7 @@ const date = new Date(date_gmt);
 	<a href=`/posts/${slug}`>
 		<figure class="relative -z-10">
 			<img
-				class="z-0 aspect-[4/3] w-full object-cover object-center"
+				class="z-0 aspect-4/3 w-full object-cover object-center"
 				src={_embedded["wp:featuredmedia"][0].source_url}
 				alt={_embedded["wp:featuredmedia"][0].alt_text}
 			/>
@@ -28,7 +28,7 @@ const date = new Date(date_gmt);
 		</figure>
 	</a>
 	<div class="space-y-2 p-5">
-		<div class="w-fit border-[1px] border-yellow-500 px-2 py-0.5 text-sm text-yellow-500">
+		<div class="w-fit border border-yellow-500 px-2 py-0.5 text-sm text-yellow-500">
 			{_embedded["wp:term"][0][0].name}
 		</div>
 		<h3 transition:name={slug} class="font-prompt text-xl">

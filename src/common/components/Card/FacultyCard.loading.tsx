@@ -1,6 +1,6 @@
 const FacultyCardLoading = () => {
 	return (
-		<div className="border border-gray-300 shadow-sm">
+		<div className="border border-gray-300 shadow-xs">
 			<div className="flex aspect-square w-full animate-pulse items-center justify-center bg-gray-200">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

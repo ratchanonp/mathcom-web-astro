@@ -20,14 +20,14 @@ export default function Navbar(props: NavbarProps) {
 	return (
 		<>
 			<nav
-				className={`fixed z-40 w-full overflow-hidden bg-white shadow transition-all duration-500 ${$isMenuOpen && "-translate-x-full md:-translate-x-[350px]"} `}
+				className={`fixed z-40 w-full overflow-hidden bg-white shadow-sm transition-all duration-500 ${$isMenuOpen && "-translate-x-full md:-translate-x-[350px]"} `}
 			>
 				<div className="container mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5">
 					<a href={translatePath("/")} className="flex items-center">
 						<img
 							src={MathComLogo.src}
 							alt="CU Logo"
-							className="aspect-auto h-[60px] w-[53px] border-r-[1px] border-r-gray-500 pr-2.5 md:h-[80px] md:w-[67px]"
+							className="aspect-auto h-[60px] w-[53px] border-r border-r-gray-500 pr-2.5 md:h-[80px] md:w-[67px]"
 						/>
 						<div className="flex h-full flex-col justify-center pl-2.5 font-kanit">
 							<span className="text-xs font-light uppercase text-gray-500 md:text-xl">{t("nav.department")}</span>

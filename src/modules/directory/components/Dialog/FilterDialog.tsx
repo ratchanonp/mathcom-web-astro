@@ -21,13 +21,13 @@ export default function FilterDialog() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<button className="inline-flex items-center rounded border-[1px] border-gray-300 px-5 py-2.5 text-xl">
+				<button className="inline-flex items-center rounded border border-gray-300 px-5 py-2.5 text-xl">
 					<AdjustmentsHorizontalIcon className="h-6 w-6 text-gray-900 lg:mr-2" />
 					<span className="hidden lg:block">Filters</span>
 				</button>
 			</DialogTrigger>
-			<DialogContent className="max-w-screen-md">
-				<DialogHeader className="flex justify-between border-b-[1px] border-b-gray-200 p-5">
+			<DialogContent className="max-w-(--breakpoint-md)">
+				<DialogHeader className="flex justify-between border-b border-b-gray-200 p-5">
 					<div className="h-6 w-6" />
 					<DialogTitle className="text-xl text-gray-800">Filter</DialogTitle>
 					<DialogClose asChild>
@@ -37,7 +37,7 @@ export default function FilterDialog() {
 					</DialogClose>
 				</DialogHeader>
 				<Filter />
-				<DialogFooter className="flex justify-between border-t-[1px] border-t-gray-200 p-5">
+				<DialogFooter className="flex justify-between border-t border-t-gray-200 p-5">
 					<button className="py-2.5 text-lg" onClick={handleClear}>
 						Clear all
 					</button>
