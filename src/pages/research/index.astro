@@ -2,7 +2,7 @@
 import Hero from "@/common/components/Hero.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ResearchModule from "@/modules/research/ResearchModule";
+import LazyResearchModule from "@/modules/research/LazyResearchModule";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,7 +18,7 @@ const t = useTranslations(lang);
 				{t("research.research_areas")}
 			</h2>
 			<main class="mt-20 grid gap-y-2.5">
-				<ResearchModule url={Astro.url} client:load />
+				<LazyResearchModule url={Astro.url} client:load />
 			</main>
 		</section>
 	</main>
