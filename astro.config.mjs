@@ -47,7 +47,6 @@ export default defineConfig({
 						// Separate research components
 						research: ['src/modules/research'],
 						// Separate UI components
-						ui: ['src/common/components/ui'],
 						// Separate card components
 						cards: ['src/common/components/Card'],
 						// Separate post components
