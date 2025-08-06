@@ -13,11 +13,11 @@ import {
 } from "date-fns";
 
 import { useDateFnsLocale } from "@/i18n/utils";
+import { cn } from "@/lib/utils";
 import { EventAPI } from "@/libs/api/event";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { useStore } from "@nanostores/react";
 import { useEffect, useState } from "react";
-import { cn } from "src/libs/utils";
 import { selectedDay } from "src/modules/event/stores/eventStore";
 
 interface Props {
@@ -100,13 +100,13 @@ const Calendar = (props: Props) => {
 								isEqual(day, $selectedDay) && "text-white",
 								!isEqual(day, $selectedDay) && isToday(day) && "text-yellow-500",
 								!isEqual(day, $selectedDay) &&
-									!isToday(day) &&
-									isSameMonth(day, firstDayCurrentMonth) &&
-									"text-gray-900",
+								!isToday(day) &&
+								isSameMonth(day, firstDayCurrentMonth) &&
+								"text-gray-900",
 								!isEqual(day, $selectedDay) &&
-									!isToday(day) &&
-									!isSameMonth(day, firstDayCurrentMonth) &&
-									"text-gray-400",
+								!isToday(day) &&
+								!isSameMonth(day, firstDayCurrentMonth) &&
+								"text-gray-400",
 								isEqual(day, $selectedDay) && isToday(day) && "bg-yellow-500",
 								isEqual(day, $selectedDay) && !isToday(day) && "bg-yellow-500",
 								!isEqual(day, $selectedDay) && "hover:bg-yellow-200",

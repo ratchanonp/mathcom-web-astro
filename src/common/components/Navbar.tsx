@@ -1,7 +1,7 @@
 import MathComLogo from "@/assets/img/logo/MathComLogo.png";
+import { Bars3Icon, XMarkIcon } from "@/common/components/icons";
 import { languages } from "@/i18n/ui";
 import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useStore } from "@nanostores/react";
 import { isMenuOpen } from "../../store/menuStore";
 
@@ -45,9 +45,8 @@ export default function Navbar(props: NavbarProps) {
 								<a
 									key={language}
 									href={`/${language}/`}
-									className={`rounded-full px-3 py-0.5 uppercase text-slate-800 hover:text-yellow-500 ${
-										lang === language && "bg-white text-yellow-500"
-									}`}
+									className={`rounded-full px-3 py-0.5 uppercase text-slate-800 hover:text-yellow-500 ${lang === language && "bg-white text-yellow-500"
+										}`}
 								>
 									{language}
 								</a>

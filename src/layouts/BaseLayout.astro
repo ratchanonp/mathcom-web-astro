@@ -1,20 +1,17 @@
 ---
+// Optimized font imports - only load essential weights
 import "@fontsource-variable/work-sans";
-import "@fontsource/kanit/100.css";
-import "@fontsource/kanit/200.css";
 import "@fontsource/kanit/300.css";
 import "@fontsource/kanit/400.css";
 import "@fontsource/kanit/500.css";
 import "@fontsource/kanit/600.css";
 import "@fontsource/kanit/700.css";
-import "@fontsource/kanit/800.css";
-import "@fontsource/kanit/900.css";
 
 
 import "../styles/global.css";
 import Navbar from "@/common/components/Navbar";
 import Footer from "@/common/components/Footer.astro";
-import Menu from "@/common/components/Menu/Menu";
+import LazyMenu from "@/common/components/LazyMenu";
 
 interface Props {
 	title: string;
@@ -53,7 +50,7 @@ const currentURL = Astro.url;
 
 	</head>
 	<body>
-		<Menu currentURL={currentURL} client:load />
+		<LazyMenu currentURL={currentURL} client:load />
 		<Navbar currentURL={currentURL} client:load />
 		<div id="content">
 			<div class="pt-[80px]">

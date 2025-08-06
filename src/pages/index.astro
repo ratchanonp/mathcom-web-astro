@@ -3,8 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import MHVH from "@/assets/img/mhvh/MHVH-Portriat.jpg";
 import MenuCard from "@/common/components/Card/MenuCard/MenuCard.astro";
-import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
-import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
+import { ArrowDownRightIcon, ArrowLongRightIcon } from "@/common/components/icons";
 
 import AdvisingIcon from "@/assets/img/icon/card/Advising.png";
 import GraduateIcon from "@/assets/img/icon/card/Graduate.png";
@@ -14,7 +13,7 @@ import UndergraduateIcon from "@/assets/img/icon/card/Undergraduate.png";
 import PostGrid from "@/common/components/Post/PostGrid.astro";
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import EventGrid from "@/modules/event/components/EventGridMain.astro";
+import EventGridMain from "@/modules/event/components/EventGridMain.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -121,7 +120,7 @@ export const prerender = false;
 					Calendar
 				</h2>
 			</header>
-			<EventGrid />
+			<EventGridMain />
 			<a href="/events" class="mt-10 flex w-full justify-center text-center text-gray-500 underline">
 				View All Events
 				<ArrowLongRightIcon className="ml-2 h-5 w-5" />
