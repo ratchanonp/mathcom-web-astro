@@ -5,7 +5,6 @@ import MHVH from "@/assets/img/mhvh/MHVH-Portriat.jpg";
 import MenuCard from "@/common/components/Card/MenuCard/MenuCard.astro";
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
-import { Image } from "astro:assets";
 
 import AdvisingIcon from "@/assets/img/icon/card/Advising.png";
 import GraduateIcon from "@/assets/img/icon/card/Graduate.png";
@@ -68,7 +67,7 @@ export const prerender = false;
 				class="w-full overflow-hidden object-cover brightness-[0.65] filter md:object-[center_80%]"
 			/>
 			<div class="absolute bottom-5 left-0 flex w-full lg:bottom-20">
-				<div class="mx-auto grid w-full max-w-screen-xl px-5">
+				<div class="mx-auto grid w-full max-w-(--breakpoint-xl) px-5">
 					<h1 class="text-2xl font-semibold text-white md:text-4xl lg:text-7xl">
 						Welcome to the Department of<br />
 						<span class="underline decoration-primary decoration-4 lg:decoration-8">Mathematics</span> & <span
@@ -90,7 +89,7 @@ export const prerender = false;
 		</section>
 
 		<section class="mt-5">
-			<div class="mx-auto w-full max-w-screen-xl px-5">
+			<div class="mx-auto w-full max-w-(--breakpoint-xl) px-5">
 				<div class="grid grid-cols-1 gap-2.5 md:grid-cols-2 lg:grid-cols-3">
 					{MenuData.map(({ title, href, imgSrc }) => <MenuCard title={title} href={href} imgSrc={imgSrc} />)}
 				</div>
@@ -98,7 +97,7 @@ export const prerender = false;
 		</section>
 
 		<!-- Start News -->
-		<section id="news" class="mx-auto mt-10 max-w-screen-xl px-5 lg:mt-20">
+		<section id="news" class="mx-auto mt-10 max-w-(--breakpoint-xl) px-5 lg:mt-20">
 			<header>
 				<h2
 					class="text-center text-2xl font-semibold uppercase underline decoration-primary decoration-4 md:text-4xl"
@@ -114,7 +113,7 @@ export const prerender = false;
 		</section>
 		<!-- End News -->
 		<!-- Calendar -->
-		<section id="event" class="mx-auto mb-10 mt-10 max-w-screen-xl px-5 lg:mt-20">
+		<section id="event" class="mx-auto mb-10 mt-10 max-w-(--breakpoint-xl) px-5 lg:mt-20">
 			<header>
 				<h2
 					class="text-center text-2xl font-semibold uppercase underline decoration-primary decoration-4 md:text-4xl"

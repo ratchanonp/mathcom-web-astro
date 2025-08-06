@@ -16,7 +16,7 @@ const FacultyCard = (props: Props) => {
 	};
 
 	return (
-		<a href={`/people/${slug}`} className="border border-gray-300 shadow-sm">
+		<a href={`/people/${slug}`} className="border border-gray-300 shadow-xs">
 			{picture ? (
 				<figure>
 					<img className="aspect-square w-full object-cover object-top" src={picture} alt={title} />

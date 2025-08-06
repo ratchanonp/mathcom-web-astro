@@ -10,14 +10,14 @@ const DirectoryModule = () => {
 
 	return (
 		<>
-			<header className="mx-auto mt-10 max-w-screen-xl px-5">
+			<header className="mx-auto mt-10 max-w-(--breakpoint-xl) px-5">
 				<h1 className="py-10 text-center font-kanit text-2xl font-semibold uppercase underline decoration-primary decoration-4 lg:text-4xl">
 					People
 				</h1>
 				<form className="flex space-x-1">
 					<label
 						htmlFor="search"
-						className="relative mr-1 flex-1 overflow-clip rounded border-[1px] border-gray-300 shadow-lg md:mx-auto md:max-w-xl"
+						className="relative mr-1 flex-1 overflow-clip rounded border border-gray-300 shadow-lg md:mx-auto md:max-w-xl"
 					>
 						<MagnifyingGlassIcon className="absolute left-2.5 top-1/2 h-6 w-6 -translate-y-1/2 text-gray-900" />
 						<input
@@ -39,7 +39,7 @@ const DirectoryModule = () => {
 					</div>
 				</form>
 			</header>
-			<main className="mx-auto mt-2 max-w-screen-xl pb-10 font-kanit">
+			<main className="mx-auto mt-2 max-w-(--breakpoint-xl) pb-10 font-kanit">
 				<DirectoryDisplay />
 			</main>
 		</>

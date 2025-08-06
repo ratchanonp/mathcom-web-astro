@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 
 <BaseLayout title={t("program.graduate.amcs.news.title")}>
 	<Hero title={t("program.graduate.amcs.news.hero.title")} subtitle={t("program.graduate.amcs.news.hero.subTitle")} />
-	<div class="mx-auto mb-20 grid max-w-screen-xl gap-5 p-5 md:grid-cols-4 md:gap-10">
+	<div class="mx-auto mb-20 grid max-w-(--breakpoint-xl) gap-5 p-5 md:grid-cols-4 md:gap-10">
 		<aside class="col-span-1">
 			<nav class="sticky top-32 bg-gray-50">
 				<SideBarUnGrad navItems={createSidebarItemsGraduate("amcs", lang)} />

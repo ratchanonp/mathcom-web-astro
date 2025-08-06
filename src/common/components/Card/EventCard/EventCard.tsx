@@ -35,7 +35,7 @@ const EventCard = (props: Props) => {
 			</div>
 
 			<div className="mt-2 flex flex-col md:flex-row md:space-x-5">
-				<figure className="flex w-full flex-shrink-0 space-x-5 md:w-56 lg:w-80">
+				<figure className="flex w-full shrink-0 space-x-5 md:w-56 lg:w-80">
 					<img src="/gordan.jpeg" alt="Gordon" className="object-cover" />
 				</figure>
 

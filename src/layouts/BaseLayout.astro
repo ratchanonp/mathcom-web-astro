@@ -10,7 +10,7 @@ import "@fontsource/kanit/700.css";
 import "@fontsource/kanit/800.css";
 import "@fontsource/kanit/900.css";
 
-import { ViewTransitions } from "astro:transitions";
+
 import "../styles/global.css";
 import Navbar from "@/common/components/Navbar";
 import Footer from "@/common/components/Footer.astro";
@@ -50,7 +50,7 @@ const currentURL = Astro.url;
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 
-		<ViewTransitions />
+
 	</head>
 	<body>
 		<Menu currentURL={currentURL} client:load />

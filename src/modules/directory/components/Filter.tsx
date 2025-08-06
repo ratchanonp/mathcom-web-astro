@@ -31,7 +31,7 @@ const Filter = () => {
 	};
 
 	return (
-		<div className="no-scrollbar mx-auto mt-5 max-h-96 max-w-screen-xl overflow-auto px-5 pb-5">
+		<div className="no-scrollbar mx-auto mt-5 max-h-96 max-w-(--breakpoint-xl) overflow-auto px-5 pb-5">
 			<h1 className="inline-flex font-kanit text-2xl font-semibold text-gray-800">
 				<DocumentTextIcon className="mr-2 h-6 w-6" />
 				Research Field <span className="hidden md:block">/ Areas of Expertise</span>
@@ -43,7 +43,7 @@ const Filter = () => {
 							type="checkbox"
 							id={id.toString()}
 							value={id}
-							className="aspect-square h-6 overflow-hidden rounded-xl border-[1px] border-gray-300 accent-gray-800"
+							className="aspect-square h-6 overflow-hidden rounded-xl border border-gray-300 accent-gray-800"
 							onChange={handleOnChange}
 							checked={$filter.includes(id)}
 						/>
