@@ -28,7 +28,7 @@ const DirectoryModule = () => {
 							id="search"
 							name="search"
 							placeholder={t("people.search_by_name")}
-							className="w-full py-2.5 pl-10 pr-2.5 font-sarabun outline-hidden ring-0"
+							className="w-full py-2.5 pl-10 pr-2.5 font-sarabun outline-none ring-0"
 							value={$searchKeyword}
 							onChange={(e) => {
 								searchKeyword.set(e.target.value);
